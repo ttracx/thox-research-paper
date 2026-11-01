@@ -2,6 +2,14 @@
 
 Skill and documentation for end-to-end authoring, technical drawings, requirements compliance, and publishing of research papers on behalf of THOX.ai, including submission to Hugging Face Papers.
 
+## Mandatory arXiv preflight and account workflow
+
+Version 1.1.1 adds the [Preflight Checklist for New Submissions](skills/thox-research-paper/references/arxiv-preflight.md), the [secure account workflow](skills/thox-research-paper/references/arxiv-account-workflow.md), and an [offline checker with usage instructions](docs/ARXIV_PREFLIGHT.md).
+
+Require TeX source for TeX-authored papers, a clean upload folder, complete files/references and an archival-safety review including TeX comments. Static checks do not establish publication readiness. Review the exact source, final PDF, current account eligibility and applicable publication authority.
+
+No account credentials, live authenticated session, SWORD permission or automatic publishing service are included. See [validation and handoff](docs/VALIDATION-1.1.1.md) for the 27 local tests and remaining operational gates. Keep unpublished papers and account records outside this public repository.
+
 ## Overview
 
 This repository contains the `thox-research-paper` agent skill that enables complete workflows for writing, illustrating, validating, and distributing research papers under the THOX.ai brand (Hugging Face organization: Thox-ai).

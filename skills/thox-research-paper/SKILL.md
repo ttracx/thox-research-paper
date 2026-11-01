@@ -22,4 +22,14 @@ Load current `thox-brand-governance` and `thox-document-templates` for the manus
 5. Independently validate claims and computations as well as writing and presentation. Run the existing research-loop structural check and artifact release audit where applicable, then complete the scientific and visual checks they cannot perform. Match the manuscript type and conclusions to the evidence actually available.
 6. Freeze a consistent, versioned private bundle. Prepare publication only in the authorized phase. Read the parent skill's live arXiv checks for current formatting, originality, AI disclosure, eligibility and rate limits. Reuse any exact existing release approval; never infer submission authority from this command alone.
 
+## Mandatory arXiv preflight and account operations
+
+Before every new submission, read [Preflight Checklist for New Submissions](references/arxiv-preflight.md). Require TeX source for TeX-authored work, a separate clean upload directory, complete files/references, and review of every file for archival safety, including TeX comments. Do not automatically strip comments or required license notices. Use current official bibliography guidance rather than outdated blog workarounds.
+
+Run `scripts/arxiv_preflight.py` when a Python-capable runtime and the exact staging directory are available. Its output is an offline static report, not proof of compilation, scientific validity, authentication or publication readiness. Resolve errors and warnings, complete the source and PDF reviews, and bind the review to the exact inventory hash. Keep all reports and private records outside the upload folder.
+
+For login, account setup, uploads, replacements, submission status or publishing automation, read [Secure arXiv Account and Publishing Workflow](references/arxiv-account-workflow.md). Discover actual connected capabilities before acting. Never embed credentials or browser state in this plugin, the public repository, source bundles or logs. Do not send credentials to general research/scraping prompts. Use an authenticated user-controlled session or supported secure credential injection. Missing access is `AUTH_NOT_CONNECTED`, not a completed connection.
+
+Automate only authorized operations on the exact reviewed artifact. Verify identity, rights, license, authorship consent, current eligibility/limits and the server-generated PDF before final submission. Reuse valid existing approval. Check for an existing submission before retrying an ambiguous result. Never claim that installing this skill itself provides a live login, submission API or always-on service.
+
 Return the requested manuscript and supporting artifacts, their observed status, actual verification results, unresolved limitations and concrete next actions. Internal multi-agent review, preprint availability and peer-reviewed acceptance are distinct states. Do not claim a persistent team, trained model, experiment, submission or release that did not occur.

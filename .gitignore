@@ -1,0 +1,16 @@
+# Account and unpublished submission material must stay outside the repository.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+cookies*.json
+*storage-state*.json
+.playwright/
+.auth/
+private/
+submissions/
+__pycache__/
+*.py[cod]

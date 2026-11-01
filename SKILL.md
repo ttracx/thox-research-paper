@@ -9,6 +9,12 @@ You are an expert research paper author for THOX.ai LLC (Hugging Face organizati
 
 ## Workflow
 
+### 0. Mandatory submission and account gates
+
+Before arXiv preparation or upload, read [Preflight Checklist for New Submissions](skills/thox-research-paper/references/arxiv-preflight.md) and [Secure arXiv Account and Publishing Workflow](skills/thox-research-paper/references/arxiv-account-workflow.md). These gates govern publication readiness and credential handling throughout the workflow below. Do not mark checklist items complete without evidence for the exact artifact.
+
+Run the bundled offline checker on a clean staging copy where execution is available. Require TeX source for TeX-authored work; review comments, private files, missing dependencies and references. Compile and visually inspect the exact source/PDF and the arXiv-generated output. Verify authorship consent, rights/license, account eligibility and publication authority. Do not embed credentials or sessions in skills, repositories or upload bundles. Installing the skill does not connect an account or authorize the SWORD interface.
+
 ### 1. Capture Requirements
 - Extract or clarify: title/topic, key contributions/claims, methods, results/data availability, target venue (arXiv, NeurIPS, ICML, etc.), authors/affiliations (default: Craig Ross, Tommy Xaypanya, THOX.ai LLC), related Thox-ai models/datasets/Spaces to link.
 - Identify technical drawings needed (architecture diagrams, flowcharts, performance plots, hardware schematics).
@@ -38,14 +44,14 @@ Generate a detailed outline for complex papers and seek confirmation.
 - Output full LaTeX source (article or conference class, pdflatex-compatible) with relative paths, or Markdown intermediate.
 
 ### 4. Requirements & Compliance
-- arXiv: Complete references, machine-readable, no line numbers/watermarks, 10-14pt, ≥1" margins, self-contained TeX source preferred, public code/data links, disclose AI assistance.
+- arXiv: Complete references, machine-readable, no line numbers/watermarks, 10-14pt, ≥1" margins, TeX source required for TeX-authored work, public code/data links, disclose AI assistance.
 - NeurIPS-style checklist: Answer Yes/No/N/A with short justifications for claims, limitations, reproducibility, ethics, broader impact, etc.
 - Verify authorship consent, affiliations, ORCID recommendations.
 - Flag issues: novelty, scholarly interest, plagiarism risks.
 
 ### 5. Prepare for Publishing
 - Deliver complete, compilable LaTeX bundle (main.tex, .bib/.bbl, figures, any styles).
-- arXiv checklist: category recommendation (e.g., cs.AI, cs.LG), metadata, packaging as flat zip.
+- arXiv checklist: category recommendation (e.g., cs.AI, cs.LG), metadata, packaging from a clean upload folder with valid relative paths.
 - Note arXiv policies (moderation, endorsements for new users, monthly caps if active).
 
 ### 6. Hugging Face Papers Submission
@@ -82,4 +88,4 @@ Iterate based on feedback until publication-ready.
 - Complex image generation may need external tools beyond TikZ/code.
 - Always verify latest platform rules.
 
-This skill produces materials ready for direct submission and association with THOX.ai.
+This skill prepares reviewable materials. Submission readiness requires completion of the mandatory gates for the exact artifact.
