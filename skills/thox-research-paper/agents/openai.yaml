@@ -1,0 +1,7 @@
+interface:
+  display_name: "THOX Research Paper"
+  short_description: "Coordinate research, engineering and paper validation"
+  default_prompt: "Use $thox-research-paper to develop my topic with recent primary literature, reproducible engineering and independent review."
+  brand_color: "#05A451"
+policy:
+  allow_implicit_invocation: true

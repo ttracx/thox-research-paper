@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "email": "tommytracx@icloud.com",
+    "name": "Tommy Xaypanya"
+  },
+  "description": "Coordinate THOX research teams, recent literature, engineering experiments and independent paper validation using existing THOX skills.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "brandColor": "#05A451",
+        "capabilities": [],
+        "category": "Scientific Research",
+        "defaultPrompt": [
+          "/thox-research-paper Research my topic with recent primary papers, an engineering loop and independent validation.",
+          "/thox-research-paper Review the current manuscript, reproduce supported results and fix evidence gaps.",
+          "/thox-research-paper Prepare a THOX paper and a separate arXiv-ready source package for review."
+        ],
+        "developerName": "Tommy Xaypanya",
+        "displayName": "THOX Research Team",
+        "longDescription": "Run /thox-research-paper for a requested topic. Coordinates research, methodology, engineering, manuscript integration and independent review. Builds a topic-specific primary-paper context from the previous 6 to 12 months, applies existing THOX research and document standards, records reproducible evidence and prepares scholarly exports. Requires the existing THOX skills and available research/execution capabilities. Runs during the conversation; no background service, model training or automatic publication.",
+        "shortDescription": "Research, build, validate"
+      }
+    }
+  },
+  "keywords": [
+    "research",
+    "THOX",
+    "multi-agent",
+    "papers",
+    "validation",
+    "arxiv"
+  ],
+  "name": "thox-research-paper",
+  "version": "1.0.0"
+}
