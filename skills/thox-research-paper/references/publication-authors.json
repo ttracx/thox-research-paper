@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "profile_version": "1.2.0",
+  "organization": "THOX.ai LLC",
+  "source": "User-provided publication defaults, confirmed in this conversation on 2026-11-01",
+  "applies_to": "All THOX publications generated or revised by these workflows",
+  "author_order_policy": "Preserve an approved project-specific order; otherwise retain the existing repository order: Craig Ross, Tommy Xaypanya.",
+  "default_authors": [
+    {
+      "id": "craig-ross",
+      "name": "Craig Ross",
+      "given_name": "Craig",
+      "family_name": "Ross",
+      "position": "Chief Executive Officer",
+      "position_short": "CEO",
+      "affiliation": "THOX.ai LLC",
+      "orcid": null,
+      "orcid_url": null
+    },
+    {
+      "id": "tommy-xaypanya",
+      "name": "Tommy Xaypanya",
+      "given_name": "Tommy",
+      "family_name": "Xaypanya",
+      "position": "Chief Technology Officer and Co-Founder",
+      "position_short": "CTO and Co-Founder",
+      "affiliation": "THOX.ai LLC",
+      "orcid": "0009-0000-4425-9565",
+      "orcid_url": "https://orcid.org/0009-0000-4425-9565"
+    }
+  ],
+  "authorship_policy": {
+    "include_both_by_default": true,
+    "preserve_other_verified_authors": true,
+    "verify_contribution_and_consent_before_submission": true,
+    "invent_missing_identifiers": false,
+    "synthetic_agents_are_authors": false,
+    "default_corresponding_author": null,
+    "retroactively_edit_announced_publications": false
+  }
+}

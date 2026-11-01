@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "service": "THOX Research Studio",
+  "site_url": null,
+  "source_repository": null,
+  "connection_status": "STUDIO_NOT_CONNECTED",
+  "mcp_endpoint": null,
+  "authenticated": false,
+  "publication_export": false
+}

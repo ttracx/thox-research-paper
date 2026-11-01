@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "account_owner": null,
+  "service": "arXiv.org",
+  "account_name": null,
+  "login_url": "https://arxiv.org/user/",
+  "authentication_status": "not_verified",
+  "contains_credentials": false,
+  "publication_export": false
+}

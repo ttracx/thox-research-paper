@@ -4,18 +4,18 @@
     "capabilities": [],
     "category": "Scientific Research",
     "defaultPrompt": [
-      "/thox-research-paper Research my topic with recent primary papers, an engineering loop and independent validation.",
-      "/thox-research-paper Review the current manuscript, reproduce supported results and fix evidence gaps.",
-      "/thox-research-paper Prepare a THOX paper and a separate arXiv-ready source package for review."
+      "Create an official THOX paper from this research using Research Studio and the standard author profiles.",
+      "Continue this THOX Research Studio project from its latest private checkpoint and resolve outstanding evidence gaps.",
+      "Review recent primary literature, run authorized experiments and prepare a THOX paper with independent validation."
     ],
     "developerName": "Tommy Xaypanya",
     "displayName": "THOX Research Team",
-    "longDescription": "Run /thox-research-paper for a requested topic. Coordinates research, methodology, engineering, manuscript integration and independent review. Builds a topic-specific primary-paper context from the previous 6 to 12 months, applies existing THOX research and document standards, records reproducible evidence and prepares scholarly exports. Requires the existing THOX skills and available research/execution capabilities. Runs during the conversation; no background service, model training or automatic publication.",
-    "shortDescription": "Research, build, validate"
+    "longDescription": "Automatically use THOX Research Studio workflows for relevant research and publication requests without requiring a slash command. Reuse available connected Studio tools, preserve private project checkpoints across sessions, and generate evidence-backed THOX papers with the shared Tommy Xaypanya and Craig Ross author profile. Includes recent-literature, engineering, review and arXiv-preflight workflows. Remote Studio tools and account authentication must be connected and verified separately; no background service or automatic publication is installed.",
+    "shortDescription": "Official THOX research and papers"
   },
   "name": "thox-research-paper",
-  "version": "1.1.1",
-  "description": "Coordinate THOX research teams, recent literature, engineering experiments and independent paper validation using existing THOX skills.",
+  "version": "1.2.0",
+  "description": "Automatically route THOX research, official papers, literature reviews and resumed projects through THOX Research Studio workflows, shared author profiles and evidence validation.",
   "author": {
     "name": "Tommy Xaypanya",
     "email": "tommytracx@icloud.com"
@@ -26,7 +26,11 @@
     "multi-agent",
     "papers",
     "validation",
-    "arxiv"
+    "arxiv",
+    "research-studio",
+    "official-papers",
+    "author-profiles",
+    "session-handoff"
   ],
   "skills": "./skills"
 }

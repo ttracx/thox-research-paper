@@ -1,7 +1,7 @@
 interface:
   display_name: "THOX Research Paper"
-  short_description: "Coordinate research, engineering and paper validation"
-  default_prompt: "Use $thox-research-paper to develop my topic with recent primary literature, reproducible engineering and independent review."
+  short_description: "Generate official THOX papers with shared authors"
+  default_prompt: "Use $thox-research-paper to create or resume an official THOX paper with Tommy Xaypanya and Craig Ross, recent primary literature, reproducible evidence and independent review."
   brand_color: "#05A451"
 policy:
   allow_implicit_invocation: true

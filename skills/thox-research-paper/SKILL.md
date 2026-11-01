@@ -1,17 +1,23 @@
 ---
 name: thox-research-paper
-description: Coordinate a THOX.ai research paper or substantive revision with a multi-agent engineering loop, primary literature from the previous 6 to 12 months, THOX formatting and independent validation. Use for /thox-research-paper and equivalent paper-generation requests.
+description: Automatically generate or revise official THOX papers, whitepapers and scholarly research from a topic, conversation, code or results. Use for paper authoring, arXiv preparation and resumed THOX research without a slash command. Reuse Research Studio tools, shared author profiles, recent primary literature and independent validation.
 ---
 
 # THOX Research Paper
 
 Turn the user's actual research subject and available evidence into a rigorous THOX paper and reproducible supporting artifacts. Run the team during this conversation using available capabilities and existing authority. This is an orchestration entry point for the existing THOX research standard, not a background service or automatic publishing tool.
 
+## Automatic activation, author defaults and continuity
+
+Begin authorized THOX research and paper tasks without requiring a slash command or repeated setup. Read [publication authors](references/publication-authors.md) and `references/publication-authors.json` on each invocation. Include Tommy Xaypanya, Chief Technology Officer and Co-Founder of THOX.ai LLC, and Craig Ross, Chief Executive Officer of THOX.ai LLC, by default in all THOX publications. Tommy's ORCID is `0009-0000-4425-9565`. Keep account aliases in private operational configuration, never in the manuscript. Preserve contribution, consent and publication checks.
+
+Use [Studio connector routing](references/studio-connector-routing.md) to discover actual tools and resume a private checkpoint. The sibling `thox-research-studio` skill may already have routed the task; reuse its project and integrator rather than starting a second team. The bundled `scripts/research_context.py` helper produces public author blocks and portable checkpoint JSON without network access. Do not describe a local checkpoint as a saved remote session.
+
 ## Load the current THOX standard
 
-Discover and read the installed `thox-research-publishing` skill by name. Record its package and workflow revision. Version 2.2.0 or later includes the requested team, rolling-literature and validation resources. Read its `references/team-engineering-loop.md` and `references/rolling-literature-context.md`, resolving them through the skill's actual resource provider. Do not hard-code a machine-specific directory or copy the whole policy into this entry point.
+Discover and read the canonical `thox-research-publishing` skill when available, recording its actual package and workflow revision and resolving its team and rolling-literature references through their real provider. Never assert a revision was loaded without reading it. If it is not exposed, use the bundled [official-paper workflow baseline](references/official-paper-workflow.md), identify that baseline explicitly, and continue useful research without claiming the missing package was verified. Do not hard-code a machine-specific directory.
 
-Load current `thox-brand-governance` and `thox-document-templates` for the manuscript. Resolve device, TXF, repository, document and PDF skills when the paper's subject or deliverables require them. If the current research dependency or a linked resource is unavailable, identify the missing capability, preserve useful private work, and do not claim the full workflow or formatting was validated. Do not invent access or silently replace missing policy with a remembered version.
+Load current `thox-brand-governance` and `thox-document-templates` for the manuscript where available. The installed `thox-official-templates` provides native THOX artifact masters; read its generation defaults and use the appropriate verified master for branded outputs. Keep scholarly/venue formatting distinct from promotional branding. Resolve device, TXF, repository, document and PDF skills when the paper's subject or deliverables require them. If a canonical research dependency, native template or linked resource is unavailable, identify the missing capability, use the explicitly identified bundled baseline where applicable, preserve useful private work, and do not claim the unavailable workflow or formatting was validated. Do not invent access or silently replace missing policy with a remembered version.
 
 ## Execute the coordinated workflow
 

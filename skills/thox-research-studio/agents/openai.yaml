@@ -1,0 +1,7 @@
+interface:
+  display_name: "THOX Research Studio"
+  short_description: "Route research and resume official THOX papers"
+  default_prompt: "Use $thox-research-studio to continue or create official THOX research using the shared author profile and evidence-gated workflow."
+  brand_color: "#05A451"
+policy:
+  allow_implicit_invocation: true

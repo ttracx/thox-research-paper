@@ -14,3 +14,8 @@ private/
 submissions/
 __pycache__/
 *.py[cod]
+
+# Private plugin-only operator configuration and research checkpoints
+skills/thox-research-paper/references/operator-account.json
+research-checkpoint*.json
+skills/thox-research-paper/references/studio-operator.json

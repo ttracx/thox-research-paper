@@ -2,6 +2,20 @@
 
 Skill and documentation for end-to-end authoring, technical drawings, requirements compliance, and publishing of research papers on behalf of THOX.ai, including submission to Hugging Face Papers.
 
+## Automatic Research Studio workflows (1.2.0)
+
+Relevant THOX research, official-paper and continuation requests can select the installed skills implicitly. The `/thox-research-paper` entry point remains available. The new `thox-research-studio` router coordinates discovery, private checkpoints and a single manuscript integrator. See [routing and connection status](skills/thox-research-paper/references/studio-connector-routing.md).
+
+All generated THOX publications use [the shared author profile](skills/thox-research-paper/references/publication-authors.md): Craig Ross, Chief Executive Officer, and Tommy Xaypanya, Chief Technology Officer and Co-Founder, both THOX.ai LLC. Tommy's ORCID is `0009-0000-4425-9565`. Existing author order, actual contributions and publication approvals remain applicable.
+
+```sh
+python skills/thox-research-paper/scripts/research_context.py authors --format markdown
+python skills/thox-research-paper/scripts/research_context.py checkpoint --project-id mesh-study --topic "Heterogeneous edge inference"
+python -m unittest discover -s tests -v
+```
+
+The helper prints data only and never logs in or submits a paper. Store checkpoints privately outside this public repository. The actual operator account alias is held only in the private plugin, not this public distribution. Remote Studio tools were not exposed during this update; plugin-side routing is not a deployed connector. See [validation](docs/VALIDATION-1.2.0.md).
+
 ## Mandatory arXiv preflight and account workflow
 
 Version 1.1.1 adds the [Preflight Checklist for New Submissions](skills/thox-research-paper/references/arxiv-preflight.md), the [secure account workflow](skills/thox-research-paper/references/arxiv-account-workflow.md), and an [offline checker with usage instructions](docs/ARXIV_PREFLIGHT.md).
@@ -32,7 +46,7 @@ Place the skill in your skills directory:
 ```bash
 # Clone or download
 git clone https://github.com/ttracx/thox-research-paper.git
-# Or copy SKILL.md into ~/.claude/skills/thox-research-paper/SKILL.md (or equivalent)
+# Keep the full skills/ tree and its references/scripts; do not copy SKILL.md alone.
 ```
 
 Alternatively, with the skills CLI (if available):
@@ -50,7 +64,7 @@ Example prompts:
 - "Generate technical drawings and LaTeX for a paper on MagStack"
 - "Prepare this draft for arXiv and submit to Hugging Face Papers under Thox-ai"
 
-The skill prepares all files and exact next steps. Actual arXiv upload and HF claims require your authenticated action.
+The skill prepares all files and exact next steps. Actual arXiv upload and HF claims require authenticated execution and the applicable publication gates.
 
 ## Repository Structure
 
