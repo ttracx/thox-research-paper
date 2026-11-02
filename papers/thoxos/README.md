@@ -6,6 +6,8 @@
 
 **Status:** Internally reviewed architecture and validation-status draft. Not submitted to arXiv. Submission readiness is not established.
 
+**DOI:** [10.5281/zenodo.23876230](https://doi.org/10.5281/zenodo.23876230) (Zenodo record, deposited November 1, 2026: PDF, LaTeX source, bibliography and evidence ledger; CC BY 4.0)
+
 ## What this revision establishes
 
 This revision corrects the supplied Grok manuscript against current ThoxInux sources. It identifies the Ginux-derived x86-64 foundation, separates current work from the older Linux/Core design, preserves proprietary portfolio boundaries, and connects technical claims to exact sources. It defines experiments for kernel/workload compatibility, resident agents, offline operation, update recovery, model behavior, and hardware feasibility.
