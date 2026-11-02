@@ -60,3 +60,19 @@ The build runs without shell escape, stops on TeX errors, writes intermediates u
 No repository license or portfolio ownership decision is changed by this revision. The historical whitepaper explicitly carries **CC BY 4.0**, with THOX.ai LLC attribution and a separate trademark notice. Its recovered figures retain that provenance. The repository's software license does not erase those document-specific notices.
 
 Public repository publication, arXiv submission, Hugging Face paper indexing, Daily Papers selection, and external peer-reviewed acceptance are separate actions and states. None is established by the local review package. Preserve the repository's existing hold on unpublished manuscripts until the owner approves the exact public-source publication.
+
+## Related models and systems
+
+The kernel models evaluated in this draft are published as:
+
+- ThoxOS-Kernel-0.8B: https://huggingface.co/Thox-ai/ThoxOS-Kernel-0.8B and https://ollama.com/Thox-ai/thoxos-kernel-0.8b
+- ThoxOS-Kernel-4B: https://huggingface.co/Thox-ai/ThoxOS-Kernel-4B and https://ollama.com/Thox-ai/thoxos-kernel-4b
+- ThoxOS-Kernel-27B: https://huggingface.co/Thox-ai/ThoxOS-Kernel-27B and https://ollama.com/Thox-ai/thoxos-kernel-27b (card only; the 27B weights are not public)
+
+The systems this draft covers are open source at:
+
+- ThoxOS Core: https://github.com/Thox-ai/thoxos-core
+- linux-thox (THOX Linux kernel): https://github.com/Thox-ai/linux-thox
+- Thox Kernel Lab: https://github.com/Thox-ai/thox-kernel-lab
+- ThoxOS images: https://github.com/Thox-ai/thoxos-images
+- ThoxInux: https://github.com/Thox-ai/thoxinux
