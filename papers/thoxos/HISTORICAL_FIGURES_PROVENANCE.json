@@ -1,0 +1,58 @@
+{
+  "status": "historical v0.1.0 source recovery; not current research claims",
+  "repository": "Thox-ai/thoxos-core",
+  "revision": "887b8c9c47f352a577b4592c6f81a2c1570d9af3",
+  "source_html": "https://github.com/Thox-ai/thoxos-core/blob/887b8c9c47f352a577b4592c6f81a2c1570d9af3/docs/whitepaper/ThoxOS_Whitepaper_v0.1.0.html",
+  "source_html_blob_sha": "138a47bd368d4d19b23ef1013142b0282c2ee211",
+  "source_html_sha256": "8d1cb2dd029707f621fdcc1ecaf71f24762b675662b3c1c2c09cb84acb9328f9",
+  "source_markdown": "https://github.com/Thox-ai/thoxos-core/blob/887b8c9c47f352a577b4592c6f81a2c1570d9af3/docs/whitepaper/ThoxOS_Whitepaper_v0.1.0.md",
+  "source_markdown_blob_sha": "34a8b2bdca8e59f10cabaa0a9cfb331a29f5bc9e",
+  "source_markdown_sha256": "3c6111630440e6ead0b88fbfc47b39cbde600d9d565332381baa88d691773487",
+  "supplied_markdown_matches_public_blob": true,
+  "license": "CC BY 4.0; copyright 2026 THOX.ai LLC; trademarks excluded",
+  "figures": [
+    {
+      "file": "figures/fig1-stack.svg",
+      "bytes": 2987,
+      "sha256": "60f32b324fa5b69f29d1d560f636d4671a8c2b92f4a21f7008f5030c4818beb3",
+      "recovery": "exact inline SVG fragment, no redraw or alteration"
+    },
+    {
+      "file": "figures/fig4-kernel-tracks.svg",
+      "bytes": 4601,
+      "sha256": "f53042162c7564d09f8fe279bfe67357ed84728afb0c35d9d3d6fda6ba478cfb",
+      "recovery": "exact inline SVG fragment, no redraw or alteration"
+    },
+    {
+      "file": "figures/fig2-entitlement.svg",
+      "bytes": 3106,
+      "sha256": "c8fbc9383bd6660d24720a0b5efe95de00feb592fbaf2ce87af66c151523e790",
+      "recovery": "exact inline SVG fragment, no redraw or alteration"
+    },
+    {
+      "file": "figures/fig6-capacity.svg",
+      "bytes": 2463,
+      "sha256": "a0cbcfc1d95de80124b8b650b92f42019d242313332e6a2010f921f4dbbe4aaf",
+      "recovery": "exact inline SVG fragment, no redraw or alteration"
+    },
+    {
+      "file": "figures/fig3-rauc.svg",
+      "bytes": 4641,
+      "sha256": "bb4dabafb058fcc768b523401729a0035d375608e7d51a692eeab5ede1d57da4",
+      "recovery": "exact inline SVG fragment, no redraw or alteration"
+    },
+    {
+      "file": "figures/fig5-open-paid.svg",
+      "bytes": 2714,
+      "sha256": "bb747dc0417c168ed157f78c2eb688007707c6e073ccb46dc20145792a2d34d0",
+      "recovery": "exact inline SVG fragment, no redraw or alteration"
+    }
+  ],
+  "validation": {
+    "inline_svg_fragments": 6,
+    "svg_xml_parse": "all 6 passed",
+    "markdown_relative_figure_links": "all 6 resolved",
+    "external_svg_resource_links": 0
+  },
+  "warning": "These historical figures depict the older linux-thox/Kernel Lab and open-paid architecture. They must remain labeled historical and must not be presented as current ThoxInux architecture or measured hardware results."
+}

@@ -1,5 +1,12 @@
 # Changelog
 
+## ThoxOS manuscript 0.2.0-review - 2026-11-01
+
+- Replaced the paper placeholders with a corrected architecture and validation-status draft, bibliography, PDF, evidence ledger, build instructions, and status documentation.
+- Reconciled the current ThoxInux/Ginux foundation, proprietary boundaries, payload-specific system evidence, and qualified model-card results.
+- Preserved the historical CC BY 4.0 whitepaper and recovered its six missing SVGs from the matching public source.
+- Recorded clean compilation and complete PDF review while preserving the public-manuscript and arXiv submission gates. No skill code or plugin version changed.
+
 ## 1.2.0 - 2026-11-01
 
 - Added automatic Research Studio routing and private cross-session handoff instructions.

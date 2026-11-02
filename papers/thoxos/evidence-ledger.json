@@ -1,0 +1,652 @@
+{
+  "schema_version": 1,
+  "manuscript_revision": "0.2.0-review",
+  "access_date_timezone": "America/Chicago",
+  "review_cutoff": "2026-11-01",
+  "scope": "Source- and payload-bound ledger. Literature includes repository-reported and publisher-reported evidence, never silently promoted to new execution. Private policies and raw private snapshots excluded.",
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "ThoxInux identifies Ginux as its Rust-first x86-64 foundation and pins upstream commit 36503bda2d87465765e1b94e65f9d100f27ed5be.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Abstract",
+        "Related Work",
+        "Methods: Architecture and deployment scope",
+        "Table 1"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxinux/blob/fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9/UPSTREAM.md",
+      "source_version": "fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9; upstream 36503bda2d87465765e1b94e65f9d100f27ed5be",
+      "locator": "Fork-record table and What the fork changes",
+      "access_date": "2026-11-01",
+      "verification": "Read the immutable public fork record and four-entry patch series; inspected source identities, not a fresh kernel build.",
+      "limitations": "Describes a derivative engineering-preview foundation. Does not establish production hardening, arbitrary Linux compatibility or completed platform integration.",
+      "quantitative": false,
+      "rights_visibility": "Public THOX repository source; Apache-2.0 for the cited code-adjacent documents per RIGHTS.md; upstream and third-party notices retained.",
+      "source_sha256": "77151f92a2f1669d61cc6a029eac8bc3b57e7097488f9000cf8820f598f0f0cd"
+    },
+    {
+      "id": "C02",
+      "claim": "The ThoxInux rights ledger preserves Apache-2.0 fork attribution and excludes proprietary MeshStack, ThoxWork and ThoxKey firmware from that grant.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Introduction",
+        "Methods: Architecture and deployment scope",
+        "Ethics and Research Integrity"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxinux/blob/fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9/RIGHTS.md",
+      "source_version": "fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9",
+      "locator": "Component license table and Explicitly not in this repository",
+      "access_date": "2026-11-01",
+      "verification": "Read the pinned public rights ledger.",
+      "limitations": "Documented rights boundary only; not independent legal due diligence and not a claim that all local services are free or open source.",
+      "quantitative": false,
+      "rights_visibility": "Public THOX repository source; Apache-2.0 for the cited code-adjacent documents per RIGHTS.md; upstream and third-party notices retained.",
+      "source_sha256": "5d39b1e1964df0565dcca6b88b30d795d03ce19787582e3b676d2bb755ede5e8"
+    },
+    {
+      "id": "C03",
+      "claim": "The supplied v0.1.0 whitepaper describes the earlier Linux LTS and separate Kernel Lab plan; it remains historical source material.",
+      "evidence_class": "observed",
+      "manuscript_locations": [
+        "Introduction",
+        "Methods: Source boundaries and evidence classes",
+        "Reproducibility Checklist"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxos-core/blob/887b8c9c47f352a577b4592c6f81a2c1570d9af3/docs/whitepaper/ThoxOS_Whitepaper_v0.1.0.md",
+      "source_version": "887b8c9c47f352a577b4592c6f81a2c1570d9af3; Markdown Git blob 34a8b2bdca8e59f10cabaa0a9cfb331a29f5bc9e",
+      "locator": "Sections 4-5, source status box and license notice",
+      "access_date": "2026-11-01",
+      "verification": "Verified the supplied 65,885-byte Markdown against the observed public Git blob; recovered its six figure fragments from the matching public HTML.",
+      "limitations": "Its architecture, release state and commercial split are dated statements. Historical diagrams are not evidence of current ThoxInux implementation.",
+      "quantitative": false,
+      "rights_visibility": "Public historical THOX documentation; document CC BY 4.0, original THOX code Apache-2.0; no portfolio-wide relicensing.",
+      "source_sha256": "3c6111630440e6ead0b88fbfc47b39cbde600d9d565332381baa88d691773487"
+    },
+    {
+      "id": "C04",
+      "claim": "The reviewed kernel has an x86-64 target; ARM64 support is scoping work, not an implemented port or physical E2/P4/P6 qualification.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Methods: Architecture and deployment scope",
+        "Limitations"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxinux/blob/fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9/docs/ARM64-SCOPING.md",
+      "source_version": "fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9; scoping counts cite upstream 759cf2e221b459b0195c3fa7ed909688b755e74e",
+      "locator": "Headline findings and Linux ABI portability discussion",
+      "access_date": "2026-11-01",
+      "verification": "Read the public scoping document and its distinction between fork pin and later upstream inspection.",
+      "limitations": "Architecture portability is not implied by QEMU emulation. No new board or ARM kernel execution occurred during this review.",
+      "quantitative": false,
+      "rights_visibility": "Public THOX repository source; Apache-2.0 for the cited code-adjacent documents per RIGHTS.md; upstream and third-party notices retained.",
+      "source_sha256": "73f30151657fc28bffd6d658f1ed297870b63ca71ae48b6efa03cd4a48dc11c9"
+    },
+    {
+      "id": "C05",
+      "claim": "Historical program device classes specify nominal RAM floors of 2 GB for E2, 4 GB for P4 and 6 GB for P6.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Methods: Architecture and deployment scope"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxos-core/blob/887b8c9c47f352a577b4592c6f81a2c1570d9af3/docs/whitepaper/ThoxOS_Whitepaper_v0.1.0.md",
+      "source_version": "887b8c9c47f352a577b4592c6f81a2c1570d9af3",
+      "locator": "Section 7.1 device-class table",
+      "access_date": "2026-11-01",
+      "verification": "Read the original dated class definitions.",
+      "limitations": "These are design targets, not measured usable memory, current board acceptance or demonstrated Ginux deployment.",
+      "quantitative": true,
+      "rights_visibility": "Public historical THOX documentation; document CC BY 4.0, original THOX code Apache-2.0; no portfolio-wide relicensing.",
+      "source_sha256": "3c6111630440e6ead0b88fbfc47b39cbde600d9d565332381baa88d691773487",
+      "quantitative_conditions": {
+        "quantity": "nominal RAM floor",
+        "units": "GB as stated in the source",
+        "E2": 2,
+        "P4": 4,
+        "P6": 6,
+        "scope": "historical program class definitions; no hardware measurement"
+      }
+    },
+    {
+      "id": "C06",
+      "claim": "Unified Payload U, legacy Ginux Edition Payload E, predecessor Azure candidate A and a host Linux container are distinct evidence targets.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Results: Foundation evidence and negative findings",
+        "Table 2",
+        "Limitations"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxinux/blob/fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9/docs/RECONCILIATION-2026-10-31.md",
+      "source_version": "fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9",
+      "locator": "Payload naming from here and What did not converge",
+      "access_date": "2026-11-01",
+      "verification": "Read the immutable reconciliation record and wave ledger.",
+      "limitations": "Neither a positive run nor a failure transfers to another payload merely through shared ancestry, a similar hash or an adjacent screenshot.",
+      "quantitative": false,
+      "rights_visibility": "Public THOX repository source; Apache-2.0 for the cited code-adjacent documents per RIGHTS.md; upstream and third-party notices retained.",
+      "source_sha256": "c82fb92d17a4516e1624bd4853283c6faa757ea881e002afd731d2b6160d6aad"
+    },
+    {
+      "id": "C07",
+      "claim": "ThoxInux v0.9.0 is a published engineering prerelease with Payload U EFI SHA-256 85722bd41426491bf86f810bbdd25f951c53afc49e1bf32ad5b34c63ab4420ae.",
+      "evidence_class": "observed",
+      "manuscript_locations": [
+        "Results: Foundation evidence and negative findings",
+        "Table 2"
+      ],
+      "source_url": "https://api.github.com/repos/Thox-ai/thoxinux/releases/430269790",
+      "source_version": "Release 430269790; tag commit 5ec049bd7911ee5d0eb2e280555212822b7b9cd1; metadata inspected 2026-11-01 America/Chicago",
+      "locator": "draft=false, prerelease=true, tag_name and asset digest fields",
+      "access_date": "2026-11-01",
+      "verification": "Read live authenticated GitHub release metadata, resolved its tag to the exact commit and inspected API-reported EFI digest.",
+      "limitations": "Release metadata remains editable. The tag commit and payload digest identify the reviewed version; EFI bytes were not downloaded or independently hashed in this review.",
+      "quantitative": false,
+      "rights_visibility": "Public THOX repository source; Apache-2.0 for the cited code-adjacent documents per RIGHTS.md; upstream and third-party notices retained."
+    },
+    {
+      "id": "C08",
+      "claim": "The TCG receipt reports 22 successful lifecycle commands for Payload U: 17 cold-boot and 5 recovered-boot commands.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Table 2: Unified EFI v0.9.0",
+        "Results: Foundation evidence and negative findings"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxinux/blob/fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9/evidence/wave5-lifecycle/lifecycle-results-tcg.json",
+      "source_version": "fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9",
+      "locator": "results, efi_sha256, upstream, accelerator and profile fields",
+      "access_date": "2026-11-01",
+      "verification": "Read the immutable JSON receipt and cross-checked the release identity and wave ledger; reported-only, not rerun.",
+      "limitations": "A bounded embedded-init lifecycle suite. It does not establish arbitrary workload compatibility, inference, physical acceptance or complete AgentOS integration.",
+      "quantitative": true,
+      "rights_visibility": "Public THOX repository source; Apache-2.0 for the cited code-adjacent documents per RIGHTS.md; upstream and third-party notices retained.",
+      "source_sha256": "e22590e451df18c8bd9f7d323e6fc653f7e4b1bbda6c52690a1e7f477b4029be",
+      "quantitative_conditions": {
+        "cold_commands": 17,
+        "recovered_commands": 5,
+        "total_commands": 22,
+        "accelerator": "QEMU TCG",
+        "machine": "Q35/OVMF; 1 vCPU; 2 GiB; 48-bit IOMMU",
+        "payload_sha256": "85722bd41426491bf86f810bbdd25f951c53afc49e1bf32ad5b34c63ab4420ae",
+        "upstream": "36503bda2d87465765e1b94e65f9d100f27ed5be",
+        "independent_rerun": false
+      }
+    },
+    {
+      "id": "C09",
+      "claim": "The KVM receipt reports 22 successful lifecycle commands for the same Payload U: 17 cold-boot and 5 recovered-boot commands.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Table 2: Unified EFI v0.9.0",
+        "Results: Foundation evidence and negative findings"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxinux/blob/fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9/evidence/wave5-lifecycle/lifecycle-results-kvm.json",
+      "source_version": "fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9",
+      "locator": "results, efi_sha256, accelerator and profile fields",
+      "access_date": "2026-11-01",
+      "verification": "Read the immutable JSON receipt and cross-checked the wave ledger; reported-only, not rerun.",
+      "limitations": "The JSON retains a stale generic claim-limit phrase excluding KVM acceptance despite accelerator=kvm. Report the explicit accelerator and command count without interpreting this as broad KVM platform qualification; the same bounded suite is not an independent workload sample.",
+      "quantitative": true,
+      "rights_visibility": "Public THOX repository source; Apache-2.0 for the cited code-adjacent documents per RIGHTS.md; upstream and third-party notices retained.",
+      "source_sha256": "da70d2cb8e776f5c823f1d70c79a8c48fe58b5c2c1668aa0ef5a8ed26bd7df0f",
+      "quantitative_conditions": {
+        "cold_commands": 17,
+        "recovered_commands": 5,
+        "total_commands": 22,
+        "accelerator": "QEMU KVM",
+        "machine": "Q35/OVMF; 1 vCPU; 2 GiB; 48-bit IOMMU",
+        "payload_sha256": "85722bd41426491bf86f810bbdd25f951c53afc49e1bf32ad5b34c63ab4420ae",
+        "upstream": "36503bda2d87465765e1b94e65f9d100f27ed5be",
+        "independent_rerun": false
+      }
+    },
+    {
+      "id": "C10",
+      "claim": "The v0.9.1 controlled-build record requires fixed toolchain, source epoch, registry anchor and absolute build path; its release bytes were not separately lifecycle-run.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Table 2: Controlled EFI v0.9.1",
+        "Results: Foundation evidence and negative findings",
+        "Limitations"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxinux/blob/fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9/docs/WAVES.md",
+      "source_version": "fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9; v0.9.1 tag commit 84b4a7e740496297ca79dff735834ca2a8f2bad3",
+      "locator": "Wave 3 reproducibility; Wave 5 result 1; kernel/ginux/docs/RELEASE-BUILD.md",
+      "access_date": "2026-11-01",
+      "verification": "Read the pinned wave ledger, release-build procedure and release 430337642 metadata/notes.",
+      "limitations": "Repository-reported repeat builds on the named host/toolchain, not an independent rerun or environment-independent reproducibility. v0.9.0 runtime evidence is not a newly executed v0.9.1 lifecycle pass.",
+      "quantitative": true,
+      "rights_visibility": "Public THOX repository source; Apache-2.0 for the cited code-adjacent documents per RIGHTS.md; upstream and third-party notices retained.",
+      "source_sha256": "b374a00c7273235bd9d9090c6ce8c8a6b37616b53f26c4b5fea71639beb262a2",
+      "quantitative_conditions": {
+        "published_efi_sha256": "1bc1c7af33470edc009fa5756d3fe6063573660e07e157d19397afc680a7bb89",
+        "source_date_epoch": 1793077647,
+        "canonical_build_path": "/mnt/d/thoxinux-build/repro/run-fixed/src",
+        "registry_anchor_sha256": "8ba5d94faafde8ee8df7fbc8bad6d97121f448eff3ed94f709c7205edcb6a149",
+        "reported_controlled_build_comparison": "two builds at a fixed alternative path matched; a canonical-path build reproduced the published hash",
+        "path_change_difference_bytes": 8,
+        "separate_lifecycle_rerun": false
+      }
+    },
+    {
+      "id": "C11",
+      "claim": "Wave 3 reports signed-identity, capability-denial, audit and shutdown behavior in a plain container sharing its host Linux kernel.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Table 2: Agent supervisor in a host container"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxinux/blob/fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9/docs/WAVES.md",
+      "source_version": "fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9",
+      "locator": "Wave 3 Guest integration",
+      "access_date": "2026-11-01",
+      "verification": "Read the explicit host-kernel qualification in the wave record; no execution rerun.",
+      "limitations": "This container result does not establish the same behavior or enforcement on a Ginux kernel.",
+      "quantitative": false,
+      "rights_visibility": "Public THOX repository source; Apache-2.0 for the cited code-adjacent documents per RIGHTS.md; upstream and third-party notices retained.",
+      "source_sha256": "b374a00c7273235bd9d9090c6ce8c8a6b37616b53f26c4b5fea71639beb262a2"
+    },
+    {
+      "id": "C12",
+      "claim": "The Wave 5 summary reports that the resident-agent loop remained incomplete across 17 recorded attempts on the legacy edition demo-guest payload, despite daemon startup.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Table 2: Resident AgentOS on Ginux",
+        "Results: Foundation evidence and negative findings",
+        "Limitations",
+        "Conclusion"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxinux/blob/fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9/docs/WAVES.md",
+      "source_version": "fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9",
+      "locator": "Wave 5 result 5; evidence/wave5-lane-e/RESULTS.md Environment, attempt matrix and fault signatures",
+      "access_date": "2026-11-01",
+      "verification": "Read the wave summary and detailed result record. Attempt count is source-reported; historical runs were not rerun and complete root-cause isolation was not independently established.",
+      "limitations": "Failure is bound to legacy edition guest EFI 21d12d86631df7947a9bd7389b664106676c6f97a18e44d38d9ddb906b00f7b4. It does not establish that unified Payload U or v0.9.1 fails the same workload; their complete resident-agent loops remain unestablished by these records.",
+      "quantitative": true,
+      "rights_visibility": "Public THOX repository source; Apache-2.0 for the cited code-adjacent documents per RIGHTS.md; upstream and third-party notices retained.",
+      "source_sha256": "b374a00c7273235bd9d9090c6ce8c8a6b37616b53f26c4b5fea71639beb262a2",
+      "quantitative_conditions": {
+        "reported_attempts": 17,
+        "payload": "legacy Ginux Edition demo-agentos variant, not unified Payload U",
+        "efi_sha256": "21d12d86631df7947a9bd7389b664106676c6f97a18e44d38d9ddb906b00f7b4",
+        "guest_userspace": "Rocky Linux 10; shell and systemd domains",
+        "environment": "KnightHub WSL2, QEMU KVM, 1 vCPU, 2 GiB",
+        "linker_adaptation": "-C link-arg=-Wl,-z,norelro",
+        "result": "intended loop not completed; domain/kernel fault signatures recorded",
+        "root_cause_status": "source-author attribution, not independently proven"
+      }
+    },
+    {
+      "id": "C13",
+      "claim": "At the pinned Ginux revision the compatibility ledger labels 375 dispatched syscalls: 82 Complete, 245 Partial and 48 Policy-denied.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Results: Foundation evidence and negative findings"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxinux/blob/fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9/docs/COMPATIBILITY.md",
+      "source_version": "fbad5952f20281ef6ad7eaefc1f54f7db4c0c6e9; upstream 36503bda2d87465765e1b94e65f9d100f27ed5be",
+      "locator": "Headline numbers, Method, Non-syscall ABI surface and What the agent path touches",
+      "access_date": "2026-11-01",
+      "verification": "Read the published audit and its stated source/ledger consistency method.",
+      "limitations": "Not individual behavioral conformance testing, not an application-compatibility percentage and not evidence of ARM syscall coverage. File-backed MAP_SHARED, sockets and blocking waits retain stated limitations.",
+      "quantitative": true,
+      "rights_visibility": "Public THOX repository source; Apache-2.0 for the cited code-adjacent documents per RIGHTS.md; upstream and third-party notices retained.",
+      "source_sha256": "ef21247c33507cc4fc2ec9e19884e603aaf7e3ce50eeabdfc30f96d281a329c7",
+      "quantitative_conditions": {
+        "total_dispatched": 375,
+        "complete": 82,
+        "partial": 245,
+        "policy_denied": 48,
+        "method": "ledger recount and dispatcher constant set comparison reported by repository",
+        "upstream": "36503bda2d87465765e1b94e65f9d100f27ed5be",
+        "behavioral_retest": false
+      }
+    },
+    {
+      "id": "C14",
+      "claim": "The older Core release reports 25 entitlement unit tests and 27 image-definition checks, with no device image build or runtime recovery implied.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Table 2: Earlier Linux/Core components",
+        "Methods: Source boundaries and evidence classes"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxos-core/blob/887b8c9c47f352a577b4592c6f81a2c1570d9af3/docs/RELEASE_MANIFEST.md",
+      "source_version": "887b8c9c47f352a577b4592c6f81a2c1570d9af3",
+      "locator": "Provenance and fidelity; Claim limits 1, 2 and 5",
+      "access_date": "2026-11-01",
+      "verification": "Read the immutable public release manifest and v0.1.0 release description; historical reported-only counts.",
+      "limitations": "Different source lane from ThoxInux. The counts are not aggregated into a system pass and were not rerun for this manuscript.",
+      "quantitative": true,
+      "rights_visibility": "Public historical THOX documentation; document CC BY 4.0, original THOX code Apache-2.0; no portfolio-wide relicensing.",
+      "source_sha256": "9f0a07bbeb6017b6cda7cac56db12d996d935ec63acb96822b4000897cedbbaf",
+      "quantitative_conditions": {
+        "entitlement_tests": 25,
+        "image_definition_checks": 27,
+        "run_context": "packaged tree and extracted historical v0.1.0 tarball as reported",
+        "image_checks_scope": "definition/template consistency",
+        "production_keys": false,
+        "boot_or_rollback_proof": false
+      }
+    },
+    {
+      "id": "C15",
+      "claim": "The older RAUC materials are templates and planned integration; actual bundle installation and rollback remain unverified in that historical evidence set.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Related Work",
+        "Methods: Evaluation protocol P4",
+        "Table 2"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxos-core/blob/887b8c9c47f352a577b4592c6f81a2c1570d9af3/docs/PENDING-VERIFY.md",
+      "source_version": "887b8c9c47f352a577b4592c6f81a2c1570d9af3",
+      "locator": "P4 and the no-update-bundle entry in The not yet list",
+      "access_date": "2026-11-01",
+      "verification": "Read the pinned pending-verification record alongside the release manifest.",
+      "limitations": "The register contains stale unrelated publication/model statements and is used only for the scoped historical rollback gap. It is not current global product status.",
+      "quantitative": false,
+      "rights_visibility": "Public historical THOX documentation; document CC BY 4.0, original THOX code Apache-2.0; no portfolio-wide relicensing.",
+      "source_sha256": "0c63e673c3802b10b7c5f6b451551299936d870fbfcab18f7a116ae0592128d2"
+    },
+    {
+      "id": "C16",
+      "claim": "The historical entitlement prototype uses HMAC-SHA256 as a demo stand-in and separately describes public-key device verification for production.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Related Work",
+        "Methods: Entitlement and execution authority",
+        "Safety"
+      ],
+      "source_url": "https://github.com/Thox-ai/thoxos-core/blob/887b8c9c47f352a577b4592c6f81a2c1570d9af3/docs/whitepaper/ThoxOS_Whitepaper_v0.1.0.md",
+      "source_version": "887b8c9c47f352a577b4592c6f81a2c1570d9af3",
+      "locator": "Sections 6.2-6.4; demo-secret and production-verification discussion near lines 672-675",
+      "access_date": "2026-11-01",
+      "verification": "Read the supplied historical reference, including the explicit prototype/production distinction.",
+      "limitations": "Production issuance, key custody, rotation, revocation, trusted time and billing are not established. Core availability does not grant action authorization.",
+      "quantitative": false,
+      "rights_visibility": "Public historical THOX documentation; document CC BY 4.0, original THOX code Apache-2.0; no portfolio-wide relicensing.",
+      "source_sha256": "3c6111630440e6ead0b88fbfc47b39cbde600d9d565332381baa88d691773487"
+    },
+    {
+      "id": "C17",
+      "claim": "The 27B model card reports GATE49 41/49 and an adopted final-answer PASS, while the raw-completion verdict remains HELD with four known-false hard failures.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Table 3: ThoxOS-Kernel-27B",
+        "Results: Published model evidence"
+      ],
+      "source_url": "https://huggingface.co/Thox-ai/ThoxOS-Kernel-27B/blob/0e03b1f067e065597e5ef205e01d965b9819b999/README.md",
+      "source_version": "0e03b1f067e065597e5ef205e01d965b9819b999",
+      "locator": "Evaluation lines 120-132; status and limitations",
+      "access_date": "2026-11-01",
+      "verification": "Read the exact publisher-card snapshot and verified its SHA-256 against the recorded metadata.",
+      "limitations": "Publisher-reported development-set result. Scoring scope changes the verdict; no held-out generalization, independent reproduction, hardware qualification or safety guarantee is inferred.",
+      "quantitative": true,
+      "rights_visibility": "Public publisher model card declaring Apache-2.0; no private run records copied and no independent training-data rights audit claimed.",
+      "quantitative_conditions": {
+        "GATE49_correct": 41,
+        "GATE49_items": 49,
+        "final_answer_verdict": "PASS under adopted scope",
+        "raw_completion_verdict": "HELD",
+        "raw_Gate49_known_false_hard_failures": 4,
+        "host_tier": true,
+        "independent_rerun": false
+      },
+      "source_sha256": "79e1f02fe026b0da3669e1300df57f5c210b9d8ed43e61ec8bae934caf22edbe"
+    },
+    {
+      "id": "C18",
+      "claim": "The 4B card reports GATE49 44/49 but identifies the release as a documented baseline, not gate-passed, because named safety-form bars remained held.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Table 3: ThoxOS-Kernel-4B"
+      ],
+      "source_url": "https://huggingface.co/Thox-ai/ThoxOS-Kernel-4B/blob/5956548e6bcafeae55e58788a0b318b27ddb9223/README.md",
+      "source_version": "5956548e6bcafeae55e58788a0b318b27ddb9223",
+      "locator": "Status lines 42-46; Evaluation lines 118-142",
+      "access_date": "2026-11-01",
+      "verification": "Read the exact publisher card and verified its recorded SHA-256.",
+      "limitations": "GATE-K gatek-f06, probe P17 and OS-bench trap-01 failures remain visible. Scores apply to merged safetensors with the published grounding prompt and greedy decoding; they do not establish GGUF or device performance.",
+      "quantitative": true,
+      "rights_visibility": "Public publisher model card declaring Apache-2.0; no private run records copied and no independent training-data rights audit claimed.",
+      "quantitative_conditions": {
+        "GATE49_correct": 44,
+        "GATE49_items": 49,
+        "verdict": "DOCUMENTED BASELINE, NOT GATE-PASSED",
+        "held_categories": [
+          "GATE-K known-false hard failure gatek-f06",
+          "probe P17 escape",
+          "OS-bench destructive escape trap-01"
+        ],
+        "evaluation_artifact": "merged safetensors",
+        "decoding": "greedy, grounding system prompt",
+        "device_qualification": false
+      },
+      "source_sha256": "6d0de6fb46e4aba63bef70a6421346c3b8e8705dd97928fe328d95b502a3b6ea"
+    },
+    {
+      "id": "C19",
+      "claim": "The 0.8B card reports GATE49 37/49 with zero hard failures on the specified gates, but GATE-K verified recall is 0/12 and routing subscore 0/2.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Table 3: ThoxOS-Kernel-0.8B"
+      ],
+      "source_url": "https://huggingface.co/Thox-ai/ThoxOS-Kernel-0.8B/blob/fe4520be896b0a1ef6545998777f5a1bdba13072/README.md",
+      "source_version": "fe4520be896b0a1ef6545998777f5a1bdba13072",
+      "locator": "Status line 42; Evaluation lines 119-129; limitations lines 133-137",
+      "access_date": "2026-11-01",
+      "verification": "Read the exact publisher card and verified its recorded SHA-256.",
+      "limitations": "Publisher-reported development data under the published configuration. A narrow PASS does not establish useful kernel-fact recall, broad routing quality, population safety, quantized-model performance or ThoxAir qualification.",
+      "quantitative": true,
+      "rights_visibility": "Public publisher model card declaring Apache-2.0; no private run records copied and no independent training-data rights audit claimed.",
+      "quantitative_conditions": {
+        "GATE49_correct": 37,
+        "GATE49_items": 49,
+        "hard_failures_on_specified_gate": 0,
+        "GATE_K_verified_recall_correct": 0,
+        "GATE_K_verified_recall_items": 12,
+        "routing_correct": 0,
+        "routing_items": 2,
+        "evaluation_artifact": "merged safetensors",
+        "decoding": "greedy, grounding system prompt",
+        "independent_rerun": false
+      },
+      "source_sha256": "0f887d8db082efc7140161885bc605964d6b44d2afe058cd9685036ce4fad420"
+    },
+    {
+      "id": "C20",
+      "claim": "The 0.8B publisher reports final answers for only 1/38 prompts under a stock thinking-template UX configuration, and requires the published think-suppressed configuration.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Table 3: ThoxOS-Kernel-0.8B",
+        "Ablations: Model surface"
+      ],
+      "source_url": "https://huggingface.co/Thox-ai/ThoxOS-Kernel-0.8B/blob/fe4520be896b0a1ef6545998777f5a1bdba13072/README.md",
+      "source_version": "fe4520be896b0a1ef6545998777f5a1bdba13072",
+      "locator": "Known limitations and risks, serving requirement, line 137",
+      "access_date": "2026-11-01",
+      "verification": "Read the publisher serving-surface qualification in the pinned card.",
+      "limitations": "This is a configuration-specific UX result, not the GATE49 denominator or an independent benchmark. Full private UX transcripts were not imported or reproduced.",
+      "quantitative": true,
+      "rights_visibility": "Public publisher model card declaring Apache-2.0; no private run records copied and no independent training-data rights audit claimed.",
+      "quantitative_conditions": {
+        "final_answers": 1,
+        "UX_prompts": 38,
+        "failing_surface": "raw stock thinking template",
+        "required_surface": "published Ollama Modelfile or equivalent think-suppressed prompt",
+        "date_reported": "2026-11-01",
+        "independent_rerun": false
+      },
+      "source_sha256": "0f887d8db082efc7140161885bc605964d6b44d2afe058cd9685036ce4fad420"
+    },
+    {
+      "id": "C21",
+      "claim": "ThoxOS-Kernel-27B Q4_K_M artifact metadata reports 16,547,400,192 bytes.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Results: Published model evidence, artifact-size paragraph"
+      ],
+      "source_url": "https://huggingface.co/Thox-ai/ThoxOS-Kernel-27B/blob/0e03b1f067e065597e5ef205e01d965b9819b999/README.md",
+      "source_version": "0e03b1f067e065597e5ef205e01d965b9819b999",
+      "locator": "Artifact inventory row for ThoxOS-Kernel-27B.Q4_K_M.gguf, line 88",
+      "access_date": "2026-11-01",
+      "verification": "Read the exact model-card artifact inventory and card hash metadata; full weight bytes were not downloaded or hashed by this review.",
+      "limitations": "File size is a storage quantity, not peak resident memory, runtime feasibility, full artifact-integrity verification or quality after quantization.",
+      "quantitative": true,
+      "rights_visibility": "Public publisher model card declaring Apache-2.0; no private run records copied and no independent training-data rights audit claimed.",
+      "quantitative_conditions": {
+        "artifact": "ThoxOS-Kernel-27B.Q4_K_M.gguf",
+        "file_bytes": 16547400192,
+        "units": "bytes",
+        "full_weights_downloaded": false,
+        "independent_inference": false
+      },
+      "source_sha256": "79e1f02fe026b0da3669e1300df57f5c210b9d8ed43e61ec8bae934caf22edbe"
+    },
+    {
+      "id": "C22",
+      "claim": "ThoxOS-Kernel-4B Q4_K_M artifact metadata reports 2,708,804,128 bytes.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Results: Published model evidence, artifact-size paragraph"
+      ],
+      "source_url": "https://huggingface.co/Thox-ai/ThoxOS-Kernel-4B/blob/5956548e6bcafeae55e58788a0b318b27ddb9223/README.md",
+      "source_version": "5956548e6bcafeae55e58788a0b318b27ddb9223",
+      "locator": "Artifact inventory row for ThoxOS-Kernel-4B.Q4_K_M.gguf, line 82",
+      "access_date": "2026-11-01",
+      "verification": "Read the exact model-card artifact inventory and card hash metadata; full weight bytes were not downloaded or hashed by this review.",
+      "limitations": "File size is a storage quantity, not peak resident memory, runtime feasibility, full artifact-integrity verification or quality after quantization.",
+      "quantitative": true,
+      "rights_visibility": "Public publisher model card declaring Apache-2.0; no private run records copied and no independent training-data rights audit claimed.",
+      "quantitative_conditions": {
+        "artifact": "ThoxOS-Kernel-4B.Q4_K_M.gguf",
+        "file_bytes": 2708804128,
+        "units": "bytes",
+        "full_weights_downloaded": false,
+        "independent_inference": false
+      },
+      "source_sha256": "6d0de6fb46e4aba63bef70a6421346c3b8e8705dd97928fe328d95b502a3b6ea"
+    },
+    {
+      "id": "C23",
+      "claim": "ThoxOS-Kernel-0.8B Q4_K_M artifact metadata reports 529,297,056 bytes.",
+      "evidence_class": "literature",
+      "manuscript_locations": [
+        "Results: Published model evidence, artifact-size paragraph"
+      ],
+      "source_url": "https://huggingface.co/Thox-ai/ThoxOS-Kernel-0.8B/blob/fe4520be896b0a1ef6545998777f5a1bdba13072/README.md",
+      "source_version": "fe4520be896b0a1ef6545998777f5a1bdba13072",
+      "locator": "Artifact inventory row for ThoxOS-Kernel-0.8B.Q4_K_M.gguf, line 82",
+      "access_date": "2026-11-01",
+      "verification": "Read the exact model-card artifact inventory and card hash metadata; full weight bytes were not downloaded or hashed by this review.",
+      "limitations": "File size is a storage quantity, not peak resident memory, runtime feasibility, full artifact-integrity verification or quality after quantization.",
+      "quantitative": true,
+      "rights_visibility": "Public publisher model card declaring Apache-2.0; no private run records copied and no independent training-data rights audit claimed.",
+      "quantitative_conditions": {
+        "artifact": "ThoxOS-Kernel-0.8B.Q4_K_M.gguf",
+        "file_bytes": 529297056,
+        "units": "bytes",
+        "full_weights_downloaded": false,
+        "independent_inference": false
+      },
+      "source_sha256": "0f887d8db082efc7140161885bc605964d6b44d2afe058cd9685036ce4fad420"
+    },
+    {
+      "id": "C24",
+      "claim": "The reviewed public paper-directory baseline contains three literal placeholder files rather than the full supplied manuscript.",
+      "evidence_class": "observed",
+      "manuscript_locations": [
+        "Methods: Source boundaries and evidence classes",
+        "Table 1: Paper repository baseline"
+      ],
+      "source_url": "https://github.com/ttracx/thox-research-paper/tree/ad92ec44116e4dd895f1f82f7b8c279de1241401/papers/thoxos",
+      "source_version": "ad92ec44116e4dd895f1f82f7b8c279de1241401",
+      "locator": "main.tex, README.md and README_HANDOFF.md",
+      "access_date": "2026-11-01",
+      "verification": "Fetched each file at the immutable baseline and observed PLACEHOLDER_TEX, PLACEHOLDER_README and PLACEHOLDER_HANDOFF. Rechecked remote main at 2026-11-02T04:01:18Z.",
+      "limitations": "A finding about that exact baseline. Does not describe any later local candidate or claim a completed public push.",
+      "quantitative": true,
+      "rights_visibility": "Public skill repository under its existing Apache-2.0 distribution; no unpublished manuscript content copied from remote.",
+      "quantitative_conditions": {
+        "file_count": 3,
+        "baseline_commit": "ad92ec44116e4dd895f1f82f7b8c279de1241401",
+        "read_scope": "all three directory files, each inspected"
+      }
+    },
+    {
+      "id": "C25",
+      "claim": "The entitlement invariant and MayExecute conjunction are proposed requirements separating commercial availability, user authority and OS/application access control.",
+      "evidence_class": "proposed",
+      "manuscript_locations": [
+        "Methods: Entitlement and execution authority; Equations 1-2",
+        "Safety"
+      ],
+      "source_url": "main.tex",
+      "source_version": "0.2.0-review",
+      "locator": "Entitlement and execution authority",
+      "access_date": "2026-11-01",
+      "verification": "Logical design formulation in the manuscript, motivated by the historical entitlement prototype. No implementation or system-wide enforcement test is asserted.",
+      "limitations": "Model output does not supply authority. The complete feature mapping, key architecture and enforcement behavior require implementation and evaluation.",
+      "quantitative": false,
+      "rights_visibility": "Original THOX draft reasoning; no external private policy or source snapshot included."
+    },
+    {
+      "id": "C26",
+      "claim": "P1-P5 and the listed ablations are proposed experiments; P1 proposes at least 30 cold-start lifecycle repetitions per configuration.",
+      "evidence_class": "proposed",
+      "manuscript_locations": [
+        "Methods: Evaluation protocol P1-P5",
+        "Ablations"
+      ],
+      "source_url": "main.tex",
+      "source_version": "0.2.0-review",
+      "locator": "P1 repetition paragraph and P2-P5 acceptance descriptions",
+      "access_date": "2026-11-01",
+      "verification": "Inspected manuscript wording for proposed/unexecuted status.",
+      "limitations": "No run count or outcome is implied. Thirty repetitions are a study choice, not proof of rare-failure rates, extreme-tail precision or safety certification.",
+      "quantitative": true,
+      "rights_visibility": "Original THOX study protocol; no execution authorization or external publication permission created.",
+      "quantitative_conditions": {
+        "planned_minimum_cold_start_runs_per_configuration": 30,
+        "executed_for_this_review": 0,
+        "other_protocols": [
+          "model and application behavior",
+          "offline and entitlement",
+          "updates and recovery",
+          "hardware feasibility"
+        ],
+        "status": "proposed, unexecuted"
+      }
+    },
+    {
+      "id": "C27",
+      "claim": "The memory-budget inequality is a necessary feasibility accounting rule, with workload-specific resident weights, KV cache, runtime, OS and reserve terms.",
+      "evidence_class": "proposed",
+      "manuscript_locations": [
+        "Results: Published model evidence, memory-budget equation"
+      ],
+      "source_url": "main.tex",
+      "source_version": "0.2.0-review",
+      "locator": "Memory-budget equation and following paragraph",
+      "access_date": "2026-11-01",
+      "verification": "Reviewed as a symbolic planning requirement; no measured memory values are substituted.",
+      "limitations": "Necessary accounting is not a sufficient fit proof. Storage file size and advertised RAM cannot replace measured resident and available memory.",
+      "quantitative": false,
+      "rights_visibility": "Original THOX draft reasoning; no private measurements included."
+    },
+    {
+      "id": "C28",
+      "claim": "Submission readiness remains unestablished; this technical draft does not claim an arXiv submission, external peer review or a completed empirical systems evaluation.",
+      "evidence_class": "unverified",
+      "manuscript_locations": [
+        "Title status note",
+        "Limitations",
+        "Reproducibility Checklist: Public submission"
+      ],
+      "source_url": "main.tex",
+      "source_version": "0.2.0-review",
+      "locator": "Submission status note and author/submission requirements",
+      "access_date": "2026-11-01",
+      "verification": "Internal source, claims and artifact reviews identify the manuscript as a draft. No arXiv transaction or external acceptance evidence is recorded.",
+      "limitations": "Compile success cannot settle scholarly contribution, exact-version author approval, account eligibility, release authority or moderation outcome.",
+      "quantitative": false,
+      "rights_visibility": "Private draft review status; no account information, private policy or new license grant included."
+    }
+  ]
+}

@@ -24,6 +24,12 @@ Require TeX source for TeX-authored papers, a clean upload folder, complete file
 
 No account credentials, live authenticated session, SWORD permission or automatic publishing service are included. See [validation and handoff](docs/VALIDATION-1.1.1.md) for the 27 local tests and remaining operational gates. Keep unpublished papers and account records outside this public repository.
 
+## ThoxOS / ThoxInux manuscript draft
+
+The [ThoxOS paper directory](papers/thoxos/README.md) contains revision `0.2.0-review`: editable LaTeX, a compiled PDF, verified bibliography, a claim-level evidence ledger, and the preserved historical reference with its six recovered figures. It reconciles the Ginux-derived ThoxInux foundation with the older Linux/Core design and retains model, payload, hardware, and licensing limits.
+
+This is an internally reviewed technical draft. It is not an arXiv submission, an empirical validation of the full platform, or an externally peer-reviewed paper. See [validation](papers/thoxos/VALIDATION.md) and [submission status](papers/thoxos/ARXIV_STATUS.md). The existing hold on unpublished manuscripts and account material remains applicable; a local candidate or build pass does not authorize public release.
+
 ## Overview
 
 This repository contains the `thox-research-paper` agent skill that enables complete workflows for writing, illustrating, validating, and distributing research papers under the THOX.ai brand (Hugging Face organization: Thox-ai).

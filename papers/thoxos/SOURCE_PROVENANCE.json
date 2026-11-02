@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "review_revision": "0.2.0-review",
+  "preserved_inputs": [
+    {
+      "name": "thox-research-paper-enhanced-evidence.zip",
+      "bytes": 188435,
+      "sha256": "637db83d232f0b0d3858d4ab34c2d5ffb8db0f7d5962c69df1767479cd869428"
+    },
+    {
+      "name": "separately-attached-main.pdf",
+      "bytes": 160139,
+      "sha256": "5486e870f342d2ac9d4bdfe98b66416a239f97fdc2dbfcef6afb86fc72f1f821"
+    },
+    {
+      "name": "zip/README_HANDOFF.md",
+      "bytes": 995,
+      "sha256": "65b9ce07b62978ba5b6d064c22e70bbdb1e679c5642e13df87a99327aeb8d40a"
+    },
+    {
+      "name": "zip/main.pdf",
+      "bytes": 160093,
+      "sha256": "20d628f3238ed7f60f12b4e73853858c1cc98cd093c3fad79f1e79dd8e6c4cbb"
+    },
+    {
+      "name": "zip/main.tex",
+      "bytes": 14649,
+      "sha256": "b8d7a8b20ffb94050def03e4d9221be38d5eac3a42529bc5c71170c4ff4f8bc1"
+    },
+    {
+      "name": "zip/reference_whitepaper_v0.1.0.md",
+      "bytes": 65885,
+      "sha256": "3c6111630440e6ead0b88fbfc47b39cbde600d9d565332381baa88d691773487"
+    }
+  ],
+  "history_note": "Original Grok files remain unchanged in the private review packet. Publicly sourced historical Markdown and recovered figures retain their existing notices.",
+  "document_license_note": "Historical reference and recovered source figures: CC BY4.0 as stated by the source. No repository/portfolio license change or arXiv license choice is made by this review."
+}
