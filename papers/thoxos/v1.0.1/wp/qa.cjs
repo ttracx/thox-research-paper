@@ -7,7 +7,7 @@ const { chromium } = require("playwright");
 
 const ROOT = path.resolve(__dirname, "..");
 const PAPER = "file://" + path.join(ROOT, "wp", "paper.html");
-const DEMO = "file://" + path.join(ROOT, "dist", "ThoxOS_Demo_v1.0.0.html");
+const DEMO = "file://" + path.join(ROOT, "dist", "ThoxOS_Demo_v1.0.1.html");
 
 (async () => {
   const browser = await chromium.launch();

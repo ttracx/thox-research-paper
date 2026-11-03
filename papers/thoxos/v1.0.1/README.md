@@ -1,13 +1,13 @@
-# ThoxOS and ThoxInux: An Evidence-Bounded Architecture for a Local-First AI Operating System (v1.0.0)
+# ThoxOS and ThoxInux: An Evidence-Bounded Architecture for a Local-First AI Operating System (v1.0.1)
 
-THOX.ai Research technical report v1.0.0, 2026-11-03. Preprint, not peer reviewed. Builds on revision 0.2.0-review in the parent directory (Zenodo DOI 10.5281/zenodo.23876230).
+THOX.ai Research technical report v1.0.1, 2026-11-03. Public preprint edition, not peer reviewed. v1.0.1 settles the author roster (Craig Ross and Tommy Xaypanya, corresponding author Tommy Xaypanya) and retires the internal marking; no result changed. Builds on revision 0.2.0-review in the parent directory (Zenodo DOI 10.5281/zenodo.23876230).
 
 | Path | Contents |
 |---|---|
-| `dist/THOX_ThoxOS_Research_Paper_v1.0.0.pdf` | The paper, 16 pages |
-| `dist/THOX_ThoxOS_Research_Paper_v1.0.0.html` | Standalone HTML, fonts and KaTeX embedded |
-| `dist/ThoxOS_Demo_v1.0.0.html` | Browser demo: entitlement contract with known-answer tests, A/B health gate stepper, memory budget, ledger lookup |
-| `dist/THOX_ThoxOS_Paper_v1.0.0_artifact.zip` | Reproducibility artifact as delivered |
+| `dist/THOX_ThoxOS_Research_Paper_v1.0.1.pdf` | The paper, 16 pages |
+| `dist/THOX_ThoxOS_Research_Paper_v1.0.1.html` | Standalone HTML, fonts and KaTeX embedded |
+| `dist/ThoxOS_Demo_v1.0.1.html` | Browser demo: entitlement contract with known-answer tests, A/B health gate stepper, memory budget, ledger lookup |
+| `dist/THOX_ThoxOS_Paper_v1.0.1_artifact.zip` | Reproducibility artifact as delivered |
 | `exp/` | Experiments, raw results, `summary.json` (single source of every number) |
 | `wp/` | Reference fetch, figures, build, render, PDF, demo build, QA |
 

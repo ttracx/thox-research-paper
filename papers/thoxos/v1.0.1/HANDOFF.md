@@ -1,6 +1,6 @@
-# Agent handoff, ThoxOS paper v1.0.0
+# Agent handoff, ThoxOS paper v1.0.1
 
-Status: v1.0.0 built, QA passed, delivered 2026-11-03. Last verified by Claude (Odette Lark lane).
+Status: v1.0.1 built, QA passed, delivered 2026-11-03. Last verified by Claude (Odette Lark lane).
 
 Lanes (Task, Inputs, Exit evidence, Stop):
 - Hermes: enforce closeout (preview mount at /research/papers/thoxos, email record). Inputs: this directory. Exit: packet with preview path, SHA, email record. Stop: never send from AgentMail or Gmail.

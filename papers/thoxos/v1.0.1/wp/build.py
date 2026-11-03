@@ -16,7 +16,7 @@ S = json.loads((ROOT / "exp" / "results" / "summary.json").read_text())
 REFS_RAW = json.loads((ROOT / "wp" / "refs_raw.json").read_text())
 FIG = ROOT / "wp" / "figures"
 
-VERSION = "v1.0.0"
+VERSION = "v1.0.1"
 DATE = "2026-11-03"
 TITLE = "ThoxOS and ThoxInux: An Evidence-Bounded Architecture for a Local-First AI Operating System"
 SHORT = "ThoxOS and ThoxInux: evidence-bounded architecture"
@@ -88,7 +88,7 @@ cover = f"""
 <div class="eyebrow"><span>THOX.ai Research &middot; Technical report {VERSION} &middot; {DATE}</span><span class="pill">Preprint, not peer reviewed</span></div>
 <h1>{TITLE}</h1>
 <p class="deck">The reviewed foundation (ThoxInux on Ginux) fixed as the architecture of record, the entitlement and update contracts tested as executable properties and fault simulations, the Linux-ABI ledger read at the pin and joined with a traced agent loop, and the kernel-model memory budget computed from the cards.</p>
-<p class="byline">THOX.ai Research &middot; Corresponding author: Tommy Xaypanya, CTO and Co-Founder, THOX.ai LLC, Cedar Park, Texas &middot; ORCID 0009-0000-4425-9565 &middot; Proposed co-author: Craig Ross, CEO, ORCID 0009-0005-9872-3673</p>
+<p class="byline">THOX.ai Research &middot; Authors: Craig Ross, Chief Executive Officer (ORCID 0009-0005-9872-3673), and Tommy Xaypanya, CTO and Co-Founder, corresponding author (ORCID 0009-0000-4425-9565), THOX.ai LLC, Cedar Park, Texas</p>
 <div class="abstract"><div class="ct">Abstract</div><p>{ABSTRACT}</p></div>
 <div class="contents"><div class="ct">Contents</div><ol>{''.join(f'<li><a href="#{a}">{t}</a></li>' for t, a in CONTENTS)}</ol></div>
 <div class="cover-foot">Your AI. Your Data. Your Rules.&trade; &middot; THOX&reg;, ThoxOS&trade;, MeshStack&trade; and ThoxWork&trade; are marks of THOX.ai LLC.</div>
@@ -333,7 +333,7 @@ ol([
     "<b>P1 first.</b> Run the review's resident-agent lifecycle protocol on Payload U and v0.9.1 bytes, 30 cold starts per configuration, with the Partial calls of Section 6.3 as the watch list.",
     "<b>P4 on hardware.</b> Interrupted writes and attempt-counter exhaustion before the happy path.",
     "<b>Measure the reserve.</b> One measured OS-plus-runtime figure per class replaces the sweep and settles the Mini context statement.",
-    "<b>Author roster and venue.</b> Craig Ross and Tommy Xaypanya are the proposed human authors; confirm contributions and consent before any submission.",
+    "<b>Venue.</b> The roster is settled (Craig Ross and Tommy Xaypanya, corresponding author Tommy Xaypanya); the remaining venue decision is whether this edition or the P1-measured successor is the one submitted.",
 ])
 
 h2("A", "Appendix A. Reproducibility", "appA")
@@ -361,11 +361,14 @@ table(["Symbol", "Meaning"], [
     ["E2, P4, P6", "THOX compute classes (Air, Mini, Clip)"],
 ])
 h2("C", "Appendix C. Authorship and disclosure", "appC")
-p("Issued by THOX.ai Research. Corresponding and accountable human author: Tommy Xaypanya (CTO and Co-Founder, THOX.ai LLC); proposed co-author Craig Ross (CEO). "
+p("Issued by THOX.ai Research. The authors are Craig Ross (Chief Executive Officer) and Tommy Xaypanya (Chief Technology Officer and Co-Founder), THOX.ai LLC; "
+  "Tommy Xaypanya is the corresponding and accountable human author. Author consent to this edition is recorded. "
   "Generative AI assistance: experiment code, analysis, figures and draft text were produced by an AI system (Claude, Anthropic) operating as the THOX digital human "
   "Odette Lark under the direction of the corresponding author; every citation was resolved live on 2026-11-03 and every number is generated from the experiment outputs. "
   "No AI system is an author. The authors are THOX.ai principals; this is an interested-party technical account. Upstream attribution: ThoxInux derives from Gregory M. "
-  "Kurtzer's Ginux under its recorded terms. Confidential until the founders authorise release; the 0.2.0-review draft it builds on is public on Zenodo.")
+  "Kurtzer's Ginux under its recorded terms. Edition v1.0.0 was an internal draft; this edition, v1.0.1, is the public preprint edition authorised "
+  "by the founders: it settles the author roster, retires the internal marking and changes no result, measurement or conclusion. The 0.2.0-review "
+  "draft it builds on is public on Zenodo.")
 
 h2("", "References", "refs")
 refs_html = []

@@ -9,5 +9,5 @@ slim = {"entitlement": {k: v for k, v in s["entitlement"].items() if k.startswit
         "syscalls": {"rows": json.loads((ROOT / "exp" / "results" / "syscalls.json").read_text())["rows"], "traced_loop": s["syscalls"]["traced_loop"], "kpi_loop_distinct_complete": s["syscalls"]["kpi_loop_distinct_complete"], "kpi_loop_distinct_total": s["syscalls"]["kpi_loop_distinct_total"]}}
 out = (ROOT / "wp" / "demo_template.html").read_text().replace("/*__SUMMARY__*/", json.dumps(slim).replace("</", "<\\/"))
 (ROOT / "dist").mkdir(exist_ok=True)
-(ROOT / "dist" / "ThoxOS_Demo_v1.0.0.html").write_text(out)
+(ROOT / "dist" / "ThoxOS_Demo_v1.0.1.html").write_text(out)
 print("demo", len(out) // 1000, "KB")

@@ -9,7 +9,7 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-PDF = ROOT / "dist" / "THOX_ThoxOS_Research_Paper_v1.0.0.pdf"
+PDF = ROOT / "dist" / "THOX_ThoxOS_Research_Paper_v1.0.1.pdf"
 QA = ROOT / "wp" / "qa"
 QA.mkdir(exist_ok=True)
 
@@ -29,7 +29,7 @@ text = subprocess.run(["pdftotext", str(PDF), "-"], capture_output=True, text=Tr
 bad = {"em dash": text.count("—"), "TODO": len(re.findall(r"\bTODO\b", text)), "lorem": text.lower().count("lorem"),
        "placeholder": text.lower().count("placeholder"), "XXX": text.count("XXX")}
 print("pdf text checks", bad)
-for f in [ROOT / "wp" / "paper.html", ROOT / "dist" / "ThoxOS_Demo_v1.0.0.html"]:
+for f in [ROOT / "wp" / "paper.html", ROOT / "dist" / "ThoxOS_Demo_v1.0.1.html"]:
     t = f.read_text()
     print(f.name, "em dashes:", t.count("—"), "TODO:", len(re.findall(r"\bTODO\b", t)))
 sys.exit(0 if bad["em dash"] == 0 and bad["TODO"] == 0 else 1)

@@ -7,7 +7,7 @@ from pypdf import PdfReader, PdfWriter
 
 ROOT = Path(__file__).resolve().parents[1]
 W = ROOT / "wp"
-OUT = ROOT / "dist" / "THOX_ThoxOS_Research_Paper_v1.0.0.pdf"
+OUT = ROOT / "dist" / "THOX_ThoxOS_Research_Paper_v1.0.1.pdf"
 OUT.parent.mkdir(exist_ok=True)
 
 writer = PdfWriter()
@@ -17,8 +17,8 @@ for page in PdfReader(W / "body.pdf").pages:
     writer.add_page(page)
 writer.add_metadata({
     "/Title": "ThoxOS and ThoxInux: An Evidence-Bounded Architecture for a Local-First AI Operating System",
-    "/Author": "THOX.ai Research; corresponding author Tommy Xaypanya",
-    "/Subject": "Technical report v1.0.0, preprint, not peer reviewed",
+    "/Author": "Craig Ross and Tommy Xaypanya (corresponding author), THOX.ai Research",
+    "/Subject": "Technical report v1.0.1, preprint, not peer reviewed",
     "/Keywords": "ThoxOS, ThoxInux, Ginux, local-first AI, entitlement, A/B updates, Linux ABI, kernel models",
     "/Creator": "THOX paper pipeline (build.py, katex_render.cjs, pdf.cjs, merge_pdf.py)",
 })
