@@ -1,0 +1,1504 @@
+{
+  "entitlement": {
+    "hmac": {
+      "properties": {
+        "P1_valid_paid_allowed": true,
+        "P2_grace_29d_allowed": true,
+        "P3_grace_31d_denied": true,
+        "P4_tampered_denied": true,
+        "P5_malformed_denied": true,
+        "P6_core_unconditional": true,
+        "P7_eq2_conjunction": true,
+        "P8_unknown_denied": true,
+        "P9_forged_accepted": true,
+        "P10_rollback_wall_accepted": true,
+        "P10_rollback_hwm_rejected": true,
+        "token_bytes": 198
+      },
+      "timing": {
+        "us_per_verify_median": 11.734249499994576,
+        "us_q1": 11.67387099998507,
+        "us_q3": 11.790828750022797,
+        "reps": 30,
+        "batch": 1000
+      }
+    },
+    "ed25519": {
+      "properties": {
+        "P1_valid_paid_allowed": true,
+        "P2_grace_29d_allowed": true,
+        "P3_grace_31d_denied": true,
+        "P4_tampered_denied": true,
+        "P5_malformed_denied": true,
+        "P6_core_unconditional": true,
+        "P7_eq2_conjunction": true,
+        "P8_unknown_denied": true,
+        "P9_forged_accepted": false,
+        "P10_rollback_wall_accepted": true,
+        "P10_rollback_hwm_rejected": true,
+        "token_bytes": 241
+      },
+      "timing": {
+        "us_per_verify_median": 196.30293550000033,
+        "us_q1": 151.4578250000369,
+        "us_q3": 220.69632050001076,
+        "reps": 30,
+        "batch": 1000
+      }
+    },
+    "known_answer": {
+      "secret_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "payload": "{\"acct\":\"acct-demo\",\"exp\":1831536000,\"feat\":[\"meshstack-pro\"],\"iat\":1800000000,\"nonce\":\"QkJCQkJCQkJCQkJCQkJCQg\",\"v\":1}",
+      "token": "eyJhY2N0IjoiYWNjdC1kZW1vIiwiZXhwIjoxODMxNTM2MDAwLCJmZWF0IjpbIm1lc2hzdGFjay1wcm8iXSwiaWF0IjoxODAwMDAwMDAwLCJub25jZSI6IlFrSkNRa0pDUWtKQ1FrSkNRa0pDUWciLCJ2IjoxfQ.N3P1z7mcN6DvXBGQm0o9WOtosb4QAhqBGuFn8pYf9IE",
+      "allowed_at": 1800086400,
+      "grace_allowed_at": 1834041600,
+      "denied_at": 1834214400
+    },
+    "grace_days": 30,
+    "kpi_hmac_us": 11.734249499994576,
+    "kpi_ed_us": 196.30293550000033,
+    "kpi_hmac_forged_accepted": true,
+    "kpi_ed_forged_accepted": false,
+    "kpi_rollback_wall_accepted": true,
+    "kpi_rollback_hwm_rejected": true,
+    "kpi_token_bytes_hmac": 198,
+    "kpi_token_bytes_ed": 241,
+    "properties_pass": true
+  },
+  "update": {
+    "policies": {
+      "contract": {
+        "known_good_end": {
+          "median": 200.0,
+          "q1": 200.0,
+          "q3": 200.0
+        },
+        "bricked": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "booted_tampered": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "data_damaged": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "rollbacks": {
+          "median": 26.0,
+          "q1": 22.25,
+          "q3": 29.0
+        },
+        "updates": {
+          "median": 200.0,
+          "q1": 200.0,
+          "q3": 200.0
+        },
+        "recovery_boots_median": {
+          "median": 1.0,
+          "q1": 1.0,
+          "q3": 1.0
+        },
+        "recovery_boots_max": {
+          "median": 3.0,
+          "q1": 3.0,
+          "q3": 3.0
+        }
+      },
+      "no_sig": {
+        "known_good_end": {
+          "median": 200.0,
+          "q1": 200.0,
+          "q3": 200.0
+        },
+        "bricked": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "booted_tampered": {
+          "median": 6.0,
+          "q1": 4.25,
+          "q3": 7.0
+        },
+        "data_damaged": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "rollbacks": {
+          "median": 34.0,
+          "q1": 29.0,
+          "q3": 38.75
+        },
+        "updates": {
+          "median": 200.0,
+          "q1": 200.0,
+          "q3": 200.0
+        },
+        "recovery_boots_median": {
+          "median": 1.0,
+          "q1": 1.0,
+          "q3": 1.0
+        },
+        "recovery_boots_max": {
+          "median": 3.0,
+          "q1": 3.0,
+          "q3": 3.0
+        }
+      },
+      "no_counter": {
+        "known_good_end": {
+          "median": 174.0,
+          "q1": 171.0,
+          "q3": 177.75
+        },
+        "bricked": {
+          "median": 26.0,
+          "q1": 22.25,
+          "q3": 29.0
+        },
+        "booted_tampered": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "data_damaged": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "rollbacks": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "updates": {
+          "median": 200.0,
+          "q1": 200.0,
+          "q3": 200.0
+        },
+        "recovery_boots_median": {
+          "median": 1.0,
+          "q1": 1.0,
+          "q3": 1.0
+        },
+        "recovery_boots_max": {
+          "median": 50.0,
+          "q1": 50.0,
+          "q3": 50.0
+        }
+      },
+      "in_place": {
+        "known_good_end": {
+          "median": 172.5,
+          "q1": 168.25,
+          "q3": 176.75
+        },
+        "bricked": {
+          "median": 27.5,
+          "q1": 23.25,
+          "q3": 31.75
+        },
+        "booted_tampered": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "data_damaged": {
+          "median": 5.0,
+          "q1": 3.25,
+          "q3": 6.0
+        },
+        "rollbacks": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        },
+        "updates": {
+          "median": 200.0,
+          "q1": 200.0,
+          "q3": 200.0
+        },
+        "recovery_boots_median": {
+          "median": 1.0,
+          "q1": 1.0,
+          "q3": 1.0
+        },
+        "recovery_boots_max": {
+          "median": 3.0,
+          "q1": 3.0,
+          "q3": 3.0
+        }
+      }
+    },
+    "faults": {
+      "bad_signature": 0.03,
+      "incomplete_write": 0.05,
+      "corrupt_image": 0.03,
+      "health_fail": 0.06,
+      "power_in_health": 0.04,
+      "boot_hang": 0.04
+    },
+    "updates": 200,
+    "seeds": 30,
+    "attempts": 3,
+    "kpi_contract_good": 200.0,
+    "kpi_contract_bricked": 0.0,
+    "kpi_contract_rollbacks": 26.0,
+    "kpi_contract_maxboots": 3.0,
+    "kpi_nosig_tampered": 6.0,
+    "kpi_nocounter_bricked": 26.0,
+    "kpi_inplace_bricked": 27.5,
+    "kpi_inplace_good": 172.5
+  },
+  "memory": {
+    "models": {
+      "ThoxOS-Kernel-0.8B": {
+        "layers": 24,
+        "full": 6,
+        "kv_heads": 2,
+        "head_dim": 256,
+        "lin_layers": 18,
+        "lin_v_heads": 16,
+        "Q4_K_M": 529297056,
+        "Q8_0": 811843232,
+        "card_role": "ThoxAir / ThoxKey triage student",
+        "kv_bytes_per_token": 12288,
+        "linear_state_bytes": 18874368
+      },
+      "ThoxOS-Kernel-4B": {
+        "layers": 32,
+        "full": 8,
+        "kv_heads": 4,
+        "head_dim": 256,
+        "lin_layers": 24,
+        "lin_v_heads": 32,
+        "Q4_K_M": 2708804128,
+        "Q8_0": 4482402848,
+        "card_role": "ThoxMini / ThoxClip resident student (baseline)",
+        "kv_bytes_per_token": 32768,
+        "linear_state_bytes": 50331648
+      },
+      "ThoxOS-Kernel-27B": {
+        "layers": 64,
+        "full": 16,
+        "kv_heads": 4,
+        "head_dim": 256,
+        "lin_layers": 48,
+        "lin_v_heads": 48,
+        "Q4_K_M": 16547400192,
+        "Q8_0": 28595763712,
+        "card_role": "host-tier teacher",
+        "kv_bytes_per_token": 65536,
+        "linear_state_bytes": 150994944
+      }
+    },
+    "classes": {
+      "E2 (Air, 2 GB)": 2000000000,
+      "P4 (Mini, 4 GB)": 4000000000,
+      "P6 (Clip, 6 GB)": 6000000000,
+      "Host 16 GB": 16000000000,
+      "Host 32 GB": 32000000000,
+      "Host 64 GB": 64000000000
+    },
+    "contexts": [
+      2048,
+      8192,
+      32768,
+      131072
+    ],
+    "reserves_gb": [
+      0.6,
+      1.0,
+      1.5
+    ],
+    "max_context": [
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 69321
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 36769
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 232082
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 199530
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 158840
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 394842
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 362290
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 321600
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "Host 16 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 1208644
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "Host 16 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 1176092
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "Host 16 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 1135402
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "Host 32 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 2510728
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "Host 32 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 2478176
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "Host 32 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 2437486
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "Host 64 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 5114894
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "Host 64 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 5082342
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q4_K_M",
+        "class": "Host 64 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 5041652
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 46328
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 13776
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 209088
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 176536
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 135846
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 371849
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 339297
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 298606
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "Host 16 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 1185651
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "Host 16 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 1153099
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "Host 16 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 1112409
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "Host 32 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 2487734
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "Host 32 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 2455182
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "Host 32 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 2414492
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "Host 64 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 5091901
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "Host 64 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 5059349
+      },
+      {
+        "model": "ThoxOS-Kernel-0.8B",
+        "quant": "Q8_0",
+        "class": "Host 64 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 5018659
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 19557
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 7350
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 80592
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 68385
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 53126
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "Host 16 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 385768
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "Host 16 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 373561
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "Host 16 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 358302
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "Host 32 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 874049
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "Host 32 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 861842
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "Host 32 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 846583
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "Host 64 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 1850612
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "Host 64 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 1838405
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q4_K_M",
+        "class": "Host 64 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 1823146
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 26466
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 14259
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "Host 16 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 331642
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "Host 16 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 319435
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "Host 16 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 304176
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "Host 32 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 819923
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "Host 32 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 807716
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "Host 32 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 792458
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "Host 64 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 1796486
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "Host 64 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 1784279
+      },
+      {
+        "model": "ThoxOS-Kernel-4B",
+        "quant": "Q8_0",
+        "class": "Host 64 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 1769020
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "Host 16 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "Host 16 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "Host 16 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "Host 32 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 224328
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "Host 32 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 218225
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "Host 32 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 210595
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "Host 64 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 712609
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "Host 64 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 706506
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q4_K_M",
+        "class": "Host 64 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 698877
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "E2 (Air, 2 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "P4 (Mini, 4 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "P6 (Clip, 6 GB)",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "Host 16 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "Host 16 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "Host 16 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 0
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "Host 32 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 40485
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "Host 32 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 34381
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "Host 32 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 26752
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "Host 64 GB",
+        "reserve_gb": 0.6,
+        "max_context_tokens": 528766
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "Host 64 GB",
+        "reserve_gb": 1.0,
+        "max_context_tokens": 522662
+      },
+      {
+        "model": "ThoxOS-Kernel-27B",
+        "quant": "Q8_0",
+        "class": "Host 64 GB",
+        "reserve_gb": 1.5,
+        "max_context_tokens": 515033
+      }
+    ],
+    "kpi_08b_air_ctx_r1": 36769,
+    "kpi_08b_air_ctx_r15": 0,
+    "kpi_4b_mini_ctx_r1": 7350,
+    "kpi_4b_mini_ctx_r15": 0,
+    "kpi_4b_clip_ctx_r1": 68385,
+    "kpi_4b_air_ctx_r06": 0,
+    "kpi_4b_q8_mini_ctx_r1": 0,
+    "kpi_27b_host16_ctx_r1": 0,
+    "kpi_27b_host32_ctx_r1": 218225,
+    "kpi_27b_q8_host32_ctx_r1": 34381,
+    "kpi_27b_q8_host64_ctx_r1": 522662
+  },
+  "syscalls": {
+    "pin": "36503bda2d87465765e1b94e65f9d100f27ed5be",
+    "totals": {
+      "Partial": 245,
+      "Complete": 82,
+      "Policy-denied": 48
+    },
+    "by_area": {
+      "files": {
+        "Partial": 120,
+        "Complete": 15,
+        "Policy-denied": 13
+      },
+      "memory": {
+        "Partial": 23,
+        "Complete": 5
+      },
+      "process": {
+        "Partial": 49,
+        "Complete": 24,
+        "Policy-denied": 4
+      },
+      "ipc": {
+        "Partial": 18
+      },
+      "time": {
+        "Partial": 12,
+        "Complete": 2,
+        "Policy-denied": 4
+      },
+      "network": {
+        "Complete": 14,
+        "Partial": 4
+      },
+      "identity": {
+        "Complete": 10,
+        "Policy-denied": 8,
+        "Partial": 5
+      },
+      "security": {
+        "Policy-denied": 19,
+        "Complete": 11,
+        "Partial": 8
+      },
+      "other": {
+        "Complete": 1,
+        "Partial": 6
+      }
+    },
+    "traced_loop": [
+      {
+        "name": "stat",
+        "calls": 152,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "rt_sigaction",
+        "calls": 133,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "fstat",
+        "calls": 110,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "read",
+        "calls": 95,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "lseek",
+        "calls": 95,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "close",
+        "calls": 84,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "openat",
+        "calls": 81,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "ioctl",
+        "calls": 51,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "mmap",
+        "calls": 33,
+        "status": "Partial",
+        "area": "memory"
+      },
+      {
+        "name": "brk",
+        "calls": 20,
+        "status": "Partial",
+        "area": "memory"
+      },
+      {
+        "name": "futex",
+        "calls": 18,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "getdents64",
+        "calls": 18,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "mprotect",
+        "calls": 9,
+        "status": "Partial",
+        "area": "memory"
+      },
+      {
+        "name": "rt_sigprocmask",
+        "calls": 8,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "munmap",
+        "calls": 7,
+        "status": "Partial",
+        "area": "memory"
+      },
+      {
+        "name": "fcntl",
+        "calls": 5,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "newfstatat",
+        "calls": 4,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "pread64",
+        "calls": 4,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "gettid",
+        "calls": 4,
+        "status": "Complete",
+        "area": "process"
+      },
+      {
+        "name": "set_robust_list",
+        "calls": 3,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "rseq",
+        "calls": 3,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "getrandom",
+        "calls": 3,
+        "status": "Partial",
+        "area": "security"
+      },
+      {
+        "name": "write",
+        "calls": 3,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "pipe2",
+        "calls": 3,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "execve",
+        "calls": 2,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "access",
+        "calls": 2,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "arch_prctl",
+        "calls": 2,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "set_tid_address",
+        "calls": 2,
+        "status": "Complete",
+        "area": "process"
+      },
+      {
+        "name": "prlimit64",
+        "calls": 2,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "open",
+        "calls": 2,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "readlink",
+        "calls": 2,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "lstat",
+        "calls": 2,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "socket",
+        "calls": 2,
+        "status": "Complete",
+        "area": "network"
+      },
+      {
+        "name": "getsockname",
+        "calls": 2,
+        "status": "Complete",
+        "area": "network"
+      },
+      {
+        "name": "dup2",
+        "calls": 2,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "poll",
+        "calls": 2,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "exit_group",
+        "calls": 2,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "readlinkat",
+        "calls": 1,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "epoll_create1",
+        "calls": 1,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "bind",
+        "calls": 1,
+        "status": "Complete",
+        "area": "network"
+      },
+      {
+        "name": "listen",
+        "calls": 1,
+        "status": "Complete",
+        "area": "network"
+      },
+      {
+        "name": "clone3",
+        "calls": 1,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "accept4",
+        "calls": 1,
+        "status": "Partial",
+        "area": "network"
+      },
+      {
+        "name": "connect",
+        "calls": 1,
+        "status": "Partial",
+        "area": "network"
+      },
+      {
+        "name": "pselect6",
+        "calls": 1,
+        "status": "Partial",
+        "area": "files"
+      },
+      {
+        "name": "sendto",
+        "calls": 1,
+        "status": "Complete",
+        "area": "network"
+      },
+      {
+        "name": "recvfrom",
+        "calls": 1,
+        "status": "Complete",
+        "area": "network"
+      },
+      {
+        "name": "madvise",
+        "calls": 1,
+        "status": "Partial",
+        "area": "memory"
+      },
+      {
+        "name": "exit",
+        "calls": 1,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "getpid",
+        "calls": 1,
+        "status": "Complete",
+        "area": "process"
+      },
+      {
+        "name": "kill",
+        "calls": 1,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "rt_sigreturn",
+        "calls": 1,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "vfork",
+        "calls": 1,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "wait4",
+        "calls": 1,
+        "status": "Partial",
+        "area": "process"
+      },
+      {
+        "name": "clock_nanosleep",
+        "calls": 1,
+        "status": "Partial",
+        "area": "time"
+      },
+      {
+        "name": "fsync",
+        "calls": 1,
+        "status": "Complete",
+        "area": "files"
+      }
+    ],
+    "loop_distinct": {
+      "Partial": 46,
+      "Complete": 10
+    },
+    "loop_calls": {
+      "Partial": 975,
+      "Complete": 16
+    },
+    "loop_last_log_line": "{\"data\": \"hello\", \"child\": \"child\", \"sig\": 1, \"model\": \"ThoxOS-Kernel-0.8B\"}",
+    "kpi_total": 375,
+    "kpi_complete": 82,
+    "kpi_partial": 245,
+    "kpi_denied": 48,
+    "kpi_loop_distinct_total": 56,
+    "kpi_loop_distinct_complete": 10,
+    "kpi_loop_distinct_partial": 46,
+    "kpi_loop_distinct_denied": 0,
+    "kpi_loop_distinct_missing": 0,
+    "kpi_loop_calls_total": 991,
+    "kpi_loop_calls_partial": 975,
+    "kpi_files_partial": 120,
+    "kpi_files_complete": 15,
+    "kpi_network_complete": 14,
+    "kpi_network_partial": 4,
+    "kpi_security_denied": 19,
+    "kpi_identity_denied": 8
+  }
+}

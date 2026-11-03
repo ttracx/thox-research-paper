@@ -24,6 +24,10 @@ Require TeX source for TeX-authored papers, a clean upload folder, complete file
 
 No account credentials, live authenticated session, SWORD permission or automatic publishing service are included. See [validation and handoff](docs/VALIDATION-1.1.1.md) for the 27 local tests and remaining operational gates. Keep unpublished papers and account records outside this public repository.
 
+## ThoxOS / ThoxInux technical report v1.0.0 (3 November 2026)
+
+[papers/thoxos/v1.0.0](papers/thoxos/v1.0.0/README.md) holds the THOX.ai Research technical report that builds on the 0.2.0-review draft: PDF, standalone HTML, browser demo, experiments and build pipeline. Preprint, not peer reviewed. Measured entitlement token designs, simulated A/B update contract, the Linux-ABI ledger at the ThoxInux pin joined with a traced agent loop, and the kernel-model memory budget.
+
 ## ThoxOS / ThoxInux manuscript draft
 
 The [ThoxOS paper directory](papers/thoxos/README.md) contains revision `0.2.0-review`: editable LaTeX, a compiled PDF, verified bibliography, a claim-level evidence ledger, and the preserved historical reference with its six recovered figures. It reconciles the Ginux-derived ThoxInux foundation with the older Linux/Core design and retains model, payload, hardware, and licensing limits.

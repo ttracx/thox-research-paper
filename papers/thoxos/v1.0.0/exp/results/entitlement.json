@@ -1,0 +1,71 @@
+{
+  "evidence_label": "clean-room contract implementation with exact property tests and host-measured verify cost; not a ThoxOS build",
+  "grace_days": 30,
+  "core_features": [
+    "device-portal",
+    "local-chat",
+    "local-models",
+    "meshstack-local",
+    "ota-security-updates"
+  ],
+  "paid_features": [
+    "fleet-console",
+    "meshstack-pro",
+    "thoxbrain-sync",
+    "thoxroute-cloud"
+  ],
+  "hmac": {
+    "properties": {
+      "P1_valid_paid_allowed": true,
+      "P2_grace_29d_allowed": true,
+      "P3_grace_31d_denied": true,
+      "P4_tampered_denied": true,
+      "P5_malformed_denied": true,
+      "P6_core_unconditional": true,
+      "P7_eq2_conjunction": true,
+      "P8_unknown_denied": true,
+      "P9_forged_accepted": true,
+      "P10_rollback_wall_accepted": true,
+      "P10_rollback_hwm_rejected": true,
+      "token_bytes": 198
+    },
+    "timing": {
+      "us_per_verify_median": 11.734249499994576,
+      "us_q1": 11.67387099998507,
+      "us_q3": 11.790828750022797,
+      "reps": 30,
+      "batch": 1000
+    }
+  },
+  "ed25519": {
+    "properties": {
+      "P1_valid_paid_allowed": true,
+      "P2_grace_29d_allowed": true,
+      "P3_grace_31d_denied": true,
+      "P4_tampered_denied": true,
+      "P5_malformed_denied": true,
+      "P6_core_unconditional": true,
+      "P7_eq2_conjunction": true,
+      "P8_unknown_denied": true,
+      "P9_forged_accepted": false,
+      "P10_rollback_wall_accepted": true,
+      "P10_rollback_hwm_rejected": true,
+      "token_bytes": 241
+    },
+    "timing": {
+      "us_per_verify_median": 196.30293550000033,
+      "us_q1": 151.4578250000369,
+      "us_q3": 220.69632050001076,
+      "reps": 30,
+      "batch": 1000
+    }
+  },
+  "known_answer": {
+    "secret_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "payload": "{\"acct\":\"acct-demo\",\"exp\":1831536000,\"feat\":[\"meshstack-pro\"],\"iat\":1800000000,\"nonce\":\"QkJCQkJCQkJCQkJCQkJCQg\",\"v\":1}",
+    "token": "eyJhY2N0IjoiYWNjdC1kZW1vIiwiZXhwIjoxODMxNTM2MDAwLCJmZWF0IjpbIm1lc2hzdGFjay1wcm8iXSwiaWF0IjoxODAwMDAwMDAwLCJub25jZSI6IlFrSkNRa0pDUWtKQ1FrSkNRa0pDUWciLCJ2IjoxfQ.N3P1z7mcN6DvXBGQm0o9WOtosb4QAhqBGuFn8pYf9IE",
+    "allowed_at": 1800086400,
+    "grace_allowed_at": 1834041600,
+    "denied_at": 1834214400
+  }
+}

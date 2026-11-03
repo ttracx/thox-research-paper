@@ -1,0 +1,184 @@
+{
+  "evidence_label": "discrete simulation of the update contract under stated fault probabilities; not a device result",
+  "fault_probabilities": {
+    "bad_signature": 0.03,
+    "incomplete_write": 0.05,
+    "corrupt_image": 0.03,
+    "health_fail": 0.06,
+    "power_in_health": 0.04,
+    "boot_hang": 0.04
+  },
+  "attempts": 3,
+  "updates_per_run": 200,
+  "seeds": 30,
+  "policies": {
+    "contract": {
+      "known_good_end": {
+        "median": 200.0,
+        "q1": 200.0,
+        "q3": 200.0
+      },
+      "bricked": {
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "booted_tampered": {
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "data_damaged": {
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "rollbacks": {
+        "median": 26.0,
+        "q1": 22.25,
+        "q3": 29.0
+      },
+      "updates": {
+        "median": 200.0,
+        "q1": 200.0,
+        "q3": 200.0
+      },
+      "recovery_boots_median": {
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0
+      },
+      "recovery_boots_max": {
+        "median": 3.0,
+        "q1": 3.0,
+        "q3": 3.0
+      }
+    },
+    "no_sig": {
+      "known_good_end": {
+        "median": 200.0,
+        "q1": 200.0,
+        "q3": 200.0
+      },
+      "bricked": {
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "booted_tampered": {
+        "median": 6.0,
+        "q1": 4.25,
+        "q3": 7.0
+      },
+      "data_damaged": {
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "rollbacks": {
+        "median": 34.0,
+        "q1": 29.0,
+        "q3": 38.75
+      },
+      "updates": {
+        "median": 200.0,
+        "q1": 200.0,
+        "q3": 200.0
+      },
+      "recovery_boots_median": {
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0
+      },
+      "recovery_boots_max": {
+        "median": 3.0,
+        "q1": 3.0,
+        "q3": 3.0
+      }
+    },
+    "no_counter": {
+      "known_good_end": {
+        "median": 174.0,
+        "q1": 171.0,
+        "q3": 177.75
+      },
+      "bricked": {
+        "median": 26.0,
+        "q1": 22.25,
+        "q3": 29.0
+      },
+      "booted_tampered": {
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "data_damaged": {
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "rollbacks": {
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "updates": {
+        "median": 200.0,
+        "q1": 200.0,
+        "q3": 200.0
+      },
+      "recovery_boots_median": {
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0
+      },
+      "recovery_boots_max": {
+        "median": 50.0,
+        "q1": 50.0,
+        "q3": 50.0
+      }
+    },
+    "in_place": {
+      "known_good_end": {
+        "median": 172.5,
+        "q1": 168.25,
+        "q3": 176.75
+      },
+      "bricked": {
+        "median": 27.5,
+        "q1": 23.25,
+        "q3": 31.75
+      },
+      "booted_tampered": {
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "data_damaged": {
+        "median": 5.0,
+        "q1": 3.25,
+        "q3": 6.0
+      },
+      "rollbacks": {
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0
+      },
+      "updates": {
+        "median": 200.0,
+        "q1": 200.0,
+        "q3": 200.0
+      },
+      "recovery_boots_median": {
+        "median": 1.0,
+        "q1": 1.0,
+        "q3": 1.0
+      },
+      "recovery_boots_max": {
+        "median": 3.0,
+        "q1": 3.0,
+        "q3": 3.0
+      }
+    }
+  }
+}

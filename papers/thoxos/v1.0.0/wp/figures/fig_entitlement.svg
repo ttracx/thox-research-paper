@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="583.785476pt" height="232.644914pt" viewBox="0 0 583.785476 232.644914" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-03T08:26:26.119973</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 232.644914 
+L 583.785476 232.644914 
+L 583.785476 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 44.063398 200.2955 
+L 171.772616 200.2955 
+L 171.772616 22.8875 
+L 44.063398 22.8875 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 49.868363 200.2955 
+L 91.064885 200.2955 
+L 91.064885 192.137976 
+L 49.868363 192.137976 
+z
+" clip-path="url(#p5cec4dd123)" style="fill: #c7ccd4"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 124.77113 200.2955 
+L 165.967651 200.2955 
+L 165.967651 63.827808 
+L 124.77113 63.827808 
+z
+" clip-path="url(#p5cec4dd123)" style="fill: #047c3d"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="mc8b61d5555" d="M 0 0 
+L 0 3.5 
+" style="stroke: #6b7280; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mc8b61d5555" x="70.466624" y="200.2955" style="fill: #6b7280; stroke: #6b7280; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 7.5px; font-family: 'Inter'; fill: #6b7280" transform="translate(42.696702 214.561125)">HMAC-SHA256</text>
+      <text style="font-size: 7.5px; font-family: 'Inter'; fill: #6b7280" transform="translate(43.472483 223.635832)">(shared secret)</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#mc8b61d5555" x="145.369391" y="200.2955" style="fill: #6b7280; stroke: #6b7280; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 7.5px; font-family: 'Inter'; fill: #6b7280" transform="translate(130.121539 214.561125)">Ed25519</text>
+      <text style="font-size: 7.5px; font-family: 'Inter'; fill: #6b7280" transform="translate(124.616656 223.635832)">(public key)</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <defs>
+       <path id="me375750c26" d="M 0 0 
+L -3.5 0 
+" style="stroke: #6b7280; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#me375750c26" x="44.063398" y="200.2955" style="fill: #6b7280; stroke: #6b7280; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 8px; font-family: 'Inter'; text-anchor: end; fill: #6b7280" x="37.063398" y="204.1705" transform="rotate(-0 37.063398 204.1705)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#me375750c26" x="44.063398" y="165.536037" style="fill: #6b7280; stroke: #6b7280; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 8px; font-family: 'Inter'; text-anchor: end; fill: #6b7280" x="37.063398" y="169.411037" transform="rotate(-0 37.063398 169.411037)">50</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#me375750c26" x="44.063398" y="130.776574" style="fill: #6b7280; stroke: #6b7280; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 8px; font-family: 'Inter'; text-anchor: end; fill: #6b7280" x="37.063398" y="134.651574" transform="rotate(-0 37.063398 134.651574)">100</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#me375750c26" x="44.063398" y="96.017111" style="fill: #6b7280; stroke: #6b7280; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 8px; font-family: 'Inter'; text-anchor: end; fill: #6b7280" x="37.063398" y="99.892111" transform="rotate(-0 37.063398 99.892111)">150</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#me375750c26" x="44.063398" y="61.257648" style="fill: #6b7280; stroke: #6b7280; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 8px; font-family: 'Inter'; text-anchor: end; fill: #6b7280" x="37.063398" y="65.132648" transform="rotate(-0 37.063398 65.132648)">200</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#me375750c26" x="44.063398" y="26.498185" style="fill: #6b7280; stroke: #6b7280; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 8px; font-family: 'Inter'; text-anchor: end; fill: #6b7280" x="37.063398" y="30.373185" transform="rotate(-0 37.063398 30.373185)">250</text>
+     </g>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 9px; font-family: 'Inter'; text-anchor: middle" x="15.91875" y="111.5915" transform="rotate(-90 15.91875 111.5915)">Verify time per token (us), median of 30 x 1,000</text>
+    </g>
+   </g>
+   <g id="LineCollection_1">
+    <path d="M 70.466624 192.17995 
+L 70.466624 192.098642 
+" clip-path="url(#p5cec4dd123)" style="fill: none; stroke: #111827; stroke-width: 0.8"/>
+    <path d="M 145.369391 95.003647 
+L 145.369391 46.869788 
+" clip-path="url(#p5cec4dd123)" style="fill: none; stroke: #111827; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_9">
+    <defs>
+     <path id="mee883e8717" d="M 3 0 
+L -3 -0 
+" style="stroke: #111827"/>
+    </defs>
+    <g clip-path="url(#p5cec4dd123)">
+     <use xlink:href="#mee883e8717" x="70.466624" y="192.17995" style="fill: #1f77b4; stroke: #111827"/>
+     <use xlink:href="#mee883e8717" x="145.369391" y="95.003647" style="fill: #1f77b4; stroke: #111827"/>
+    </g>
+   </g>
+   <g id="line2d_10">
+    <g clip-path="url(#p5cec4dd123)">
+     <use xlink:href="#mee883e8717" x="70.466624" y="192.098642" style="fill: #1f77b4; stroke: #111827"/>
+     <use xlink:href="#mee883e8717" x="145.369391" y="46.869788" style="fill: #1f77b4; stroke: #111827"/>
+    </g>
+   </g>
+   <g id="patch_5">
+    <path d="M 44.063398 200.2955 
+L 44.063398 22.8875 
+" style="fill: none; stroke: #6b7280; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 44.063398 200.2955 
+L 171.772616 200.2955 
+" style="fill: none; stroke: #6b7280; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 7.5px; font-family: 'JetBrains Mono'; text-anchor: middle; fill: #111827" x="70.466624" y="191.7301" transform="rotate(-0 70.466624 191.7301)">12 us</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 7.5px; font-family: 'JetBrains Mono'; text-anchor: middle; fill: #111827" x="145.369391" y="57.004423" transform="rotate(-0 145.369391 57.004423)">196 us</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Inter'; text-anchor: middle" x="107.918007" y="16.8875" transform="rotate(-0 107.918007 16.8875)">A. Verify cost on the authoring host</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="table_1">
+    <g id="patch_7">
+     <path d="M 399.277465 45.8027 
+L 483.930431 45.8027 
+L 483.930431 31.7579 
+L 399.277465 31.7579 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_13">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="441.603948" y="41.326687" transform="rotate(-0 441.603948 41.326687)">HMAC design</text>
+    </g>
+    <g id="patch_8">
+     <path d="M 483.930431 45.8027 
+L 568.583398 45.8027 
+L 568.583398 31.7579 
+L 483.930431 31.7579 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="526.256915" y="41.326687" transform="rotate(-0 526.256915 41.326687)">Ed25519 design</text>
+    </g>
+    <g id="patch_9">
+     <path d="M 290.21134 59.8475 
+L 399.277465 59.8475 
+L 399.277465 45.8027 
+L 290.21134 45.8027 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: start" x="301.117952" y="55.371487" transform="rotate(-0 301.117952 55.371487)">P1 valid paid</text>
+    </g>
+    <g id="patch_10">
+     <path d="M 399.277465 59.8475 
+L 483.930431 59.8475 
+L 483.930431 45.8027 
+L 399.277465 45.8027 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_16">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="441.603948" y="55.371487" transform="rotate(-0 441.603948 55.371487)">pass</text>
+    </g>
+    <g id="patch_11">
+     <path d="M 483.930431 59.8475 
+L 568.583398 59.8475 
+L 568.583398 45.8027 
+L 483.930431 45.8027 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="526.256915" y="55.371487" transform="rotate(-0 526.256915 55.371487)">pass</text>
+    </g>
+    <g id="patch_12">
+     <path d="M 290.21134 73.8923 
+L 399.277465 73.8923 
+L 399.277465 59.8475 
+L 290.21134 59.8475 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_18">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: start" x="301.117952" y="69.416287" transform="rotate(-0 301.117952 69.416287)">P2 grace +29 d</text>
+    </g>
+    <g id="patch_13">
+     <path d="M 399.277465 73.8923 
+L 483.930431 73.8923 
+L 483.930431 59.8475 
+L 399.277465 59.8475 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_19">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="441.603948" y="69.416287" transform="rotate(-0 441.603948 69.416287)">pass</text>
+    </g>
+    <g id="patch_14">
+     <path d="M 483.930431 73.8923 
+L 568.583398 73.8923 
+L 568.583398 59.8475 
+L 483.930431 59.8475 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_20">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="526.256915" y="69.416287" transform="rotate(-0 526.256915 69.416287)">pass</text>
+    </g>
+    <g id="patch_15">
+     <path d="M 290.21134 87.9371 
+L 399.277465 87.9371 
+L 399.277465 73.8923 
+L 290.21134 73.8923 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_21">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: start" x="301.117952" y="83.461087" transform="rotate(-0 301.117952 83.461087)">P3 grace +31 d</text>
+    </g>
+    <g id="patch_16">
+     <path d="M 399.277465 87.9371 
+L 483.930431 87.9371 
+L 483.930431 73.8923 
+L 399.277465 73.8923 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_22">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="441.603948" y="83.461087" transform="rotate(-0 441.603948 83.461087)">pass</text>
+    </g>
+    <g id="patch_17">
+     <path d="M 483.930431 87.9371 
+L 568.583398 87.9371 
+L 568.583398 73.8923 
+L 483.930431 73.8923 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_23">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="526.256915" y="83.461087" transform="rotate(-0 526.256915 83.461087)">pass</text>
+    </g>
+    <g id="patch_18">
+     <path d="M 290.21134 101.9819 
+L 399.277465 101.9819 
+L 399.277465 87.9371 
+L 290.21134 87.9371 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_24">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: start" x="301.117952" y="97.505887" transform="rotate(-0 301.117952 97.505887)">P4 tampered</text>
+    </g>
+    <g id="patch_19">
+     <path d="M 399.277465 101.9819 
+L 483.930431 101.9819 
+L 483.930431 87.9371 
+L 399.277465 87.9371 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_25">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="441.603948" y="97.505887" transform="rotate(-0 441.603948 97.505887)">pass</text>
+    </g>
+    <g id="patch_20">
+     <path d="M 483.930431 101.9819 
+L 568.583398 101.9819 
+L 568.583398 87.9371 
+L 483.930431 87.9371 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_26">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="526.256915" y="97.505887" transform="rotate(-0 526.256915 97.505887)">pass</text>
+    </g>
+    <g id="patch_21">
+     <path d="M 290.21134 116.0267 
+L 399.277465 116.0267 
+L 399.277465 101.9819 
+L 290.21134 101.9819 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_27">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: start" x="301.117952" y="111.550687" transform="rotate(-0 301.117952 111.550687)">P5 malformed</text>
+    </g>
+    <g id="patch_22">
+     <path d="M 399.277465 116.0267 
+L 483.930431 116.0267 
+L 483.930431 101.9819 
+L 399.277465 101.9819 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_28">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="441.603948" y="111.550687" transform="rotate(-0 441.603948 111.550687)">pass</text>
+    </g>
+    <g id="patch_23">
+     <path d="M 483.930431 116.0267 
+L 568.583398 116.0267 
+L 568.583398 101.9819 
+L 483.930431 101.9819 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_29">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="526.256915" y="111.550687" transform="rotate(-0 526.256915 111.550687)">pass</text>
+    </g>
+    <g id="patch_24">
+     <path d="M 290.21134 130.0715 
+L 399.277465 130.0715 
+L 399.277465 116.0267 
+L 290.21134 116.0267 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_30">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: start" x="301.117952" y="125.595487" transform="rotate(-0 301.117952 125.595487)">P6 Core unconditional</text>
+    </g>
+    <g id="patch_25">
+     <path d="M 399.277465 130.0715 
+L 483.930431 130.0715 
+L 483.930431 116.0267 
+L 399.277465 116.0267 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_31">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="441.603948" y="125.595487" transform="rotate(-0 441.603948 125.595487)">pass</text>
+    </g>
+    <g id="patch_26">
+     <path d="M 483.930431 130.0715 
+L 568.583398 130.0715 
+L 568.583398 116.0267 
+L 483.930431 116.0267 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_32">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="526.256915" y="125.595487" transform="rotate(-0 526.256915 125.595487)">pass</text>
+    </g>
+    <g id="patch_27">
+     <path d="M 290.21134 144.1163 
+L 399.277465 144.1163 
+L 399.277465 130.0715 
+L 290.21134 130.0715 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_33">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: start" x="301.117952" y="139.640287" transform="rotate(-0 301.117952 139.640287)">P7 U and O required</text>
+    </g>
+    <g id="patch_28">
+     <path d="M 399.277465 144.1163 
+L 483.930431 144.1163 
+L 483.930431 130.0715 
+L 399.277465 130.0715 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_34">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="441.603948" y="139.640287" transform="rotate(-0 441.603948 139.640287)">pass</text>
+    </g>
+    <g id="patch_29">
+     <path d="M 483.930431 144.1163 
+L 568.583398 144.1163 
+L 568.583398 130.0715 
+L 483.930431 130.0715 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_35">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="526.256915" y="139.640287" transform="rotate(-0 526.256915 139.640287)">pass</text>
+    </g>
+    <g id="patch_30">
+     <path d="M 290.21134 158.1611 
+L 399.277465 158.1611 
+L 399.277465 144.1163 
+L 290.21134 144.1163 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_36">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: start" x="301.117952" y="153.685087" transform="rotate(-0 301.117952 153.685087)">P8 unknown feature</text>
+    </g>
+    <g id="patch_31">
+     <path d="M 399.277465 158.1611 
+L 483.930431 158.1611 
+L 483.930431 144.1163 
+L 399.277465 144.1163 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_37">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="441.603948" y="153.685087" transform="rotate(-0 441.603948 153.685087)">pass</text>
+    </g>
+    <g id="patch_32">
+     <path d="M 483.930431 158.1611 
+L 568.583398 158.1611 
+L 568.583398 144.1163 
+L 483.930431 144.1163 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_38">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="526.256915" y="153.685087" transform="rotate(-0 526.256915 153.685087)">pass</text>
+    </g>
+    <g id="patch_33">
+     <path d="M 290.21134 172.2059 
+L 399.277465 172.2059 
+L 399.277465 158.1611 
+L 290.21134 158.1611 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_39">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: start" x="301.117952" y="167.729887" transform="rotate(-0 301.117952 167.729887)">P9 forged by verifier holder</text>
+    </g>
+    <g id="patch_34">
+     <path d="M 399.277465 172.2059 
+L 483.930431 172.2059 
+L 483.930431 158.1611 
+L 399.277465 158.1611 
+z
+" style="fill: #fde2e2; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_40">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="441.603948" y="167.729887" transform="rotate(-0 441.603948 167.729887)">ACCEPTED</text>
+    </g>
+    <g id="patch_35">
+     <path d="M 483.930431 172.2059 
+L 568.583398 172.2059 
+L 568.583398 158.1611 
+L 483.930431 158.1611 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_41">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="526.256915" y="167.729887" transform="rotate(-0 526.256915 167.729887)">rejected</text>
+    </g>
+    <g id="patch_36">
+     <path d="M 290.21134 186.2507 
+L 399.277465 186.2507 
+L 399.277465 172.2059 
+L 290.21134 172.2059 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_42">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: start" x="301.117952" y="181.774687" transform="rotate(-0 301.117952 181.774687)">P10 clock rollback (wall)</text>
+    </g>
+    <g id="patch_37">
+     <path d="M 399.277465 186.2507 
+L 483.930431 186.2507 
+L 483.930431 172.2059 
+L 399.277465 172.2059 
+z
+" style="fill: #fde2e2; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_43">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="441.603948" y="181.774687" transform="rotate(-0 441.603948 181.774687)">ACCEPTED</text>
+    </g>
+    <g id="patch_38">
+     <path d="M 483.930431 186.2507 
+L 568.583398 186.2507 
+L 568.583398 172.2059 
+L 483.930431 172.2059 
+z
+" style="fill: #fde2e2; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_44">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="526.256915" y="181.774687" transform="rotate(-0 526.256915 181.774687)">ACCEPTED</text>
+    </g>
+    <g id="patch_39">
+     <path d="M 290.21134 200.2955 
+L 399.277465 200.2955 
+L 399.277465 186.2507 
+L 290.21134 186.2507 
+z
+" style="fill: #ffffff; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_45">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: start" x="301.117952" y="195.819487" transform="rotate(-0 301.117952 195.819487)">P10 clock rollback (hwm)</text>
+    </g>
+    <g id="patch_40">
+     <path d="M 399.277465 200.2955 
+L 483.930431 200.2955 
+L 483.930431 186.2507 
+L 399.277465 186.2507 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_46">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="441.603948" y="195.819487" transform="rotate(-0 441.603948 195.819487)">pass</text>
+    </g>
+    <g id="patch_41">
+     <path d="M 483.930431 200.2955 
+L 568.583398 200.2955 
+L 568.583398 186.2507 
+L 483.930431 186.2507 
+z
+" style="fill: #e6f4ec; stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_47">
+     <text style="font-size: 7px; font-family: 'Inter'; text-anchor: middle" x="526.256915" y="195.819487" transform="rotate(-0 526.256915 195.819487)">pass</text>
+    </g>
+   </g>
+   <g id="text_48">
+    <text style="font-weight: 600; font-size: 10px; font-family: 'Inter'; text-anchor: middle" x="422.630007" y="16.8875" transform="rotate(-0 422.630007 16.8875)">B. Property outcomes (red = the hazard the design leaves open)</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5cec4dd123">
+   <rect x="44.063398" y="22.8875" width="127.709217" height="177.408"/>
+  </clipPath>
+ </defs>
+</svg>

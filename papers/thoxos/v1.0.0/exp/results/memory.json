@@ -1,0 +1,5143 @@
+{
+  "evidence_label": "calculated from public card file sizes, card config geometry, class floors and stated reserves; not a measurement",
+  "models": {
+    "ThoxOS-Kernel-0.8B": {
+      "layers": 24,
+      "full": 6,
+      "kv_heads": 2,
+      "head_dim": 256,
+      "lin_layers": 18,
+      "lin_v_heads": 16,
+      "Q4_K_M": 529297056,
+      "Q8_0": 811843232,
+      "card_role": "ThoxAir / ThoxKey triage student",
+      "kv_bytes_per_token": 12288,
+      "linear_state_bytes": 18874368
+    },
+    "ThoxOS-Kernel-4B": {
+      "layers": 32,
+      "full": 8,
+      "kv_heads": 4,
+      "head_dim": 256,
+      "lin_layers": 24,
+      "lin_v_heads": 32,
+      "Q4_K_M": 2708804128,
+      "Q8_0": 4482402848,
+      "card_role": "ThoxMini / ThoxClip resident student (baseline)",
+      "kv_bytes_per_token": 32768,
+      "linear_state_bytes": 50331648
+    },
+    "ThoxOS-Kernel-27B": {
+      "layers": 64,
+      "full": 16,
+      "kv_heads": 4,
+      "head_dim": 256,
+      "lin_layers": 48,
+      "lin_v_heads": 48,
+      "Q4_K_M": 16547400192,
+      "Q8_0": 28595763712,
+      "card_role": "host-tier teacher",
+      "kv_bytes_per_token": 65536,
+      "linear_state_bytes": 150994944
+    }
+  },
+  "classes": {
+    "E2 (Air, 2 GB)": 2000000000,
+    "P4 (Mini, 4 GB)": 4000000000,
+    "P6 (Clip, 6 GB)": 6000000000,
+    "Host 16 GB": 16000000000,
+    "Host 32 GB": 32000000000,
+    "Host 64 GB": 64000000000
+  },
+  "contexts": [
+    2048,
+    8192,
+    32768,
+    131072
+  ],
+  "reserves_gb": [
+    0.6,
+    1.0,
+    1.5
+  ],
+  "rows": [
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 1173337248.0,
+      "available_bytes": 2000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 1248834720.0,
+      "available_bytes": 2000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 1550824608.0,
+      "available_bytes": 2000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 2758784160.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 1573337248.0,
+      "available_bytes": 2000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 1648834720.0,
+      "available_bytes": 2000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 1950824608.0,
+      "available_bytes": 2000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 3158784160.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 2073337248.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 2148834720.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 2450824608.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 3658784160.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 1173337248.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 1248834720.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 1550824608.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 2758784160.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 1573337248.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 1648834720.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 1950824608.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 3158784160.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 2073337248.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 2148834720.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 2450824608.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 3658784160.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 1173337248.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 1248834720.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 1550824608.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 2758784160.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 1573337248.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 1648834720.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 1950824608.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 3158784160.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 2073337248.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 2148834720.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 2450824608.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 3658784160.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 1173337248.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 1248834720.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 1550824608.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 2758784160.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 1573337248.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 1648834720.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 1950824608.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 3158784160.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 2073337248.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 2148834720.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 2450824608.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 3658784160.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 1173337248.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 1248834720.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 1550824608.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 2758784160.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 1573337248.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 1648834720.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 1950824608.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 3158784160.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 2073337248.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 2148834720.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 2450824608.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 3658784160.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 1173337248.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 1248834720.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 1550824608.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 2758784160.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 1573337248.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 1648834720.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 1950824608.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 3158784160.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 2073337248.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 2148834720.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 2450824608.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 3658784160.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 1455883424.0,
+      "available_bytes": 2000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 1531380896.0,
+      "available_bytes": 2000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 1833370784.0,
+      "available_bytes": 2000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 3041330336.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 1855883424.0,
+      "available_bytes": 2000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 1931380896.0,
+      "available_bytes": 2000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 2233370784.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 3441330336.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 2355883424.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 2431380896.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 2733370784.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 3941330336.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 1455883424.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 1531380896.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 1833370784.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 3041330336.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 1855883424.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 1931380896.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 2233370784.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 3441330336.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 2355883424.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 2431380896.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 2733370784.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 3941330336.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 1455883424.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 1531380896.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 1833370784.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 3041330336.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 1855883424.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 1931380896.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 2233370784.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 3441330336.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 2355883424.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 2431380896.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 2733370784.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 3941330336.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 1455883424.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 1531380896.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 1833370784.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 3041330336.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 1855883424.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 1931380896.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 2233370784.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 3441330336.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 2355883424.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 2431380896.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 2733370784.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 3941330336.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 1455883424.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 1531380896.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 1833370784.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 3041330336.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 1855883424.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 1931380896.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 2233370784.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 3441330336.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 2355883424.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 2431380896.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 2733370784.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 3941330336.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 1455883424.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 1531380896.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 1833370784.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 3041330336.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 1855883424.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 1931380896.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 2233370784.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 3441330336.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 2355883424.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 2431380896.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 2733370784.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 3941330336.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 3426244640.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 3627571232.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 4432877600.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 7654103072.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 3826244640.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 4027571232.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 4832877600.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 8054103072.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 4326244640.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 4527571232.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 5332877600.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 8554103072.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 3426244640.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 3627571232.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 4432877600.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 7654103072.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 3826244640.0,
+      "available_bytes": 4000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 4027571232.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 4832877600.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 8054103072.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 4326244640.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 4527571232.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 5332877600.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 8554103072.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 3426244640.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 3627571232.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 4432877600.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 7654103072.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 3826244640.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 4027571232.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 4832877600.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 8054103072.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 4326244640.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 4527571232.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 5332877600.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 8554103072.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 3426244640.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 3627571232.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 4432877600.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 7654103072.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 3826244640.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 4027571232.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 4832877600.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 8054103072.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 4326244640.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 4527571232.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 5332877600.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 8554103072.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 3426244640.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 3627571232.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 4432877600.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 7654103072.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 3826244640.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 4027571232.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 4832877600.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 8054103072.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 4326244640.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 4527571232.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 5332877600.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 8554103072.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 3426244640.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 3627571232.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 4432877600.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 7654103072.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 3826244640.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 4027571232.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 4832877600.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 8054103072.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 4326244640.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 4527571232.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 5332877600.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 8554103072.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 5199843360.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 5401169952.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 6206476320.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 9427701792.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 5599843360.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 5801169952.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 6606476320.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 9827701792.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 6099843360.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 6301169952.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 7106476320.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 10327701792.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 5199843360.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 5401169952.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 6206476320.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 9427701792.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 5599843360.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 5801169952.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 6606476320.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 9827701792.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 6099843360.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 6301169952.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 7106476320.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 10327701792.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 5199843360.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 5401169952.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 6206476320.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 9427701792.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 5599843360.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 5801169952.0,
+      "available_bytes": 6000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 6606476320.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 9827701792.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 6099843360.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 6301169952.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 7106476320.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 10327701792.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 5199843360.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 5401169952.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 6206476320.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 9427701792.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 5599843360.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 5801169952.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 6606476320.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 9827701792.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 6099843360.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 6301169952.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 7106476320.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 10327701792.0,
+      "available_bytes": 16000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 5199843360.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 5401169952.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 6206476320.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 9427701792.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 5599843360.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 5801169952.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 6606476320.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 9827701792.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 6099843360.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 6301169952.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 7106476320.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 10327701792.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 5199843360.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 5401169952.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 6206476320.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 9427701792.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 5599843360.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 5801169952.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 6606476320.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 9827701792.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 6099843360.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 6301169952.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 7106476320.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 10327701792.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 17432612864.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 17835266048.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 19445878784.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 25888329728.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 17832612864.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 18235266048.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 19845878784.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 26288329728.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 18332612864.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 18735266048.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 20345878784.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 26788329728.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 17432612864.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 17835266048.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 19445878784.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 25888329728.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 17832612864.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 18235266048.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 19845878784.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 26288329728.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 18332612864.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 18735266048.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 20345878784.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 26788329728.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 17432612864.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 17835266048.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 19445878784.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 25888329728.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 17832612864.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 18235266048.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 19845878784.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 26288329728.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 18332612864.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 18735266048.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 20345878784.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 26788329728.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 17432612864.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 17835266048.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 19445878784.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 25888329728.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 17832612864.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 18235266048.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 19845878784.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 26288329728.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 18332612864.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 18735266048.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 20345878784.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 26788329728.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 17432612864.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 17835266048.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 19445878784.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 25888329728.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 17832612864.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 18235266048.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 19845878784.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 26288329728.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 18332612864.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 18735266048.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 20345878784.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 26788329728.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 17432612864.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 17835266048.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 19445878784.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 25888329728.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 17832612864.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 18235266048.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 19845878784.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 26288329728.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 18332612864.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 18735266048.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 20345878784.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 26788329728.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 29480976384.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 29883629568.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 31494242304.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 37936693248.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 29880976384.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 30283629568.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 31894242304.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 38336693248.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 30380976384.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 30783629568.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 32394242304.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 38836693248.0,
+      "available_bytes": 2000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 29480976384.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 29883629568.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 31494242304.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 37936693248.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 29880976384.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 30283629568.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 31894242304.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 38336693248.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 30380976384.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 30783629568.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 32394242304.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 38836693248.0,
+      "available_bytes": 4000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 29480976384.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 29883629568.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 31494242304.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 37936693248.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 29880976384.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 30283629568.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 31894242304.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 38336693248.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 30380976384.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 30783629568.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 32394242304.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 38836693248.0,
+      "available_bytes": 6000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 29480976384.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 29883629568.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 31494242304.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 37936693248.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 29880976384.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 30283629568.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 31894242304.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 38336693248.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 30380976384.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 30783629568.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 32394242304.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 38836693248.0,
+      "available_bytes": 16000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 29480976384.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 29883629568.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 31494242304.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 37936693248.0,
+      "available_bytes": 32000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 29880976384.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 30283629568.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 31894242304.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 38336693248.0,
+      "available_bytes": 32000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 30380976384.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 30783629568.0,
+      "available_bytes": 32000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 32394242304.0,
+      "available_bytes": 32000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 38836693248.0,
+      "available_bytes": 32000000000,
+      "fits": false
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 2048,
+      "need_bytes": 29480976384.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 8192,
+      "need_bytes": 29883629568.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 32768,
+      "need_bytes": 31494242304.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "context": 131072,
+      "need_bytes": 37936693248.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 2048,
+      "need_bytes": 29880976384.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 8192,
+      "need_bytes": 30283629568.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 32768,
+      "need_bytes": 31894242304.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "context": 131072,
+      "need_bytes": 38336693248.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 2048,
+      "need_bytes": 30380976384.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 8192,
+      "need_bytes": 30783629568.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 32768,
+      "need_bytes": 32394242304.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "context": 131072,
+      "need_bytes": 38836693248.0,
+      "available_bytes": 64000000000,
+      "fits": true
+    }
+  ],
+  "max_context": [
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 69321
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 36769
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 232082
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 199530
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 158840
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 394842
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 362290
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 321600
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 1208644
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 1176092
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 1135402
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 2510728
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 2478176
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 2437486
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 5114894
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 5082342
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 5041652
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 46328
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 13776
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 209088
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 176536
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 135846
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 371849
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 339297
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 298606
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 1185651
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 1153099
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 1112409
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 2487734
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 2455182
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 2414492
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 5091901
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 5059349
+    },
+    {
+      "model": "ThoxOS-Kernel-0.8B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 5018659
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 19557
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 7350
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 80592
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 68385
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 53126
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 385768
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 373561
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 358302
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 874049
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 861842
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 846583
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 1850612
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 1838405
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 1823146
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 26466
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 14259
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 331642
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 319435
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 304176
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 819923
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 807716
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 792458
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 1796486
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 1784279
+    },
+    {
+      "model": "ThoxOS-Kernel-4B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 1769020
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 224328
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 218225
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 210595
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 712609
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 706506
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q4_K_M",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 698877
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "E2 (Air, 2 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P4 (Mini, 4 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "P6 (Clip, 6 GB)",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 16 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 0
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 40485
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 34381
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 32 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 26752
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 0.6,
+      "max_context_tokens": 528766
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.0,
+      "max_context_tokens": 522662
+    },
+    {
+      "model": "ThoxOS-Kernel-27B",
+      "quant": "Q8_0",
+      "class": "Host 64 GB",
+      "reserve_gb": 1.5,
+      "max_context_tokens": 515033
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+CITED: list[str] = []
+
+
+def ref_entry(key: str) -> dict:
+    if key in REFS_RAW and REFS_RAW[key]["status"] == "resolved":
+        r = REFS_RAW[key]
+        return {"authors": r["authors"], "title": r["title"],
+                "venue": f"arXiv:{r['arxiv_id']}, first posted {r['published'][:10]}, version inspected {r['updated'][:10]}" + (f"; {r['journal_ref']}" if r.get("journal_ref") else ""),
+                "url": r["url"]}
+    if key in MANUAL_REFS:
+        return MANUAL_REFS[key]
+    raise KeyError(f"unknown citation key {key}")
+
+
+def cite(text: str) -> str:
+    def repl(m):
+        keys = [k.strip().lstrip("@") for k in m.group(1).split(";")]
+        nums = []
+        for k in keys:
+            ref_entry(k)
+            if k not in CITED:
+                CITED.append(k)
+            nums.append(str(CITED.index(k) + 1))
+        return '<span class="cite">[' + ", ".join(nums) + "]</span>"
+    return re.sub(r"\[@([^\]]+)\]", repl, text)
+
+
+# ----------------------------------------------------------------------------
+# HTML helpers
+# ----------------------------------------------------------------------------
+OUT: list[str] = []
+
+
+def p(text: str):
+    OUT.append(f"<p>{cite(text)}</p>")
+
+
+def h2(num: str, text: str, anchor: str):
+    OUT.append(f'<h2 id="{anchor}"><span class="num">{num}</span>{text}</h2>')
+
+
+def h3(text: str):
+    OUT.append(f"<h3>{text}</h3>")
+
+
+def eq(tex: str, display: bool = True):
+    OUT.append(f'<div class="eq"><span class="katex-src" data-display="{1 if display else 0}">{html.escape(tex)}</span></div>')
+
+
+def ieq(tex: str) -> str:
+    return f'<span class="katex-src" data-display="0">{html.escape(tex)}</span>'
+
+
+def table(headers: list[str], rows: list[list[str]], caption: str = "", cls: str = ""):
+    th = "".join(f"<th>{h}</th>" for h in headers)
+    body = "".join("<tr>" + "".join(f"<td>{cite(c)}</td>" for c in r) + "</tr>" for r in rows)
+    cap = f"<caption>{cite(caption)}</caption>" if caption else ""
+    OUT.append(f'<table class="{cls}">{cap}<thead><tr>{th}</tr></thead><tbody>{body}</tbody></table>')
+
+
+def figure(svg: str, num: int, caption: str):
+    content = (FIG / svg).read_text()
+    content = re.sub(r"<\?xml[^>]*\?>", "", content)
+    content = re.sub(r"<!DOCTYPE[^>]*>", "", content)
+    OUT.append(f'<figure id="fig{num}"><div class="figwrap">{content}</div><figcaption><b>Figure {num}.</b> {cite(caption)}</figcaption></figure>')
+
+
+def callout(title: str, body: str, kind: str = "note"):
+    OUT.append(f'<div class="callout {kind}"><div class="ct">{title}</div><div>{cite(body)}</div></div>')
+
+
+def algo(title: str, lines: list[str]):
+    body = "\n".join(html.escape(l) for l in lines)
+    OUT.append(f'<div class="algo"><div class="at">{title}</div><pre>{body}</pre></div>')
+
+
+def ul(items: list[str]):
+    OUT.append("<ul>" + "".join(f"<li>{cite(i)}</li>" for i in items) + "</ul>")
+
+
+def ol(items: list[str]):
+    OUT.append("<ol>" + "".join(f"<li>{cite(i)}</li>" for i in items) + "</ol>")
+
+
+def fmt(x: float, nd: int = 2) -> str:
+    return f"{x:,.{nd}f}"
+
+

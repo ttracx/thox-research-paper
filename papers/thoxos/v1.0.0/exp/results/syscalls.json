@@ -1,0 +1,2653 @@
+{
+  "evidence_label": "Part A: observed upstream ledger at the pin, area classification by this paper; Part B: strace of a reference loop on the authoring host Linux, joined with ledger statuses; neither ran on ThoxInux",
+  "pin": "36503bda2d87465765e1b94e65f9d100f27ed5be",
+  "ledger_totals": {
+    "Partial": 245,
+    "Complete": 82,
+    "Policy-denied": 48
+  },
+  "by_area": {
+    "files": {
+      "Partial": 120,
+      "Complete": 15,
+      "Policy-denied": 13
+    },
+    "memory": {
+      "Partial": 23,
+      "Complete": 5
+    },
+    "process": {
+      "Partial": 49,
+      "Complete": 24,
+      "Policy-denied": 4
+    },
+    "ipc": {
+      "Partial": 18
+    },
+    "time": {
+      "Partial": 12,
+      "Complete": 2,
+      "Policy-denied": 4
+    },
+    "network": {
+      "Complete": 14,
+      "Partial": 4
+    },
+    "identity": {
+      "Complete": 10,
+      "Policy-denied": 8,
+      "Partial": 5
+    },
+    "security": {
+      "Policy-denied": 19,
+      "Complete": 11,
+      "Partial": 8
+    },
+    "other": {
+      "Complete": 1,
+      "Partial": 6
+    }
+  },
+  "rows": [
+    {
+      "nr": 0,
+      "name": "read",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 1,
+      "name": "write",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 2,
+      "name": "open",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 3,
+      "name": "close",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 4,
+      "name": "stat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 5,
+      "name": "fstat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 6,
+      "name": "lstat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 7,
+      "name": "poll",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 8,
+      "name": "lseek",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 9,
+      "name": "mmap",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 10,
+      "name": "mprotect",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 11,
+      "name": "munmap",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 12,
+      "name": "brk",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 13,
+      "name": "rt_sigaction",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 14,
+      "name": "rt_sigprocmask",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 15,
+      "name": "rt_sigreturn",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 16,
+      "name": "ioctl",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 17,
+      "name": "pread64",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 18,
+      "name": "pwrite64",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 19,
+      "name": "readv",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 20,
+      "name": "writev",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 21,
+      "name": "access",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 22,
+      "name": "pipe",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 23,
+      "name": "select",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 24,
+      "name": "sched_yield",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 25,
+      "name": "mremap",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 26,
+      "name": "msync",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 27,
+      "name": "mincore",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 28,
+      "name": "madvise",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 29,
+      "name": "shmget",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 30,
+      "name": "shmat",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 31,
+      "name": "shmctl",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 32,
+      "name": "dup",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 33,
+      "name": "dup2",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 34,
+      "name": "pause",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 35,
+      "name": "nanosleep",
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "nr": 36,
+      "name": "getitimer",
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "nr": 37,
+      "name": "alarm",
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "nr": 38,
+      "name": "setitimer",
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "nr": 39,
+      "name": "getpid",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 40,
+      "name": "sendfile",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 41,
+      "name": "socket",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 42,
+      "name": "connect",
+      "status": "Partial",
+      "area": "network"
+    },
+    {
+      "nr": 43,
+      "name": "accept",
+      "status": "Partial",
+      "area": "network"
+    },
+    {
+      "nr": 44,
+      "name": "sendto",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 45,
+      "name": "recvfrom",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 46,
+      "name": "sendmsg",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 47,
+      "name": "recvmsg",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 48,
+      "name": "shutdown",
+      "status": "Partial",
+      "area": "network"
+    },
+    {
+      "nr": 49,
+      "name": "bind",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 50,
+      "name": "listen",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 51,
+      "name": "getsockname",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 52,
+      "name": "getpeername",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 53,
+      "name": "socketpair",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 54,
+      "name": "setsockopt",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 55,
+      "name": "getsockopt",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 56,
+      "name": "clone",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 57,
+      "name": "fork",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 58,
+      "name": "vfork",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 59,
+      "name": "execve",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 60,
+      "name": "exit",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 61,
+      "name": "wait4",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 62,
+      "name": "kill",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 63,
+      "name": "uname",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 64,
+      "name": "semget",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 65,
+      "name": "semop",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 66,
+      "name": "semctl",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 67,
+      "name": "shmdt",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 68,
+      "name": "msgget",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 69,
+      "name": "msgsnd",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 70,
+      "name": "msgrcv",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 71,
+      "name": "msgctl",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 72,
+      "name": "fcntl",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 73,
+      "name": "flock",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 74,
+      "name": "fsync",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 75,
+      "name": "fdatasync",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 76,
+      "name": "truncate",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 77,
+      "name": "ftruncate",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 78,
+      "name": "getdents",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 79,
+      "name": "getcwd",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 80,
+      "name": "chdir",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 81,
+      "name": "fchdir",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 82,
+      "name": "rename",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 83,
+      "name": "mkdir",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 84,
+      "name": "rmdir",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 85,
+      "name": "creat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 86,
+      "name": "link",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 87,
+      "name": "unlink",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 88,
+      "name": "symlink",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 89,
+      "name": "readlink",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 90,
+      "name": "chmod",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 91,
+      "name": "fchmod",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 92,
+      "name": "chown",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 93,
+      "name": "fchown",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 94,
+      "name": "lchown",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 95,
+      "name": "umask",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 96,
+      "name": "gettimeofday",
+      "status": "Complete",
+      "area": "time"
+    },
+    {
+      "nr": 97,
+      "name": "getrlimit",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 98,
+      "name": "getrusage",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 99,
+      "name": "sysinfo",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 100,
+      "name": "times",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 101,
+      "name": "ptrace",
+      "status": "Policy-denied",
+      "area": "process"
+    },
+    {
+      "nr": 102,
+      "name": "getuid",
+      "status": "Complete",
+      "area": "identity"
+    },
+    {
+      "nr": 103,
+      "name": "syslog",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 104,
+      "name": "getgid",
+      "status": "Complete",
+      "area": "identity"
+    },
+    {
+      "nr": 105,
+      "name": "setuid",
+      "status": "Policy-denied",
+      "area": "identity"
+    },
+    {
+      "nr": 106,
+      "name": "setgid",
+      "status": "Policy-denied",
+      "area": "identity"
+    },
+    {
+      "nr": 107,
+      "name": "geteuid",
+      "status": "Complete",
+      "area": "identity"
+    },
+    {
+      "nr": 108,
+      "name": "getegid",
+      "status": "Complete",
+      "area": "identity"
+    },
+    {
+      "nr": 109,
+      "name": "setpgid",
+      "status": "Partial",
+      "area": "identity"
+    },
+    {
+      "nr": 110,
+      "name": "getppid",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 111,
+      "name": "getpgrp",
+      "status": "Complete",
+      "area": "identity"
+    },
+    {
+      "nr": 112,
+      "name": "setsid",
+      "status": "Partial",
+      "area": "identity"
+    },
+    {
+      "nr": 113,
+      "name": "setreuid",
+      "status": "Policy-denied",
+      "area": "identity"
+    },
+    {
+      "nr": 114,
+      "name": "setregid",
+      "status": "Policy-denied",
+      "area": "identity"
+    },
+    {
+      "nr": 115,
+      "name": "getgroups",
+      "status": "Complete",
+      "area": "identity"
+    },
+    {
+      "nr": 116,
+      "name": "setgroups",
+      "status": "Partial",
+      "area": "identity"
+    },
+    {
+      "nr": 117,
+      "name": "setresuid",
+      "status": "Policy-denied",
+      "area": "identity"
+    },
+    {
+      "nr": 118,
+      "name": "getresuid",
+      "status": "Complete",
+      "area": "identity"
+    },
+    {
+      "nr": 119,
+      "name": "setresgid",
+      "status": "Policy-denied",
+      "area": "identity"
+    },
+    {
+      "nr": 120,
+      "name": "getresgid",
+      "status": "Complete",
+      "area": "identity"
+    },
+    {
+      "nr": 121,
+      "name": "getpgid",
+      "status": "Complete",
+      "area": "identity"
+    },
+    {
+      "nr": 122,
+      "name": "setfsuid",
+      "status": "Policy-denied",
+      "area": "identity"
+    },
+    {
+      "nr": 123,
+      "name": "setfsgid",
+      "status": "Policy-denied",
+      "area": "identity"
+    },
+    {
+      "nr": 124,
+      "name": "getsid",
+      "status": "Complete",
+      "area": "identity"
+    },
+    {
+      "nr": 125,
+      "name": "capget",
+      "status": "Partial",
+      "area": "identity"
+    },
+    {
+      "nr": 126,
+      "name": "capset",
+      "status": "Partial",
+      "area": "identity"
+    },
+    {
+      "nr": 127,
+      "name": "rt_sigpending",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 128,
+      "name": "rt_sigtimedwait",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 129,
+      "name": "rt_sigqueueinfo",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 130,
+      "name": "rt_sigsuspend",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 131,
+      "name": "sigaltstack",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 132,
+      "name": "utime",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 133,
+      "name": "mknod",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 134,
+      "name": "uselib",
+      "status": "Complete",
+      "area": "security"
+    },
+    {
+      "nr": 135,
+      "name": "personality",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 136,
+      "name": "ustat",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 137,
+      "name": "statfs",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 138,
+      "name": "fstatfs",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 139,
+      "name": "sysfs",
+      "status": "Complete",
+      "area": "other"
+    },
+    {
+      "nr": 140,
+      "name": "getpriority",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 141,
+      "name": "setpriority",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 142,
+      "name": "sched_setparam",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 143,
+      "name": "sched_getparam",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 144,
+      "name": "sched_setscheduler",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 145,
+      "name": "sched_getscheduler",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 146,
+      "name": "sched_get_priority_max",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 147,
+      "name": "sched_get_priority_min",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 148,
+      "name": "sched_rr_get_interval",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 149,
+      "name": "mlock",
+      "status": "Complete",
+      "area": "memory"
+    },
+    {
+      "nr": 150,
+      "name": "munlock",
+      "status": "Complete",
+      "area": "memory"
+    },
+    {
+      "nr": 151,
+      "name": "mlockall",
+      "status": "Complete",
+      "area": "memory"
+    },
+    {
+      "nr": 152,
+      "name": "munlockall",
+      "status": "Complete",
+      "area": "memory"
+    },
+    {
+      "nr": 153,
+      "name": "vhangup",
+      "status": "Policy-denied",
+      "area": "process"
+    },
+    {
+      "nr": 154,
+      "name": "modify_ldt",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 155,
+      "name": "pivot_root",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 156,
+      "name": "_sysctl",
+      "status": "Complete",
+      "area": "security"
+    },
+    {
+      "nr": 157,
+      "name": "prctl",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 158,
+      "name": "arch_prctl",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 159,
+      "name": "adjtimex",
+      "status": "Policy-denied",
+      "area": "time"
+    },
+    {
+      "nr": 160,
+      "name": "setrlimit",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 161,
+      "name": "chroot",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 162,
+      "name": "sync",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 163,
+      "name": "acct",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 164,
+      "name": "settimeofday",
+      "status": "Policy-denied",
+      "area": "time"
+    },
+    {
+      "nr": 165,
+      "name": "mount",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 166,
+      "name": "umount2",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 167,
+      "name": "swapon",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 168,
+      "name": "swapoff",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 169,
+      "name": "reboot",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 170,
+      "name": "sethostname",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 171,
+      "name": "setdomainname",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 172,
+      "name": "iopl",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 173,
+      "name": "ioperm",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 174,
+      "name": "create_module",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 175,
+      "name": "init_module",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 176,
+      "name": "delete_module",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 177,
+      "name": "get_kernel_syms",
+      "status": "Complete",
+      "area": "security"
+    },
+    {
+      "nr": 178,
+      "name": "query_module",
+      "status": "Complete",
+      "area": "security"
+    },
+    {
+      "nr": 179,
+      "name": "quotactl",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 180,
+      "name": "nfsservctl",
+      "status": "Complete",
+      "area": "security"
+    },
+    {
+      "nr": 181,
+      "name": "getpmsg",
+      "status": "Complete",
+      "area": "security"
+    },
+    {
+      "nr": 182,
+      "name": "putpmsg",
+      "status": "Complete",
+      "area": "security"
+    },
+    {
+      "nr": 183,
+      "name": "afs_syscall",
+      "status": "Complete",
+      "area": "security"
+    },
+    {
+      "nr": 184,
+      "name": "tuxcall",
+      "status": "Complete",
+      "area": "security"
+    },
+    {
+      "nr": 185,
+      "name": "security",
+      "status": "Complete",
+      "area": "security"
+    },
+    {
+      "nr": 186,
+      "name": "gettid",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 187,
+      "name": "readahead",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 188,
+      "name": "setxattr",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 189,
+      "name": "lsetxattr",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 190,
+      "name": "fsetxattr",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 191,
+      "name": "getxattr",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 192,
+      "name": "lgetxattr",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 193,
+      "name": "fgetxattr",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 194,
+      "name": "listxattr",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 195,
+      "name": "llistxattr",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 196,
+      "name": "flistxattr",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 197,
+      "name": "removexattr",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 198,
+      "name": "lremovexattr",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 199,
+      "name": "fremovexattr",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 200,
+      "name": "tkill",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 201,
+      "name": "time",
+      "status": "Complete",
+      "area": "time"
+    },
+    {
+      "nr": 202,
+      "name": "futex",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 203,
+      "name": "sched_setaffinity",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 204,
+      "name": "sched_getaffinity",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 205,
+      "name": "set_thread_area",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 206,
+      "name": "io_setup",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 207,
+      "name": "io_destroy",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 208,
+      "name": "io_getevents",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 209,
+      "name": "io_submit",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 210,
+      "name": "io_cancel",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 211,
+      "name": "get_thread_area",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 212,
+      "name": "lookup_dcookie",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 213,
+      "name": "epoll_create",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 214,
+      "name": "epoll_ctl_old",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 215,
+      "name": "epoll_wait_old",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 216,
+      "name": "remap_file_pages",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 217,
+      "name": "getdents64",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 218,
+      "name": "set_tid_address",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 219,
+      "name": "restart_syscall",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 220,
+      "name": "semtimedop",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 221,
+      "name": "fadvise64",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 222,
+      "name": "timer_create",
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "nr": 223,
+      "name": "timer_settime",
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "nr": 224,
+      "name": "timer_gettime",
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "nr": 225,
+      "name": "timer_getoverrun",
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "nr": 226,
+      "name": "timer_delete",
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "nr": 227,
+      "name": "clock_settime",
+      "status": "Policy-denied",
+      "area": "time"
+    },
+    {
+      "nr": 228,
+      "name": "clock_gettime",
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "nr": 229,
+      "name": "clock_getres",
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "nr": 230,
+      "name": "clock_nanosleep",
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "nr": 231,
+      "name": "exit_group",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 232,
+      "name": "epoll_wait",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 233,
+      "name": "epoll_ctl",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 234,
+      "name": "tgkill",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 235,
+      "name": "utimes",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 236,
+      "name": "vserver",
+      "status": "Complete",
+      "area": "security"
+    },
+    {
+      "nr": 237,
+      "name": "mbind",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 238,
+      "name": "set_mempolicy",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 239,
+      "name": "get_mempolicy",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 240,
+      "name": "mq_open",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 241,
+      "name": "mq_unlink",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 242,
+      "name": "mq_timedsend",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 243,
+      "name": "mq_timedreceive",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 244,
+      "name": "mq_notify",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 245,
+      "name": "mq_getsetattr",
+      "status": "Partial",
+      "area": "ipc"
+    },
+    {
+      "nr": 246,
+      "name": "kexec_load",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 247,
+      "name": "waitid",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 248,
+      "name": "add_key",
+      "status": "Partial",
+      "area": "security"
+    },
+    {
+      "nr": 249,
+      "name": "request_key",
+      "status": "Partial",
+      "area": "security"
+    },
+    {
+      "nr": 250,
+      "name": "keyctl",
+      "status": "Partial",
+      "area": "security"
+    },
+    {
+      "nr": 251,
+      "name": "ioprio_set",
+      "status": "Partial",
+      "area": "other"
+    },
+    {
+      "nr": 252,
+      "name": "ioprio_get",
+      "status": "Partial",
+      "area": "other"
+    },
+    {
+      "nr": 253,
+      "name": "inotify_init",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 254,
+      "name": "inotify_add_watch",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 255,
+      "name": "inotify_rm_watch",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 256,
+      "name": "migrate_pages",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 257,
+      "name": "openat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 258,
+      "name": "mkdirat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 259,
+      "name": "mknodat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 260,
+      "name": "fchownat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 261,
+      "name": "futimesat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 262,
+      "name": "newfstatat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 263,
+      "name": "unlinkat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 264,
+      "name": "renameat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 265,
+      "name": "linkat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 266,
+      "name": "symlinkat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 267,
+      "name": "readlinkat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 268,
+      "name": "fchmodat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 269,
+      "name": "faccessat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 270,
+      "name": "pselect6",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 271,
+      "name": "ppoll",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 272,
+      "name": "unshare",
+      "status": "Policy-denied",
+      "area": "process"
+    },
+    {
+      "nr": 273,
+      "name": "set_robust_list",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 274,
+      "name": "get_robust_list",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 275,
+      "name": "splice",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 276,
+      "name": "tee",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 277,
+      "name": "sync_file_range",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 278,
+      "name": "vmsplice",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 279,
+      "name": "move_pages",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 280,
+      "name": "utimensat",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 281,
+      "name": "epoll_pwait",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 282,
+      "name": "signalfd",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 283,
+      "name": "timerfd_create",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 284,
+      "name": "eventfd",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 285,
+      "name": "fallocate",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 286,
+      "name": "timerfd_settime",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 287,
+      "name": "timerfd_gettime",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 288,
+      "name": "accept4",
+      "status": "Partial",
+      "area": "network"
+    },
+    {
+      "nr": 289,
+      "name": "signalfd4",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 290,
+      "name": "eventfd2",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 291,
+      "name": "epoll_create1",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 292,
+      "name": "dup3",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 293,
+      "name": "pipe2",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 294,
+      "name": "inotify_init1",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 295,
+      "name": "preadv",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 296,
+      "name": "pwritev",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 297,
+      "name": "rt_tgsigqueueinfo",
+      "status": "Partial",
+      "area": "other"
+    },
+    {
+      "nr": 298,
+      "name": "perf_event_open",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 299,
+      "name": "recvmmsg",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 300,
+      "name": "fanotify_init",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 301,
+      "name": "fanotify_mark",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 302,
+      "name": "prlimit64",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 303,
+      "name": "name_to_handle_at",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 304,
+      "name": "open_by_handle_at",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 305,
+      "name": "clock_adjtime",
+      "status": "Policy-denied",
+      "area": "time"
+    },
+    {
+      "nr": 306,
+      "name": "syncfs",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 307,
+      "name": "sendmmsg",
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "nr": 308,
+      "name": "setns",
+      "status": "Policy-denied",
+      "area": "process"
+    },
+    {
+      "nr": 309,
+      "name": "getcpu",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 310,
+      "name": "process_vm_readv",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 311,
+      "name": "process_vm_writev",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 312,
+      "name": "kcmp",
+      "status": "Partial",
+      "area": "other"
+    },
+    {
+      "nr": 313,
+      "name": "finit_module",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 314,
+      "name": "sched_setattr",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 315,
+      "name": "sched_getattr",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 316,
+      "name": "renameat2",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 317,
+      "name": "seccomp",
+      "status": "Partial",
+      "area": "security"
+    },
+    {
+      "nr": 318,
+      "name": "getrandom",
+      "status": "Partial",
+      "area": "security"
+    },
+    {
+      "nr": 319,
+      "name": "memfd_create",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 320,
+      "name": "kexec_file_load",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 321,
+      "name": "bpf",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 322,
+      "name": "execveat",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 323,
+      "name": "userfaultfd",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 324,
+      "name": "membarrier",
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "nr": 325,
+      "name": "mlock2",
+      "status": "Complete",
+      "area": "memory"
+    },
+    {
+      "nr": 326,
+      "name": "copy_file_range",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 327,
+      "name": "preadv2",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 328,
+      "name": "pwritev2",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 329,
+      "name": "pkey_mprotect",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 330,
+      "name": "pkey_alloc",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 331,
+      "name": "pkey_free",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 332,
+      "name": "statx",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 333,
+      "name": "io_pgetevents",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 334,
+      "name": "rseq",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 335,
+      "name": "uretprobe",
+      "status": "Partial",
+      "area": "other"
+    },
+    {
+      "nr": 424,
+      "name": "pidfd_send_signal",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 425,
+      "name": "io_uring_setup",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 426,
+      "name": "io_uring_enter",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 427,
+      "name": "io_uring_register",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 428,
+      "name": "open_tree",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 429,
+      "name": "move_mount",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 430,
+      "name": "fsopen",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 431,
+      "name": "fsconfig",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 432,
+      "name": "fsmount",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 433,
+      "name": "fspick",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 434,
+      "name": "pidfd_open",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 435,
+      "name": "clone3",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 436,
+      "name": "close_range",
+      "status": "Complete",
+      "area": "files"
+    },
+    {
+      "nr": 437,
+      "name": "openat2",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 438,
+      "name": "pidfd_getfd",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 439,
+      "name": "faccessat2",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 440,
+      "name": "process_madvise",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 441,
+      "name": "epoll_pwait2",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 442,
+      "name": "mount_setattr",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 443,
+      "name": "quotactl_fd",
+      "status": "Policy-denied",
+      "area": "files"
+    },
+    {
+      "nr": 444,
+      "name": "landlock_create_ruleset",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 445,
+      "name": "landlock_add_rule",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 446,
+      "name": "landlock_restrict_self",
+      "status": "Policy-denied",
+      "area": "security"
+    },
+    {
+      "nr": 447,
+      "name": "memfd_secret",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 448,
+      "name": "process_mrelease",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 449,
+      "name": "futex_waitv",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 450,
+      "name": "set_mempolicy_home_node",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 451,
+      "name": "cachestat",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 452,
+      "name": "fchmodat2",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 453,
+      "name": "map_shadow_stack",
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "nr": 454,
+      "name": "futex_wake",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 455,
+      "name": "futex_wait",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 456,
+      "name": "futex_requeue",
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "nr": 457,
+      "name": "statmount",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 458,
+      "name": "listmount",
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "nr": 459,
+      "name": "lsm_get_self_attr",
+      "status": "Partial",
+      "area": "security"
+    },
+    {
+      "nr": 460,
+      "name": "lsm_set_self_attr",
+      "status": "Partial",
+      "area": "security"
+    },
+    {
+      "nr": 461,
+      "name": "lsm_list_modules",
+      "status": "Partial",
+      "area": "security"
+    },
+    {
+      "nr": 462,
+      "name": "mseal",
+      "status": "Partial",
+      "area": "other"
+    }
+  ],
+  "traced_loop": [
+    {
+      "name": "stat",
+      "calls": 152,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "rt_sigaction",
+      "calls": 133,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "fstat",
+      "calls": 110,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "read",
+      "calls": 95,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "lseek",
+      "calls": 95,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "close",
+      "calls": 84,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "openat",
+      "calls": 81,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "ioctl",
+      "calls": 51,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "mmap",
+      "calls": 33,
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "name": "brk",
+      "calls": 20,
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "name": "futex",
+      "calls": 18,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "getdents64",
+      "calls": 18,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "mprotect",
+      "calls": 9,
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "name": "rt_sigprocmask",
+      "calls": 8,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "munmap",
+      "calls": 7,
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "name": "fcntl",
+      "calls": 5,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "newfstatat",
+      "calls": 4,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "pread64",
+      "calls": 4,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "gettid",
+      "calls": 4,
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "name": "set_robust_list",
+      "calls": 3,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "rseq",
+      "calls": 3,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "getrandom",
+      "calls": 3,
+      "status": "Partial",
+      "area": "security"
+    },
+    {
+      "name": "write",
+      "calls": 3,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "pipe2",
+      "calls": 3,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "execve",
+      "calls": 2,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "access",
+      "calls": 2,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "arch_prctl",
+      "calls": 2,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "set_tid_address",
+      "calls": 2,
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "name": "prlimit64",
+      "calls": 2,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "open",
+      "calls": 2,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "readlink",
+      "calls": 2,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "lstat",
+      "calls": 2,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "socket",
+      "calls": 2,
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "name": "getsockname",
+      "calls": 2,
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "name": "dup2",
+      "calls": 2,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "poll",
+      "calls": 2,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "exit_group",
+      "calls": 2,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "readlinkat",
+      "calls": 1,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "epoll_create1",
+      "calls": 1,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "bind",
+      "calls": 1,
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "name": "listen",
+      "calls": 1,
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "name": "clone3",
+      "calls": 1,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "accept4",
+      "calls": 1,
+      "status": "Partial",
+      "area": "network"
+    },
+    {
+      "name": "connect",
+      "calls": 1,
+      "status": "Partial",
+      "area": "network"
+    },
+    {
+      "name": "pselect6",
+      "calls": 1,
+      "status": "Partial",
+      "area": "files"
+    },
+    {
+      "name": "sendto",
+      "calls": 1,
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "name": "recvfrom",
+      "calls": 1,
+      "status": "Complete",
+      "area": "network"
+    },
+    {
+      "name": "madvise",
+      "calls": 1,
+      "status": "Partial",
+      "area": "memory"
+    },
+    {
+      "name": "exit",
+      "calls": 1,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "getpid",
+      "calls": 1,
+      "status": "Complete",
+      "area": "process"
+    },
+    {
+      "name": "kill",
+      "calls": 1,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "rt_sigreturn",
+      "calls": 1,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "vfork",
+      "calls": 1,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "wait4",
+      "calls": 1,
+      "status": "Partial",
+      "area": "process"
+    },
+    {
+      "name": "clock_nanosleep",
+      "calls": 1,
+      "status": "Partial",
+      "area": "time"
+    },
+    {
+      "name": "fsync",
+      "calls": 1,
+      "status": "Complete",
+      "area": "files"
+    }
+  ],
+  "loop_distinct_by_status": {
+    "Partial": 46,
+    "Complete": 10
+  },
+  "loop_calls_by_status": {
+    "Partial": 975,
+    "Complete": 16
+  },
+  "loop_last_log_line": "{\"data\": \"hello\", \"child\": \"child\", \"sig\": 1, \"model\": \"ThoxOS-Kernel-0.8B\"}",
+  "host": {
+    "python": "3.13.18"
+  }
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "name": "paper",
+    "width": 1280,
+    "scheme": "light",
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "hscroll": false,
+    "errors": [],
+    "kat": null,
+    "flows": null
+  },
+  {
+    "name": "paper",
+    "width": 1280,
+    "scheme": "dark",
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "hscroll": false,
+    "errors": [],
+    "kat": null,
+    "flows": null
+  },
+  {
+    "name": "paper",
+    "width": 390,
+    "scheme": "light",
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "hscroll": false,
+    "errors": [],
+    "kat": null,
+    "flows": null
+  },
+  {
+    "name": "paper",
+    "width": 390,
+    "scheme": "dark",
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "hscroll": false,
+    "errors": [],
+    "kat": null,
+    "flows": null
+  },
+  {
+    "name": "demo",
+    "width": 1280,
+    "scheme": "light",
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "hscroll": false,
+    "errors": [],
+    "kat": true,
+    "flows": {
+      "forgedAllowed": true,
+      "expiredDenied": true,
+      "rollback": true,
+      "fit": "available 4 GB -> FITS",
+      "loopLines": 56
+    }
+  },
+  {
+    "name": "demo",
+    "width": 1280,
+    "scheme": "dark",
+    "scrollWidth": 1280,
+    "clientWidth": 1280,
+    "hscroll": false,
+    "errors": [],
+    "kat": true,
+    "flows": {
+      "forgedAllowed": true,
+      "expiredDenied": true,
+      "rollback": true,
+      "fit": "available 4 GB -> FITS",
+      "loopLines": 56
+    }
+  },
+  {
+    "name": "demo",
+    "width": 390,
+    "scheme": "light",
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "hscroll": false,
+    "errors": [],
+    "kat": true,
+    "flows": {
+      "forgedAllowed": true,
+      "expiredDenied": true,
+      "rollback": true,
+      "fit": "available 4 GB -> FITS",
+      "loopLines": 56
+    }
+  },
+  {
+    "name": "demo",
+    "width": 390,
+    "scheme": "dark",
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "hscroll": false,
+    "errors": [],
+    "kat": true,
+    "flows": {
+      "forgedAllowed": true,
+      "expiredDenied": true,
+      "rollback": true,
+      "fit": "available 4 GB -> FITS",
+      "loopLines": 56
+    }
+  }
+]

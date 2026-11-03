@@ -1,0 +1,6 @@
+node_modules/
+__pycache__/
+wp/paper.src.html
+wp/paper.html
+wp/cover.pdf
+wp/body.pdf
