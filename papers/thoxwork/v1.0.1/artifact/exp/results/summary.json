@@ -1,0 +1,1207 @@
+{
+  "all_hypotheses_passed": true,
+  "config": {
+    "replicates_e1_e4": 20,
+    "replicates_e5_per_cell": 10,
+    "tick_budget_e5": 200000
+  },
+  "evidence_notice": "All results are SIMULATED in a deterministic discrete-tick model. No result is measured on a device, network, or production system. Ratios described as CALCULATED are arithmetic over simulated counts.",
+  "experiments": {
+    "E1": {
+      "evidence_class": "SIMULATED",
+      "failure_mode_tested": "Policy checked only at creation; cross-group approval confusion; post-admission resource escalation (TOCTOU).",
+      "hypothesis": "leak_rate = 0 and false_block_rate <= 0.01",
+      "metrics": {
+        "audit_coverage": {
+          "max": 1.0,
+          "mean": 1.0,
+          "min": 1.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "block_rate": {
+          "max": 1.0,
+          "mean": 1.0,
+          "min": 1.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "false_block_rate": {
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "leak_rate": {
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "replicates": 20,
+          "sd": 0.0
+        }
+      },
+      "passed": true,
+      "seed_formula": "20261104 + 10000*1 + replicate",
+      "title": "Policy enforcement: unapproved resources never run",
+      "totals": {
+        "leaked_attempts": 0,
+        "legit_attempts": 8000,
+        "legit_blocked": 0,
+        "violating_attempts": 12000
+      }
+    },
+    "E2": {
+      "evidence_class": "SIMULATED",
+      "failure_mode_tested": "Silent reassignment: dropped notes, renumbered or truncated chains, empty-note acceptance.",
+      "hypothesis": "chain_completeness = 1.0 and note_coverage = 1.0",
+      "metrics": {
+        "chain_completeness": {
+          "max": 1.0,
+          "mean": 1.0,
+          "min": 1.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "max_chain_depth": {
+          "max": 5.0,
+          "mean": 5.0,
+          "min": 5.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "note_coverage": {
+          "max": 1.0,
+          "mean": 1.0,
+          "min": 1.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "probe_leak_rate": {
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "replicates": 20,
+          "sd": 0.0
+        }
+      },
+      "passed": true,
+      "seed_formula": "20261104 + 10000*2 + replicate",
+      "title": "Handoff integrity: reassignment chains stay complete",
+      "totals": {
+        "complete_chains": 5000,
+        "negative_probes": 4000,
+        "probe_leaks": 0,
+        "reassigned_tasks": 5000,
+        "total_entries": 15000
+      }
+    },
+    "E3": {
+      "by_demand_fraction": {
+        "0.10": {
+          "admitted": 1000,
+          "denied": 0,
+          "tasks": 1000,
+          "waited_then_admitted": 0
+        },
+        "0.25": {
+          "admitted": 1000,
+          "denied": 0,
+          "tasks": 1000,
+          "waited_then_admitted": 0
+        },
+        "0.50": {
+          "admitted": 1000,
+          "denied": 0,
+          "tasks": 1000,
+          "waited_then_admitted": 0
+        },
+        "0.75": {
+          "admitted": 1000,
+          "denied": 0,
+          "tasks": 1000,
+          "waited_then_admitted": 0
+        },
+        "0.90": {
+          "admitted": 1000,
+          "denied": 0,
+          "tasks": 1000,
+          "waited_then_admitted": 0
+        },
+        "1.00": {
+          "admitted": 1000,
+          "denied": 0,
+          "tasks": 1000,
+          "waited_then_admitted": 0
+        },
+        "1.01": {
+          "admitted": 0,
+          "denied": 1000,
+          "tasks": 1000,
+          "waited_then_admitted": 0
+        },
+        "1.25": {
+          "admitted": 0,
+          "denied": 1000,
+          "tasks": 1000,
+          "waited_then_admitted": 0
+        },
+        "1.50": {
+          "admitted": 0,
+          "denied": 1000,
+          "tasks": 1000,
+          "waited_then_admitted": 0
+        },
+        "2.00": {
+          "admitted": 0,
+          "denied": 1000,
+          "tasks": 1000,
+          "waited_then_admitted": 0
+        }
+      },
+      "evidence_class": "SIMULATED",
+      "failure_mode_tested": "Admission layer overflowing to a neighbouring pool, splitting demand, or queueing oversized work indefinitely instead of denying it.",
+      "hypothesis": "silent_overflow_rate = 0, unplaceable_recall = 1.0, right_sized_placement_rate >= 0.99",
+      "metrics": {
+        "deny_latency_ticks_max": {
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "deny_latency_ticks_mean": {
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "right_sized_placement_rate": {
+          "max": 1.0,
+          "mean": 1.0,
+          "min": 1.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "silent_overflow_rate": {
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "stranded_rate": {
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "unplaceable_recall": {
+          "max": 1.0,
+          "mean": 1.0,
+          "min": 1.0,
+          "replicates": 20,
+          "sd": 0.0
+        }
+      },
+      "passed": true,
+      "seed_formula": "20261104 + 10000*3 + replicate",
+      "title": "Admission control: oversized work is denied, never spilled",
+      "totals": {
+        "correctly_denied": 4000,
+        "cross_group_spills": 0,
+        "oversized_tasks": 4000,
+        "placed": 6000,
+        "right_sized_tasks": 6000,
+        "silently_placed": 0,
+        "stranded": 0
+      }
+    },
+    "E4": {
+      "bypass_by_class": {
+        "B1": {
+          "attempts": 1000,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "B2": {
+          "attempts": 1000,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "B3": {
+          "attempts": 1000,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "B4": {
+          "attempts": 1000,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "B5": {
+          "attempts": 1000,
+          "success_rate": 0.0,
+          "successes": 0
+        },
+        "B6": {
+          "attempts": 1000,
+          "success_rate": 0.0,
+          "successes": 0
+        }
+      },
+      "control_no_review_gate": {
+        "completions_without_review": 4000,
+        "legitimate_tasks": 4000
+      },
+      "evidence_class": "SIMULATED",
+      "failure_mode_tested": "Gate erosion: direct finish, skipped review, self-review, wrong-role review, non-member review, stale approval reuse.",
+      "hypothesis": "bypass_success_rate = 0, done_without_review_count = 0, legitimate_completion_rate >= 0.99",
+      "metrics": {
+        "bypass_success_rate": {
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "done_without_review_rate": {
+          "max": 0.0,
+          "mean": 0.0,
+          "min": 0.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "legitimate_completion_rate": {
+          "max": 1.0,
+          "mean": 1.0,
+          "min": 1.0,
+          "replicates": 20,
+          "sd": 0.0
+        },
+        "rejection_integrity": {
+          "max": 1.0,
+          "mean": 1.0,
+          "min": 1.0,
+          "replicates": 20,
+          "sd": 0.0
+        }
+      },
+      "passed": true,
+      "seed_formula": "20261104 + 10000*4 + replicate",
+      "title": "Review gate: no DONE without human review",
+      "totals": {
+        "bypass_attempts": 6000,
+        "bypass_successes": 0,
+        "done_tasks_total": 4000,
+        "done_without_review_count": 0,
+        "legitimate_completions": 4000,
+        "legitimate_tasks": 4000
+      }
+    },
+    "E5": {
+      "cells": [
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 16082.0,
+            "mean": 16018.7,
+            "min": 15963.0,
+            "replicates": 10,
+            "sd": 35.307365
+          },
+          "mean_wait_ticks": {
+            "max": 8034.8665,
+            "mean": 7999.8574,
+            "min": 7952.8055,
+            "replicates": 10,
+            "sd": 20.970311
+          },
+          "meshgroups": 1,
+          "p50_completion_ticks": {
+            "max": 8067.5,
+            "mean": 8020.8,
+            "min": 7963.0,
+            "replicates": 10,
+            "sd": 27.530165
+          },
+          "p95_completion_ticks": {
+            "max": 15276.0,
+            "mean": 15222.9,
+            "min": 15163.0,
+            "replicates": 10,
+            "sd": 32.085667
+          },
+          "review_wait_share": {
+            "max": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "team_size": 2,
+          "throughput_per_1000_ticks": {
+            "max": 125.289733,
+            "mean": 124.854684,
+            "min": 124.362641,
+            "replicates": 10,
+            "sd": 0.275275
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 8055.0,
+            "mean": 8028.9,
+            "min": 7994.0,
+            "replicates": 10,
+            "sd": 18.790689
+          },
+          "mean_wait_ticks": {
+            "max": 4003.707,
+            "mean": 3991.06875,
+            "min": 3949.9705,
+            "replicates": 10,
+            "sd": 14.546668
+          },
+          "meshgroups": 2,
+          "p50_completion_ticks": {
+            "max": 4021.0,
+            "mean": 4006.55,
+            "min": 3969.5,
+            "replicates": 10,
+            "sd": 13.902248
+          },
+          "p95_completion_ticks": {
+            "max": 7627.0,
+            "mean": 7609.4,
+            "min": 7543.0,
+            "replicates": 10,
+            "sd": 23.795798
+          },
+          "review_wait_share": {
+            "max": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "team_size": 2,
+          "throughput_per_1000_ticks": {
+            "max": 250.187641,
+            "mean": 249.101491,
+            "min": 248.292986,
+            "replicates": 10,
+            "sd": 0.583341
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 4288.0,
+            "mean": 4275.5,
+            "min": 4263.0,
+            "replicates": 10,
+            "sd": 7.940403
+          },
+          "mean_wait_ticks": {
+            "max": 2122.7135,
+            "mean": 2114.4938,
+            "min": 2107.4325,
+            "replicates": 10,
+            "sd": 4.704902
+          },
+          "meshgroups": 4,
+          "p50_completion_ticks": {
+            "max": 2142.5,
+            "mean": 2134.85,
+            "min": 2126.0,
+            "replicates": 10,
+            "sd": 4.796092
+          },
+          "p95_completion_ticks": {
+            "max": 4061.0,
+            "mean": 4042.2,
+            "min": 4031.0,
+            "replicates": 10,
+            "sd": 8.255907
+          },
+          "review_wait_share": {
+            "max": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "team_size": 2,
+          "throughput_per_1000_ticks": {
+            "max": 469.153179,
+            "mean": 467.783159,
+            "min": 466.41791,
+            "replicates": 10,
+            "sd": 0.868614
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 2425.0,
+            "mean": 2408.1,
+            "min": 2398.0,
+            "replicates": 10,
+            "sd": 6.92026
+          },
+          "mean_wait_ticks": {
+            "max": 1183.821,
+            "mean": 1180.03085,
+            "min": 1176.2645,
+            "replicates": 10,
+            "sd": 2.488508
+          },
+          "meshgroups": 8,
+          "p50_completion_ticks": {
+            "max": 1208.5,
+            "mean": 1202.8,
+            "min": 1194.5,
+            "replicates": 10,
+            "sd": 3.796051
+          },
+          "p95_completion_ticks": {
+            "max": 2282.0,
+            "mean": 2271.6,
+            "min": 2263.0,
+            "replicates": 10,
+            "sd": 5.624944
+          },
+          "review_wait_share": {
+            "max": 0.0,
+            "mean": 0.0,
+            "min": 0.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "team_size": 2,
+          "throughput_per_1000_ticks": {
+            "max": 834.028357,
+            "mean": 830.537132,
+            "min": 824.742268,
+            "replicates": 10,
+            "sd": 2.379638
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 5377.0,
+            "mean": 5341.3,
+            "min": 5313.0,
+            "replicates": 10,
+            "sd": 22.140687
+          },
+          "mean_wait_ticks": {
+            "max": 2669.925,
+            "mean": 2655.8677,
+            "min": 2644.147,
+            "replicates": 10,
+            "sd": 9.044644
+          },
+          "meshgroups": 1,
+          "p50_completion_ticks": {
+            "max": 2696.5,
+            "mean": 2675.45,
+            "min": 2660.5,
+            "replicates": 10,
+            "sd": 11.30365
+          },
+          "p95_completion_ticks": {
+            "max": 5100.0,
+            "mean": 5071.8,
+            "min": 5050.0,
+            "replicates": 10,
+            "sd": 19.451478
+          },
+          "review_wait_share": {
+            "max": 1.7e-05,
+            "mean": 1.2e-05,
+            "min": 8e-06,
+            "replicates": 10,
+            "sd": 3e-06
+          },
+          "team_size": 4,
+          "throughput_per_1000_ticks": {
+            "max": 376.435159,
+            "mean": 374.447105,
+            "min": 371.954622,
+            "replicates": 10,
+            "sd": 1.550249
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 2693.0,
+            "mean": 2677.9,
+            "min": 2663.0,
+            "replicates": 10,
+            "sd": 10.387011
+          },
+          "mean_wait_ticks": {
+            "max": 1334.968,
+            "mean": 1323.87865,
+            "min": 1316.6505,
+            "replicates": 10,
+            "sd": 5.642585
+          },
+          "meshgroups": 2,
+          "p50_completion_ticks": {
+            "max": 1356.5,
+            "mean": 1342.6,
+            "min": 1335.5,
+            "replicates": 10,
+            "sd": 6.069596
+          },
+          "p95_completion_ticks": {
+            "max": 2559.0,
+            "mean": 2539.5,
+            "min": 2525.0,
+            "replicates": 10,
+            "sd": 10.141499
+          },
+          "review_wait_share": {
+            "max": 2.9e-05,
+            "mean": 2.1e-05,
+            "min": 1.6e-05,
+            "replicates": 10,
+            "sd": 4e-06
+          },
+          "team_size": 4,
+          "throughput_per_1000_ticks": {
+            "max": 751.03267,
+            "mean": 746.865108,
+            "min": 742.666172,
+            "replicates": 10,
+            "sd": 2.895164
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 1442.0,
+            "mean": 1436.4,
+            "min": 1424.0,
+            "replicates": 10,
+            "sd": 5.388877
+          },
+          "mean_wait_ticks": {
+            "max": 701.6035,
+            "mean": 699.4635,
+            "min": 694.7935,
+            "replicates": 10,
+            "sd": 1.992932
+          },
+          "meshgroups": 4,
+          "p50_completion_ticks": {
+            "max": 722.5,
+            "mean": 719.35,
+            "min": 716.0,
+            "replicates": 10,
+            "sd": 2.429506
+          },
+          "p95_completion_ticks": {
+            "max": 1360.0,
+            "mean": 1356.3,
+            "min": 1351.0,
+            "replicates": 10,
+            "sd": 2.93428
+          },
+          "review_wait_share": {
+            "max": 8.1e-05,
+            "mean": 5.4e-05,
+            "min": 3.3e-05,
+            "replicates": 10,
+            "sd": 1.3e-05
+          },
+          "team_size": 4,
+          "throughput_per_1000_ticks": {
+            "max": 1404.494382,
+            "mean": 1392.389489,
+            "min": 1386.962552,
+            "replicates": 10,
+            "sd": 5.244521
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 813.0,
+            "mean": 810.3,
+            "min": 806.0,
+            "replicates": 10,
+            "sd": 2.45153
+          },
+          "mean_wait_ticks": {
+            "max": 387.29,
+            "mean": 385.8469,
+            "min": 384.869,
+            "replicates": 10,
+            "sd": 0.680144
+          },
+          "meshgroups": 8,
+          "p50_completion_ticks": {
+            "max": 409.0,
+            "mean": 407.85,
+            "min": 405.0,
+            "replicates": 10,
+            "sd": 1.184272
+          },
+          "p95_completion_ticks": {
+            "max": 766.0,
+            "mean": 763.4,
+            "min": 760.0,
+            "replicates": 10,
+            "sd": 1.68523
+          },
+          "review_wait_share": {
+            "max": 0.000114,
+            "mean": 9.3e-05,
+            "min": 7e-05,
+            "replicates": 10,
+            "sd": 1.5e-05
+          },
+          "team_size": 4,
+          "throughput_per_1000_ticks": {
+            "max": 2481.389578,
+            "mean": 2468.244258,
+            "min": 2460.0246,
+            "replicates": 10,
+            "sd": 7.473669
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 2313.0,
+            "mean": 2299.0,
+            "min": 2292.0,
+            "replicates": 10,
+            "sd": 7.042727
+          },
+          "mean_wait_ticks": {
+            "max": 1144.9545,
+            "mean": 1135.3234,
+            "min": 1128.8855,
+            "replicates": 10,
+            "sd": 4.48478
+          },
+          "meshgroups": 1,
+          "p50_completion_ticks": {
+            "max": 1165.0,
+            "mean": 1156.1,
+            "min": 1144.5,
+            "replicates": 10,
+            "sd": 5.503635
+          },
+          "p95_completion_ticks": {
+            "max": 2199.0,
+            "mean": 2185.3,
+            "min": 2179.0,
+            "replicates": 10,
+            "sd": 6.067125
+          },
+          "review_wait_share": {
+            "max": 0.000801,
+            "mean": 0.000728,
+            "min": 0.000671,
+            "replicates": 10,
+            "sd": 4.5e-05
+          },
+          "team_size": 8,
+          "throughput_per_1000_ticks": {
+            "max": 872.600349,
+            "mean": 869.951592,
+            "min": 864.677907,
+            "replicates": 10,
+            "sd": 2.656759
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 1168.0,
+            "mean": 1157.5,
+            "min": 1149.0,
+            "replicates": 10,
+            "sd": 6.152235
+          },
+          "mean_wait_ticks": {
+            "max": 566.243,
+            "mean": 563.03615,
+            "min": 559.9585,
+            "replicates": 10,
+            "sd": 2.292934
+          },
+          "meshgroups": 2,
+          "p50_completion_ticks": {
+            "max": 587.5,
+            "mean": 582.9,
+            "min": 578.5,
+            "replicates": 10,
+            "sd": 2.8
+          },
+          "p95_completion_ticks": {
+            "max": 1105.0,
+            "mean": 1097.1,
+            "min": 1092.0,
+            "replicates": 10,
+            "sd": 3.884585
+          },
+          "review_wait_share": {
+            "max": 0.001672,
+            "mean": 0.001542,
+            "min": 0.001363,
+            "replicates": 10,
+            "sd": 8.9e-05
+          },
+          "team_size": 8,
+          "throughput_per_1000_ticks": {
+            "max": 1740.644038,
+            "mean": 1727.91049,
+            "min": 1712.328767,
+            "replicates": 10,
+            "sd": 9.166223
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 626.0,
+            "mean": 621.7,
+            "min": 619.0,
+            "replicates": 10,
+            "sd": 2.368544
+          },
+          "mean_wait_ticks": {
+            "max": 296.255,
+            "mean": 294.3202,
+            "min": 292.5195,
+            "replicates": 10,
+            "sd": 0.914913
+          },
+          "meshgroups": 4,
+          "p50_completion_ticks": {
+            "max": 318.0,
+            "mean": 315.1,
+            "min": 312.0,
+            "replicates": 10,
+            "sd": 1.410674
+          },
+          "p95_completion_ticks": {
+            "max": 592.0,
+            "mean": 587.3,
+            "min": 584.0,
+            "replicates": 10,
+            "sd": 2.147091
+          },
+          "review_wait_share": {
+            "max": 0.003106,
+            "mean": 0.002685,
+            "min": 0.002451,
+            "replicates": 10,
+            "sd": 0.0002
+          },
+          "team_size": 8,
+          "throughput_per_1000_ticks": {
+            "max": 3231.017771,
+            "mean": 3217.032274,
+            "min": 3194.888179,
+            "replicates": 10,
+            "sd": 12.229099
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 359.0,
+            "mean": 355.8,
+            "min": 354.0,
+            "replicates": 10,
+            "sd": 1.536229
+          },
+          "mean_wait_ticks": {
+            "max": 160.7155,
+            "mean": 160.01595,
+            "min": 159.506,
+            "replicates": 10,
+            "sd": 0.445867
+          },
+          "meshgroups": 8,
+          "p50_completion_ticks": {
+            "max": 184.0,
+            "mean": 182.35,
+            "min": 181.0,
+            "replicates": 10,
+            "sd": 0.95
+          },
+          "p95_completion_ticks": {
+            "max": 336.0,
+            "mean": 335.2,
+            "min": 334.0,
+            "replicates": 10,
+            "sd": 0.6
+          },
+          "review_wait_share": {
+            "max": 0.005702,
+            "mean": 0.004945,
+            "min": 0.004316,
+            "replicates": 10,
+            "sd": 0.000418
+          },
+          "team_size": 8,
+          "throughput_per_1000_ticks": {
+            "max": 5649.717514,
+            "mean": 5621.239963,
+            "min": 5571.030641,
+            "replicates": 10,
+            "sd": 24.201472
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 1520.0,
+            "mean": 1517.5,
+            "min": 1516.0,
+            "replicates": 10,
+            "sd": 1.284523
+          },
+          "mean_wait_ticks": {
+            "max": 529.1005,
+            "mean": 525.59315,
+            "min": 522.5935,
+            "replicates": 10,
+            "sd": 1.867547
+          },
+          "meshgroups": 1,
+          "p50_completion_ticks": {
+            "max": 770.5,
+            "mean": 767.8,
+            "min": 766.5,
+            "replicates": 10,
+            "sd": 1.228821
+          },
+          "p95_completion_ticks": {
+            "max": 1445.0,
+            "mean": 1442.5,
+            "min": 1441.0,
+            "replicates": 10,
+            "sd": 1.284523
+          },
+          "review_wait_share": {
+            "max": 0.297393,
+            "mean": 0.290722,
+            "min": 0.285542,
+            "replicates": 10,
+            "sd": 0.003239
+          },
+          "team_size": 16,
+          "throughput_per_1000_ticks": {
+            "max": 1319.261214,
+            "mean": 1317.95811,
+            "min": 1315.789474,
+            "replicates": 10,
+            "sd": 1.115217
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 770.0,
+            "mean": 768.1,
+            "min": 767.0,
+            "replicates": 10,
+            "sd": 0.943398
+          },
+          "mean_wait_ticks": {
+            "max": 260.3145,
+            "mean": 258.6641,
+            "min": 256.6135,
+            "replicates": 10,
+            "sd": 1.004018
+          },
+          "meshgroups": 2,
+          "p50_completion_ticks": {
+            "max": 395.0,
+            "mean": 393.05,
+            "min": 392.0,
+            "replicates": 10,
+            "sd": 0.906918
+          },
+          "p95_completion_ticks": {
+            "max": 731.0,
+            "mean": 730.3,
+            "min": 730.0,
+            "replicates": 10,
+            "sd": 0.458258
+          },
+          "review_wait_share": {
+            "max": 0.298222,
+            "mean": 0.293497,
+            "min": 0.289667,
+            "replicates": 10,
+            "sd": 0.002417
+          },
+          "team_size": 16,
+          "throughput_per_1000_ticks": {
+            "max": 2607.56193,
+            "mean": 2603.831552,
+            "min": 2597.402597,
+            "replicates": 10,
+            "sd": 3.196074
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 396.0,
+            "mean": 395.4,
+            "min": 394.0,
+            "replicates": 10,
+            "sd": 0.663325
+          },
+          "mean_wait_ticks": {
+            "max": 134.1985,
+            "mean": 133.20515,
+            "min": 132.092,
+            "replicates": 10,
+            "sd": 0.63139
+          },
+          "meshgroups": 4,
+          "p50_completion_ticks": {
+            "max": 207.0,
+            "mean": 206.45,
+            "min": 206.0,
+            "replicates": 10,
+            "sd": 0.471699
+          },
+          "p95_completion_ticks": {
+            "max": 376.0,
+            "mean": 375.0,
+            "min": 374.0,
+            "replicates": 10,
+            "sd": 0.447214
+          },
+          "review_wait_share": {
+            "max": 0.264133,
+            "mean": 0.257867,
+            "min": 0.253404,
+            "replicates": 10,
+            "sd": 0.003257
+          },
+          "team_size": 16,
+          "throughput_per_1000_ticks": {
+            "max": 5076.142132,
+            "mean": 5058.183194,
+            "min": 5050.505051,
+            "replicates": 10,
+            "sd": 8.495042
+          }
+        },
+        {
+          "completion_rate": {
+            "max": 1.0,
+            "mean": 1.0,
+            "min": 1.0,
+            "replicates": 10,
+            "sd": 0.0
+          },
+          "evidence_class": "SIMULATED",
+          "makespan_ticks": {
+            "max": 210.0,
+            "mean": 209.4,
+            "min": 208.0,
+            "replicates": 10,
+            "sd": 0.663325
+          },
+          "mean_wait_ticks": {
+            "max": 70.1895,
+            "mean": 69.7343,
+            "min": 69.4625,
+            "replicates": 10,
+            "sd": 0.208869
+          },
+          "meshgroups": 8,
+          "p50_completion_ticks": {
+            "max": 115.0,
+            "mean": 114.55,
+            "min": 114.0,
+            "replicates": 10,
+            "sd": 0.471699
+          },
+          "p95_completion_ticks": {
+            "max": 199.0,
+            "mean": 198.8,
+            "min": 198.0,
+            "replicates": 10,
+            "sd": 0.4
+          },
+          "review_wait_share": {
+            "max": 0.202557,
+            "mean": 0.198273,
+            "min": 0.193344,
+            "replicates": 10,
+            "sd": 0.002666
+          },
+          "team_size": 16,
+          "throughput_per_1000_ticks": {
+            "max": 9615.384615,
+            "mean": 9551.19442,
+            "min": 9523.809524,
+            "replicates": 10,
+            "sd": 30.319322
+          }
+        }
+      ],
+      "evidence_class": "SIMULATED",
+      "failure_mode_tested": "Coordination collapse: reviewer bottleneck, group-count overhead, queue starvation of late tasks.",
+      "group_scaling_ratio": {
+        "1": 1.0,
+        "2": 1.986215,
+        "4": 3.697944,
+        "8": 6.461555
+      },
+      "hypothesis": "every cell completion_rate >= 0.99 and scaling_efficiency(16) >= 0.50",
+      "passed": true,
+      "scaling_efficiency": {
+        "16": 1.319492,
+        "2": 1.0,
+        "4": 1.499532,
+        "8": 1.741928
+      },
+      "seed_formula": "20261104 + 10000*5 + cell_index*10 + replicate",
+      "title": "Scale and throughput under a stated simulated-latency model"
+    }
+  },
+  "generated_by": {
+    "deterministic": true,
+    "master_seed": 20261104,
+    "python_stdlib_only": true,
+    "script": "thoxwork_experiments.py",
+    "script_version": "1.0.0"
+  },
+  "invariant_checks": {
+    "e1_no_unapproved_resource_ever_ran": true,
+    "e2_all_handoff_chains_complete": true,
+    "e3_no_oversized_task_placed": true,
+    "e4_all_done_tasks_legitimately_reviewed": true
+  },
+  "lab": "thoxwork-virtual-lab",
+  "paper_id": "thoxwork",
+  "schema_version": "thoxwork-summary/1.0"
+}

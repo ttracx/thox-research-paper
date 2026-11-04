@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "ThoxWork: One Workplace, One Connected Team. A Policy-Bounded DigitalHuman Work Platform for Enterprise Use"
+type: report
+authors:
+  - family-names: Ross
+    given-names: Craig
+    affiliation: "THOX.ai"
+    orcid: "https://orcid.org/0009-0005-9872-3673"
+  - family-names: Xaypanya
+    given-names: Tommy
+    affiliation: "THOX.ai"
+    orcid: "https://orcid.org/0009-0000-4425-9565"
+date-released: 2026-11-04
+version: 1.0.1
+doi: "10.5281/zenodo.23963936"
+url: "https://thox.ai/research/papers/thoxwork"
+repository-code: "https://github.com/ttracx/thox-research-paper/tree/main/papers/thoxwork/v1.0.1"
+publisher:
+  name: "THOX.ai Research"
+license: CC-BY-4.0
+abstract: "ThoxWork is the third THOX platform: the work-organization layer in which a company assigns real work to named DigitalHuman colleagues (ThoxEmployees), reaches them through Rolodex, bounds their authority and resources by MeshGroup, and draws on approved capacity through MeshStack. The paper defines the model as five testable invariants, reports an evidence-bounded account of what is built, and evaluates the invariants in a deterministic virtual lab (all results SIMULATED)."
+keywords:
+  - ThoxWork
+  - DigitalHumans
+  - ThoxEmployees
+  - Rolodex
+  - MeshGroup
+  - MeshStack
+  - enterprise AI agents
+  - agent governance

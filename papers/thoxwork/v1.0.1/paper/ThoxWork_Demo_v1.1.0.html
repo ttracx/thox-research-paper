@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ThoxWork — Interactive Demo v1.1.0 · THOX.ai Research</title>
+<style>
+:root{--green:#05A451;--ink:#14201a;--mut:#5a6b62;--line:#dce5df;--bg:#f7faf8;--card:#fff;--bad:#b3261e;--warn:#8a6d00}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+header.top{border-bottom:1px solid var(--line);background:#fff}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.top .wrap{display:flex;align-items:center;gap:14px;padding:14px 20px}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.02em}
+.logo .chip{display:inline-block;width:22px;height:22px;border:2.5px solid var(--green);border-radius:5px;vertical-align:-3px;margin-right:8px;position:relative}
+.logo .ai{color:var(--green)}
+.top .tag{margin-left:auto;color:var(--mut);font-size:13px}
+h1{font-size:30px;letter-spacing:-.02em;margin:22px 0 4px}
+.sub{color:var(--mut);margin:0 0 14px}
+.banner{border:1px solid var(--line);border-left:4px solid var(--green);background:#fff;border-radius:8px;padding:10px 14px;font-size:14px;margin:14px 0}
+.banner b{color:var(--green)}
+.grid{display:grid;grid-template-columns:340px 1fr;gap:16px;margin:16px 0}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card h2{font-size:16px;margin:0 0 10px}
+.card h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin:14px 0 6px}
+label{font-size:12px;color:var(--mut);display:block;margin:8px 0 3px}
+input,select{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:6px;font:inherit;font-size:14px;background:#fff}
+button{font:inherit;font-size:13.5px;border:1px solid var(--green);background:var(--green);color:#fff;border-radius:7px;padding:7px 12px;cursor:pointer}
+button.ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+button.small{padding:4px 9px;font-size:12.5px}
+button:disabled{opacity:.45;cursor:default}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.stats{display:flex;gap:18px;flex-wrap:wrap}
+.stat b{font-size:20px;display:block}
+.stat span{font-size:12px;color:var(--mut)}
+.pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;border:1.5px solid var(--green);color:var(--green);border-radius:999px;padding:2px 9px;vertical-align:2px}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.pill.warn{border-color:var(--warn);color:var(--warn)}
+#outcome{border-radius:8px;padding:10px 14px;font-size:14px;margin:12px 0;border:1px solid var(--line);background:#fff}
+#outcome.ok{border-left:4px solid var(--green)}
+#outcome.deny{border-left:4px solid var(--bad)}
+#outcome.wait{border-left:4px solid var(--warn)}
+.board{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+@media(max-width:860px){.board{grid-template-columns:1fr}}
+.col{background:#eef3f0;border:1px solid var(--line);border-radius:10px;padding:10px;min-height:120px}
+.col h3{margin:2px 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+.task{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px;margin:0 0 10px;font-size:13px}
+.task .tt{font-weight:700;font-size:13.5px}
+.task .meta{color:var(--mut);font-size:12px;margin:3px 0 8px}
+.task select,.task input{padding:4px 6px;font-size:12.5px;margin:2px 0}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{border-bottom:1px solid var(--line);text-align:left;padding:5px 6px;vertical-align:top}
+td.h{word-break:break-all}
+.results{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+@media(max-width:860px){.results{grid-template-columns:1fr 1fr}}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}
+.rcard .big{font-size:24px;font-weight:800;letter-spacing:-.02em}
+.rcard p{margin:6px 0 0;font-size:12.5px;color:var(--mut)}
+footer{border-top:1px solid var(--line);margin:28px 0 0;padding:18px 0 30px;color:var(--mut);font-size:13px}
+.tagline{font-weight:700;color:var(--ink)}
+.small{font-size:12.5px;color:var(--mut)}
+.pass{color:var(--green);font-weight:700}.fail{color:var(--bad);font-weight:700}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<div class="logo"><span class="chip"></span>THOX<span class="ai">.ai</span></div>
+<div class="tag">THOXWORK&trade; RESEARCH INSTRUMENT &middot; DEMO v1.1.0</div>
+</div></header>
+
+<div class="wrap">
+<h1>ThoxWork, exercised live</h1>
+<p class="sub">The paper&rsquo;s model, running in your browser: MeshGroup admission under Algorithm&nbsp;1, the Rolodex board with written handoffs and a human review gate, and a hash-chained evidence ledger you can verify, tamper-test, and export.</p>
+
+<div class="banner"><b>Demonstration environment.</b> The organization below is fictional example data. This demo runs the ThoxWork admission, workflow, and evidence logic from the paper in your browser with deterministic text: it calls no model and takes no external action. Every experiment result shown is <b>SIMULATED</b> and traced to the paper&rsquo;s evidence file.</div>
+
+<div class="card">
+<div class="stats">
+<div class="stat"><b id="stRecords">0</b><span>LEDGER RECORDS</span></div>
+<div class="stat"><b class="mono" id="stHead" style="font-size:14px;padding-top:5px">&mdash;</b><span>CHAIN HEAD</span></div>
+<div class="stat"><b id="stIntegrity" style="font-size:16px;padding-top:4px">not verified yet</b><span>INTEGRITY</span></div>
+<div class="stat"><b id="stTasks">0</b><span>TASKS ON BOARD</span></div>
+</div>
+<div class="row" style="margin-top:12px">
+<button id="verifyChain" class="ghost">Verify chain</button>
+<button id="tamperTest" class="ghost">Tamper test (on a copy)</button>
+<button id="exportBundle" class="ghost">Export evidence bundle</button>
+<span id="tamperResult" class="small"></span>
+</div>
+</div>
+
+<div class="grid">
+<div class="card">
+<h2>MeshGroups <span class="small">(fictional example)</span></h2>
+<div id="groupInfo"></div>
+<h3>New task &mdash; admission under Algorithm 1</h3>
+<label>MeshGroup</label><select id="fGroup"></select>
+<label>Title</label><input id="fTitle" value="Evidence pack assembly">
+<label>Resource type</label><select id="fRes">
+<option>document-store</option><option>code-workspace</option><option>dataset</option><option>ticket-queue</option><option>crm-records</option>
+</select>
+<label>Demand (RU, against the group&rsquo;s pooled capacity)</label><input id="fDem" type="number" value="30" min="1">
+<label>Assignee</label><select id="fAsg"><option>DH-002 Specialist</option><option>DH-004 Operator</option><option>DH-006 Reviewer</option></select>
+<div class="row" style="margin-top:12px"><button id="createTask">Submit for admission</button></div>
+<h3>Preset tests from the paper</h3>
+<div class="row">
+<button id="presetAdmit" class="ghost small">Admit: evidence pack (30 RU)</button>
+<button id="presetUnapproved" class="ghost small">Attack: unapproved CRM pull</button>
+<button id="presetOversized" class="ghost small">Oversized: 121 RU</button>
+<button id="presetWait" class="ghost small">Too big for free pool: 100 RU</button>
+<button id="presetBypass" class="ghost small">Attack: force Done, no review</button>
+</div>
+<p class="small">Admission is pooled-capacity accounting over the group&rsquo;s approved resources only. Node placement is the MeshStack dispatch layer and is out of scope for admission; nothing here splits, borrows, or reroutes demand.</p>
+</div>
+
+<div class="card">
+<h2>Evidence ledger <span class="small">append-only &middot; SHA-256 hash-chained</span></h2>
+<div style="max-height:430px;overflow:auto"><table><thead><tr><th>#</th><th>Entry</th><th>Detail</th><th>Hash</th></tr></thead><tbody id="ledgerBody"></tbody></table></div>
+</div>
+</div>
+
+<div id="outcome" class="ok">Ready. Submit a task or run a preset test; every decision is written to the ledger with its reason.</div>
+
+<h2 style="margin:18px 0 0">Rolodex board</h2>
+<div class="board">
+<div class="col" id="col-QUEUED"><h3>Queued</h3><div class="tasks"></div></div>
+<div class="col" id="col-IN_PROGRESS"><h3>In Progress</h3><div class="tasks"></div></div>
+<div class="col" id="col-IN_REVIEW"><h3>In Review</h3><div class="tasks"></div></div>
+<div class="col" id="col-DONE"><h3>Done</h3><div class="tasks"></div></div>
+</div>
+<div class="card" id="waitCard"><h2>Waiting / refused</h2><div id="waitList" class="small">No waiting or refused tasks yet.</div></div>
+
+<h2 style="margin:22px 0 0">What the paper measured <span class="pill">SIMULATED</span></h2>
+<div class="results">
+<div class="rcard"><div class="big">0 / 12,000</div><span class="pill">SIMULATED</span><p><b>E1 &middot; Policy enforcement.</b> Unapproved-resource attempts leaked. 0 of 8,000 legitimate attempts falsely blocked.</p></div>
+<div class="rcard"><div class="big">5,000 / 5,000</div><span class="pill">SIMULATED</span><p><b>E2 &middot; Handoff integrity.</b> Reassigned tasks with complete chains; 15,000 entries; 0 leaks across 4,000 negative probes.</p></div>
+<div class="rcard"><div class="big">100%</div><span class="pill">SIMULATED</span><p><b>E3 &middot; Admission boundary.</b> 4,000 of 4,000 oversized tasks denied UNPLACEABLE; admitted at 1.00&times; the pool (1,000/1,000), denied at 1.01&times; (1,000/1,000); 0 spills.</p></div>
+<div class="rcard"><div class="big">0 / 6,000</div><span class="pill">SIMULATED</span><p><b>E4 &middot; Review gate.</b> Bypass attempts succeeded across six attack classes; 4,000 of 4,000 legitimate completions reached Done through review.</p></div>
+</div>
+<p class="small"><b>E5 (scale), SIMULATED:</b> completion held at 1.0 across all 16 cells (2&ndash;16 workers &times; 1&ndash;8 MeshGroups). The paper&rsquo;s &sect;7 reads the superunitary efficiency figures (1.32&ndash;1.74) as a model artifact, not a capacity claim; the informative signal at 16 workers is the reviewer bottleneck. All numbers from <span class="mono">exp/results/summary.json</span>, SHA-256 f7c72f64&hellip;d79; an independent verifier reproduced that file byte for byte.</p>
+
+<footer><span class="tagline">Your AI. Your Data. Your Rules.&trade;</span> &middot; THOX.ai Research &middot; Demo v1.1.0 &middot; Companion to the ThoxWork paper v1.0.1.</footer>
+</div>
+
+<script>
+"use strict";
+const GROUPS={
+ "MG-Research":{approved:["document-store","code-workspace","dataset"],pool:120},
+ "MG-Operations":{approved:["document-store","ticket-queue"],pool:60}};
+const WORKERS=["DH-002 Specialist","DH-004 Operator","DH-006 Reviewer"];
+let ledger=[],tasks=[],clock=0,tid=0;
+let tail=Promise.resolve();
+async function sha(s){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+function append(kind,detail){tail=tail.then(async()=>{const seq=ledger.length;const prev=seq?ledger[seq-1].hash:"GENESIS";const hash=await sha(seq+"|"+kind+"|"+detail+"|"+prev);ledger.push({seq,kind,detail,prev,hash});renderLedger();});return tail}
+async function verifyEntries(entries){let prev="GENESIS";for(const e of entries){const h=await sha(e.seq+"|"+e.kind+"|"+e.detail+"|"+e.prev);if(h!==e.hash||e.prev!==prev)return{ok:false,at:e.seq};prev=e.hash}return{ok:true,at:null}}
+function usedRU(g){return tasks.filter(t=>t.group===g&&["QUEUED","IN_PROGRESS","IN_REVIEW"].includes(t.state)).reduce((a,t)=>a+t.demand,0)}
+function outcome(cls,html){const o=document.getElementById("outcome");o.className=cls;o.innerHTML=html}
+async function admit(group,title,res,demand,asg){
+ const G=GROUPS[group];const used=usedRU(group);const free=G.pool-used;
+ if(!G.approved.includes(res)){const reason='Resource type "'+res+'" is not on the approved list for '+group+'.';
+   await append("admission.denied",'DENIED "'+title+'" ('+group+'): '+reason);
+   outcome("deny","<b>DENIED.</b> "+reason+" The refusal and its reason are recorded in the ledger.");return null}
+ if(demand>G.pool){await append("admission.unplaceable",'UNPLACEABLE "'+title+'" ('+group+'): demand '+demand+' RU exceeds the pooled capacity '+G.pool+' RU. Not split, not borrowed, not rerouted.');
+   outcome("deny","<b>UNPLACEABLE.</b> Demand "+demand+" RU exceeds the "+group+" pooled capacity of "+G.pool+" RU. Oversized work is denied at the boundary, never split or spilled into a neighboring pool.");return null}
+ if(demand>free){const t={id:++tid,group,title,res,demand,asg,state:"WAIT",chain:[]};tasks.push(t);
+   await append("admission.wait",'WAIT "'+title+'" ('+group+'): demand '+demand+' RU fits the pool ('+G.pool+' RU) but only '+free+' RU is free. WAIT is not a denial.');
+   outcome("wait","<b>WAIT.</b> "+demand+" RU fits the "+group+" pool but only "+free+" RU is currently free. The task waits; it is not denied and not rerouted.");renderBoard();return t}
+ const t={id:++tid,group,title,res,demand,asg,state:"QUEUED",chain:[]};tasks.push(t);
+ await append("admission.admitted",'ADMITTED "'+title+'" ('+group+', '+res+', '+demand+' RU) to '+asg+'; state QUEUED.');
+ outcome("ok","<b>ADMITTED.</b> &ldquo;"+title+"&rdquo; is Queued in "+group+" ("+demand+" RU reserved against the pool).");renderBoard();return t}
+async function retryWaiting(){for(const t of tasks.filter(t=>t.state==="WAIT")){const G=GROUPS[t.group];if(t.demand<=G.pool-usedRU(t.group)){t.state="QUEUED";await append("admission.admitted",'WAIT cleared: "'+t.title+'" admitted to QUEUED as capacity freed.')}}renderBoard()}
+function renderLedger(){document.getElementById("stRecords").textContent=ledger.length;
+ document.getElementById("stHead").textContent=ledger.length?ledger[ledger.length-1].hash.slice(0,10)+"…":"—";
+ document.getElementById("ledgerBody").innerHTML=ledger.slice().reverse().map(e=>'<tr><td class="mono">'+e.seq+'</td><td class="mono">'+e.kind+'</td><td>'+e.detail+'</td><td class="mono h">'+e.hash.slice(0,16)+'…</td></tr>').join("")}
+function cardHTML(t){let ctl="";
+ if(t.state==="QUEUED")ctl='<button class="small" data-act="start" data-id="'+t.id+'">Start</button> <button class="small ghost" data-act="force" data-id="'+t.id+'">Force Done (attack)</button>';
+ if(t.state==="IN_PROGRESS")ctl='<button class="small" data-act="submit" data-id="'+t.id+'">Submit for review</button> <button class="small ghost" data-act="force" data-id="'+t.id+'">Force Done (attack)</button>';
+ if(t.state==="IN_REVIEW")ctl='<label>Reviewer (must differ from assignee)</label><select data-rev="'+t.id+'">'+WORKERS.map(w=>'<option>'+w+'</option>').join("")+'</select><button class="small" data-act="approve" data-id="'+t.id+'">Approve to Done</button> <button class="small ghost" data-act="return" data-id="'+t.id+'">Return</button>';
+ let re="";if(["QUEUED","IN_PROGRESS"].includes(t.state))re='<label>Reassign to</label><select data-to="'+t.id+'">'+WORKERS.filter(w=>w!==t.asg).map(w=>'<option>'+w+'</option>').join("")+'</select><input data-note="'+t.id+'" placeholder="Written handoff note (required)"><button class="small ghost" data-act="reassign" data-id="'+t.id+'">Reassign with handoff</button>';
+ return '<div class="task"><div class="tt">'+t.title+'</div><div class="meta">'+t.group+' · '+t.res+' · '+t.demand+' RU · assignee '+t.asg+' · handoffs '+t.chain.length+'</div>'+ctl+re+'</div>'}
+function renderBoard(){for(const s of["QUEUED","IN_PROGRESS","IN_REVIEW","DONE"]){document.querySelector("#col-"+s+" .tasks").innerHTML=tasks.filter(t=>t.state===s).map(cardHTML).join("")||'<div class="small">Empty.</div>'}
+ document.getElementById("stTasks").textContent=tasks.filter(t=>t.state!=="WAIT").length;
+ const w=tasks.filter(t=>t.state==="WAIT");document.getElementById("waitList").innerHTML=w.length?w.map(t=>'<div>WAIT · '+t.title+' ('+t.group+', '+t.demand+' RU) — admitted automatically when capacity frees.</div>').join(""):"No waiting or refused tasks yet. Refusals live in the ledger, permanently.";
+ document.getElementById("groupInfo").innerHTML=Object.entries(GROUPS).map(([n,g])=>'<p style="margin:6px 0"><b>'+n+'</b> · pool '+g.pool+' RU · in use '+usedRU(n)+' RU<br><span class="small">approved: '+g.approved.join(", ")+'</span></p>').join("")}
+async function forceDone(t){await append("bypass.refused",'BYPASS REFUSED: direct-to-Done attempted on "'+t.title+'" from '+t.state+'. DONE is reachable only through review approval.');
+ outcome("deny","<b>BYPASS REFUSED.</b> There is no route to Done except reviewer approval. The attempt is recorded in the ledger.");}
+document.addEventListener("click",async e=>{const b=e.target.closest("button[data-act]");if(!b)return;const t=tasks.find(x=>x.id==b.dataset.id);if(!t)return;const act=b.dataset.act;
+ if(act==="start"){t.state="IN_PROGRESS";await append("transition",'\"'+t.title+'": QUEUED -> IN_PROGRESS by '+t.asg+'.')}
+ if(act==="submit"){t.state="IN_REVIEW";await append("transition",'\"'+t.title+'": IN_PROGRESS -> IN_REVIEW; awaiting a reviewer who is not the assignee.')}
+ if(act==="force"){await forceDone(t)}
+ if(act==="return"){t.state="IN_PROGRESS";await append("review.returned",'\"'+t.title+'" returned from review to IN_PROGRESS.')}
+ if(act==="approve"){const rev=document.querySelector('[data-rev="'+t.id+'"]').value;
+   if(rev===t.asg){await append("review.self_refused",'SELF-REVIEW REFUSED: '+rev+' is the assignee of "'+t.title+'"; reviewer must differ from assignee.');outcome("deny","<b>SELF-REVIEW REFUSED.</b> The reviewer must differ from the assignee. Recorded in the ledger.");return}
+   t.state="DONE";await append("review.approved",'\"'+t.title+'" approved by '+rev+' (assignee '+t.asg+'): IN_REVIEW -> DONE. Capacity released.');outcome("ok","<b>DONE.</b> &ldquo;"+t.title+"&rdquo; reached Done through review by "+rev+". Its capacity is released.");await retryWaiting()}
+ if(act==="reassign"){const to=document.querySelector('[data-to="'+t.id+'"]').value;const note=document.querySelector('[data-note="'+t.id+'"]').value.trim();
+   if(!note){await append("handoff.refused",'HANDOFF REFUSED: reassignment of "'+t.title+'" attempted without a written note.');outcome("deny","<b>HANDOFF REFUSED.</b> Every reassignment requires a written handoff note. Recorded in the ledger.");return}
+   const from=t.asg;t.asg=to;t.chain.push({from,to,note,state:t.state});await append("handoff.recorded",'HANDOFF "'+t.title+'": '+from+' -> '+to+' at state '+t.state+' (state preserved). Note: "'+note+'"')}
+ renderBoard()});
+document.getElementById("createTask").onclick=async()=>{await admit(document.getElementById("fGroup").value,document.getElementById("fTitle").value||"Untitled task",document.getElementById("fRes").value,parseInt(document.getElementById("fDem").value||"0",10),document.getElementById("fAsg").value);renderBoard()};
+document.getElementById("presetAdmit").onclick=async()=>{await admit("MG-Research","Evidence pack assembly","document-store",30,"DH-002 Specialist");renderBoard()};
+document.getElementById("presetUnapproved").onclick=async()=>{await admit("MG-Research","POLICY TEST: pull unapproved CRM records","crm-records",10,"DH-002 Specialist")};
+document.getElementById("presetOversized").onclick=async()=>{await admit("MG-Research","Oversized model sweep","dataset",121,"DH-004 Operator")};
+document.getElementById("presetWait").onclick=async()=>{await admit("MG-Research","Full corpus re-index","dataset",100,"DH-004 Operator");renderBoard()};
+document.getElementById("presetBypass").onclick=async()=>{const t=await admit("MG-Research","Rush job (bypass attempt)","code-workspace",5,"DH-002 Specialist");if(t){t.state="IN_PROGRESS";await append("transition",'\"'+t.title+'": QUEUED -> IN_PROGRESS by '+t.asg+'.');await forceDone(t);renderBoard()}};
+document.getElementById("verifyChain").onclick=async()=>{const r=await verifyEntries(ledger);const el=document.getElementById("stIntegrity");
+ if(r.ok){el.innerHTML='<span class="pass">verified, '+ledger.length+' records</span>';await append("chain.verified","Chain verification PASS over "+(ledger.length)+" records (run after this entry was requested).")}else{el.innerHTML='<span class="fail">FAILED at record '+r.at+'</span>'}
+ renderLedger()};
+document.getElementById("tamperTest").onclick=async()=>{if(!ledger.length)return;const copy=ledger.map(e=>({...e}));const victim=copy[Math.min(1,copy.length-1)];victim.detail=victim.detail+" [TAMPERED COPY]";
+ const r=await verifyEntries(copy);const el=document.getElementById("tamperResult");
+ el.innerHTML=r.ok?'Tamper test inconclusive: copy verified (unexpected).':'<span class="fail">Tamper test: verification FAILED on the tampered copy at record '+r.at+', as designed.</span> Real records untouched.';
+ const chk=await verifyEntries(ledger);if(chk.ok)document.getElementById("stIntegrity").innerHTML='<span class="pass">verified, '+ledger.length+' records (real chain intact after tamper test)</span>'};
+document.getElementById("exportBundle").onclick=async()=>{const bundle={demo:"ThoxWork Demo v1.1.0",exported_logical_tick:++clock,groups:GROUPS,tasks:tasks,ledger:ledger,results_simulated:{E1:{leaked:0,violating:12000,legit:8000,falsely_blocked:0},E2:{chains_complete:5000,tasks:5000,entries:15000,probe_leaks:0,probes:4000},E3:{oversized_denied:4000,oversized:4000,spills:0},E4:{bypass_successes:0,bypass_attempts:6000,legit_completions:4000},E5:{cells:16,completion_rate:1.0,note:"SIMULATED; see paper S7"}},summary_json_sha256:"f7c72f64b9b8c6f2e1663fbb014374858b2251f2aeaa7d989393a6cdb071dd79"};
+ const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(bundle,null,2)],{type:"application/json"}));a.download="thoxwork-evidence-bundle.json";a.click();URL.revokeObjectURL(a.href);
+ await append("bundle.exported","Evidence bundle exported (groups, tasks, ledger, SIMULATED results).")};
+(async()=>{const fg=document.getElementById("fGroup");fg.innerHTML=Object.keys(GROUPS).map(g=>'<option>'+g+'</option>').join("");
+ await append("session.open","ThoxWork demo v1.1.0 session opened. Canonical Algorithm 1 admission; pooled capacity; review gate on.");
+ await admit("MG-Operations","Weekly ops digest","document-store",20,"DH-004 Operator");renderBoard()})();
+</script>
+</body>
+</html>
