@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ThoxWork Demo v1.0.0 · Rolodex, MeshGroup admission and the review gate</title>
+<style>
+body{font-family:Inter,system-ui,sans-serif;margin:0;color:#111827;background:#fff}
+main{max-width:1060px;margin:0 auto;padding:24px 18px 40px}
+h1{font-size:20px;margin:0 0 4px} .sub{color:#6B7280;font-size:13px;margin:0 0 14px}
+.notice{border-left:3px solid #05A451;background:#EAF6EF;padding:8px 12px;font-size:13px;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.col{border:1px solid #E5E7EB;border-radius:8px;min-height:180px;padding:8px}
+.col h3{margin:0 0 8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#047C3D}
+.col.denied h3{color:#991B1B}
+.task{border:1px solid #E5E7EB;border-top:3px solid #05A451;border-radius:6px;padding:7px 8px;margin:0 0 8px;font-size:12px}
+.task b{display:block;font-size:12.5px}
+.task button{font-size:11px;margin:4px 4px 0 0;cursor:pointer}
+.panel{border:1px solid #E5E7EB;border-radius:8px;padding:12px;margin:0 0 14px}
+label{font-size:12px;display:block;margin:6px 0 2px}
+input,select{font-size:13px;padding:5px;width:100%;box-sizing:border-box}
+button.act{background:#05A451;color:#fff;border:0;border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer}
+.log{font-family:'JetBrains Mono',monospace;font-size:11px;background:#0B0F14;color:#D1D5DB;border-radius:8px;padding:10px;height:150px;overflow:auto;white-space:pre-wrap}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 14px}
+.kpi{border:1px solid #E5E7EB;border-top:3px solid #05A451;padding:8px}.kv{font-size:18px;font-weight:700;color:#047C3D}.kl{font-size:11px}.kt{font-size:9px;color:#6B7280;text-transform:uppercase}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}.kpis{grid-template-columns:1fr 1fr}}
+</style></head><body><main>
+<h1>ThoxWork Demo · One workplace, one connected team</h1>
+<p class="sub">Interactive companion to THOX ThoxWork Research Paper v1.0.0 (2026-11-04). This demo implements the paper's public rules exactly: MeshGroup admission (Algorithm 1), the Rolodex state machine, handoff notes on reassignment, and the review gate.</p>
+<div class="notice"><b>Evidence notice.</b> This demo is a model of the paper's rules. The experiment figures below are SIMULATED results from the paper's deterministic oracle (exp/results/summary.json, master seed 20261104), not measurements of a production system.</div>
+<div class="kpis">
+<div class="kpi"><div class="kv">0 / 12,000</div><div class="kl">Unapproved-resource attempts leaked (E1)</div><div class="kt">Simulated</div></div>
+<div class="kpi"><div class="kv">1.000</div><div class="kl">Handoff-chain completeness, 5,000 tasks (E2)</div><div class="kt">Simulated</div></div>
+<div class="kpi"><div class="kv">100%</div><div class="kl">Oversized tasks denied UNPLACEABLE (E3)</div><div class="kt">Simulated</div></div>
+<div class="kpi"><div class="kv">0 / 6,000</div><div class="kl">Review-gate bypasses succeeded (E4)</div><div class="kt">Simulated</div></div>
+</div>
+<div class="panel"><b>MeshGroup MG-1</b> · Members: DH-002 Specialist, DH-003 Specialist, DH-006 Human Reviewer · Approved resources: document-store (40 RU), code-workspace (40 RU), calendar (20 RU), messaging (20 RU) · <b>Pooled approved capacity: 120 RU</b>
+<label>Task title</label><input id="tTitle" value="Draft the enterprise onboarding pack">
+<label>Required resource</label><select id="tRes"><option value="document-store">document-store (approved)</option><option value="code-workspace">code-workspace (approved)</option><option value="crm-records">crm-records (NOT approved)</option><option value="dataset-private">dataset-private (NOT approved)</option></select>
+<label>Demand (RU) · pooled capacity is 120</label><input id="tDem" type="number" value="30">
+<p style="margin:10px 0 0"><button class="act" onclick="createTask()">Create task (admission runs now)</button>
+<button class="act" style="background:#111827" onclick="preset(121)">Try oversized: 121 RU</button>
+<button class="act" style="background:#111827" onclick="preset(30,'crm-records')">Try unapproved resource</button></p></div>
+<div class="grid">
+<div class="col"><h3>Queued</h3><div id="cQUEUED"></div></div>
+<div class="col"><h3>In Progress</h3><div id="cIN_PROGRESS"></div></div>
+<div class="col"><h3>In Review</h3><div id="cIN_REVIEW"></div></div>
+<div class="col"><h3>Done</h3><div id="cDONE"></div></div>
+<div class="col denied"><h3>Denied tray</h3><div id="cDENIED"></div></div>
+</div>
+<p style="font-size:12px;color:#6B7280">Try the paper's attack cases by hand: create a task with an unapproved resource (denied at admission), create one at 121 RU (denied UNPLACEABLE), reassign without a note (the demo asks for one and refuses an empty note), or try to approve your own task (self-review is rejected; DH-006 must approve).</p>
+<h3 style="margin:16px 0 6px">Event log</h3><div class="log" id="log"></div>
+<script>
+const APPROVED={"document-store":40,"code-workspace":40,"calendar":20,"messaging":20};
+const POOLED=120; let seq=0; const tasks=[]; const logEl=document.getElementById('log');
+function log(m){logEl.textContent+=m+"\n";logEl.scrollTop=1e6}
+function admit(t){
+  if(!(t.res in APPROVED)) return ["DENIED","UNAPPROVED_RESOURCE"];
+  if(t.dem>POOLED) return ["DENIED","UNPLACEABLE"];
+  const free=POOLED-tasks.filter(x=>x.state==="IN_PROGRESS").reduce((a,x)=>a+x.dem,0);
+  if(t.dem>free) return ["WAIT",null];
+  return ["ADMITTED",null];
+}
+function preset(dem,res){document.getElementById('tDem').value=dem;if(res)document.getElementById('tRes').value=res;createTask()}
+function createTask(){
+  seq++; const t={id:"T-"+String(seq).padStart(4,"0"),title:document.getElementById('tTitle').value,
+    res:document.getElementById('tRes').value,dem:+document.getElementById('tDem').value,
+    state:"QUEUED",assignee:null,chain:[],checkin:false};
+  const [v,reason]=admit(t);
+  if(v==="DENIED"){t.state="DENIED";t.reason=reason;log(t.id+" DENIED at admission: "+reason+" (required "+t.res+", demand "+t.dem+" RU vs pooled "+POOLED+" RU)")}
+  else log(t.id+" created QUEUED ("+t.res+", "+t.dem+" RU) - admission: "+v);
+  tasks.push(t); render();
+}
+function act(id,action){
+  const t=tasks.find(x=>x.id===id);
+  if(action==="assign"){const [v,r]=admit(t); if(v==="DENIED"){t.state="DENIED";t.reason=r;log(id+" DENIED at assignment: "+r)}
+    else if(v==="WAIT"){log(id+" WAIT: approved capacity currently in use; task stays Queued, it is NOT placed elsewhere")}
+    else {t.assignee="DH-002";t.state="IN_PROGRESS";log(id+" assigned to DH-002 -> IN_PROGRESS (admission re-checked at assignment)")}}
+  if(action==="checkin"){t.checkin=true;log(id+" check-in by DH-002 (progress only; never advances to Done)")}
+  if(action==="submit"){if(!t.checkin){log(id+" REJECTED: submit requires a check-in first")}else{t.state="IN_REVIEW";log(id+" submitted -> IN_REVIEW")}}
+  if(action==="approveSelf"){log(id+" REJECTED: self-review forbidden. The assignee cannot approve their own task; DH-006 (Human Reviewer) must approve.")}
+  if(action==="approve"){t.state="DONE";log(id+" approved by DH-006 (member, reviewer role, not the assignee) -> DONE")}
+  if(action==="reassign"){const note=prompt("Handoff note (required, non-empty):","Context, state, next step."); 
+    if(!note||!note.trim()){log(id+" REJECTED: reassignment requires a non-empty handoff note")}
+    else{const from=t.assignee||"UNASSIGNED";t.chain.push({seq:t.chain.length+1,from,to:"DH-003",note});
+      t.assignee="DH-003";if(t.state==="QUEUED")t.state="IN_PROGRESS";
+      log(id+" reassigned "+from+" -> DH-003, handoff entry #"+t.chain.length+" recorded with note hash")}}
+  render();
+}
+function render(){
+  for(const s of ["QUEUED","IN_PROGRESS","IN_REVIEW","DONE","DENIED"]) document.getElementById("c"+s).innerHTML="";
+  for(const t of tasks){
+    const d=document.createElement("div");d.className="task";
+    let h="<b>"+t.id+"</b>"+t.title+"<br>"+t.res+" · "+t.dem+" RU"+(t.assignee?"<br>Held by "+t.assignee:"")+(t.reason?"<br>Reason: "+t.reason:"")+(t.chain.length?"<br>Handoffs: "+t.chain.length:"");
+    if(t.state==="QUEUED")h+='<br><button onclick="act(\''+t.id+'\',\'assign\')">Assign</button><button onclick="act(\''+t.id+'\',\'reassign\')">Reassign</button>';
+    if(t.state==="IN_PROGRESS")h+='<br><button onclick="act(\''+t.id+'\',\'checkin\')">Check in</button><button onclick="act(\''+t.id+'\',\'submit\')">Submit</button><button onclick="act(\''+t.id+'\',\'reassign\')">Reassign</button>';
+    if(t.state==="IN_REVIEW")h+='<br><button onclick="act(\''+t.id+'\',\'approve\')">Approve (DH-006)</button><button onclick="act(\''+t.id+'\',\'approveSelf\')">Try self-approve</button>';
+    d.innerHTML=h;document.getElementById("c"+t.state).appendChild(d);
+  }
+}
+log("ThoxWork Demo v1.0.0 ready. MG-1 pooled approved capacity: 120 RU. Admission: Algorithm 1 of the paper.");
+createTask();
+</script>
+<p style="font-size:12px;color:#6B7280;margin-top:18px">Your AI. Your Data. Your Rules.™ · THOX.ai Research · Demo companion to THOX_ThoxWork_Research_Paper_v1.0.0</p>
+</main></body></html>

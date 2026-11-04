@@ -1,0 +1,627 @@
+{
+ "schema_version": "thoxwork-summary/1.1.0",
+ "paper": {
+  "id": "thoxwork",
+  "edition": "v1.1.0",
+  "title": "ThoxWork for the Enterprise: Governed Digital Employees, MeshGroups, Rolodex and Evidence-First Teamwork",
+  "authors": [
+   "Craig Ross",
+   "Tommy Xaypanya"
+  ],
+  "license": "CC BY 4.0",
+  "doi_version": "10.5281/zenodo.23965052",
+  "doi_concept": "10.5281/zenodo.23963935",
+  "supersedes": "v1.0.1 (version DOI 10.5281/zenodo.23963936)"
+ },
+ "evidence_notice": "Every number in the v1.1.0 paper is generated from this file. Classes: MEASURED = produced by running real code (product suites, lab experiments on stated hosts, or the live core service API); SIMULATED = produced by the deterministic seeded oracle of the paper of record, labelled simulated wherever used.",
+ "product_tests": {
+  "evidence_class": "MEASURED",
+  "host": {
+   "platform": "Linux-6.18.44-fc-v233-x86_64-with-glibc2.39",
+   "cpus": 2,
+   "mem_total_gb": 7.84,
+   "loadavg_at_start": [
+    2.43,
+    8.08,
+    6.91
+   ],
+   "python": "3.13.18",
+   "node": "v22.23.4",
+   "bun": "1.4.4",
+   "bun_alt": "1.3.11",
+   "pnpm_system": "10.28.0",
+   "cargo": "cargo 1.97.0 (c980f4866 2026-06-30)",
+   "rustc": "rustc 1.97.0 (2d8144b78 2026-07-07)",
+   "chrome": "Google Chrome for Testing 153.0.8010.12"
+  },
+  "summary": {
+   "suites_total": 44,
+   "suites_run": 36,
+   "suites_log": 1,
+   "suites_not_run": 7,
+   "tests_passed": 27856,
+   "tests_failed": 75,
+   "tests_skipped": 194,
+   "tests_errors": 52,
+   "groups_passed": 17,
+   "groups_failed": 0,
+   "checks_passed": 11,
+   "checks_failed": 0,
+   "by_repo": {
+    "THOX Evidence Lab (paper workspace)": {
+     "suites": 1,
+     "run": 1,
+     "log": 0,
+     "not_run": 0,
+     "passed": 75,
+     "failed": 0,
+     "skipped": 0,
+     "errors": 0,
+     "checks_passed": 0,
+     "checks_failed": 0,
+     "commits": []
+    },
+    "MeshGroup reference admission kit": {
+     "suites": 1,
+     "run": 1,
+     "log": 0,
+     "not_run": 0,
+     "passed": 8,
+     "failed": 0,
+     "skipped": 0,
+     "errors": 0,
+     "checks_passed": 0,
+     "checks_failed": 0,
+     "commits": [
+      "657c7c4"
+     ]
+    },
+    "ThoxWork shell and servers": {
+     "suites": 20,
+     "run": 18,
+     "log": 0,
+     "not_run": 2,
+     "passed": 975,
+     "failed": 2,
+     "skipped": 0,
+     "errors": 0,
+     "checks_passed": 6,
+     "checks_failed": 0,
+     "commits": [
+      "ab29b61"
+     ]
+    },
+    "ThoxEmployee runtime": {
+     "suites": 6,
+     "run": 4,
+     "log": 0,
+     "not_run": 2,
+     "passed": 752,
+     "failed": 0,
+     "skipped": 6,
+     "errors": 0,
+     "checks_passed": 0,
+     "checks_failed": 0,
+     "commits": [
+      "efe63da"
+     ]
+    },
+    "Digital Employee contract service": {
+     "suites": 3,
+     "run": 2,
+     "log": 0,
+     "not_run": 1,
+     "passed": 510,
+     "failed": 0,
+     "skipped": 28,
+     "errors": 0,
+     "checks_passed": 1,
+     "checks_failed": 0,
+     "commits": [
+      "8997830"
+     ]
+    },
+    "Digital Humans gateway (Rust)": {
+     "suites": 3,
+     "run": 3,
+     "log": 0,
+     "not_run": 0,
+     "passed": 337,
+     "failed": 0,
+     "skipped": 0,
+     "errors": 0,
+     "checks_passed": 2,
+     "checks_failed": 0,
+     "commits": [
+      "73088ef"
+     ]
+    },
+    "Digital Humans agent runtime (Python)": {
+     "suites": 1,
+     "run": 0,
+     "log": 1,
+     "not_run": 0,
+     "passed": 24109,
+     "failed": 72,
+     "skipped": 160,
+     "errors": 52,
+     "checks_passed": 0,
+     "checks_failed": 0,
+     "commits": [
+      "c7b4c33"
+     ]
+    },
+    "Rolodex directory": {
+     "suites": 4,
+     "run": 3,
+     "log": 0,
+     "not_run": 1,
+     "passed": 481,
+     "failed": 1,
+     "skipped": 0,
+     "errors": 0,
+     "checks_passed": 2,
+     "checks_failed": 0,
+     "commits": [
+      "eeef7de"
+     ]
+    },
+    "Thoxy dispatch": {
+     "suites": 2,
+     "run": 2,
+     "log": 0,
+     "not_run": 0,
+     "passed": 257,
+     "failed": 0,
+     "skipped": 0,
+     "errors": 0,
+     "checks_passed": 0,
+     "checks_failed": 0,
+     "commits": [
+      "2ee63c6"
+     ]
+    },
+    "thox.ai website": {
+     "suites": 2,
+     "run": 1,
+     "log": 0,
+     "not_run": 1,
+     "passed": 135,
+     "failed": 0,
+     "skipped": 0,
+     "errors": 0,
+     "checks_passed": 0,
+     "checks_failed": 0,
+     "commits": [
+      "8999c14"
+     ]
+    },
+    "RolodexGo": {
+     "suites": 1,
+     "run": 1,
+     "log": 0,
+     "not_run": 0,
+     "passed": 292,
+     "failed": 0,
+     "skipped": 0,
+     "errors": 0,
+     "checks_passed": 0,
+     "checks_failed": 0,
+     "commits": [
+      "cdee70c"
+     ]
+    }
+   },
+   "excluded_from_totals": [
+    {
+     "id": "tw-meshgroups-server",
+     "reason": "subset or repeat of a counted suite"
+    },
+    {
+     "id": "tw-meshgroups-view",
+     "reason": "subset or repeat of a counted suite"
+    },
+    {
+     "id": "tw-de-server",
+     "reason": "subset or repeat of a counted suite"
+    },
+    {
+     "id": "tw-pack-server",
+     "reason": "subset or repeat of a counted suite"
+    },
+    {
+     "id": "tw-server-b-repeat",
+     "reason": "subset or repeat of a counted suite"
+    }
+   ],
+   "product_totals": {
+    "tests_passed": 27856,
+    "tests_failed": 75,
+    "tests_skipped": 194,
+    "tests_errors": 52
+   },
+   "suites_with_failures": [
+    {
+     "id": "tw-server-b",
+     "failed": 2,
+     "errors": 0
+    },
+    {
+     "id": "tw-server-b-repeat",
+     "failed": 1,
+     "errors": 0
+    },
+    {
+     "id": "dh-python-runtime-full",
+     "failed": 72,
+     "errors": 52
+    },
+    {
+     "id": "rolodex-test",
+     "failed": 1,
+     "errors": 0
+    }
+   ],
+   "suites_disagreeing_with_team_reports": [
+    "tw-server-b-repeat",
+    "emp-workspace"
+   ],
+   "parse_failures": [],
+   "totals_note": "tests_* sum suites with unit 'tests' and counts_in_totals true, in run and log mode; browser e2e assertion groups are counted separately as groups_*; checks have no test counts. product_totals exclude the Evidence Lab's own unit tests.",
+   "repos": 10,
+   "repo_names": [
+    "RolodexGo",
+    "Digital Humans agent runtime (Python)",
+    "Rolodex directory",
+    "Digital Humans gateway (Rust)",
+    "Digital Employee contract service",
+    "MeshGroup reference admission kit",
+    "thox.ai website",
+    "ThoxEmployee runtime",
+    "ThoxWork shell and servers",
+    "Thoxy dispatch"
+   ],
+   "suites_with_counts": 19,
+   "rerun_suites": 18,
+   "rerun_passed": 3747,
+   "rerun_failed": 3,
+   "rerun_skipped": 34,
+   "log_suites": 1,
+   "log_passed": 24109,
+   "log_failed": 72,
+   "log_errors": 52,
+   "log_skipped": 160,
+   "not_run": [
+    "emp-kit-swift",
+    "emp-kernel-docker",
+    "dh-backend-postgres",
+    "tw-hosted-enterprise",
+    "tw-provider-e2e",
+    "rolodex-browser",
+    "site-hosted-demo-http"
+   ],
+   "rerun_repos": 9,
+   "checks_run": 10,
+   "lab_tests": 75
+  },
+  "components": [
+   {
+    "component": "MeshGroup reference admission kit",
+    "passed": 8,
+    "failed": 0,
+    "skipped": 0
+   },
+   {
+    "component": "ThoxWork shell and servers",
+    "passed": 975,
+    "failed": 2,
+    "skipped": 0
+   },
+   {
+    "component": "ThoxEmployee runtime",
+    "passed": 752,
+    "failed": 0,
+    "skipped": 6
+   },
+   {
+    "component": "Digital Employee contract service",
+    "passed": 510,
+    "failed": 0,
+    "skipped": 28
+   },
+   {
+    "component": "Digital Humans gateway (Rust)",
+    "passed": 337,
+    "failed": 0,
+    "skipped": 0
+   },
+   {
+    "component": "Rolodex directory",
+    "passed": 481,
+    "failed": 1,
+    "skipped": 0
+   },
+   {
+    "component": "Thoxy dispatch",
+    "passed": 257,
+    "failed": 0,
+    "skipped": 0
+   },
+   {
+    "component": "thox.ai website (claim-related subset)",
+    "passed": 135,
+    "failed": 0,
+    "skipped": 0
+   },
+   {
+    "component": "RolodexGo",
+    "passed": 292,
+    "failed": 0,
+    "skipped": 0
+   },
+   {
+    "component": "Digital Humans agent runtime (Python), parsed from review log, not rerun",
+    "passed": 24109,
+    "failed": 72,
+    "skipped": 160,
+    "errors": 52,
+    "counted_in_headline": false
+   }
+  ]
+ },
+ "planner_agreement": {
+  "evidence_class": "MEASURED",
+  "total": 12000,
+  "agree_all": 12000,
+  "candidates_compared": 55832,
+  "candidates_agree": 55832,
+  "directories": 250,
+  "outcome_mix": {
+   "eligible_for_planning": 3038,
+   "denied": 3835,
+   "no_eligible_node": 5127
+  },
+  "early_denials_seen": 9,
+  "candidate_reasons_seen": 11,
+  "invalid_inputs": 4000,
+  "invalid_agree": 4000,
+  "invalid_kinds": 18,
+  "timing_us_median": {
+   "product_preview_n100": 783.2264,
+   "product_parse_n100": 608.3077,
+   "lab_plan_n100": 83.2136,
+   "product_validate_g100": 42313.26,
+   "lab_validate_g100": 6690.447
+  }
+ },
+ "reference_kit_agreement": {
+  "evidence_class": "MEASURED",
+  "total": 20000,
+  "agree": 20000,
+  "by_reference_outcome": {
+   "NONE": 4377,
+   "PLACE": 4570,
+   "DENY:classification exceeds group policy": 9097,
+   "DENY:unknown group": 932,
+   "DENY:tenant mismatch": 1024
+  },
+  "scenarios": 200,
+  "nodes_per_scenario": 50
+ },
+ "admission_divergence": {
+  "evidence_class": "MEASURED (illustrative seeded demand model)",
+  "demand_model": "uniform on [1, 1.5 x largest free GB] per scenario, rounded to 0.5 GB",
+  "seed": 20261109,
+  "counts": {
+   "total": 20000,
+   "both_admit_fits_one_node": 1998,
+   "both_admit_pooled_needs_spanning": 1655,
+   "reference_places_node_too_small": 585,
+   "reference_places_pooled_denies_unplaceable": 332,
+   "reference_denies_pooled_admits": 0,
+   "reference_none_pooled_admits": 2678,
+   "both_refuse": 12752,
+   "other": 0
+  },
+  "reference_placements": 4570,
+  "reference_placements_on_too_small_node": 2572,
+  "share_of_reference_placements_on_too_small_node": 0.562800875273523,
+  "pooled_admits_beyond_reference": 4333
+ },
+ "evidence_chain": {
+  "evidence_class": "MEASURED",
+  "kat": {
+   "ok": true,
+   "passed": 7,
+   "total": 7
+  },
+  "trials_per_cell": 500,
+  "chain_length": 1000,
+  "edit_position_accuracy": 1.0,
+  "cells_total": 24,
+  "cells_full_detection": 21,
+  "cells_zero_detection": 3,
+  "timing_us_per_record_median_n1000": {
+   "append_keyed": 27.58344449987635,
+   "verify_keyed": 31.626839000266045,
+   "append_unkeyed": 14.195023499894887
+  },
+  "verify_10000_keyed_ms_median": 307.1,
+  "bundle_bytes_per_record": 379.671
+ },
+ "decision_cost": {
+  "evidence_class": "MEASURED",
+  "median_us_per_decision_by_inventory": {
+   "lab_module_javascript": {
+    "10": 0.107,
+    "100": 1.053,
+    "1000": 13.335
+   },
+   "reference_kit_python": {
+    "10": 1.566,
+    "100": 6.302,
+    "1000": 50.054
+   }
+  },
+  "protocol": "medians of 30 repetitions of 1,000-request batches"
+ },
+ "oracle_simulated": {
+  "evidence_class": "SIMULATED",
+  "source": "Paper of record v1.0.0/v1.0.1 deterministic seeded oracle (exp/thoxwork_experiments.py), master seed 20261104, 20 replicates E1-E4, 10 per cell E5",
+  "experiments": {
+   "E1": {
+    "title": "Policy enforcement: unapproved resources never run",
+    "passed": true,
+    "totals": {
+     "leaked_attempts": 0,
+     "legit_attempts": 8000,
+     "legit_blocked": 0,
+     "violating_attempts": 12000
+    }
+   },
+   "E2": {
+    "title": "Handoff integrity: reassignment chains stay complete",
+    "passed": true,
+    "totals": {
+     "complete_chains": 5000,
+     "negative_probes": 4000,
+     "probe_leaks": 0,
+     "reassigned_tasks": 5000,
+     "total_entries": 15000
+    }
+   },
+   "E3": {
+    "title": "Admission control: oversized work is denied, never spilled",
+    "passed": true,
+    "totals": {
+     "correctly_denied": 4000,
+     "cross_group_spills": 0,
+     "oversized_tasks": 4000,
+     "placed": 6000,
+     "right_sized_tasks": 6000,
+     "silently_placed": 0,
+     "stranded": 0
+    }
+   },
+   "E4": {
+    "title": "Review gate: no DONE without human review",
+    "passed": true,
+    "totals": {
+     "bypass_attempts": 6000,
+     "bypass_successes": 0,
+     "done_tasks_total": 4000,
+     "done_without_review_count": 0,
+     "legitimate_completions": 4000,
+     "legitimate_tasks": 4000
+    }
+   },
+   "E5": {
+    "title": "Scale and throughput under a stated simulated-latency model",
+    "passed": true,
+    "totals": null,
+    "scaling_efficiency": {
+     "16": 1.319492,
+     "2": 1.0,
+     "4": 1.499532,
+     "8": 1.741928
+    },
+    "group_scaling_ratio": {
+     "1": 1.0,
+     "2": 1.986215,
+     "4": 3.697944,
+     "8": 6.461555
+    },
+    "cells": 16,
+    "all_cells_completion_rate": 1.0
+   }
+  },
+  "all_hypotheses_passed": true,
+  "honesty_note": "E5 efficiency above 1.0 is an artifact of the simulated-latency model; the falsifiable content of E5 is non-collapse (completion 1.0 in all 16 cells), not speedup."
+ },
+ "live_core_measured": {
+  "evidence_class": "MEASURED",
+  "source": "M1 acceptance replay against the live thoxwork-core service HTTP API (Rust core, PostgreSQL system of record), oracle generators ported 1:1, same seeds, 20 replicates per experiment, run tag f182809",
+  "experiments": {
+   "E1": {
+    "title": "Policy enforcement: unapproved resources never run",
+    "passed": true,
+    "totals": {
+     "leaked_attempts": 0,
+     "legit_attempts": 8000,
+     "legit_blocked": 0,
+     "violating_attempts": 12000
+    }
+   },
+   "E2": {
+    "title": "Handoff integrity: reassignment chains stay complete",
+    "passed": true,
+    "totals": {
+     "complete_chains": 5000,
+     "negative_probes": 4000,
+     "probe_leaks": 0,
+     "reassigned_tasks": 5000,
+     "total_entries": 15000
+    }
+   },
+   "E3": {
+    "title": "Admission control: oversized work is denied, never spilled",
+    "passed": true,
+    "totals": {
+     "correctly_denied": 4000,
+     "cross_group_spills": 0,
+     "oversized_tasks": 4000,
+     "placed": 6000,
+     "right_sized_tasks": 6000,
+     "silently_placed": 0,
+     "stranded": 0
+    }
+   },
+   "E4": {
+    "title": "Review gate: no DONE without human review",
+    "passed": true,
+    "totals": {
+     "bypass_attempts": 6000,
+     "bypass_successes": 0,
+     "done_tasks_total": 8000,
+     "done_without_review_count": 0,
+     "legitimate_completions": 4000,
+     "legitimate_tasks": 4000,
+     "rejection_integrity_checks": 8000,
+     "rejection_integrity_ok": 8000
+    }
+   }
+  },
+  "parallel_assign": {
+   "after_3s_in_progress_count": 10,
+   "after_3s_sum_demand_ru": 120,
+   "demand_each_ru": 12,
+   "in_progress_count": 10,
+   "outcome_counts": {
+    "ACCEPTED": 10,
+    "DENIED": 0,
+    "OTHER": 0,
+    "REJECTED": 0,
+    "WAIT": 40
+   },
+   "over_admission": 0,
+   "passed": true,
+   "pooled_ru": 120,
+   "sum_in_progress_demand_ru": 120,
+   "tasks": 50
+  },
+  "judges": {
+   "workspaces_checked": 102,
+   "all_agree": true,
+   "s7_api_all_clean": true,
+   "s7_cli_all_clean": true,
+   "harness_all_clean": true
+  },
+  "fail_closed_drills": {
+   "drill1_eventlog_insert_revoked": "PASS (assign returned 503 OPERATIONAL, task unchanged)",
+   "drill2_suspend_revoke": "PASS after fix (see defect_and_fix)",
+   "drill3_db_unreachable": "PASS (assign returned 503 OPERATIONAL, nothing admitted)"
+  },
+  "defect_and_fix": "Drill 2 first failed as specified: suspend/revoke returned 404 for principals present in more than one workspace (unscoped id lookup; no mutation occurred). Fixed by workspace-scoped routes plus a token_epoch claim checked in-transaction; drill 2 re-run passed in full and a post-fix verifier run over 121 workspaces was clean.",
+  "e5_note": "E5 was not run against the live core in M1; the scale grid remains the SIMULATED oracle result above and is not re-labelled."
+ }
+}

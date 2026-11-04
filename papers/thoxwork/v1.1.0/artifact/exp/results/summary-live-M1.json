@@ -1,0 +1,3964 @@
+{
+ "all_hypotheses_passed": true,
+ "config": {
+  "replicates_e1_e4": 20
+ },
+ "durations_seconds": {
+  "DRILLS": 4.09,
+  "E1": 2206.59,
+  "E2": 339.13,
+  "E3": 1212.11,
+  "E4": 2452.5,
+  "PARALLEL": 5.28
+ },
+ "evidence_notice": "All results in this file are MEASURED against the live thoxwork-core HTTP API (M1 acceptance replay of the SIMULATED oracle protocol). E5 is not part of M1 acceptance and is not run here.",
+ "experiments": {
+  "E1": {
+   "evidence_class": "MEASURED_LIVE_API",
+   "failure_mode_tested": "Policy checked only at creation; cross-group approval confusion; post-admission resource escalation (TOCTOU).",
+   "hypothesis": "leak_rate = 0 and false_block_rate <= 0.01",
+   "metrics": {
+    "audit_coverage": {
+     "max": 1.0,
+     "mean": 1.0,
+     "min": 1.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "block_rate": {
+     "max": 1.0,
+     "mean": 1.0,
+     "min": 1.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "false_block_rate": {
+     "max": 0.0,
+     "mean": 0.0,
+     "min": 0.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "leak_rate": {
+     "max": 0.0,
+     "mean": 0.0,
+     "min": 0.0,
+     "replicates": 20,
+     "sd": 0.0
+    }
+   },
+   "passed": true,
+   "seed_formula": "20261104 + 10000*1 + replicate",
+   "title": "Policy enforcement: unapproved resources never run",
+   "totals": {
+    "leaked_attempts": 0,
+    "legit_attempts": 8000,
+    "legit_blocked": 0,
+    "violating_attempts": 12000
+   }
+  },
+  "E2": {
+   "evidence_class": "MEASURED_LIVE_API",
+   "failure_mode_tested": "Silent reassignment: dropped notes, renumbered or truncated chains, empty-note acceptance.",
+   "hypothesis": "chain_completeness = 1.0 and note_coverage = 1.0",
+   "metrics": {
+    "chain_completeness": {
+     "max": 1.0,
+     "mean": 1.0,
+     "min": 1.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "max_chain_depth": {
+     "max": 5.0,
+     "mean": 5.0,
+     "min": 5.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "note_coverage": {
+     "max": 1.0,
+     "mean": 1.0,
+     "min": 1.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "probe_leak_rate": {
+     "max": 0.0,
+     "mean": 0.0,
+     "min": 0.0,
+     "replicates": 20,
+     "sd": 0.0
+    }
+   },
+   "passed": true,
+   "seed_formula": "20261104 + 10000*2 + replicate",
+   "title": "Handoff integrity: reassignment chains stay complete",
+   "totals": {
+    "complete_chains": 5000,
+    "negative_probes": 4000,
+    "probe_leaks": 0,
+    "reassigned_tasks": 5000,
+    "total_entries": 15000
+   }
+  },
+  "E3": {
+   "boundary_assertion_all_replicates": true,
+   "by_demand_fraction": {
+    "0.10": {
+     "admitted": 1000,
+     "denied": 0,
+     "tasks": 1000,
+     "waited_then_admitted": 0
+    },
+    "0.25": {
+     "admitted": 1000,
+     "denied": 0,
+     "tasks": 1000,
+     "waited_then_admitted": 0
+    },
+    "0.50": {
+     "admitted": 1000,
+     "denied": 0,
+     "tasks": 1000,
+     "waited_then_admitted": 0
+    },
+    "0.75": {
+     "admitted": 1000,
+     "denied": 0,
+     "tasks": 1000,
+     "waited_then_admitted": 0
+    },
+    "0.90": {
+     "admitted": 1000,
+     "denied": 0,
+     "tasks": 1000,
+     "waited_then_admitted": 0
+    },
+    "1.00": {
+     "admitted": 1000,
+     "denied": 0,
+     "tasks": 1000,
+     "waited_then_admitted": 0
+    },
+    "1.01": {
+     "admitted": 0,
+     "denied": 1000,
+     "tasks": 1000,
+     "waited_then_admitted": 0
+    },
+    "1.25": {
+     "admitted": 0,
+     "denied": 1000,
+     "tasks": 1000,
+     "waited_then_admitted": 0
+    },
+    "1.50": {
+     "admitted": 0,
+     "denied": 1000,
+     "tasks": 1000,
+     "waited_then_admitted": 0
+    },
+    "2.00": {
+     "admitted": 0,
+     "denied": 1000,
+     "tasks": 1000,
+     "waited_then_admitted": 0
+    }
+   },
+   "deny_latency_note": "Live API has no ticks; UNPLACEABLE is returned synchronously in the create response (0 additional round trips).",
+   "evidence_class": "MEASURED_LIVE_API",
+   "failure_mode_tested": "Admission layer overflowing to a neighbouring pool, splitting demand, or queueing oversized work indefinitely instead of denying it.",
+   "hypothesis": "silent_overflow_rate = 0, unplaceable_recall = 1.0, right_sized_placement_rate >= 0.99",
+   "metrics": {
+    "deny_latency_ticks_max": {
+     "max": 0.0,
+     "mean": 0.0,
+     "min": 0.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "deny_latency_ticks_mean": {
+     "max": 0.0,
+     "mean": 0.0,
+     "min": 0.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "right_sized_placement_rate": {
+     "max": 1.0,
+     "mean": 1.0,
+     "min": 1.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "silent_overflow_rate": {
+     "max": 0.0,
+     "mean": 0.0,
+     "min": 0.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "stranded_rate": {
+     "max": 0.0,
+     "mean": 0.0,
+     "min": 0.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "unplaceable_recall": {
+     "max": 1.0,
+     "mean": 1.0,
+     "min": 1.0,
+     "replicates": 20,
+     "sd": 0.0
+    }
+   },
+   "passed": true,
+   "seed_formula": "20261104 + 10000*3 + replicate",
+   "title": "Admission control: oversized work is denied, never spilled",
+   "totals": {
+    "correctly_denied": 4000,
+    "cross_group_spills": 0,
+    "oversized_tasks": 4000,
+    "placed": 6000,
+    "right_sized_tasks": 6000,
+    "silently_placed": 0,
+    "stranded": 0
+   }
+  },
+  "E4": {
+   "bypass_by_class": {
+    "B1": {
+     "attempts": 1000,
+     "success_rate": 0.0,
+     "successes": 0
+    },
+    "B2": {
+     "attempts": 1000,
+     "success_rate": 0.0,
+     "successes": 0
+    },
+    "B3": {
+     "attempts": 1000,
+     "success_rate": 0.0,
+     "successes": 0
+    },
+    "B4": {
+     "attempts": 1000,
+     "success_rate": 0.0,
+     "successes": 0
+    },
+    "B5": {
+     "attempts": 1000,
+     "success_rate": 0.0,
+     "successes": 0
+    },
+    "B6": {
+     "attempts": 1000,
+     "success_rate": 0.0,
+     "successes": 0
+    }
+   },
+   "control_no_review_gate": {
+    "completions_without_review": 4000,
+    "legitimate_tasks": 4000
+   },
+   "evidence_class": "MEASURED_LIVE_API",
+   "failure_mode_tested": "Gate erosion: direct finish, skipped review, self-review, wrong-role review, non-member review, stale approval reuse.",
+   "hypothesis": "bypass_success_rate = 0, done_without_review_count = 0, legitimate_completion_rate >= 0.99",
+   "metrics": {
+    "bypass_success_rate": {
+     "max": 0.0,
+     "mean": 0.0,
+     "min": 0.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "done_without_review_rate": {
+     "max": 0.0,
+     "mean": 0.0,
+     "min": 0.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "legitimate_completion_rate": {
+     "max": 1.0,
+     "mean": 1.0,
+     "min": 1.0,
+     "replicates": 20,
+     "sd": 0.0
+    },
+    "rejection_integrity": {
+     "max": 1.0,
+     "mean": 1.0,
+     "min": 1.0,
+     "replicates": 20,
+     "sd": 0.0
+    }
+   },
+   "passed": true,
+   "seed_formula": "20261104 + 10000*4 + replicate",
+   "title": "Review gate: no DONE without human review",
+   "totals": {
+    "bypass_attempts": 6000,
+    "bypass_successes": 0,
+    "done_tasks_total": 8000,
+    "done_without_review_count": 0,
+    "legitimate_completions": 4000,
+    "legitimate_tasks": 4000,
+    "rejection_integrity_checks": 8000,
+    "rejection_integrity_ok": 8000
+   }
+  }
+ },
+ "fail_closed_drills": {
+  "drill1_eventlog_insert_revoked": {
+   "assign_code": "OPERATIONAL",
+   "assign_status": 503,
+   "passed": true,
+   "revoke_rc": 0,
+   "task_state_via_verify_role": "QUEUED|NULL"
+  },
+  "drill2_suspend_revoke": {
+   "passed": false,
+   "property_leg_passed": true,
+   "revoke_DH-003_status": 404,
+   "revoke_DH-9R182809": {
+    "event_logged": true,
+    "guard_failed": "CREDENTIAL",
+    "outcome": "REJECTED",
+    "state_unchanged": true,
+    "status": 403
+   },
+   "spec_literal_leg_passed": false,
+   "suspend_DH-002_status": 404,
+   "suspend_DH-9S182809": {
+    "event_logged": true,
+    "guard_failed": "CREDENTIAL",
+    "outcome": "REJECTED",
+    "state_unchanged": true,
+    "status": 403
+   }
+  },
+  "drill3_db_unreachable": {
+   "assign_code": "OPERATIONAL",
+   "assign_status": 503,
+   "note": "Core connects once at startup (expect() on connect), so an unreachable DSN at boot kills the process before it can serve; this drill severs the database after boot, which is the reachable form of the same failure: assign must return OPERATIONAL and admit nothing.",
+   "passed": true,
+   "task_state_via_verify_role_after_restore": "QUEUED|NULL"
+  },
+  "passed": false
+ },
+ "failures_and_deviations": [
+  "drill2 as specified: POST /principals/DH-002/suspend -> 404, POST /principals/DH-003/revoke -> 404 (expected 200). The core resolves the workspace with query_opt on principals.id alone; the id exists in many workspaces, so the lookup errors and returns 404 'principal not found'. Suspend/revoke is therefore unusable for roster ids shared across workspaces (the normal case). No mutation occurred (verified in probing)."
+ ],
+ "generated_by": {
+  "master_seed": 20261104,
+  "run_tag": "f182809",
+  "script": "replay_harness.py",
+  "script_version": "1.0.0",
+  "target": "live thoxwork-core service HTTP API (acceptance run f182809)"
+ },
+ "judges": {
+  "all_agree": true,
+  "disagreements": [],
+  "harness_all_clean": true,
+  "per_workspace": [
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r0"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r1"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r2"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r3"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r4"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r5"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r6"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r7"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r8"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r9"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r10"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r11"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r12"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r13"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r14"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r15"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r16"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r17"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r18"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e1-r19"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r0"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r1"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r2"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r3"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r4"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r5"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r6"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r7"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r8"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r9"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r10"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r11"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r12"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r13"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r14"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r15"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r16"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r17"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r18"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e2-r19"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r0"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r1"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r2"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r3"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r4"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r5"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r6"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r7"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r8"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r9"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r10"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r11"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r12"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r13"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r14"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r15"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r16"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r17"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r18"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e3-r19"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r0"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r0"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r1"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r1"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r2"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r2"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r3"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r3"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r4"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r4"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r5"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r5"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r6"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r6"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r7"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r7"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r8"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r8"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r9"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r9"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r10"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r10"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r11"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r11"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r12"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r12"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r13"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r13"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r14"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r14"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r15"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r15"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r16"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r16"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r17"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r17"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r18"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r18"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4-r19"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 200,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-e4c-r19"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-parallel"
+   },
+   {
+    "agree": true,
+    "harness": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": null
+    },
+    "s7_api": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli": {
+     "chain_ok": true,
+     "control_done_without_review": 0,
+     "handoff_chain_ok": true,
+     "i": true,
+     "ii": true,
+     "iii": true,
+     "iv": true,
+     "violations": 0
+    },
+    "s7_cli_exit": 0,
+    "workspace": "f182809-drill-cred"
+   }
+  ],
+  "s7_api_all_clean": true,
+  "s7_cli_all_clean": true,
+  "workspaces_checked": 102
+ },
+ "lab": "thoxwork-core-live-api",
+ "paper_id": "thoxwork",
+ "parallel_test": {
+  "after_3s_in_progress_count": 10,
+  "after_3s_sum_demand_ru": 120,
+  "demand_each_ru": 12,
+  "in_progress_count": 10,
+  "outcome_counts": {
+   "ACCEPTED": 10,
+   "DENIED": 0,
+   "OTHER": 0,
+   "REJECTED": 0,
+   "WAIT": 40
+  },
+  "over_admission": 0,
+  "passed": true,
+  "pooled_ru": 120,
+  "sum_in_progress_demand_ru": 120,
+  "tasks": 50
+ },
+ "schema_version": "thoxwork-summary-live/1.0"
+}

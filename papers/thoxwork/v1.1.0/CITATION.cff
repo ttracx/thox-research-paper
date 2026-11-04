@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: report
+title: "ThoxWork for the Enterprise: Governed Digital Employees, MeshGroups, Rolodex and Evidence-First Teamwork"
+authors:
+  - family-names: Ross
+    given-names: Craig
+    orcid: "https://orcid.org/0009-0005-9872-3673"
+    affiliation: "THOX.ai"
+  - family-names: Xaypanya
+    given-names: Tommy
+    orcid: "https://orcid.org/0009-0000-4425-9565"
+    affiliation: "THOX.ai"
+institution:
+  - name: "THOX.ai Research"
+    address: "930 South Bell Boulevard, Suite 305, Cedar Park, TX 78613, USA"
+date-released: "2026-11-04"
+version: "1.1.0"
+doi: "10.5281/zenodo.23965052"
+url: "https://thox.ai/research/papers/thoxwork"
+license: "CC-BY-4.0"
+abstract: "An evidence-bound comprehensive edition of the ThoxWork paper of record: governed Digital Employees, MeshGroups with a pooled-capacity admission rule, the Rolodex state machine with a person-only approval gate, and hash-chained evidence. It merges product-measured evidence (3,747 product tests rerun, planner and reference-kit agreement studies, an admission-rule divergence study, Evidence Lab tamper-detection and cost measurements) with a measured replay of the protocol experiments against the live ThoxWork core service (Section 7.7)."
+keywords:
+  - multi-agent systems
+  - admission control
+  - governance
+  - tamper-evident audit
+  - digital employees
+  - THOX.ai
