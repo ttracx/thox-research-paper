@@ -1,0 +1,296 @@
+{
+ "experiment": "E9 audit-chain detection matrix (v1.1.0 re-implementation)",
+ "scheme": "Eq. 2: h_i = SHA256(canon(i,t,kappa,a,pi,h_{i-1})); tau_i = HMAC-SHA256_k(h_i); anchor = (n, h_{n-1})",
+ "canon": "JSON sorted keys, separators (',',':'), UTF-8",
+ "records_per_chain": 1000,
+ "trials_per_attack": 500,
+ "seed_family": "20261104 + 10000*9 + trial",
+ "matrix_detected_of_trials": {
+  "modify": {
+   "plain": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500
+    }
+   },
+   "plain+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500
+    }
+   },
+   "keyed": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500
+    }
+   },
+   "keyed+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500
+    }
+   }
+  },
+  "delete": {
+   "plain": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500,
+     "continuity": 500
+    }
+   },
+   "plain+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500,
+     "continuity": 500,
+     "anchor": 500
+    }
+   },
+   "keyed": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500,
+     "continuity": 500
+    }
+   },
+   "keyed+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500,
+     "continuity": 500,
+     "anchor": 500
+    }
+   }
+  },
+  "reorder": {
+   "plain": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500,
+     "continuity": 500
+    }
+   },
+   "plain+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500,
+     "continuity": 500
+    }
+   },
+   "keyed": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500,
+     "continuity": 500
+    }
+   },
+   "keyed+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500,
+     "continuity": 500
+    }
+   }
+  },
+  "renumber": {
+   "plain": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500,
+     "continuity": 500
+    }
+   },
+   "plain+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500,
+     "continuity": 500
+    }
+   },
+   "keyed": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500,
+     "continuity": 500
+    }
+   },
+   "keyed+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "link": 500,
+     "continuity": 500
+    }
+   }
+  },
+  "truncate": {
+   "plain": {
+    "detected": 0,
+    "trials": 500,
+    "per_check_detected": {}
+   },
+   "plain+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "anchor": 500
+    }
+   },
+   "keyed": {
+    "detected": 0,
+    "trials": 500,
+    "per_check_detected": {}
+   },
+   "keyed+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "anchor": 500
+    }
+   }
+  },
+  "append-nokey": {
+   "plain": {
+    "detected": 0,
+    "trials": 500,
+    "per_check_detected": {}
+   },
+   "plain+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "anchor": 500
+    }
+   },
+   "keyed": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "tag": 500
+    }
+   },
+   "keyed+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "tag": 500,
+     "anchor": 500
+    }
+   }
+  },
+  "append-withkey": {
+   "plain": {
+    "detected": 0,
+    "trials": 500,
+    "per_check_detected": {}
+   },
+   "plain+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "anchor": 500
+    }
+   },
+   "keyed": {
+    "detected": 0,
+    "trials": 500,
+    "per_check_detected": {}
+   },
+   "keyed+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "anchor": 500
+    }
+   }
+  },
+  "rebuild": {
+   "plain": {
+    "detected": 0,
+    "trials": 500,
+    "per_check_detected": {}
+   },
+   "plain+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "anchor": 500
+    }
+   },
+   "keyed": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "tag": 500
+    }
+   },
+   "keyed+anchor": {
+    "detected": 500,
+    "trials": 500,
+    "per_check_detected": {
+     "tag": 500,
+     "anchor": 500
+    }
+   }
+  }
+ },
+ "kat": {
+  "passed": 7,
+  "total": 7,
+  "detail": [
+   {
+    "test": "FIPS180-4 SHA-256 len=0",
+    "pass": true
+   },
+   {
+    "test": "FIPS180-4 SHA-256 len=3",
+    "pass": true
+   },
+   {
+    "test": "FIPS180-4 SHA-256 len=56",
+    "pass": true
+   },
+   {
+    "test": "FIPS180-4 SHA-256 len=1000000",
+    "pass": true
+   },
+   {
+    "test": "RFC4231 HMAC-SHA-256",
+    "pass": true
+   },
+   {
+    "test": "RFC4231 HMAC-SHA-256",
+    "pass": true
+   },
+   {
+    "test": "RFC4231 HMAC-SHA-256",
+    "pass": true
+   }
+  ]
+ },
+ "costs_host_measured": {
+  "append_keyed_us_per_record_median": 10.02,
+  "verify_keyed_1000_ms_median": 10.48,
+  "verify_keyed_us_per_record_median": 10.48,
+  "verify_keyed_10000_ms_median": 197.0,
+  "bundle_bytes_per_record_mean": 227.5
+ },
+ "supplement": "The 'rebuild' attack row was produced by e9_rebuild_supplement.py with the same builder, checks, seeds and trial count as the main E9 run."
+}

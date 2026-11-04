@@ -1,0 +1,447 @@
+{
+ "meta": {
+  "paper": "ThoxWork v1.1.0",
+  "schema": "thoxwork-summary-v110/1.0",
+  "note": "New evidence runs for edition v1.1.0 only. The E1-E5 oracle summary is a separate frozen file; its SHA-256 is asserted by this merge.",
+  "oracle_summary": "thoxwork-paper-20261104/exp/results/summary.json",
+  "oracle_summary_sha256": "f7c72f64b9b8c6f2e1663fbb014374858b2251f2aeaa7d989393a6cdb071dd79"
+ },
+ "E8": {
+  "experiment": "E8 admission-rule divergence under Algorithm 1 semantics (v1.1.0)",
+  "semantics": "Oracle admit() verdict order (v1.0.x exp/thoxwork_experiments.py) with Definition 1/5 node refinement: capacity(P, r) and free(P, r) summed over devices running r.",
+  "arms": {
+   "P": "Algorithm 1: pooled, membership-aware, WAIT live",
+   "S": "strict single-node capacity rule (no queue)",
+   "X": "companion port semantics: membership-blind free sum, no WAIT (deviation accounting only)"
+  },
+  "seed_family": "20261104 + 10000*8 + rep (phase 2 offset +5000)",
+  "world": {
+   "nodes_per_group": 12,
+   "node_caps_ru": [
+    60,
+    120,
+    240
+   ],
+   "models": [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4"
+   ],
+   "host_prob": 0.55,
+   "demand_model": "mixture: 50% U[5,60], 30% U[61,240], 12% U[241,480], 8% U[481,1200] RU; 12% of requests ask an unapproved resource"
+  },
+  "phase1_probe": {
+   "probes": 20000,
+   "P": {
+    "ADMITTED": 15982,
+    "WAIT": 1212,
+    "UNPLACEABLE": 523,
+    "DENIED": 2283
+   },
+   "P_admitted_spanning_required": 3882,
+   "P_admitted_single_node_fit": 12100,
+   "S": {
+    "ADMITTED": 12100,
+    "REFUSED": 7900
+   },
+   "X": {
+    "ADMITTED": 17138,
+    "REFUSED": 2862
+   },
+   "pooled_only_admissions": 3882,
+   "pooled_only_spanning": 3882,
+   "pooled_only_waitclass": 1212,
+   "S_admits_P_refuses": 0,
+   "X_phantom_admissions": 967,
+   "X_wait_collapse": 245,
+   "X_admits_P_unplaceable": 189,
+   "agree_all": 14962
+  },
+  "phase1_examples_pooled_only": [
+   {
+    "model": "M2",
+    "demand_ru": 142,
+    "pool_free_ru": 602,
+    "largest_single_free_ru": 136
+   },
+   {
+    "model": "M2",
+    "demand_ru": 186,
+    "pool_free_ru": 559,
+    "largest_single_free_ru": 131
+   },
+   {
+    "model": "M0",
+    "demand_ru": 269,
+    "pool_free_ru": 604,
+    "largest_single_free_ru": 223
+   },
+   {
+    "model": "M0",
+    "demand_ru": 153,
+    "pool_free_ru": 517,
+    "largest_single_free_ru": 149
+   },
+   {
+    "model": "M1",
+    "demand_ru": 238,
+    "pool_free_ru": 1233,
+    "largest_single_free_ru": 222
+   },
+   {
+    "model": "M1",
+    "demand_ru": 539,
+    "pool_free_ru": 1006,
+    "largest_single_free_ru": 197
+   },
+   {
+    "model": "M2",
+    "demand_ru": 138,
+    "pool_free_ru": 514,
+    "largest_single_free_ru": 104
+   },
+   {
+    "model": "M3",
+    "demand_ru": 223,
+    "pool_free_ru": 592,
+    "largest_single_free_ru": 155
+   },
+   {
+    "model": "M0",
+    "demand_ru": 391,
+    "pool_free_ru": 510,
+    "largest_single_free_ru": 152
+   },
+   {
+    "model": "M3",
+    "demand_ru": 421,
+    "pool_free_ru": 621,
+    "largest_single_free_ru": 239
+   },
+   {
+    "model": "M1",
+    "demand_ru": 358,
+    "pool_free_ru": 1144,
+    "largest_single_free_ru": 200
+   },
+   {
+    "model": "M2",
+    "demand_ru": 211,
+    "pool_free_ru": 786,
+    "largest_single_free_ru": 168
+   }
+  ],
+  "phase2_stream": {
+   "arrivals": 10000,
+   "admitted_immediate": 3311,
+   "waited_then_admitted": 5093,
+   "still_waiting_at_end": 74,
+   "unplaceable": 306,
+   "denied_unapproved": 1216,
+   "admissions_spanning": 4625,
+   "admissions_single_node": 3779,
+   "invariant_violations": 0,
+   "S_admitted": 1266,
+   "S_refused": 8734,
+   "S_refused_P_admitted": 2244
+  }
+ },
+ "E9": {
+  "experiment": "E9 audit-chain detection matrix (v1.1.0 re-implementation)",
+  "scheme": "Eq. 2: h_i = SHA256(canon(i,t,kappa,a,pi,h_{i-1})); tau_i = HMAC-SHA256_k(h_i); anchor = (n, h_{n-1})",
+  "canon": "JSON sorted keys, separators (',',':'), UTF-8",
+  "records_per_chain": 1000,
+  "trials_per_attack": 500,
+  "seed_family": "20261104 + 10000*9 + trial",
+  "matrix_detected_of_trials": {
+   "modify": {
+    "plain": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500
+     }
+    },
+    "plain+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500
+     }
+    },
+    "keyed": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500
+     }
+    },
+    "keyed+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500
+     }
+    }
+   },
+   "delete": {
+    "plain": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500,
+      "continuity": 500
+     }
+    },
+    "plain+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500,
+      "continuity": 500,
+      "anchor": 500
+     }
+    },
+    "keyed": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500,
+      "continuity": 500
+     }
+    },
+    "keyed+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500,
+      "continuity": 500,
+      "anchor": 500
+     }
+    }
+   },
+   "reorder": {
+    "plain": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500,
+      "continuity": 500
+     }
+    },
+    "plain+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500,
+      "continuity": 500
+     }
+    },
+    "keyed": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500,
+      "continuity": 500
+     }
+    },
+    "keyed+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500,
+      "continuity": 500
+     }
+    }
+   },
+   "renumber": {
+    "plain": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500,
+      "continuity": 500
+     }
+    },
+    "plain+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500,
+      "continuity": 500
+     }
+    },
+    "keyed": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500,
+      "continuity": 500
+     }
+    },
+    "keyed+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "link": 500,
+      "continuity": 500
+     }
+    }
+   },
+   "truncate": {
+    "plain": {
+     "detected": 0,
+     "trials": 500,
+     "per_check_detected": {}
+    },
+    "plain+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "anchor": 500
+     }
+    },
+    "keyed": {
+     "detected": 0,
+     "trials": 500,
+     "per_check_detected": {}
+    },
+    "keyed+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "anchor": 500
+     }
+    }
+   },
+   "append-nokey": {
+    "plain": {
+     "detected": 0,
+     "trials": 500,
+     "per_check_detected": {}
+    },
+    "plain+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "anchor": 500
+     }
+    },
+    "keyed": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "tag": 500
+     }
+    },
+    "keyed+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "tag": 500,
+      "anchor": 500
+     }
+    }
+   },
+   "append-withkey": {
+    "plain": {
+     "detected": 0,
+     "trials": 500,
+     "per_check_detected": {}
+    },
+    "plain+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "anchor": 500
+     }
+    },
+    "keyed": {
+     "detected": 0,
+     "trials": 500,
+     "per_check_detected": {}
+    },
+    "keyed+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "anchor": 500
+     }
+    }
+   },
+   "rebuild": {
+    "plain": {
+     "detected": 0,
+     "trials": 500,
+     "per_check_detected": {}
+    },
+    "plain+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "anchor": 500
+     }
+    },
+    "keyed": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "tag": 500
+     }
+    },
+    "keyed+anchor": {
+     "detected": 500,
+     "trials": 500,
+     "per_check_detected": {
+      "tag": 500,
+      "anchor": 500
+     }
+    }
+   }
+  },
+  "kat": {
+   "passed": 7,
+   "total": 7,
+   "detail": [
+    {
+     "test": "FIPS180-4 SHA-256 len=0",
+     "pass": true
+    },
+    {
+     "test": "FIPS180-4 SHA-256 len=3",
+     "pass": true
+    },
+    {
+     "test": "FIPS180-4 SHA-256 len=56",
+     "pass": true
+    },
+    {
+     "test": "FIPS180-4 SHA-256 len=1000000",
+     "pass": true
+    },
+    {
+     "test": "RFC4231 HMAC-SHA-256",
+     "pass": true
+    },
+    {
+     "test": "RFC4231 HMAC-SHA-256",
+     "pass": true
+    },
+    {
+     "test": "RFC4231 HMAC-SHA-256",
+     "pass": true
+    }
+   ]
+  },
+  "costs_host_measured": {
+   "append_keyed_us_per_record_median": 10.02,
+   "verify_keyed_1000_ms_median": 10.48,
+   "verify_keyed_us_per_record_median": 10.48,
+   "verify_keyed_10000_ms_median": 197.0,
+   "bundle_bytes_per_record_mean": 227.5
+  },
+  "supplement": "The 'rebuild' attack row was produced by e9_rebuild_supplement.py with the same builder, checks, seeds and trial count as the main E9 run."
+ }
+}

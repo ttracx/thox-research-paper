@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ThoxWork — Interactive Demo v1.2.0 · THOX.ai Research</title>
+<style>
+:root{--green:#05A451;--ink:#14201a;--mut:#5a6b62;--line:#dce5df;--bg:#f7faf8;--card:#fff;--bad:#b3261e;--warn:#8a6d00}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+header.top{border-bottom:1px solid var(--line);background:#fff}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.top .wrap{display:flex;align-items:center;gap:14px;padding:14px 20px}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.02em}
+.logo .chip{display:inline-block;width:22px;height:22px;border:2.5px solid var(--green);border-radius:5px;vertical-align:-3px;margin-right:8px;position:relative}
+.logo .ai{color:var(--green)}
+.top .tag{margin-left:auto;color:var(--mut);font-size:13px}
+nav.sections{display:flex;gap:14px;flex-wrap:wrap;padding:8px 0 0;font-size:13px}
+nav.sections a{color:var(--green);text-decoration:none;font-weight:600}
+nav.sections a:hover{text-decoration:underline}
+h1{font-size:30px;letter-spacing:-.02em;margin:22px 0 4px}
+.sub{color:var(--mut);margin:0 0 14px}
+.banner{border:1px solid var(--line);border-left:4px solid var(--green);background:#fff;border-radius:8px;padding:10px 14px;font-size:14px;margin:14px 0}
+.banner b{color:var(--green)}
+.grid{display:grid;grid-template-columns:340px 1fr;gap:16px;margin:16px 0}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card h2{font-size:16px;margin:0 0 10px}
+.card h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);margin:14px 0 6px}
+label{font-size:12px;color:var(--mut);display:block;margin:8px 0 3px}
+input,select{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:6px;font:inherit;font-size:14px;background:#fff}
+button{font:inherit;font-size:13.5px;border:1px solid var(--green);background:var(--green);color:#fff;border-radius:7px;padding:7px 12px;cursor:pointer}
+button.ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+button.small{padding:4px 9px;font-size:12.5px}
+button:disabled{opacity:.45;cursor:default}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.stats{display:flex;gap:18px;flex-wrap:wrap}
+.stat b{font-size:20px;display:block}
+.stat span{font-size:12px;color:var(--mut)}
+.pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;border:1.5px solid var(--green);color:var(--green);border-radius:999px;padding:2px 9px;vertical-align:2px}
+.pill.bad{border-color:var(--bad);color:var(--bad)}
+.pill.warn{border-color:var(--warn);color:var(--warn)}
+#outcome{border-radius:8px;padding:10px 14px;font-size:14px;margin:12px 0;border:1px solid var(--line);background:#fff}
+#outcome.ok{border-left:4px solid var(--green)}
+#outcome.deny{border-left:4px solid var(--bad)}
+#outcome.wait{border-left:4px solid var(--warn)}
+.board{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+@media(max-width:860px){.board{grid-template-columns:1fr}}
+.col{background:#eef3f0;border:1px solid var(--line);border-radius:10px;padding:10px;min-height:120px}
+.col h3{margin:2px 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+.task{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px;margin:0 0 10px;font-size:13px}
+.task .tt{font-weight:700;font-size:13.5px}
+.task .meta{color:var(--mut);font-size:12px;margin:3px 0 8px}
+.task select,.task input{padding:4px 6px;font-size:12.5px;margin:2px 0}
+.qrow{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:0 0 10px;font-size:13px}
+.qrow .tt{font-weight:700;font-size:13.5px}
+.qrow .meta{color:var(--mut);font-size:12px;margin:3px 0 8px}
+.qrow select{padding:4px 6px;font-size:12.5px;width:auto;min-width:170px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{border-bottom:1px solid var(--line);text-align:left;padding:5px 6px;vertical-align:top}
+td.h{word-break:break-all}
+tr.lrow{cursor:pointer}
+tr.lrow:hover{background:#f2f7f3}
+tr.xrow td{background:#f7faf8;font-size:11.5px;word-break:break-all}
+.results{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+@media(max-width:860px){.results{grid-template-columns:1fr 1fr}}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}
+.rcard .big{font-size:24px;font-weight:800;letter-spacing:-.02em}
+.rcard p{margin:6px 0 0;font-size:12.5px;color:var(--mut)}
+.roster{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.roster{grid-template-columns:1fr}}
+.roster .rcard .big{font-size:16px}
+.drop{border:1.5px dashed var(--line);border-radius:8px;padding:14px;text-align:center;color:var(--mut);font-size:13px}
+.drop.over{border-color:var(--green);color:var(--ink)}
+footer{border-top:1px solid var(--line);margin:28px 0 0;padding:18px 0 30px;color:var(--mut);font-size:13px}
+.tagline{font-weight:700;color:var(--ink)}
+.small{font-size:12.5px;color:var(--mut)}
+.pass{color:var(--green);font-weight:700}.fail{color:var(--bad);font-weight:700}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<div class="logo"><span class="chip"></span>THOX<span class="ai">.ai</span></div>
+<div class="tag">THOXWORK&trade; RESEARCH INSTRUMENT &middot; DEMO v1.2.0</div>
+</div></header>
+
+<div class="wrap">
+<h1>ThoxWork, exercised live</h1>
+<p class="sub">The paper&rsquo;s model, running in your browser: MeshGroup admission under Algorithm&nbsp;1, the Rolodex board with written handoffs and a human review gate with an approvals queue, guided scenarios, and a hash-chained evidence ledger you can verify, tamper-test, capture into, and export.</p>
+
+<div class="banner"><b>Demonstration environment.</b> The organization below is fictional example data. This demo runs the ThoxWork admission, workflow, and evidence logic from the paper in your browser with deterministic text: it calls no model and takes no external action. Every experiment result shown is <b>SIMULATED</b> and traced to the paper&rsquo;s evidence file.</div>
+
+<nav class="sections">
+<a href="#org">Organization</a><a href="#admission">Admission</a><a href="#board">Rolodex board</a><a href="#approvals">Approvals queue</a><a href="#ledger">Evidence ledger</a><a href="#captures">Captures &amp; bundles</a><a href="#results">Paper results</a>
+</nav>
+
+<div class="card" style="margin-top:14px">
+<div class="stats">
+<div class="stat"><b id="stRecords">0</b><span>LEDGER RECORDS</span></div>
+<div class="stat"><b class="mono" id="stHead" style="font-size:14px;padding-top:5px">&mdash;</b><span>CHAIN HEAD</span></div>
+<div class="stat"><b id="stIntegrity" style="font-size:16px;padding-top:4px">not verified yet</b><span>INTEGRITY</span></div>
+<div class="stat"><b id="stTasks">0</b><span>TASKS ON BOARD</span></div>
+<div class="stat"><b id="stApprovals">0</b><span>PENDING APPROVALS</span></div>
+<div class="stat"><b id="stCaptures">0</b><span>CAPTURES</span></div>
+</div>
+<div class="row" style="margin-top:12px">
+<button id="verifyChain" class="ghost">Verify chain</button>
+<button id="tamperTest" class="ghost">Tamper test (on a copy)</button>
+<button id="exportBundle" class="ghost">Export evidence bundle</button>
+<span id="tamperResult" class="small"></span>
+</div>
+<p class="small" style="margin:10px 0 0">Session anchor (record count + head hash, held outside the ledger as a second party would hold it): <span class="mono" id="anchorInfo">not set yet</span> <button id="reanchor" class="ghost small">Re-anchor to verified head</button></p>
+</div>
+
+<h2 id="org" style="margin:22px 0 8px">Organization <span class="small">(fictional example)</span></h2>
+<div class="roster">
+<div class="rcard"><div class="big">People</div><p><b>Harbor Pine Logistics</b> is a fictional 40-person company used for every scenario in this lab. Its people sponsor work and hold the review role: a task reaches Done only when a person-side reviewer who is not the assignee approves it. Reviewer choices in this demo are drawn from the Digital Employee roster to keep the instrument self-contained; the rule enforced is the paper&rsquo;s: reviewer &ne; assignee.</p></div>
+<div class="rcard"><div class="big">Digital Employees</div><p><b>DH-002 Specialist</b> &middot; research and drafting<br><b>DH-004 Operator</b> &middot; operations and execution<br><b>DH-006 Reviewer</b> &middot; review and compliance<br>Each works only inside MeshGroups whose approved resource list covers the task, and only against that group&rsquo;s pooled capacity.</p></div>
+<div class="rcard"><div class="big">MeshGroups</div><div id="groupInfo"></div><p>Admission is pooled-capacity accounting over the group&rsquo;s approved resources only. Node placement is the MeshStack dispatch layer and is out of scope for admission; nothing here splits, borrows, or reroutes demand.</p></div>
+</div>
+
+<div class="grid" id="admission">
+<div class="card">
+<h2>New task &mdash; admission under Algorithm 1</h2>
+<label>MeshGroup</label><select id="fGroup"></select>
+<label>Title</label><input id="fTitle" value="Evidence pack assembly">
+<label>Resource type</label><select id="fRes">
+<option>document-store</option><option>code-workspace</option><option>dataset</option><option>ticket-queue</option><option>crm-records</option>
+</select>
+<label>Demand (RU, against the group&rsquo;s pooled capacity)</label><input id="fDem" type="number" value="30" min="1">
+<label>Assignee</label><select id="fAsg"><option>DH-002 Specialist</option><option>DH-004 Operator</option><option>DH-006 Reviewer</option></select>
+<div class="row" style="margin-top:12px"><button id="createTask">Submit for admission</button></div>
+<h3>Preset tests from the paper</h3>
+<div class="row">
+<button id="presetAdmit" class="ghost small">Admit: evidence pack (30 RU)</button>
+<button id="presetUnapproved" class="ghost small">Attack: unapproved CRM pull</button>
+<button id="presetOversized" class="ghost small">Oversized: 121 RU</button>
+<button id="presetWait" class="ghost small">Too big for free pool: 100 RU</button>
+<button id="presetBypass" class="ghost small">Attack: force Done, no review</button>
+</div>
+<h3>Guided scenarios</h3>
+<div class="row">
+<button id="scenLifecycle" class="ghost small">Scenario 1: full lifecycle with handoff</button>
+<button id="scenAttacks" class="ghost small">Scenario 2: denials and gate attacks</button>
+<button id="scenCapacity" class="ghost small">Scenario 3: WAIT, then capacity frees</button>
+</div>
+<p class="small">Scenarios drive the same admission, handoff, and review functions as the buttons above; every step is written to the ledger with its reason.</p>
+</div>
+
+<div class="card" id="ledger">
+<h2>Evidence ledger <span class="small">append-only &middot; SHA-256 hash-chained</span></h2>
+<div class="row">
+<select id="ledFilter" style="width:auto;min-width:170px">
+<option value="all">All entries</option><option value="admission">Admissions</option><option value="transition">Transitions</option><option value="handoff">Handoffs</option><option value="review">Reviews</option><option value="bypass">Bypass &amp; refusals</option><option value="chain">Chain checks</option><option value="anchor">Anchor</option><option value="capture">Captures</option><option value="bundle">Bundles</option><option value="session">Session</option><option value="scenario">Scenarios</option>
+</select>
+<input id="ledSearch" placeholder="Search entry text" style="width:auto;flex:1;min-width:140px">
+<span class="small" id="ledCount"></span>
+</div>
+<div style="max-height:430px;overflow:auto;margin-top:8px"><table><thead><tr><th>#</th><th>Entry</th><th>Detail</th><th>Hash</th></tr></thead><tbody id="ledgerBody"></tbody></table></div>
+<p class="small">Click a row to expand its full hash and chain link. Two checks protect this ledger: the hash links themselves, and a session anchor &mdash; the record count and head hash noted separately from a verified chain. This ledger uses hash links plus an anchor; it does not use a session signing key.</p>
+<h3>Tamper suite (always on a copy; the live ledger is never changed)</h3>
+<div class="row">
+<button id="tampEdit" class="ghost small">Edit a record</button>
+<button id="tampDelete" class="ghost small">Delete a record</button>
+<button id="tampSwap" class="ghost small">Swap two records</button>
+<button id="tampRewrite" class="ghost small">Rewrite history (recompute all hashes)</button>
+</div>
+<p class="small" id="tampSuiteResult">Each attack is checked two ways: hash links, and the anchor (live record count + head hash at test start).</p>
+</div>
+</div>
+
+<div id="outcome" class="ok">Ready. Submit a task or run a preset test; every decision is written to the ledger with its reason.</div>
+
+<h2 id="board" style="margin:18px 0 0">Rolodex board</h2>
+<div class="board">
+<div class="col" id="col-QUEUED"><h3>Queued</h3><div class="tasks"></div></div>
+<div class="col" id="col-IN_PROGRESS"><h3>In Progress</h3><div class="tasks"></div></div>
+<div class="col" id="col-IN_REVIEW"><h3>In Review</h3><div class="tasks"></div></div>
+<div class="col" id="col-DONE"><h3>Done</h3><div class="tasks"></div></div>
+</div>
+
+<div class="card" id="approvals" style="margin:16px 0">
+<h2>Approvals queue <span class="small">every task in review, one place to decide</span></h2>
+<div id="queueList"><div class="small">Nothing is waiting for a decision. Submit a task for review and it appears here.</div></div>
+</div>
+
+<div class="card" id="waitCard"><h2>Waiting / refused</h2><div id="waitList" class="small">No waiting or refused tasks yet.</div></div>
+
+<div class="card" id="captures" style="margin:16px 0">
+<h2>Captures &amp; bundles <span class="small">evidence in, evidence out</span></h2>
+<h3>Capture a file into the ledger</h3>
+<p class="small">Attach a screenshot, screen recording, or PDF taken during a run. The file is hashed in your browser and its SHA-256 is written into the ledger, so the capture and the record vouch for each other. Files stay in this tab; only the hash enters the ledger.</p>
+<div class="drop" id="dropZone">Choose files or drop them here. Images, video, and PDF.
+<div style="margin-top:8px"><input type="file" id="capFile" multiple accept="image/*,video/*,application/pdf" style="width:auto"></div></div>
+<div class="row" style="margin-top:10px"><button id="snapshot" class="ghost">Snapshot lab state (PNG)</button><span class="small" id="capResult"></span></div>
+<h3>Import an evidence bundle</h3>
+<p class="small">Load a bundle previously exported from this demo. Its ledger is verified on its own (links and its recorded anchor) and the verdict is written into the live ledger. Importing never merges foreign records into the live chain.</p>
+<div class="row"><input type="file" id="impFile" accept="application/json" style="width:auto"><span class="small" id="impResult"></span></div>
+</div>
+
+<h2 id="results" style="margin:22px 0 0">What the paper measured <span class="pill">SIMULATED</span></h2>
+<div class="results">
+<div class="rcard"><div class="big">0 / 12,000</div><span class="pill">SIMULATED</span><p><b>E1 &middot; Policy enforcement.</b> Unapproved-resource attempts leaked. 0 of 8,000 legitimate attempts falsely blocked.</p></div>
+<div class="rcard"><div class="big">5,000 / 5,000</div><span class="pill">SIMULATED</span><p><b>E2 &middot; Handoff integrity.</b> Reassigned tasks with complete chains; 15,000 entries; 0 leaks across 4,000 negative probes.</p></div>
+<div class="rcard"><div class="big">100%</div><span class="pill">SIMULATED</span><p><b>E3 &middot; Admission boundary.</b> 4,000 of 4,000 oversized tasks denied UNPLACEABLE; admitted at 1.00&times; the pool (1,000/1,000), denied at 1.01&times; (1,000/1,000); 0 spills.</p></div>
+<div class="rcard"><div class="big">0 / 6,000</div><span class="pill">SIMULATED</span><p><b>E4 &middot; Review gate.</b> Bypass attempts succeeded across six attack classes; 4,000 of 4,000 legitimate completions reached Done through review.</p></div>
+</div>
+<p class="small"><b>E5 (scale), SIMULATED:</b> completion held at 1.0 across all 16 cells (2&ndash;16 workers &times; 1&ndash;8 MeshGroups). The paper&rsquo;s &sect;7 reads the superunitary efficiency figures (1.32&ndash;1.74) as a model artifact, not a capacity claim; the informative signal at 16 workers is the reviewer bottleneck. All numbers from <span class="mono">exp/results/summary.json</span>, SHA-256 f7c72f64&hellip;d79; an independent verifier reproduced that file byte for byte.</p>
+
+<footer><span class="tagline">Your AI. Your Data. Your Rules.&trade;</span> &middot; THOX.ai Research &middot; Demo v1.2.0 &middot; Companion to the ThoxWork paper v1.0.1.</footer>
+</div>
+
+<script>
+"use strict";
+const GROUPS={
+ "MG-Research":{approved:["document-store","code-workspace","dataset"],pool:120},
+ "MG-Operations":{approved:["document-store","ticket-queue"],pool:60},
+ "MG-Field":{approved:["ticket-queue","dataset"],pool:45}};
+const WORKERS=["DH-002 Specialist","DH-004 Operator","DH-006 Reviewer"];
+let ledger=[],tasks=[],clock=0,tid=0,anchor=null,expandedSeq=null;
+let tail=Promise.resolve();
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function sha(s){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+async function shaBuf(buf){const b=await crypto.subtle.digest("SHA-256",buf);return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+function headHash(){return ledger.length?ledger[ledger.length-1].hash:"GENESIS"}
+function append(kind,detail){tail=tail.then(async()=>{const seq=ledger.length;const prev=seq?ledger[seq-1].hash:"GENESIS";const hash=await sha(seq+"|"+kind+"|"+detail+"|"+prev);ledger.push({seq,kind,detail,prev,hash});renderLedger();});return tail}
+async function verifyEntries(entries){let prev="GENESIS";for(const e of entries){const h=await sha(e.seq+"|"+e.kind+"|"+e.detail+"|"+e.prev);if(h!==e.hash||e.prev!==prev)return{ok:false,at:e.seq};prev=e.hash}return{ok:true,at:null}}
+function usedRU(g){return tasks.filter(t=>t.group===g&&["QUEUED","IN_PROGRESS","IN_REVIEW"].includes(t.state)).reduce((a,t)=>a+t.demand,0)}
+function outcome(cls,html){const o=document.getElementById("outcome");o.className=cls;o.innerHTML=html}
+async function admit(group,title,res,demand,asg){
+ const G=GROUPS[group];const used=usedRU(group);const free=G.pool-used;
+ if(!G.approved.includes(res)){const reason='Resource type "'+res+'" is not on the approved list for '+group+'.';
+   await append("admission.denied",'DENIED "'+title+'" ('+group+'): '+reason);
+   outcome("deny","<b>DENIED.</b> "+reason+" The refusal and its reason are recorded in the ledger.");return null}
+ if(demand>G.pool){await append("admission.unplaceable",'UNPLACEABLE "'+title+'" ('+group+'): demand '+demand+' RU exceeds the pooled capacity '+G.pool+' RU. Not split, not borrowed, not rerouted.');
+   outcome("deny","<b>UNPLACEABLE.</b> Demand "+demand+" RU exceeds the "+group+" pooled capacity of "+G.pool+" RU. Oversized work is denied at the boundary, never split or spilled into a neighboring pool.");return null}
+ if(demand>free){const t={id:++tid,group,title,res,demand,asg,state:"WAIT",chain:[]};tasks.push(t);
+   await append("admission.wait",'WAIT "'+title+'" ('+group+'): demand '+demand+' RU fits the pool ('+G.pool+' RU) but only '+free+' RU is free. WAIT is not a denial.');
+   outcome("wait","<b>WAIT.</b> "+demand+" RU fits the "+group+" pool but only "+free+" RU is currently free. The task waits; it is not denied and not rerouted.");renderBoard();return t}
+ const t={id:++tid,group,title,res,demand,asg,state:"QUEUED",chain:[]};tasks.push(t);
+ await append("admission.admitted",'ADMITTED "'+title+'" ('+group+', '+res+', '+demand+' RU) to '+asg+'; state QUEUED.');
+ outcome("ok","<b>ADMITTED.</b> &ldquo;"+title+"&rdquo; is Queued in "+group+" ("+demand+" RU reserved against the pool).");renderBoard();return t}
+async function retryWaiting(){for(const t of tasks.filter(t=>t.state==="WAIT")){const G=GROUPS[t.group];if(t.demand<=G.pool-usedRU(t.group)){t.state="QUEUED";await append("admission.admitted",'WAIT cleared: "'+t.title+'" admitted to QUEUED as capacity freed.')}}renderBoard()}
+async function doStart(t){t.state="IN_PROGRESS";await append("transition",'\"'+t.title+'": QUEUED -> IN_PROGRESS by '+t.asg+'.')}
+async function doSubmit(t){t.state="IN_REVIEW";await append("transition",'\"'+t.title+'": IN_PROGRESS -> IN_REVIEW; awaiting a reviewer who is not the assignee.')}
+async function doReturn(t){t.state="IN_PROGRESS";await append("review.returned",'\"'+t.title+'" returned from review to IN_PROGRESS.')}
+async function forceDone(t){await append("bypass.refused",'BYPASS REFUSED: direct-to-Done attempted on "'+t.title+'" from '+t.state+'. DONE is reachable only through review approval.');
+ outcome("deny","<b>BYPASS REFUSED.</b> There is no route to Done except reviewer approval. The attempt is recorded in the ledger.");}
+async function doApprove(t,rev){
+ if(rev===t.asg){await append("review.self_refused",'SELF-REVIEW REFUSED: '+rev+' is the assignee of "'+t.title+'"; reviewer must differ from assignee.');outcome("deny","<b>SELF-REVIEW REFUSED.</b> The reviewer must differ from the assignee. Recorded in the ledger.");renderBoard();return false}
+ t.state="DONE";await append("review.approved",'\"'+t.title+'" approved by '+rev+' (assignee '+t.asg+'): IN_REVIEW -> DONE. Capacity released.');outcome("ok","<b>DONE.</b> &ldquo;"+t.title+"&rdquo; reached Done through review by "+rev+". Its capacity is released.");await retryWaiting();return true}
+async function doReassign(t,to,note){
+ if(!note){await append("handoff.refused",'HANDOFF REFUSED: reassignment of "'+t.title+'" attempted without a written note.');outcome("deny","<b>HANDOFF REFUSED.</b> Every reassignment requires a written handoff note. Recorded in the ledger.");renderBoard();return false}
+ const from=t.asg;t.asg=to;t.chain.push({from,to,note,state:t.state});await append("handoff.recorded",'HANDOFF "'+t.title+'": '+from+' -> '+to+' at state '+t.state+' (state preserved). Note: "'+note+'"');renderBoard();return true}
+function renderStats(){
+ document.getElementById("stRecords").textContent=ledger.length;
+ document.getElementById("stHead").textContent=ledger.length?headHash().slice(0,10)+"…":"—";
+ document.getElementById("stTasks").textContent=tasks.filter(t=>t.state!=="WAIT").length;
+ document.getElementById("stApprovals").textContent=tasks.filter(t=>t.state==="IN_REVIEW").length;
+ document.getElementById("stCaptures").textContent=ledger.filter(e=>e.kind.indexOf("capture.")===0).length}
+function filterMatch(kind,f){
+ if(f==="all")return true;
+ if(f==="bypass")return kind.indexOf("bypass")===0||/\.refused$/.test(kind)||kind==="admission.denied"||kind==="admission.unplaceable";
+ return kind.indexOf(f)===0||kind.split(".")[0]===f}
+function renderLedger(){renderStats();
+ const f=document.getElementById("ledFilter").value;const q=document.getElementById("ledSearch").value.trim().toLowerCase();
+ const rows=ledger.filter(e=>filterMatch(e.kind,f)&&(!q||(e.kind+" "+e.detail).toLowerCase().indexOf(q)>=0));
+ document.getElementById("ledCount").textContent="showing "+rows.length+" of "+ledger.length;
+ document.getElementById("ledgerBody").innerHTML=rows.slice().reverse().map(e=>{
+   let h='<tr class="lrow" data-seq="'+e.seq+'"><td class="mono">'+e.seq+'</td><td class="mono">'+e.kind+'</td><td>'+e.detail+'</td><td class="mono h">'+e.hash.slice(0,16)+'…</td></tr>';
+   if(expandedSeq===e.seq)h+='<tr class="xrow"><td></td><td colspan="3">hash <span class="mono">'+e.hash+'</span><br>prev <span class="mono">'+e.prev+'</span></td></tr>';
+   return h}).join("")}
+function cardHTML(t){let ctl="";
+ if(t.state==="QUEUED")ctl='<button class="small" data-act="start" data-id="'+t.id+'">Start</button> <button class="small ghost" data-act="force" data-id="'+t.id+'">Force Done (attack)</button>';
+ if(t.state==="IN_PROGRESS")ctl='<button class="small" data-act="submit" data-id="'+t.id+'">Submit for review</button> <button class="small ghost" data-act="force" data-id="'+t.id+'">Force Done (attack)</button>';
+ if(t.state==="IN_REVIEW")ctl='<label>Reviewer (must differ from assignee)</label><select data-rev="'+t.id+'">'+WORKERS.map(w=>'<option>'+w+'</option>').join("")+'</select><button class="small" data-act="approve" data-id="'+t.id+'">Approve to Done</button> <button class="small ghost" data-act="return" data-id="'+t.id+'">Return</button>';
+ let re="";if(["QUEUED","IN_PROGRESS"].includes(t.state))re='<label>Reassign to</label><select data-to="'+t.id+'">'+WORKERS.filter(w=>w!==t.asg).map(w=>'<option>'+w+'</option>').join("")+'</select><input data-note="'+t.id+'" placeholder="Written handoff note (required)"><button class="small ghost" data-act="reassign" data-id="'+t.id+'">Reassign with handoff</button>';
+ return '<div class="task"><div class="tt">'+t.title+'</div><div class="meta">'+t.group+' · '+t.res+' · '+t.demand+' RU · assignee '+t.asg+' · handoffs '+t.chain.length+'</div>'+ctl+re+'</div>'}
+function queueHTML(t){const others=WORKERS.filter(w=>w!==t.asg);
+ return '<div class="qrow"><div class="tt">'+t.title+'</div><div class="meta">'+t.group+' · '+t.res+' · '+t.demand+' RU · assignee '+t.asg+' · handoffs '+t.chain.length+' · waiting for a reviewer who is not the assignee</div><div class="row"><select data-rev="'+t.id+'">'+WORKERS.map(w=>'<option'+(w===others[0]?' selected':'')+'>'+w+'</option>').join("")+'</select><button class="small" data-act="approve" data-id="'+t.id+'">Approve to Done</button><button class="small ghost" data-act="return" data-id="'+t.id+'">Return</button><span class="small">Selecting the assignee and approving is refused and recorded &mdash; try it.</span></div></div>'}
+function renderBoard(){for(const s of["QUEUED","IN_PROGRESS","IN_REVIEW","DONE"]){document.querySelector("#col-"+s+" .tasks").innerHTML=tasks.filter(t=>t.state===s).map(cardHTML).join("")||'<div class="small">Empty.</div>'}
+ const pend=tasks.filter(t=>t.state==="IN_REVIEW");
+ document.getElementById("queueList").innerHTML=pend.length?pend.map(queueHTML).join(""):'<div class="small">Nothing is waiting for a decision. Submit a task for review and it appears here.</div>';
+ const w=tasks.filter(t=>t.state==="WAIT");document.getElementById("waitList").innerHTML=w.length?w.map(t=>'<div>WAIT · '+t.title+' ('+t.group+', '+t.demand+' RU) — admitted automatically when capacity frees.</div>').join(""):"No waiting or refused tasks yet. Refusals live in the ledger, permanently.";
+ document.getElementById("groupInfo").innerHTML=Object.entries(GROUPS).map(([n,g])=>'<p style="margin:6px 0"><b>'+n+'</b> · pool '+g.pool+' RU · in use '+usedRU(n)+' RU<br><span class="small">approved: '+g.approved.join(", ")+'</span></p>').join("");
+ renderStats()}
+document.addEventListener("click",async e=>{const b=e.target.closest("button[data-act]");if(!b)return;const t=tasks.find(x=>x.id==b.dataset.id);if(!t)return;const act=b.dataset.act;
+ if(act==="start"){await doStart(t)}
+ if(act==="submit"){await doSubmit(t)}
+ if(act==="force"){await forceDone(t)}
+ if(act==="return"){await doReturn(t)}
+ if(act==="approve"){const scope=b.closest(".task,.qrow");const sel=scope?scope.querySelector('select[data-rev="'+t.id+'"]'):document.querySelector('select[data-rev="'+t.id+'"]');await doApprove(t,sel?sel.value:t.asg)}
+ if(act==="reassign"){const scope=b.closest(".task");const to=scope.querySelector('select[data-to="'+t.id+'"]').value;const note=scope.querySelector('input[data-note="'+t.id+'"]').value.trim();await doReassign(t,to,note)}
+ renderBoard()});
+document.getElementById("ledgerBody").addEventListener("click",e=>{const tr=e.target.closest("tr.lrow");if(!tr)return;const s=parseInt(tr.dataset.seq,10);expandedSeq=(expandedSeq===s?null:s);renderLedger()});
+document.getElementById("ledFilter").addEventListener("change",renderLedger);
+document.getElementById("ledSearch").addEventListener("input",renderLedger);
+document.getElementById("createTask").onclick=async()=>{await admit(document.getElementById("fGroup").value,document.getElementById("fTitle").value||"Untitled task",document.getElementById("fRes").value,parseInt(document.getElementById("fDem").value||"0",10),document.getElementById("fAsg").value);renderBoard()};
+document.getElementById("presetAdmit").onclick=async()=>{await admit("MG-Research","Evidence pack assembly","document-store",30,"DH-002 Specialist");renderBoard()};
+document.getElementById("presetUnapproved").onclick=async()=>{await admit("MG-Research","POLICY TEST: pull unapproved CRM records","crm-records",10,"DH-002 Specialist")};
+document.getElementById("presetOversized").onclick=async()=>{await admit("MG-Research","Oversized model sweep","dataset",121,"DH-004 Operator")};
+document.getElementById("presetWait").onclick=async()=>{await admit("MG-Research","Full corpus re-index","dataset",100,"DH-004 Operator");renderBoard()};
+document.getElementById("presetBypass").onclick=async()=>{const t=await admit("MG-Research","Rush job (bypass attempt)","code-workspace",5,"DH-002 Specialist");if(t){await doStart(t);await forceDone(t);renderBoard()}};
+async function refreshAnchor(note){if(!ledger.length)return;anchor={count:ledger.length,head:headHash()};document.getElementById("anchorInfo").textContent=anchor.count+" records · head "+anchor.head.slice(0,16)+"… "+note}
+document.getElementById("verifyChain").onclick=async()=>{const r=await verifyEntries(ledger);const el=document.getElementById("stIntegrity");
+ if(r.ok){el.innerHTML='<span class="pass">verified, '+ledger.length+' records</span>';await append("chain.verified","Chain verification PASS over "+(ledger.length)+" records (run after this entry was requested).");await refreshAnchor("· set from verified chain")}else{el.innerHTML='<span class="fail">FAILED at record '+r.at+'</span>'}
+ renderLedger()};
+document.getElementById("reanchor").onclick=async()=>{const r=await verifyEntries(ledger);if(!r.ok){document.getElementById("anchorInfo").innerHTML='<span class="fail">chain FAILED at record '+r.at+'; anchor not moved</span>';return}
+ await append("anchor.set","Session anchor re-noted outside the ledger from a verified chain.");await refreshAnchor("· re-anchored after verification");renderLedger()};
+document.getElementById("tamperTest").onclick=async()=>{if(!ledger.length)return;const copy=ledger.map(e=>({...e}));const victim=copy[Math.min(1,copy.length-1)];victim.detail=victim.detail+" [TAMPERED COPY]";
+ const r=await verifyEntries(copy);const el=document.getElementById("tamperResult");
+ el.innerHTML=r.ok?'Tamper test inconclusive: copy verified (unexpected).':'<span class="fail">Tamper test: verification FAILED on the tampered copy at record '+r.at+', as designed.</span> Real records untouched.';
+ const chk=await verifyEntries(ledger);if(chk.ok)document.getElementById("stIntegrity").innerHTML='<span class="pass">verified, '+ledger.length+' records (real chain intact after tamper test)</span>'};
+async function tamperSuite(mode){if(ledger.length<3){document.getElementById("tampSuiteResult").textContent="Not enough records yet; run a preset or scenario first.";return}
+ const liveCount=ledger.length,liveHead=headHash();const copy=ledger.map(e=>({...e}));let label="";
+ if(mode==="edit"){const v=copy[Math.min(1,copy.length-1)];v.detail=v.detail+" [EDITED]";label="Edit record "+v.seq}
+ if(mode==="delete"){const i=Math.floor(copy.length/2);label="Delete record "+copy[i].seq;copy.splice(i,1)}
+ if(mode==="swap"){const tmp=copy[1];copy[1]=copy[2];copy[2]=tmp;label="Swap records 1 and 2"}
+ if(mode==="rewrite"){copy[Math.min(1,copy.length-1)].detail=copy[Math.min(1,copy.length-1)].detail+" [REWRITTEN]";let prev="GENESIS";for(const en of copy){en.prev=prev;en.hash=await sha(en.seq+"|"+en.kind+"|"+en.detail+"|"+en.prev);prev=en.hash}label="Rewrite history (edit + recompute every hash)"}
+ const links=await verifyEntries(copy);
+ const copyHead=copy.length?copy[copy.length-1].hash:"GENESIS";
+ const anchorOk=(copy.length===liveCount&&copyHead===liveHead);
+ const real=await verifyEntries(ledger);
+ document.getElementById("tampSuiteResult").innerHTML="<b>"+label+":</b> hash links on the copy &mdash; "+(links.ok?'<span class="pass">PASS</span>':'<span class="fail">FAILED at record '+links.at+'</span>')+" · anchor (live count + head) &mdash; "+(anchorOk?'<span class="pass">MATCH</span>':'<span class="fail">MISMATCH, attack caught</span>')+". Live ledger re-verified "+(real.ok?'<span class="pass">intact, '+ledger.length+' records</span>':'<span class="fail">FAILED</span>')+".";
+ await append("chain.tamper_suite","Tamper suite on a copy: "+label+". Links "+(links.ok?"PASS":"FAILED at "+links.at)+"; anchor "+(anchorOk?"MATCH":"MISMATCH")+". Live ledger untouched.")}
+document.getElementById("tampEdit").onclick=()=>tamperSuite("edit");
+document.getElementById("tampDelete").onclick=()=>tamperSuite("delete");
+document.getElementById("tampSwap").onclick=()=>tamperSuite("swap");
+document.getElementById("tampRewrite").onclick=()=>tamperSuite("rewrite");
+function bundleObject(){return{demo:"ThoxWork Demo v1.2.0",exported_logical_tick:++clock,anchor:anchor,groups:GROUPS,tasks:tasks,ledger:ledger,results_simulated:{E1:{leaked:0,violating:12000,legit:8000,falsely_blocked:0},E2:{chains_complete:5000,tasks:5000,entries:15000,probe_leaks:0,probes:4000},E3:{oversized_denied:4000,oversized:4000,spills:0},E4:{bypass_successes:0,bypass_attempts:6000,legit_completions:4000},E5:{cells:16,completion_rate:1.0,note:"SIMULATED; see paper S7"}},summary_json_sha256:"f7c72f64b9b8c6f2e1663fbb014374858b2251f2aeaa7d989393a6cdb071dd79"}}
+document.getElementById("exportBundle").onclick=async()=>{const vr=await verifyEntries(ledger);if(vr.ok)await refreshAnchor("· set at export");
+ const bundle=bundleObject();
+ const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(bundle,null,2)],{type:"application/json"}));a.download="thoxwork-evidence-bundle.json";a.click();URL.revokeObjectURL(a.href);
+ await append("bundle.exported","Evidence bundle exported (groups, tasks, ledger, anchor, SIMULATED results).")};
+document.getElementById("impFile").addEventListener("change",async e=>{const f=e.target.files[0];if(!f)return;const el=document.getElementById("impResult");
+ try{const data=JSON.parse(await f.text());const entries=Array.isArray(data.ledger)?data.ledger:null;
+  if(!entries)throw new Error("no ledger array in file");
+  const r=await verifyEntries(entries);
+  let anchorTxt="no anchor recorded in this bundle (links checked only)";
+  if(data.anchor&&entries.length){const h=entries[entries.length-1].hash;anchorTxt=(data.anchor.count===entries.length&&data.anchor.head===h)?"anchor MATCHES the bundle ledger":"anchor MISMATCH against the bundle ledger"}
+  const verdict=r.ok?("chain verified over "+entries.length+" records; "+anchorTxt):("chain FAILED at record "+r.at+"; "+anchorTxt);
+  el.innerHTML=(r.ok?'<span class="pass">Import check: '+verdict+'.</span>':'<span class="fail">Import check: '+verdict+'.</span>');
+  await append("bundle.imported","Imported bundle checked (not merged): "+verdict+".");
+ }catch(err){el.innerHTML='<span class="fail">Import failed: '+err.message+'</span>'}
+ e.target.value=""});
+async function captureFiles(files){const el=document.getElementById("capResult");let n=0;
+ for(const f of files){const buf=await f.arrayBuffer();const h=await shaBuf(buf);
+  await append("capture.hashed",'CAPTURE "'+f.name+'" ('+(f.type||"application/octet-stream")+', '+f.size+' bytes) SHA-256 '+h+'. File stays in this tab; only the hash enters the ledger.');n++}
+ if(n)el.innerHTML='<span class="pass">'+n+' capture(s) hashed into the ledger.</span>';renderLedger();renderBoard()}
+document.getElementById("capFile").addEventListener("change",e=>{captureFiles([...e.target.files]);e.target.value=""});
+const dz=document.getElementById("dropZone");
+dz.addEventListener("dragover",e=>{e.preventDefault();dz.classList.add("over")});
+dz.addEventListener("dragleave",()=>dz.classList.remove("over"));
+dz.addEventListener("drop",e=>{e.preventDefault();dz.classList.remove("over");captureFiles([...e.dataTransfer.files])});
+document.getElementById("snapshot").onclick=async()=>{const c=document.createElement("canvas");c.width=1200;c.height=630;const x=c.getContext("2d");
+ x.fillStyle="#ffffff";x.fillRect(0,0,1200,630);x.fillStyle="#05A451";x.fillRect(0,0,1200,14);
+ x.fillStyle="#14201a";x.font="800 44px Inter, sans-serif";x.fillText("ThoxWork — lab state snapshot",48,110);
+ x.font="24px 'JetBrains Mono', monospace";x.fillStyle="#5a6b62";
+ x.fillText("demo v1.2.0 · logical tick "+(++clock),48,170);
+ x.fillStyle="#14201a";x.font="28px 'JetBrains Mono', monospace";
+ x.fillText("ledger records: "+ledger.length,48,250);
+ x.fillText("chain head: "+(ledger.length?headHash().slice(0,32)+"…":"—"),48,310);
+ x.fillText("tasks: "+tasks.length+" · in review: "+tasks.filter(t=>t.state==="IN_REVIEW").length+" · done: "+tasks.filter(t=>t.state==="DONE").length,48,370);
+ x.fillText("anchor: "+(anchor?anchor.count+" records, head "+anchor.head.slice(0,16)+"…":"not set"),48,430);
+ x.fillStyle="#05A451";x.font="700 26px Inter, sans-serif";x.fillText("Your AI. Your Data. Your Rules.™",48,560);
+ const blob=await new Promise(r=>c.toBlob(r,"image/png"));const buf=await blob.arrayBuffer();const h=await shaBuf(buf);
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="thoxwork-lab-snapshot.png";a.click();URL.revokeObjectURL(a.href);
+ await append("capture.snapshot","SNAPSHOT of lab state rendered to PNG ("+buf.byteLength+" bytes) SHA-256 "+h+". The snapshot and this record vouch for each other.");
+ document.getElementById("capResult").innerHTML='<span class="pass">Snapshot downloaded and its hash recorded in the ledger.</span>';renderLedger()};
+let scenRunning=false;
+async function scenGuard(fn){if(scenRunning)return;scenRunning=true;for(const id of["scenLifecycle","scenAttacks","scenCapacity"])document.getElementById(id).disabled=true;
+ try{await fn()}finally{scenRunning=false;for(const id of["scenLifecycle","scenAttacks","scenCapacity"])document.getElementById(id).disabled=false;renderBoard()}}
+document.getElementById("scenLifecycle").onclick=()=>scenGuard(async()=>{
+ const t=await admit("MG-Research","Scenario 1: onboarding evidence draft","document-store",25,"DH-002 Specialist");if(!t)return;await sleep(300);
+ await doStart(t);renderBoard();await sleep(300);
+ await doReassign(t,"DH-004 Operator","Draft complete; operator to assemble the exhibits.");await sleep(300);
+ await doSubmit(t);renderBoard();await sleep(300);
+ await doApprove(t,"DH-006 Reviewer");
+ await append("scenario.completed",'Scenario 1 finished: "'+t.title+'" reached DONE through a written handoff and review by a non-assignee.');
+ outcome("ok","<b>SCENARIO 1 COMPLETE.</b> Admit &rarr; start &rarr; written handoff (state preserved) &rarr; review &rarr; Done, every step in the ledger.")});
+document.getElementById("scenAttacks").onclick=()=>scenGuard(async()=>{
+ await admit("MG-Research","Scenario 2: unapproved CRM pull","crm-records",10,"DH-002 Specialist");await sleep(300);
+ await admit("MG-Research","Scenario 2: oversized sweep","dataset",121,"DH-004 Operator");await sleep(300);
+ const t=await admit("MG-Research","Scenario 2: gate drill","code-workspace",5,"DH-002 Specialist");if(!t)return;await sleep(300);
+ await doStart(t);renderBoard();await sleep(300);
+ await forceDone(t);await sleep(300);
+ await doSubmit(t);renderBoard();await sleep(300);
+ await doApprove(t,t.asg);await sleep(300);
+ await doApprove(t,"DH-006 Reviewer");
+ await append("scenario.completed",'Scenario 2 finished: DENIED, UNPLACEABLE, bypass refused, self-review refused, then a legitimate approval to DONE.');
+ outcome("ok","<b>SCENARIO 2 COMPLETE.</b> Every attack was refused and recorded; the same task then completed legitimately through review.")});
+document.getElementById("scenCapacity").onclick=()=>scenGuard(async()=>{
+ const filler=await admit("MG-Research","Scenario 3: pool filler","dataset",90,"DH-004 Operator");await sleep(300);
+ const big=await admit("MG-Research","Scenario 3: full corpus re-index","dataset",100,"DH-004 Operator");renderBoard();await sleep(300);
+ if(filler&&filler.state!=="WAIT"&&big&&big.state==="WAIT"){
+  await doStart(filler);await sleep(300);await doSubmit(filler);renderBoard();await sleep(300);
+  await doApprove(filler,"DH-006 Reviewer");
+  await append("scenario.completed",'Scenario 3 finished: 100 RU task held at WAIT, then admitted automatically when the 90 RU filler completed and freed capacity. Final state of the re-index: '+big.state+'.');
+  outcome(big.state==="QUEUED"?"ok":"wait","<b>SCENARIO 3 COMPLETE.</b> The 100 RU task waited instead of spilling, and was admitted automatically when capacity freed; it is now "+big.state+".");
+ }else{
+  await append("scenario.completed","Scenario 3 ran against a pool already in use; filler state "+(filler?filler.state:"none")+", re-index state "+(big?big.state:"none")+". No spill occurred.");
+  outcome("wait","<b>SCENARIO 3 RAN WITH A BUSY POOL.</b> The exact WAIT sequence needs 90 RU free in MG-Research; current states are recorded in the ledger. Nothing spilled or rerouted.")}});
+(async()=>{const fg=document.getElementById("fGroup");fg.innerHTML=Object.keys(GROUPS).map(g=>'<option>'+g+'</option>').join("");
+ await append("session.open","ThoxWork demo v1.2.0 session opened. Canonical Algorithm 1 admission; pooled capacity; review gate on; approvals queue, scenarios, captures enabled.");
+ await admit("MG-Operations","Weekly ops digest","document-store",20,"DH-004 Operator");
+ anchor={count:ledger.length,head:headHash()};document.getElementById("anchorInfo").textContent=anchor.count+" records · head "+anchor.head.slice(0,16)+"… · set at session open";
+ renderBoard()})();
+</script>
+</body>
+</html>

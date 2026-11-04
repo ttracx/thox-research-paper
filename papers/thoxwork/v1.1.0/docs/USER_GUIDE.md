@@ -8,7 +8,7 @@ and evidence repository, not the ThoxWork product.
 ## Reading the paper
 
 - `paper/THOX_ThoxWork_Research_Paper_v1.1.0.pdf` — the canonical
-  edition (17 pages).
+  edition (45 pages).
 - `paper/THOX_ThoxWork_Research_Paper_v1.1.0.html` — the same edition
   as a single self-contained HTML file (fonts and figures embedded);
   open it in any browser.
@@ -18,7 +18,7 @@ and evidence repository, not the ThoxWork product.
 
 ## Running the demo
 
-Open `paper/ThoxWork_Demo_v1.1.0.html` in a browser. It is a standalone
+Open `paper/ThoxWork_Demo_v1.2.0.html` in a browser. It is a standalone
 interactive walkthrough of the model's rules (Rolodex board, MeshGroup
 admission, review gate) with preset cases, including the policy-block
 case. It needs no network and installs nothing. On the website the demo
@@ -34,13 +34,18 @@ python3 artifact/exp/thoxwork_experiments.py
 ```
 
 The suite is deterministic: a fresh run reproduces `summary.json`
-byte for byte (SHA-256 in the README). `artifact/wp/qa/VERIFIER-REPORT.md`
-is the non-producer verifier's independent re-judgement of the same
-numbers. All results are SIMULATED; the paper and the artifact README
-state what that does and does not establish.
+byte for byte (SHA-256 in the README). This edition's added evidence
+(E8, E9) lives in `artifact/exp/results/summary-v110.json` and
+reproduces the same way from `e8_divergence.py` and
+`e9_detection_matrix.py`. `artifact/wp/qa/VERIFIER-REPORT.md` is the
+non-producer verifier's independent re-judgement of the numbers;
+`QA-REPORT.md` sits beside it. Results carry tier labels (SIMULATED
+for the oracle tier, MEASURED for the code/lab and live-replay tiers);
+the paper and the artifact README state what each tier does and does
+not establish.
 
 ## Citing
 
 Use `CITATION.cff` (GitHub renders a "Cite this repository" button
-from it) or `paper.bib` for BibTeX. The DOI in those files is the
+from it) or `CITATION.bib` for BibTeX. The DOI in those files is the
 version DOI of record.

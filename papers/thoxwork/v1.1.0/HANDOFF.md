@@ -1,64 +1,81 @@
 # Publication Record and Agent Handoff — ThoxWork v1.1.0
 
 Folder: `papers/thoxwork/v1.1.0/` in `ttracx/thox-research-paper`
-(public) — publication record for the THOX.ai Research paper "ThoxWork
-for the Enterprise: Governed Digital Employees, MeshGroups, Rolodex and
-Evidence-First Teamwork", authors Craig Ross (CEO) and Tommy Xaypanya
-(CTO & Co-Founder, corresponding author).
+(public) — publication record for the THOX.ai Research paper "ThoxWork:
+One Workplace, One Connected Team. A Policy-Bounded DigitalHuman Work
+Platform for Enterprise Use", authors Craig Ross (CEO) and Tommy
+Xaypanya (CTO & Co-Founder, corresponding author).
 
 ## Status
 
-- Comprehensive edition v1.1.0 published 2026-11-04. It supersedes
-  v1.0.1 (DOI 10.5281/zenodo.23963936) under concept DOI
-  10.5281/zenodo.23963935 and merges: the comprehensive product-measured
-  account of the platform (threat model, governance mapping,
-  admission-divergence study, planner agreement and timing, MeshGroup
-  Evidence Lab, product test census), the errata of the internal edition
-  reconciled into the text (no errata appendix is carried), the
-  RolodexGo framing correction, the CTO's admission ruling of 2026-11-04
-  (the pooled-capacity rule governs), and the new Section 7.7: the
-  protocol experiments replayed against the live ThoxWork core service
-  and reported as measured.
-- Version DOI: 10.5281/zenodo.23965052 · Concept DOI:
+- Edition v1.1.0 (expanded comprehensive edition, 45 pages) published
+  2026-11-04. It supersedes v1.0.1 as the current edition under the
+  same concept DOI. v1.0.1 remains published and citable as the prior
+  version; v1.0.0 was an internal edition and was never published as
+  this paper.
+- Version DOI: 10.5281/zenodo.23965699 · Concept DOI:
   10.5281/zenodo.23963935 · Zenodo record:
-  https://zenodo.org/records/23965052 (v1.1.0, CC BY 4.0, both creators
-  with ORCIDs; record carries BOTH the PDF and the HTML this time;
-  live-downloaded SHA-256 verified equal to the local dist hashes
-  2026-11-04).
+  https://zenodo.org/records/23965699 (v1.1.0, CC BY 4.0, both creators
+  with ORCIDs, verified by public read-back 2026-11-04; both deposited
+  files download byte-identical to the files in this folder).
 - Publication authorization: Tommy Xaypanya's global approval for all
-  THOX papers (standing, confirmed 2026-11-04 15:17 CT), executed on his
-  direct order of 2026-11-04 16:17 CT to merge and update without
-  waiting on approval.
-- Evidence discipline: every number in the paper traces to
-  `artifact/exp/results/summary.json` (schema thoxwork-summary/1.1.0);
-  the numbers proof (35/35 checks) is in `artifact/wp/qa/`. Measured and
-  simulated results are never relabelled: the E1-E5 protocol oracle
-  remains SIMULATED, including in Section 7.7, where E5 was not run
-  live.
+  THOX papers (standing, confirmed 2026-11-04). Per-paper co-author
+  consent is not a publication gate under that approval.
+- Zenodo file note: unlike v1.0.1 (whose record carries the PDF only),
+  the v1.1.0 record carries BOTH the paper PDF (315,564 bytes, SHA-256
+  77aa1e51bd5f9e36c912cfacf36c0feba8a5a37ed0ae4a5d1b47d92c162e6187)
+  and the HTML edition (1,718,984 bytes, SHA-256
+  8fbc6eef88201694e03467b2486f98d2ccc0404a17af72f74e54e18dc6136ecf),
+  closing the series' HTML gap. The deposited bytes are the
+  deposit-time rebuild with the version DOI substituted into the
+  paper's document control (Section 14); the pre-substitution
+  inspection build is preserved in the internal edition record.
+- Deposit integrity note: the Zenodo new-version draft was found
+  pre-loaded with a superseded parallel build's files (a 38-page
+  companion-body artefact) and that build's title in the draft
+  metadata. Before publishing, every deposited file was replaced with
+  the canonical build and the metadata title and description were
+  restored to this paper's title and abstract; file checksums (MD5 via
+  the deposit API, SHA-256 via public download after publish) were
+  verified against the canonical build at each step. What is on the
+  record is the canonical v1.1.0 edition and nothing else.
 
-## Files of record (SHA-256)
+## Surfaces
 
-| File | SHA-256 |
-|---|---|
-| `paper/THOX_ThoxWork_Research_Paper_v1.1.0.pdf` (434,438 bytes, 38 pp) | `8d7ad1c796a4184f84c1595d4a5ddc85d66b42d4bd26ce5e472eb083c1042819` |
-| `paper/THOX_ThoxWork_Research_Paper_v1.1.0.html` (2,259,668 bytes) | `7b39596a4dc28ae24545c53e53c79d8e7026bfb26df454c684d90f3168a9dd83` |
-| `paper/ThoxWork_Evidence_Lab_THOX.html` (444,870 bytes) | `d9667c23d60832171559f80d3e2ada795c20e83e300a3c24d37c33d215b01819` |
+- Zenodo (version of record): https://zenodo.org/records/23965699
+- thox.ai paper page: https://thox.ai/research/papers/thoxwork
+  (updated to v1.1.0 at publication; demo v1.2.0 unchanged)
+- HF dataset Thox-ai/thox-whitepapers, folder `thoxwork/` (v1.1.0 PDF +
+  HTML added alongside v1.0.1; card names v1.1.0 as the current edition)
+- This folder: `paper/` (PDF + HTML + demo v1.2.0), `artifact/` (oracle
+  + frozen summary.json, E8/E9 suite + summary-v110.json, QA and
+  verifier reports)
+- Registry: research-publishing-pipeline, paper id `thoxwork`,
+  manifest `manifests/thoxwork.json`
 
-Full per-file manifest: `MANIFEST.sha256` in this folder.
+## Key files
 
-## Demo note
+- `paper/` — canonical edition bytes; hashes in `README.md`;
+  folder-wide hashes in `MANIFEST.sha256`.
+- `artifact/exp/results/summary.json` — tier-1 evidence source,
+  frozen from v1.0.1; SHA-256
+  f7c72f64b9b8c6f2e1663fbb014374858b2251f2aeaa7d989393a6cdb071dd79.
+- `artifact/exp/results/summary-v110.json` — this edition's E8 + E9
+  evidence source; SHA-256
+  37496b599d5055e8045dfee79eff7b3ff9b1add86fa41b2b49a5b3bc941363ad.
+- `artifact/wp/qa/VERIFIER-REPORT.md` — independent verification of
+  E8 and E9 (byte-identical re-runs by non-producers; oracle hash
+  exact). `QA-REPORT.md` records the build's binding dispositions;
+  its public copy carries one scrub note where an internal build
+  path was replaced by a description.
 
-The pack demo is the ThoxWork Evidence Lab in its THOX-branded edition
-(official lockup and icon; SHA-256 in the table above), which replaced
-the earlier demo build on the founders' direction of 2026-11-04. The
-same bytes are served from the paper's website page.
+## Conventions
 
-## Surfaces flipped in the same pass
-
-- Zenodo: new version published (above).
-- Hugging Face: `thoxwork/` in Thox-ai/thox-whitepapers updated to v1.1.0.
-- Website: https://thox.ai/research/papers/thoxwork updated to v1.1.0
-  (version label, hosted PDF/HTML, stat cards, citation block).
-- Registry + manifest in the THOX research publishing pipeline updated
-  to v1.1.0 published. Per-surface evidence: FLIP-REPORT-v110.md in the
-  THOX publication workdir.
+- Evaluation numbers carry their tier labels everywhere: SIMULATED
+  (tier 1, protocol oracle), MEASURED code and lab (tier 2, E6–E10),
+  MEASURED live implementation replay (tier 3, E11). Never restate a
+  lab number as a product measurement.
+- The demo is hosted on thox.ai (Zenodo serves HTML as text); the
+  copy in `paper/` is the downloadable one.
+- New editions follow `docs/DEVELOPMENT.md`'s release checklist and
+  publish under Tommy Xaypanya's global paper approval.

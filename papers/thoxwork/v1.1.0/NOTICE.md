@@ -24,10 +24,9 @@ identification only.
 
 ## Governance
 
-This repository is the publication record for the THOX.ai Research
+This folder of ttracx/thox-research-paper is the publication record for the THOX.ai Research
 technical report "ThoxWork: One Workplace, One Connected Team. A
-Policy-Bounded DigitalHuman Work Platform for Enterprise Use" v1.0.1
-(Zenodo DOI 10.5281/zenodo.XXXXXXX; concept DOI 10.5281/zenodo.XXXXXXX).
-<!-- FLIP: substitute the real DOIs. -->
+Policy-Bounded DigitalHuman Work Platform for Enterprise Use" v1.1.0
+(version DOI 10.5281/zenodo.23965699; concept DOI 10.5281/zenodo.23963935).
 Changes follow the THOX Research Paper Process v1.0: a new edition is
 a new version here and a new version on Zenodo, never a silent edit.
