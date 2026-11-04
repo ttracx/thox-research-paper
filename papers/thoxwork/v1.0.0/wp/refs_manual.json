@@ -1,0 +1,59 @@
+{
+ "thoxV1": {
+  "authors": [
+   "Craig Ross",
+   "Tommy Xaypanya"
+  ],
+  "title": "ThoxWork: One Workplace, One Connected Team. A Policy-Bounded DigitalHuman Work Platform for Enterprise Use",
+  "venue": "THOX.ai Research technical report v1.0.0 (internal edition), 2026-11-04",
+  "year": 2026,
+  "url": "",
+  "accessed": "2026-11-04",
+  "note": "Edition reviewed from the PDF supplied by the corresponding author."
+ },
+ "thoxMesh": {
+  "authors": [
+   "Craig Ross",
+   "Tommy Xaypanya"
+  ],
+  "title": "THOX MeshStack: Capacity-Priced Pipeline Sharding, Grant-Gated KV Transfer and Lease-Fenced Device Roles for a Private Household Mesh",
+  "venue": "THOX.ai Research technical report v1.0.1, preprint, 2026-11-03; Zenodo DOI 10.5281/zenodo.23919580",
+  "year": 2026,
+  "url": "https://doi.org/10.5281/zenodo.23919580",
+  "accessed": "2026-11-04",
+  "note": ""
+ },
+ "openwork": {
+  "authors": [
+   "Different AI, Inc."
+  ],
+  "title": "openwork: The open-source alternative to Claude Cowork (powered by opencode)",
+  "venue": "GitHub repository different-ai/openwork; accessed 2026-11-04",
+  "year": 2026,
+  "url": "https://github.com/different-ai/openwork",
+  "accessed": "2026-11-04",
+  "note": ""
+ },
+ "opencode": {
+  "authors": [
+   "anomalyco"
+  ],
+  "title": "opencode: The open source coding agent",
+  "venue": "GitHub repository anomalyco/opencode, MIT license; accessed 2026-11-04",
+  "year": 2026,
+  "url": "https://github.com/anomalyco/opencode",
+  "accessed": "2026-11-04",
+  "note": ""
+ },
+ "hermesagent": {
+  "authors": [
+   "Nous Research"
+  ],
+  "title": "hermes-agent: The agent that grows with you",
+  "venue": "GitHub repository NousResearch/hermes-agent, MIT license; accessed 2026-11-04",
+  "year": 2026,
+  "url": "https://github.com/NousResearch/hermes-agent",
+  "accessed": "2026-11-04",
+  "note": ""
+ }
+}

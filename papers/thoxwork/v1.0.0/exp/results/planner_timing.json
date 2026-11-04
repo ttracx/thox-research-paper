@@ -1,0 +1,4216 @@
+{
+ "experiment": "E4 planner timing",
+ "masterSeed": 20261104,
+ "now": "2026-11-04T17:00:00.000Z",
+ "protocol": {
+  "repetitions": 30,
+  "targetBatch": 1000,
+  "maxBatchMs": 2000,
+  "warmup": "one batch at the calibrated size",
+  "clock": "process.hrtime.bigint",
+  "order": "per configuration, implementations interleaved repetition by repetition with a rotating first position (reps[].position); configurations in the order listed",
+  "batchCap": "calibrated to 1,000 calls or fewer; a warm-up batch over 2 s shrinks the batch to 90% of the cap and warms up again (warmupMs lists each attempt)"
+ },
+ "host": {
+  "cpu_model": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "cores": 2,
+  "arch": "x64",
+  "platform": "linux",
+  "kernel": "6.18.44-fc-v233",
+  "totalmem_gib": 7.84,
+  "node": "v22.23.4",
+  "v8": "12.4.254.21-node.57",
+  "tsx": "tsx v4.20.6",
+  "bun_installed": "1.4.4",
+  "bun_used": false,
+  "zod": "4.3.6"
+ },
+ "product": {
+  "component": "ThoxWork MeshGroup routing planner",
+  "commit": "ab29b61"
+ },
+ "lab": {
+  "module": "lab/src/planner.js"
+ },
+ "inputs": {
+  "a": "makeFullDirectory(groups): 100 principals (10 humans, 90 digital employees), 100 sites, 100 workspaces, 100 pools, 100 nodes each serving 100 pools; each group has 100 members and binds 100 workspaces, 100 pools and 100 nodes",
+  "b": "makePreviewInput(nodes): 10 sites, 20 principals, 5 workspaces, 5 pools, 10 groups; all nodes bound to group 0 and serving pool0, sites and readiness seeded; eligible request from site0"
+ },
+ "loadavg": {
+  "before": {
+   "at": "2026-11-04T18:41:47.048Z",
+   "loadavg": "0.67 1.53 3.05 1/121 8005"
+  },
+  "after": {
+   "at": "2026-11-04T18:51:01.202Z",
+   "loadavg": "1.05 1.16 2.16 1/120 8150"
+  }
+ },
+ "sink": 15384451,
+ "rows": [
+  {
+   "experiment": "a-validation",
+   "impl": "product-schema",
+   "param": "groups",
+   "value": 1,
+   "inputBytes": 173325,
+   "check": "valid",
+   "calibration": {
+    "batchSize": 255,
+    "probeCalls": 16,
+    "probeMs": 125.184
+   },
+   "batchSize": 255,
+   "warmupMs": [
+    1833.764
+   ],
+   "loadavgAtStart": "0.67 1.53 3.05 4/121 8005",
+   "loadavgAtEnd": "0.94 1.37 2.83 1/121 8032",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 0,
+     "batchMs": 1766.5595,
+     "usPerCall": 6927.6845
+    },
+    {
+     "rep": 1,
+     "position": 1,
+     "batchMs": 1899.7982,
+     "usPerCall": 7450.1889
+    },
+    {
+     "rep": 2,
+     "position": 0,
+     "batchMs": 2022.8446,
+     "usPerCall": 7932.724
+    },
+    {
+     "rep": 3,
+     "position": 1,
+     "batchMs": 1980.8496,
+     "usPerCall": 7768.0375
+    },
+    {
+     "rep": 4,
+     "position": 0,
+     "batchMs": 1933.3416,
+     "usPerCall": 7581.7317
+    },
+    {
+     "rep": 5,
+     "position": 1,
+     "batchMs": 1973.6513,
+     "usPerCall": 7739.8092
+    },
+    {
+     "rep": 6,
+     "position": 0,
+     "batchMs": 2042.2922,
+     "usPerCall": 8008.9892
+    },
+    {
+     "rep": 7,
+     "position": 1,
+     "batchMs": 2090.995,
+     "usPerCall": 8199.9804
+    },
+    {
+     "rep": 8,
+     "position": 0,
+     "batchMs": 2012.62,
+     "usPerCall": 7892.6275
+    },
+    {
+     "rep": 9,
+     "position": 1,
+     "batchMs": 2098.195,
+     "usPerCall": 8228.2156
+    },
+    {
+     "rep": 10,
+     "position": 0,
+     "batchMs": 2097.603,
+     "usPerCall": 8225.8942
+    },
+    {
+     "rep": 11,
+     "position": 1,
+     "batchMs": 1959.7494,
+     "usPerCall": 7685.2918
+    },
+    {
+     "rep": 12,
+     "position": 0,
+     "batchMs": 2263.579,
+     "usPerCall": 8876.7803
+    },
+    {
+     "rep": 13,
+     "position": 1,
+     "batchMs": 2242.3273,
+     "usPerCall": 8793.4403
+    },
+    {
+     "rep": 14,
+     "position": 0,
+     "batchMs": 1889.9444,
+     "usPerCall": 7411.5466
+    },
+    {
+     "rep": 15,
+     "position": 1,
+     "batchMs": 2085.4504,
+     "usPerCall": 8178.237
+    },
+    {
+     "rep": 16,
+     "position": 0,
+     "batchMs": 2260.2391,
+     "usPerCall": 8863.6828
+    },
+    {
+     "rep": 17,
+     "position": 1,
+     "batchMs": 2002.3169,
+     "usPerCall": 7852.2233
+    },
+    {
+     "rep": 18,
+     "position": 0,
+     "batchMs": 2075.0176,
+     "usPerCall": 8137.324
+    },
+    {
+     "rep": 19,
+     "position": 1,
+     "batchMs": 1915.0132,
+     "usPerCall": 7509.8557
+    },
+    {
+     "rep": 20,
+     "position": 0,
+     "batchMs": 2046.2087,
+     "usPerCall": 8024.3479
+    },
+    {
+     "rep": 21,
+     "position": 1,
+     "batchMs": 1919.8657,
+     "usPerCall": 7528.885
+    },
+    {
+     "rep": 22,
+     "position": 0,
+     "batchMs": 2195.013,
+     "usPerCall": 8607.8941
+    },
+    {
+     "rep": 23,
+     "position": 1,
+     "batchMs": 1787.9881,
+     "usPerCall": 7011.718
+    },
+    {
+     "rep": 24,
+     "position": 0,
+     "batchMs": 2112.9601,
+     "usPerCall": 8286.1181
+    },
+    {
+     "rep": 25,
+     "position": 1,
+     "batchMs": 1977.5885,
+     "usPerCall": 7755.2489
+    },
+    {
+     "rep": 26,
+     "position": 0,
+     "batchMs": 1951.8258,
+     "usPerCall": 7654.2188
+    },
+    {
+     "rep": 27,
+     "position": 1,
+     "batchMs": 2407.3423,
+     "usPerCall": 9440.5579
+    },
+    {
+     "rep": 28,
+     "position": 0,
+     "batchMs": 2051.0727,
+     "usPerCall": 8043.4223
+    },
+    {
+     "rep": 29,
+     "position": 1,
+     "batchMs": 2041.4459,
+     "usPerCall": 8005.6703
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 7932.724,
+    "usPerCallMin": 6927.6845,
+    "usPerCallP95": 8863.6828,
+    "usPerCallMean": 7987.4115,
+    "usPerCallSd": 548.1187
+   }
+  },
+  {
+   "experiment": "a-validation",
+   "impl": "lab-validateDirectory",
+   "param": "groups",
+   "value": 1,
+   "inputBytes": 173325,
+   "check": "valid",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 64,
+    "probeMs": 79.325
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    1172.789
+   ],
+   "loadavgAtStart": "0.67 1.53 3.05 4/121 8005",
+   "loadavgAtEnd": "0.94 1.37 2.83 1/121 8032",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 1,
+     "batchMs": 1267.6887,
+     "usPerCall": 1267.6887
+    },
+    {
+     "rep": 1,
+     "position": 0,
+     "batchMs": 1204.2911,
+     "usPerCall": 1204.2911
+    },
+    {
+     "rep": 2,
+     "position": 1,
+     "batchMs": 1183.5247,
+     "usPerCall": 1183.5247
+    },
+    {
+     "rep": 3,
+     "position": 0,
+     "batchMs": 1279.2336,
+     "usPerCall": 1279.2336
+    },
+    {
+     "rep": 4,
+     "position": 1,
+     "batchMs": 1157.2632,
+     "usPerCall": 1157.2632
+    },
+    {
+     "rep": 5,
+     "position": 0,
+     "batchMs": 1166.7681,
+     "usPerCall": 1166.7681
+    },
+    {
+     "rep": 6,
+     "position": 1,
+     "batchMs": 1254.0168,
+     "usPerCall": 1254.0168
+    },
+    {
+     "rep": 7,
+     "position": 0,
+     "batchMs": 1388.2649,
+     "usPerCall": 1388.2649
+    },
+    {
+     "rep": 8,
+     "position": 1,
+     "batchMs": 1359.2116,
+     "usPerCall": 1359.2116
+    },
+    {
+     "rep": 9,
+     "position": 0,
+     "batchMs": 1278.6902,
+     "usPerCall": 1278.6902
+    },
+    {
+     "rep": 10,
+     "position": 1,
+     "batchMs": 1279.365,
+     "usPerCall": 1279.365
+    },
+    {
+     "rep": 11,
+     "position": 0,
+     "batchMs": 1219.3441,
+     "usPerCall": 1219.3441
+    },
+    {
+     "rep": 12,
+     "position": 1,
+     "batchMs": 1173.6849,
+     "usPerCall": 1173.6849
+    },
+    {
+     "rep": 13,
+     "position": 0,
+     "batchMs": 1218.3277,
+     "usPerCall": 1218.3277
+    },
+    {
+     "rep": 14,
+     "position": 1,
+     "batchMs": 1372.4934,
+     "usPerCall": 1372.4934
+    },
+    {
+     "rep": 15,
+     "position": 0,
+     "batchMs": 1262.1315,
+     "usPerCall": 1262.1315
+    },
+    {
+     "rep": 16,
+     "position": 1,
+     "batchMs": 1286.4231,
+     "usPerCall": 1286.4231
+    },
+    {
+     "rep": 17,
+     "position": 0,
+     "batchMs": 1273.074,
+     "usPerCall": 1273.074
+    },
+    {
+     "rep": 18,
+     "position": 1,
+     "batchMs": 1252.7166,
+     "usPerCall": 1252.7166
+    },
+    {
+     "rep": 19,
+     "position": 0,
+     "batchMs": 1250.9564,
+     "usPerCall": 1250.9564
+    },
+    {
+     "rep": 20,
+     "position": 1,
+     "batchMs": 1187.5285,
+     "usPerCall": 1187.5285
+    },
+    {
+     "rep": 21,
+     "position": 0,
+     "batchMs": 1166.2941,
+     "usPerCall": 1166.2941
+    },
+    {
+     "rep": 22,
+     "position": 1,
+     "batchMs": 1231.1858,
+     "usPerCall": 1231.1858
+    },
+    {
+     "rep": 23,
+     "position": 0,
+     "batchMs": 1180.3186,
+     "usPerCall": 1180.3186
+    },
+    {
+     "rep": 24,
+     "position": 1,
+     "batchMs": 1296.3034,
+     "usPerCall": 1296.3034
+    },
+    {
+     "rep": 25,
+     "position": 0,
+     "batchMs": 1302.7175,
+     "usPerCall": 1302.7175
+    },
+    {
+     "rep": 26,
+     "position": 1,
+     "batchMs": 1182.333,
+     "usPerCall": 1182.333
+    },
+    {
+     "rep": 27,
+     "position": 0,
+     "batchMs": 1403.0574,
+     "usPerCall": 1403.0574
+    },
+    {
+     "rep": 28,
+     "position": 1,
+     "batchMs": 1204.6559,
+     "usPerCall": 1204.6559
+    },
+    {
+     "rep": 29,
+     "position": 0,
+     "batchMs": 1351.8987,
+     "usPerCall": 1351.8987
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 1252.7166,
+    "usPerCallMin": 1157.2632,
+    "usPerCallP95": 1372.4934,
+    "usPerCallMean": 1254.4588,
+    "usPerCallSd": 69.8831
+   }
+  },
+  {
+   "experiment": "a-validation",
+   "impl": "product-schema",
+   "param": "groups",
+   "value": 10,
+   "inputBytes": 261597,
+   "check": "valid",
+   "calibration": {
+    "batchSize": 176,
+    "probeCalls": 16,
+    "probeMs": 181.398
+   },
+   "batchSize": 145,
+   "warmupMs": [
+    2178.763,
+    1689.795
+   ],
+   "loadavgAtStart": "0.94 1.37 2.83 1/121 8032",
+   "loadavgAtEnd": "1.17 1.32 2.65 1/121 8064",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 0,
+     "batchMs": 1668.1091,
+     "usPerCall": 11504.2006
+    },
+    {
+     "rep": 1,
+     "position": 1,
+     "batchMs": 1830.9234,
+     "usPerCall": 12627.0581
+    },
+    {
+     "rep": 2,
+     "position": 0,
+     "batchMs": 1704.7714,
+     "usPerCall": 11757.0439
+    },
+    {
+     "rep": 3,
+     "position": 1,
+     "batchMs": 1659.7063,
+     "usPerCall": 11446.2505
+    },
+    {
+     "rep": 4,
+     "position": 0,
+     "batchMs": 1927.9858,
+     "usPerCall": 13296.4541
+    },
+    {
+     "rep": 5,
+     "position": 1,
+     "batchMs": 1760.8199,
+     "usPerCall": 12143.5856
+    },
+    {
+     "rep": 6,
+     "position": 0,
+     "batchMs": 1715.6502,
+     "usPerCall": 11832.0707
+    },
+    {
+     "rep": 7,
+     "position": 1,
+     "batchMs": 1699.8528,
+     "usPerCall": 11723.1227
+    },
+    {
+     "rep": 8,
+     "position": 0,
+     "batchMs": 1627.8422,
+     "usPerCall": 11226.4976
+    },
+    {
+     "rep": 9,
+     "position": 1,
+     "batchMs": 1620.5625,
+     "usPerCall": 11176.2928
+    },
+    {
+     "rep": 10,
+     "position": 0,
+     "batchMs": 1545.1226,
+     "usPerCall": 10656.018
+    },
+    {
+     "rep": 11,
+     "position": 1,
+     "batchMs": 1582.5362,
+     "usPerCall": 10914.0427
+    },
+    {
+     "rep": 12,
+     "position": 0,
+     "batchMs": 1435.7621,
+     "usPerCall": 9901.8076
+    },
+    {
+     "rep": 13,
+     "position": 1,
+     "batchMs": 1495.9893,
+     "usPerCall": 10317.1675
+    },
+    {
+     "rep": 14,
+     "position": 0,
+     "batchMs": 1687.5377,
+     "usPerCall": 11638.1912
+    },
+    {
+     "rep": 15,
+     "position": 1,
+     "batchMs": 1781.6127,
+     "usPerCall": 12286.9842
+    },
+    {
+     "rep": 16,
+     "position": 0,
+     "batchMs": 1530.2186,
+     "usPerCall": 10553.2319
+    },
+    {
+     "rep": 17,
+     "position": 1,
+     "batchMs": 1708.9872,
+     "usPerCall": 11786.1184
+    },
+    {
+     "rep": 18,
+     "position": 0,
+     "batchMs": 2034.4575,
+     "usPerCall": 14030.7414
+    },
+    {
+     "rep": 19,
+     "position": 1,
+     "batchMs": 1497.8057,
+     "usPerCall": 10329.6946
+    },
+    {
+     "rep": 20,
+     "position": 0,
+     "batchMs": 1682.7029,
+     "usPerCall": 11604.8478
+    },
+    {
+     "rep": 21,
+     "position": 1,
+     "batchMs": 1546.283,
+     "usPerCall": 10664.0207
+    },
+    {
+     "rep": 22,
+     "position": 0,
+     "batchMs": 1554.3399,
+     "usPerCall": 10719.5853
+    },
+    {
+     "rep": 23,
+     "position": 1,
+     "batchMs": 1642.8145,
+     "usPerCall": 11329.755
+    },
+    {
+     "rep": 24,
+     "position": 0,
+     "batchMs": 1690.8174,
+     "usPerCall": 11660.8098
+    },
+    {
+     "rep": 25,
+     "position": 1,
+     "batchMs": 1498.7334,
+     "usPerCall": 10336.0926
+    },
+    {
+     "rep": 26,
+     "position": 0,
+     "batchMs": 1574.4671,
+     "usPerCall": 10858.3935
+    },
+    {
+     "rep": 27,
+     "position": 1,
+     "batchMs": 1613.2579,
+     "usPerCall": 11125.9168
+    },
+    {
+     "rep": 28,
+     "position": 0,
+     "batchMs": 1582.8645,
+     "usPerCall": 10916.307
+    },
+    {
+     "rep": 29,
+     "position": 1,
+     "batchMs": 1661.0052,
+     "usPerCall": 11455.2081
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 11329.755,
+    "usPerCallMin": 9901.8076,
+    "usPerCallP95": 12627.0581,
+    "usPerCallMean": 11393.917,
+    "usPerCallSd": 890.6672
+   }
+  },
+  {
+   "experiment": "a-validation",
+   "impl": "lab-validateDirectory",
+   "param": "groups",
+   "value": 10,
+   "inputBytes": 261597,
+   "check": "valid",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 64,
+    "probeMs": 127.773
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    1839.168
+   ],
+   "loadavgAtStart": "0.94 1.37 2.83 1/121 8032",
+   "loadavgAtEnd": "1.17 1.32 2.65 1/121 8064",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 1,
+     "batchMs": 1779.6464,
+     "usPerCall": 1779.6464
+    },
+    {
+     "rep": 1,
+     "position": 0,
+     "batchMs": 1889.8178,
+     "usPerCall": 1889.8178
+    },
+    {
+     "rep": 2,
+     "position": 1,
+     "batchMs": 1852.2094,
+     "usPerCall": 1852.2094
+    },
+    {
+     "rep": 3,
+     "position": 0,
+     "batchMs": 2032.3005,
+     "usPerCall": 2032.3005
+    },
+    {
+     "rep": 4,
+     "position": 1,
+     "batchMs": 1887.9113,
+     "usPerCall": 1887.9113
+    },
+    {
+     "rep": 5,
+     "position": 0,
+     "batchMs": 2034.2421,
+     "usPerCall": 2034.2421
+    },
+    {
+     "rep": 6,
+     "position": 1,
+     "batchMs": 1902.8422,
+     "usPerCall": 1902.8422
+    },
+    {
+     "rep": 7,
+     "position": 0,
+     "batchMs": 1915.5628,
+     "usPerCall": 1915.5628
+    },
+    {
+     "rep": 8,
+     "position": 1,
+     "batchMs": 1736.6414,
+     "usPerCall": 1736.6414
+    },
+    {
+     "rep": 9,
+     "position": 0,
+     "batchMs": 1771.8649,
+     "usPerCall": 1771.8649
+    },
+    {
+     "rep": 10,
+     "position": 1,
+     "batchMs": 1771.3718,
+     "usPerCall": 1771.3718
+    },
+    {
+     "rep": 11,
+     "position": 0,
+     "batchMs": 1626.2037,
+     "usPerCall": 1626.2037
+    },
+    {
+     "rep": 12,
+     "position": 1,
+     "batchMs": 1802.4878,
+     "usPerCall": 1802.4878
+    },
+    {
+     "rep": 13,
+     "position": 0,
+     "batchMs": 1721.473,
+     "usPerCall": 1721.473
+    },
+    {
+     "rep": 14,
+     "position": 1,
+     "batchMs": 1760.2447,
+     "usPerCall": 1760.2447
+    },
+    {
+     "rep": 15,
+     "position": 0,
+     "batchMs": 1937.5615,
+     "usPerCall": 1937.5615
+    },
+    {
+     "rep": 16,
+     "position": 1,
+     "batchMs": 1723.8519,
+     "usPerCall": 1723.8519
+    },
+    {
+     "rep": 17,
+     "position": 0,
+     "batchMs": 1716.2895,
+     "usPerCall": 1716.2895
+    },
+    {
+     "rep": 18,
+     "position": 1,
+     "batchMs": 1833.6378,
+     "usPerCall": 1833.6378
+    },
+    {
+     "rep": 19,
+     "position": 0,
+     "batchMs": 1643.0517,
+     "usPerCall": 1643.0517
+    },
+    {
+     "rep": 20,
+     "position": 1,
+     "batchMs": 1865.1366,
+     "usPerCall": 1865.1366
+    },
+    {
+     "rep": 21,
+     "position": 0,
+     "batchMs": 1807.8239,
+     "usPerCall": 1807.8239
+    },
+    {
+     "rep": 22,
+     "position": 1,
+     "batchMs": 1583.2448,
+     "usPerCall": 1583.2448
+    },
+    {
+     "rep": 23,
+     "position": 0,
+     "batchMs": 1688.2475,
+     "usPerCall": 1688.2475
+    },
+    {
+     "rep": 24,
+     "position": 1,
+     "batchMs": 1674.5732,
+     "usPerCall": 1674.5732
+    },
+    {
+     "rep": 25,
+     "position": 0,
+     "batchMs": 1977.8772,
+     "usPerCall": 1977.8772
+    },
+    {
+     "rep": 26,
+     "position": 1,
+     "batchMs": 1983.0914,
+     "usPerCall": 1983.0914
+    },
+    {
+     "rep": 27,
+     "position": 0,
+     "batchMs": 1755.6984,
+     "usPerCall": 1755.6984
+    },
+    {
+     "rep": 28,
+     "position": 1,
+     "batchMs": 1975.5956,
+     "usPerCall": 1975.5956
+    },
+    {
+     "rep": 29,
+     "position": 0,
+     "batchMs": 1867.6118,
+     "usPerCall": 1867.6118
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 1802.4878,
+    "usPerCallMin": 1583.2448,
+    "usPerCallP95": 1983.0914,
+    "usPerCallMean": 1817.2704,
+    "usPerCallSd": 121.182
+   }
+  },
+  {
+   "experiment": "a-validation",
+   "impl": "product-schema",
+   "param": "groups",
+   "value": 50,
+   "inputBytes": 653997,
+   "check": "valid",
+   "calibration": {
+    "batchSize": 85,
+    "probeCalls": 4,
+    "probeMs": 94.08
+   },
+   "batchSize": 69,
+   "warmupMs": [
+    2202.811,
+    1683.241
+   ],
+   "loadavgAtStart": "1.17 1.32 2.65 1/121 8064",
+   "loadavgAtEnd": "1.02 1.21 2.44 1/119 8096",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 0,
+     "batchMs": 1962.5316,
+     "usPerCall": 28442.4863
+    },
+    {
+     "rep": 1,
+     "position": 1,
+     "batchMs": 1679.9039,
+     "usPerCall": 24346.4329
+    },
+    {
+     "rep": 2,
+     "position": 0,
+     "batchMs": 1804.1282,
+     "usPerCall": 26146.7861
+    },
+    {
+     "rep": 3,
+     "position": 1,
+     "batchMs": 1819.4606,
+     "usPerCall": 26368.9941
+    },
+    {
+     "rep": 4,
+     "position": 0,
+     "batchMs": 1686.0992,
+     "usPerCall": 24436.2204
+    },
+    {
+     "rep": 5,
+     "position": 1,
+     "batchMs": 1743.3354,
+     "usPerCall": 25265.7303
+    },
+    {
+     "rep": 6,
+     "position": 0,
+     "batchMs": 1945.8662,
+     "usPerCall": 28200.9595
+    },
+    {
+     "rep": 7,
+     "position": 1,
+     "batchMs": 1690.5128,
+     "usPerCall": 24500.1857
+    },
+    {
+     "rep": 8,
+     "position": 0,
+     "batchMs": 1703.4938,
+     "usPerCall": 24688.3164
+    },
+    {
+     "rep": 9,
+     "position": 1,
+     "batchMs": 2080.8238,
+     "usPerCall": 30156.8661
+    },
+    {
+     "rep": 10,
+     "position": 0,
+     "batchMs": 1890.0729,
+     "usPerCall": 27392.3608
+    },
+    {
+     "rep": 11,
+     "position": 1,
+     "batchMs": 1734.3719,
+     "usPerCall": 25135.8242
+    },
+    {
+     "rep": 12,
+     "position": 0,
+     "batchMs": 1799.6578,
+     "usPerCall": 26081.9971
+    },
+    {
+     "rep": 13,
+     "position": 1,
+     "batchMs": 1725.0612,
+     "usPerCall": 25000.8872
+    },
+    {
+     "rep": 14,
+     "position": 0,
+     "batchMs": 1881.3156,
+     "usPerCall": 27265.4436
+    },
+    {
+     "rep": 15,
+     "position": 1,
+     "batchMs": 1924.0901,
+     "usPerCall": 27885.364
+    },
+    {
+     "rep": 16,
+     "position": 0,
+     "batchMs": 1900.2278,
+     "usPerCall": 27539.533
+    },
+    {
+     "rep": 17,
+     "position": 1,
+     "batchMs": 1818.3078,
+     "usPerCall": 26352.2864
+    },
+    {
+     "rep": 18,
+     "position": 0,
+     "batchMs": 1633.5928,
+     "usPerCall": 23675.2583
+    },
+    {
+     "rep": 19,
+     "position": 1,
+     "batchMs": 1658.9465,
+     "usPerCall": 24042.7026
+    },
+    {
+     "rep": 20,
+     "position": 0,
+     "batchMs": 1714.2537,
+     "usPerCall": 24844.2562
+    },
+    {
+     "rep": 21,
+     "position": 1,
+     "batchMs": 1659.7605,
+     "usPerCall": 24054.5007
+    },
+    {
+     "rep": 22,
+     "position": 0,
+     "batchMs": 1978.2615,
+     "usPerCall": 28670.4561
+    },
+    {
+     "rep": 23,
+     "position": 1,
+     "batchMs": 1729.7624,
+     "usPerCall": 25069.0203
+    },
+    {
+     "rep": 24,
+     "position": 0,
+     "batchMs": 2025.3676,
+     "usPerCall": 29353.1538
+    },
+    {
+     "rep": 25,
+     "position": 1,
+     "batchMs": 2168.4068,
+     "usPerCall": 31426.1859
+    },
+    {
+     "rep": 26,
+     "position": 0,
+     "batchMs": 1882.8244,
+     "usPerCall": 27287.3108
+    },
+    {
+     "rep": 27,
+     "position": 1,
+     "batchMs": 1742.4886,
+     "usPerCall": 25253.4575
+    },
+    {
+     "rep": 28,
+     "position": 0,
+     "batchMs": 1606.6219,
+     "usPerCall": 23284.3759
+    },
+    {
+     "rep": 29,
+     "position": 1,
+     "batchMs": 2068.5302,
+     "usPerCall": 29978.6987
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 26081.9971,
+    "usPerCallMin": 23284.3759,
+    "usPerCallP95": 29978.6987,
+    "usPerCallMean": 26404.8684,
+    "usPerCallSd": 2140.09
+   }
+  },
+  {
+   "experiment": "a-validation",
+   "impl": "lab-validateDirectory",
+   "param": "groups",
+   "value": 50,
+   "inputBytes": 653997,
+   "check": "valid",
+   "calibration": {
+    "batchSize": 549,
+    "probeCalls": 16,
+    "probeMs": 58.223
+   },
+   "batchSize": 481,
+   "warmupMs": [
+    2052.134,
+    1856.624
+   ],
+   "loadavgAtStart": "1.17 1.32 2.65 1/121 8064",
+   "loadavgAtEnd": "1.02 1.21 2.44 1/119 8096",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 1,
+     "batchMs": 1794.8224,
+     "usPerCall": 3731.4395
+    },
+    {
+     "rep": 1,
+     "position": 0,
+     "batchMs": 1774.9262,
+     "usPerCall": 3690.0752
+    },
+    {
+     "rep": 2,
+     "position": 1,
+     "batchMs": 2006.4147,
+     "usPerCall": 4171.3402
+    },
+    {
+     "rep": 3,
+     "position": 0,
+     "batchMs": 1996.4103,
+     "usPerCall": 4150.5412
+    },
+    {
+     "rep": 4,
+     "position": 1,
+     "batchMs": 2389.1208,
+     "usPerCall": 4966.9872
+    },
+    {
+     "rep": 5,
+     "position": 0,
+     "batchMs": 1954.795,
+     "usPerCall": 4064.0229
+    },
+    {
+     "rep": 6,
+     "position": 1,
+     "batchMs": 1955.6745,
+     "usPerCall": 4065.8514
+    },
+    {
+     "rep": 7,
+     "position": 0,
+     "batchMs": 1793.2171,
+     "usPerCall": 3728.1022
+    },
+    {
+     "rep": 8,
+     "position": 1,
+     "batchMs": 1817.379,
+     "usPerCall": 3778.3347
+    },
+    {
+     "rep": 9,
+     "position": 0,
+     "batchMs": 2062.5442,
+     "usPerCall": 4288.0336
+    },
+    {
+     "rep": 10,
+     "position": 1,
+     "batchMs": 1904.1739,
+     "usPerCall": 3958.7816
+    },
+    {
+     "rep": 11,
+     "position": 0,
+     "batchMs": 1837.4853,
+     "usPerCall": 3820.1357
+    },
+    {
+     "rep": 12,
+     "position": 1,
+     "batchMs": 1947.4868,
+     "usPerCall": 4048.8291
+    },
+    {
+     "rep": 13,
+     "position": 0,
+     "batchMs": 2026.0451,
+     "usPerCall": 4212.152
+    },
+    {
+     "rep": 14,
+     "position": 1,
+     "batchMs": 2002.7165,
+     "usPerCall": 4163.6517
+    },
+    {
+     "rep": 15,
+     "position": 0,
+     "batchMs": 1826.6614,
+     "usPerCall": 3797.6328
+    },
+    {
+     "rep": 16,
+     "position": 1,
+     "batchMs": 2200.1856,
+     "usPerCall": 4574.1905
+    },
+    {
+     "rep": 17,
+     "position": 0,
+     "batchMs": 1824.8908,
+     "usPerCall": 3793.9518
+    },
+    {
+     "rep": 18,
+     "position": 1,
+     "batchMs": 1935.0724,
+     "usPerCall": 4023.0195
+    },
+    {
+     "rep": 19,
+     "position": 0,
+     "batchMs": 1978.9441,
+     "usPerCall": 4114.2289
+    },
+    {
+     "rep": 20,
+     "position": 1,
+     "batchMs": 1996.7886,
+     "usPerCall": 4151.3276
+    },
+    {
+     "rep": 21,
+     "position": 0,
+     "batchMs": 2135.4117,
+     "usPerCall": 4439.5253
+    },
+    {
+     "rep": 22,
+     "position": 1,
+     "batchMs": 1830.3859,
+     "usPerCall": 3805.376
+    },
+    {
+     "rep": 23,
+     "position": 0,
+     "batchMs": 1854.9353,
+     "usPerCall": 3856.4144
+    },
+    {
+     "rep": 24,
+     "position": 1,
+     "batchMs": 2364.2815,
+     "usPerCall": 4915.3461
+    },
+    {
+     "rep": 25,
+     "position": 0,
+     "batchMs": 2162.0395,
+     "usPerCall": 4494.8847
+    },
+    {
+     "rep": 26,
+     "position": 1,
+     "batchMs": 1905.3098,
+     "usPerCall": 3961.1429
+    },
+    {
+     "rep": 27,
+     "position": 0,
+     "batchMs": 1975.9618,
+     "usPerCall": 4108.0286
+    },
+    {
+     "rep": 28,
+     "position": 1,
+     "batchMs": 1937.3754,
+     "usPerCall": 4027.8074
+    },
+    {
+     "rep": 29,
+     "position": 0,
+     "batchMs": 2227.0888,
+     "usPerCall": 4630.1222
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 4064.0229,
+    "usPerCallMin": 3690.0752,
+    "usPerCallP95": 4630.1222,
+    "usPerCallMean": 4117.7092,
+    "usPerCallSd": 335.1439
+   }
+  },
+  {
+   "experiment": "a-validation",
+   "impl": "product-schema",
+   "param": "groups",
+   "value": 100,
+   "inputBytes": 1144497,
+   "check": "valid",
+   "calibration": {
+    "batchSize": 35,
+    "probeCalls": 1,
+    "probeMs": 57.083
+   },
+   "batchSize": 35,
+   "warmupMs": [
+    1471.621
+   ],
+   "loadavgAtStart": "1.02 1.21 2.44 1/119 8096",
+   "loadavgAtEnd": "1.16 1.22 2.31 1/119 8123",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 0,
+     "batchMs": 1338.2307,
+     "usPerCall": 38235.1615
+    },
+    {
+     "rep": 1,
+     "position": 1,
+     "batchMs": 1431.3726,
+     "usPerCall": 40896.3607
+    },
+    {
+     "rep": 2,
+     "position": 0,
+     "batchMs": 1622.7876,
+     "usPerCall": 46365.3607
+    },
+    {
+     "rep": 3,
+     "position": 1,
+     "batchMs": 1498.5157,
+     "usPerCall": 42814.7334
+    },
+    {
+     "rep": 4,
+     "position": 0,
+     "batchMs": 1519.38,
+     "usPerCall": 43410.8584
+    },
+    {
+     "rep": 5,
+     "position": 1,
+     "batchMs": 1614.6982,
+     "usPerCall": 46134.233
+    },
+    {
+     "rep": 6,
+     "position": 0,
+     "batchMs": 1441.9748,
+     "usPerCall": 41199.2794
+    },
+    {
+     "rep": 7,
+     "position": 1,
+     "batchMs": 1537.1448,
+     "usPerCall": 43918.4229
+    },
+    {
+     "rep": 8,
+     "position": 0,
+     "batchMs": 1348.149,
+     "usPerCall": 38518.5428
+    },
+    {
+     "rep": 9,
+     "position": 1,
+     "batchMs": 1480.9641,
+     "usPerCall": 42313.26
+    },
+    {
+     "rep": 10,
+     "position": 0,
+     "batchMs": 1461.7595,
+     "usPerCall": 41764.5568
+    },
+    {
+     "rep": 11,
+     "position": 1,
+     "batchMs": 1452.3097,
+     "usPerCall": 41494.5617
+    },
+    {
+     "rep": 12,
+     "position": 0,
+     "batchMs": 1299.756,
+     "usPerCall": 37135.886
+    },
+    {
+     "rep": 13,
+     "position": 1,
+     "batchMs": 1296.9065,
+     "usPerCall": 37054.4716
+    },
+    {
+     "rep": 14,
+     "position": 0,
+     "batchMs": 1845.0183,
+     "usPerCall": 52714.8072
+    },
+    {
+     "rep": 15,
+     "position": 1,
+     "batchMs": 1839.1513,
+     "usPerCall": 52547.1787
+    },
+    {
+     "rep": 16,
+     "position": 0,
+     "batchMs": 1964.4967,
+     "usPerCall": 56128.4766
+    },
+    {
+     "rep": 17,
+     "position": 1,
+     "batchMs": 1503.5453,
+     "usPerCall": 42958.4383
+    },
+    {
+     "rep": 18,
+     "position": 0,
+     "batchMs": 1433.7446,
+     "usPerCall": 40964.1325
+    },
+    {
+     "rep": 19,
+     "position": 1,
+     "batchMs": 1551.302,
+     "usPerCall": 44322.9143
+    },
+    {
+     "rep": 20,
+     "position": 0,
+     "batchMs": 1359.3452,
+     "usPerCall": 38838.4331
+    },
+    {
+     "rep": 21,
+     "position": 1,
+     "batchMs": 1402.8664,
+     "usPerCall": 40081.8969
+    },
+    {
+     "rep": 22,
+     "position": 0,
+     "batchMs": 1308.8694,
+     "usPerCall": 37396.2687
+    },
+    {
+     "rep": 23,
+     "position": 1,
+     "batchMs": 1536.1116,
+     "usPerCall": 43888.9018
+    },
+    {
+     "rep": 24,
+     "position": 0,
+     "batchMs": 1500.9117,
+     "usPerCall": 42883.1917
+    },
+    {
+     "rep": 25,
+     "position": 1,
+     "batchMs": 1453.792,
+     "usPerCall": 41536.9153
+    },
+    {
+     "rep": 26,
+     "position": 0,
+     "batchMs": 1504.6995,
+     "usPerCall": 42991.4153
+    },
+    {
+     "rep": 27,
+     "position": 1,
+     "batchMs": 1573.4227,
+     "usPerCall": 44954.9337
+    },
+    {
+     "rep": 28,
+     "position": 0,
+     "batchMs": 1578.0391,
+     "usPerCall": 45086.8302
+    },
+    {
+     "rep": 29,
+     "position": 1,
+     "batchMs": 1353.7606,
+     "usPerCall": 38678.8753
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 42313.26,
+    "usPerCallMin": 37054.4716,
+    "usPerCallP95": 52547.1787,
+    "usPerCallMean": 42907.6433,
+    "usPerCallSd": 4537.9809
+   }
+  },
+  {
+   "experiment": "a-validation",
+   "impl": "lab-validateDirectory",
+   "param": "groups",
+   "value": 100,
+   "inputBytes": 1144497,
+   "check": "valid",
+   "calibration": {
+    "batchSize": 311,
+    "probeCalls": 16,
+    "probeMs": 102.807
+   },
+   "batchSize": 272,
+   "warmupMs": [
+    2053.72,
+    1759.814
+   ],
+   "loadavgAtStart": "1.02 1.21 2.44 1/119 8096",
+   "loadavgAtEnd": "1.16 1.22 2.31 1/119 8123",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 1,
+     "batchMs": 1880.4401,
+     "usPerCall": 6913.3827
+    },
+    {
+     "rep": 1,
+     "position": 0,
+     "batchMs": 1774.3472,
+     "usPerCall": 6523.3353
+    },
+    {
+     "rep": 2,
+     "position": 1,
+     "batchMs": 1924.3576,
+     "usPerCall": 7074.8443
+    },
+    {
+     "rep": 3,
+     "position": 0,
+     "batchMs": 1840.7106,
+     "usPerCall": 6767.3183
+    },
+    {
+     "rep": 4,
+     "position": 1,
+     "batchMs": 1724.5368,
+     "usPerCall": 6340.2088
+    },
+    {
+     "rep": 5,
+     "position": 0,
+     "batchMs": 1753.6281,
+     "usPerCall": 6447.1619
+    },
+    {
+     "rep": 6,
+     "position": 1,
+     "batchMs": 2189.6205,
+     "usPerCall": 8050.0753
+    },
+    {
+     "rep": 7,
+     "position": 0,
+     "batchMs": 1924.1108,
+     "usPerCall": 7073.9369
+    },
+    {
+     "rep": 8,
+     "position": 1,
+     "batchMs": 1657.2073,
+     "usPerCall": 6092.674
+    },
+    {
+     "rep": 9,
+     "position": 0,
+     "batchMs": 1769.5747,
+     "usPerCall": 6505.7894
+    },
+    {
+     "rep": 10,
+     "position": 1,
+     "batchMs": 1751.0143,
+     "usPerCall": 6437.5525
+    },
+    {
+     "rep": 11,
+     "position": 0,
+     "batchMs": 1778.9172,
+     "usPerCall": 6540.1369
+    },
+    {
+     "rep": 12,
+     "position": 1,
+     "batchMs": 1860.22,
+     "usPerCall": 6839.0441
+    },
+    {
+     "rep": 13,
+     "position": 0,
+     "batchMs": 2133.2747,
+     "usPerCall": 7842.9216
+    },
+    {
+     "rep": 14,
+     "position": 1,
+     "batchMs": 2091.1158,
+     "usPerCall": 7687.9258
+    },
+    {
+     "rep": 15,
+     "position": 0,
+     "batchMs": 1835.4973,
+     "usPerCall": 6748.152
+    },
+    {
+     "rep": 16,
+     "position": 1,
+     "batchMs": 1966.1389,
+     "usPerCall": 7228.4518
+    },
+    {
+     "rep": 17,
+     "position": 0,
+     "batchMs": 1871.8803,
+     "usPerCall": 6881.9129
+    },
+    {
+     "rep": 18,
+     "position": 1,
+     "batchMs": 1688.0952,
+     "usPerCall": 6206.2323
+    },
+    {
+     "rep": 19,
+     "position": 0,
+     "batchMs": 1819.8016,
+     "usPerCall": 6690.447
+    },
+    {
+     "rep": 20,
+     "position": 1,
+     "batchMs": 1789.1015,
+     "usPerCall": 6577.5792
+    },
+    {
+     "rep": 21,
+     "position": 0,
+     "batchMs": 1823.0628,
+     "usPerCall": 6702.4368
+    },
+    {
+     "rep": 22,
+     "position": 1,
+     "batchMs": 1726.6735,
+     "usPerCall": 6348.0643
+    },
+    {
+     "rep": 23,
+     "position": 0,
+     "batchMs": 1908.4064,
+     "usPerCall": 7016.1999
+    },
+    {
+     "rep": 24,
+     "position": 1,
+     "batchMs": 1887.6579,
+     "usPerCall": 6939.9186
+    },
+    {
+     "rep": 25,
+     "position": 0,
+     "batchMs": 1741.0499,
+     "usPerCall": 6400.9188
+    },
+    {
+     "rep": 26,
+     "position": 1,
+     "batchMs": 1813.4288,
+     "usPerCall": 6667.0178
+    },
+    {
+     "rep": 27,
+     "position": 0,
+     "batchMs": 1705.4775,
+     "usPerCall": 6270.1379
+    },
+    {
+     "rep": 28,
+     "position": 1,
+     "batchMs": 1767.7643,
+     "usPerCall": 6499.1333
+    },
+    {
+     "rep": 29,
+     "position": 0,
+     "batchMs": 2041.0337,
+     "usPerCall": 7503.8004
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 6690.447,
+    "usPerCallMin": 6092.674,
+    "usPerCallP95": 7687.9258,
+    "usPerCallMean": 6793.8904,
+    "usPerCallSd": 481.8268
+   }
+  },
+  {
+   "experiment": "b-c-preview",
+   "impl": "product-previewMeshGroupRoute",
+   "param": "nodes",
+   "value": 10,
+   "inputBytes": 21991,
+   "check": "eligible_for_planning n4 same_site; candidates 10, eligible 8",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 256,
+    "probeMs": 69.12
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    232.326
+   ],
+   "loadavgAtStart": "1.16 1.22 2.31 1/119 8123",
+   "loadavgAtEnd": "1.11 1.21 2.28 1/120 8128",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 0,
+     "batchMs": 280.6923,
+     "usPerCall": 280.6923
+    },
+    {
+     "rep": 1,
+     "position": 3,
+     "batchMs": 255.8705,
+     "usPerCall": 255.8705
+    },
+    {
+     "rep": 2,
+     "position": 2,
+     "batchMs": 263.807,
+     "usPerCall": 263.807
+    },
+    {
+     "rep": 3,
+     "position": 1,
+     "batchMs": 200.6647,
+     "usPerCall": 200.6647
+    },
+    {
+     "rep": 4,
+     "position": 0,
+     "batchMs": 331.9262,
+     "usPerCall": 331.9262
+    },
+    {
+     "rep": 5,
+     "position": 3,
+     "batchMs": 250.591,
+     "usPerCall": 250.591
+    },
+    {
+     "rep": 6,
+     "position": 2,
+     "batchMs": 217.5316,
+     "usPerCall": 217.5316
+    },
+    {
+     "rep": 7,
+     "position": 1,
+     "batchMs": 211.1377,
+     "usPerCall": 211.1377
+    },
+    {
+     "rep": 8,
+     "position": 0,
+     "batchMs": 217.3202,
+     "usPerCall": 217.3202
+    },
+    {
+     "rep": 9,
+     "position": 3,
+     "batchMs": 216.2878,
+     "usPerCall": 216.2878
+    },
+    {
+     "rep": 10,
+     "position": 2,
+     "batchMs": 199.1919,
+     "usPerCall": 199.1919
+    },
+    {
+     "rep": 11,
+     "position": 1,
+     "batchMs": 202.6615,
+     "usPerCall": 202.6615
+    },
+    {
+     "rep": 12,
+     "position": 0,
+     "batchMs": 299.2545,
+     "usPerCall": 299.2545
+    },
+    {
+     "rep": 13,
+     "position": 3,
+     "batchMs": 206.5115,
+     "usPerCall": 206.5115
+    },
+    {
+     "rep": 14,
+     "position": 2,
+     "batchMs": 208.8362,
+     "usPerCall": 208.8362
+    },
+    {
+     "rep": 15,
+     "position": 1,
+     "batchMs": 191.226,
+     "usPerCall": 191.226
+    },
+    {
+     "rep": 16,
+     "position": 0,
+     "batchMs": 232.6404,
+     "usPerCall": 232.6404
+    },
+    {
+     "rep": 17,
+     "position": 3,
+     "batchMs": 215.2888,
+     "usPerCall": 215.2888
+    },
+    {
+     "rep": 18,
+     "position": 2,
+     "batchMs": 221.6126,
+     "usPerCall": 221.6126
+    },
+    {
+     "rep": 19,
+     "position": 1,
+     "batchMs": 203.0558,
+     "usPerCall": 203.0558
+    },
+    {
+     "rep": 20,
+     "position": 0,
+     "batchMs": 217.8669,
+     "usPerCall": 217.8669
+    },
+    {
+     "rep": 21,
+     "position": 3,
+     "batchMs": 223.9392,
+     "usPerCall": 223.9392
+    },
+    {
+     "rep": 22,
+     "position": 2,
+     "batchMs": 202.3455,
+     "usPerCall": 202.3455
+    },
+    {
+     "rep": 23,
+     "position": 1,
+     "batchMs": 240.8664,
+     "usPerCall": 240.8664
+    },
+    {
+     "rep": 24,
+     "position": 0,
+     "batchMs": 227.6595,
+     "usPerCall": 227.6595
+    },
+    {
+     "rep": 25,
+     "position": 3,
+     "batchMs": 215.8001,
+     "usPerCall": 215.8001
+    },
+    {
+     "rep": 26,
+     "position": 2,
+     "batchMs": 200.4412,
+     "usPerCall": 200.4412
+    },
+    {
+     "rep": 27,
+     "position": 1,
+     "batchMs": 225.252,
+     "usPerCall": 225.252
+    },
+    {
+     "rep": 28,
+     "position": 0,
+     "batchMs": 214.8177,
+     "usPerCall": 214.8177
+    },
+    {
+     "rep": 29,
+     "position": 3,
+     "batchMs": 262.4591,
+     "usPerCall": 262.4591
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 217.3202,
+    "usPerCallMin": 191.226,
+    "usPerCallP95": 280.6923,
+    "usPerCallMean": 228.5852,
+    "usPerCallSd": 32.3372
+   }
+  },
+  {
+   "experiment": "b-c-preview",
+   "impl": "product-requestSchema-safeParse-only",
+   "param": "nodes",
+   "value": 10,
+   "inputBytes": 21991,
+   "check": "eligible_for_planning n4 same_site; candidates 10, eligible 8",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 256,
+    "probeMs": 51.637
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    222.865
+   ],
+   "loadavgAtStart": "1.16 1.22 2.31 1/119 8123",
+   "loadavgAtEnd": "1.11 1.21 2.28 1/120 8128",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 1,
+     "batchMs": 239.0528,
+     "usPerCall": 239.0528
+    },
+    {
+     "rep": 1,
+     "position": 0,
+     "batchMs": 221.8543,
+     "usPerCall": 221.8543
+    },
+    {
+     "rep": 2,
+     "position": 3,
+     "batchMs": 245.6195,
+     "usPerCall": 245.6195
+    },
+    {
+     "rep": 3,
+     "position": 2,
+     "batchMs": 251.8653,
+     "usPerCall": 251.8653
+    },
+    {
+     "rep": 4,
+     "position": 1,
+     "batchMs": 354.3099,
+     "usPerCall": 354.3099
+    },
+    {
+     "rep": 5,
+     "position": 0,
+     "batchMs": 276.3424,
+     "usPerCall": 276.3424
+    },
+    {
+     "rep": 6,
+     "position": 3,
+     "batchMs": 263.097,
+     "usPerCall": 263.097
+    },
+    {
+     "rep": 7,
+     "position": 2,
+     "batchMs": 271.4771,
+     "usPerCall": 271.4771
+    },
+    {
+     "rep": 8,
+     "position": 1,
+     "batchMs": 320.5786,
+     "usPerCall": 320.5786
+    },
+    {
+     "rep": 9,
+     "position": 0,
+     "batchMs": 302.097,
+     "usPerCall": 302.097
+    },
+    {
+     "rep": 10,
+     "position": 3,
+     "batchMs": 235.4447,
+     "usPerCall": 235.4447
+    },
+    {
+     "rep": 11,
+     "position": 2,
+     "batchMs": 274.5372,
+     "usPerCall": 274.5372
+    },
+    {
+     "rep": 12,
+     "position": 1,
+     "batchMs": 244.4901,
+     "usPerCall": 244.4901
+    },
+    {
+     "rep": 13,
+     "position": 0,
+     "batchMs": 242.2174,
+     "usPerCall": 242.2174
+    },
+    {
+     "rep": 14,
+     "position": 3,
+     "batchMs": 248.8633,
+     "usPerCall": 248.8633
+    },
+    {
+     "rep": 15,
+     "position": 2,
+     "batchMs": 290.807,
+     "usPerCall": 290.807
+    },
+    {
+     "rep": 16,
+     "position": 1,
+     "batchMs": 275.1371,
+     "usPerCall": 275.1371
+    },
+    {
+     "rep": 17,
+     "position": 0,
+     "batchMs": 270.4429,
+     "usPerCall": 270.4429
+    },
+    {
+     "rep": 18,
+     "position": 3,
+     "batchMs": 254.0827,
+     "usPerCall": 254.0827
+    },
+    {
+     "rep": 19,
+     "position": 2,
+     "batchMs": 235.443,
+     "usPerCall": 235.443
+    },
+    {
+     "rep": 20,
+     "position": 1,
+     "batchMs": 292.6465,
+     "usPerCall": 292.6465
+    },
+    {
+     "rep": 21,
+     "position": 0,
+     "batchMs": 279.5129,
+     "usPerCall": 279.5129
+    },
+    {
+     "rep": 22,
+     "position": 3,
+     "batchMs": 242.3154,
+     "usPerCall": 242.3154
+    },
+    {
+     "rep": 23,
+     "position": 2,
+     "batchMs": 274.2331,
+     "usPerCall": 274.2331
+    },
+    {
+     "rep": 24,
+     "position": 1,
+     "batchMs": 345.1028,
+     "usPerCall": 345.1028
+    },
+    {
+     "rep": 25,
+     "position": 0,
+     "batchMs": 303.0541,
+     "usPerCall": 303.0541
+    },
+    {
+     "rep": 26,
+     "position": 3,
+     "batchMs": 272.7967,
+     "usPerCall": 272.7967
+    },
+    {
+     "rep": 27,
+     "position": 2,
+     "batchMs": 265.7776,
+     "usPerCall": 265.7776
+    },
+    {
+     "rep": 28,
+     "position": 1,
+     "batchMs": 284.089,
+     "usPerCall": 284.089
+    },
+    {
+     "rep": 29,
+     "position": 0,
+     "batchMs": 416.3932,
+     "usPerCall": 416.3932
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 271.4771,
+    "usPerCallMin": 221.8543,
+    "usPerCallP95": 345.1028,
+    "usPerCallMean": 276.456,
+    "usPerCallSd": 40.8961
+   }
+  },
+  {
+   "experiment": "b-c-preview",
+   "impl": "lab-preview",
+   "param": "nodes",
+   "value": 10,
+   "inputBytes": 21991,
+   "check": "eligible_for_planning n4 same_site; candidates 10, eligible 8",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 1000,
+    "probeMs": 143.328
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    169.9
+   ],
+   "loadavgAtStart": "1.16 1.22 2.31 1/119 8123",
+   "loadavgAtEnd": "1.11 1.21 2.28 1/120 8128",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 2,
+     "batchMs": 104.1628,
+     "usPerCall": 104.1628
+    },
+    {
+     "rep": 1,
+     "position": 1,
+     "batchMs": 111.9592,
+     "usPerCall": 111.9592
+    },
+    {
+     "rep": 2,
+     "position": 0,
+     "batchMs": 111.0532,
+     "usPerCall": 111.0532
+    },
+    {
+     "rep": 3,
+     "position": 3,
+     "batchMs": 139.5729,
+     "usPerCall": 139.5729
+    },
+    {
+     "rep": 4,
+     "position": 2,
+     "batchMs": 123.5517,
+     "usPerCall": 123.5517
+    },
+    {
+     "rep": 5,
+     "position": 1,
+     "batchMs": 129.917,
+     "usPerCall": 129.917
+    },
+    {
+     "rep": 6,
+     "position": 0,
+     "batchMs": 159.7125,
+     "usPerCall": 159.7125
+    },
+    {
+     "rep": 7,
+     "position": 3,
+     "batchMs": 109.6738,
+     "usPerCall": 109.6738
+    },
+    {
+     "rep": 8,
+     "position": 2,
+     "batchMs": 161.4186,
+     "usPerCall": 161.4186
+    },
+    {
+     "rep": 9,
+     "position": 1,
+     "batchMs": 111.8848,
+     "usPerCall": 111.8848
+    },
+    {
+     "rep": 10,
+     "position": 0,
+     "batchMs": 105.972,
+     "usPerCall": 105.972
+    },
+    {
+     "rep": 11,
+     "position": 3,
+     "batchMs": 208.434,
+     "usPerCall": 208.434
+    },
+    {
+     "rep": 12,
+     "position": 2,
+     "batchMs": 159.8479,
+     "usPerCall": 159.8479
+    },
+    {
+     "rep": 13,
+     "position": 1,
+     "batchMs": 106.3004,
+     "usPerCall": 106.3004
+    },
+    {
+     "rep": 14,
+     "position": 0,
+     "batchMs": 103.311,
+     "usPerCall": 103.311
+    },
+    {
+     "rep": 15,
+     "position": 3,
+     "batchMs": 114.4726,
+     "usPerCall": 114.4726
+    },
+    {
+     "rep": 16,
+     "position": 2,
+     "batchMs": 116.1713,
+     "usPerCall": 116.1713
+    },
+    {
+     "rep": 17,
+     "position": 1,
+     "batchMs": 109.1435,
+     "usPerCall": 109.1435
+    },
+    {
+     "rep": 18,
+     "position": 0,
+     "batchMs": 108.6292,
+     "usPerCall": 108.6292
+    },
+    {
+     "rep": 19,
+     "position": 3,
+     "batchMs": 116.0123,
+     "usPerCall": 116.0123
+    },
+    {
+     "rep": 20,
+     "position": 2,
+     "batchMs": 115.5426,
+     "usPerCall": 115.5426
+    },
+    {
+     "rep": 21,
+     "position": 1,
+     "batchMs": 108.4868,
+     "usPerCall": 108.4868
+    },
+    {
+     "rep": 22,
+     "position": 0,
+     "batchMs": 104.7114,
+     "usPerCall": 104.7114
+    },
+    {
+     "rep": 23,
+     "position": 3,
+     "batchMs": 112.1833,
+     "usPerCall": 112.1833
+    },
+    {
+     "rep": 24,
+     "position": 2,
+     "batchMs": 129.3365,
+     "usPerCall": 129.3365
+    },
+    {
+     "rep": 25,
+     "position": 1,
+     "batchMs": 114.2493,
+     "usPerCall": 114.2493
+    },
+    {
+     "rep": 26,
+     "position": 0,
+     "batchMs": 106.8824,
+     "usPerCall": 106.8824
+    },
+    {
+     "rep": 27,
+     "position": 3,
+     "batchMs": 106.7397,
+     "usPerCall": 106.7397
+    },
+    {
+     "rep": 28,
+     "position": 2,
+     "batchMs": 184.0246,
+     "usPerCall": 184.0246
+    },
+    {
+     "rep": 29,
+     "position": 1,
+     "batchMs": 110.1098,
+     "usPerCall": 110.1098
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 111.9592,
+    "usPerCallMin": 103.311,
+    "usPerCallP95": 161.4186,
+    "usPerCallMean": 123.4489,
+    "usPerCallSd": 25.9242
+   }
+  },
+  {
+   "experiment": "b-c-preview",
+   "impl": "lab-plan-only",
+   "param": "nodes",
+   "value": 10,
+   "inputBytes": 21991,
+   "check": "eligible_for_planning n4 same_site; candidates 10, eligible 8",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 1000,
+    "probeMs": 12.852
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    17.169
+   ],
+   "loadavgAtStart": "1.16 1.22 2.31 1/119 8123",
+   "loadavgAtEnd": "1.11 1.21 2.28 1/120 8128",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 3,
+     "batchMs": 11.6939,
+     "usPerCall": 11.6939
+    },
+    {
+     "rep": 1,
+     "position": 2,
+     "batchMs": 11.0531,
+     "usPerCall": 11.0531
+    },
+    {
+     "rep": 2,
+     "position": 1,
+     "batchMs": 11.0297,
+     "usPerCall": 11.0297
+    },
+    {
+     "rep": 3,
+     "position": 0,
+     "batchMs": 12.7623,
+     "usPerCall": 12.7623
+    },
+    {
+     "rep": 4,
+     "position": 3,
+     "batchMs": 11.1072,
+     "usPerCall": 11.1072
+    },
+    {
+     "rep": 5,
+     "position": 2,
+     "batchMs": 10.8842,
+     "usPerCall": 10.8842
+    },
+    {
+     "rep": 6,
+     "position": 1,
+     "batchMs": 10.6659,
+     "usPerCall": 10.6659
+    },
+    {
+     "rep": 7,
+     "position": 0,
+     "batchMs": 11.7071,
+     "usPerCall": 11.7071
+    },
+    {
+     "rep": 8,
+     "position": 3,
+     "batchMs": 12.3417,
+     "usPerCall": 12.3417
+    },
+    {
+     "rep": 9,
+     "position": 2,
+     "batchMs": 11.2668,
+     "usPerCall": 11.2668
+    },
+    {
+     "rep": 10,
+     "position": 1,
+     "batchMs": 10.6044,
+     "usPerCall": 10.6044
+    },
+    {
+     "rep": 11,
+     "position": 0,
+     "batchMs": 12.0924,
+     "usPerCall": 12.0924
+    },
+    {
+     "rep": 12,
+     "position": 3,
+     "batchMs": 10.5362,
+     "usPerCall": 10.5362
+    },
+    {
+     "rep": 13,
+     "position": 2,
+     "batchMs": 10.8821,
+     "usPerCall": 10.8821
+    },
+    {
+     "rep": 14,
+     "position": 1,
+     "batchMs": 10.5805,
+     "usPerCall": 10.5805
+    },
+    {
+     "rep": 15,
+     "position": 0,
+     "batchMs": 11.1527,
+     "usPerCall": 11.1527
+    },
+    {
+     "rep": 16,
+     "position": 3,
+     "batchMs": 10.2781,
+     "usPerCall": 10.2781
+    },
+    {
+     "rep": 17,
+     "position": 2,
+     "batchMs": 10.4943,
+     "usPerCall": 10.4943
+    },
+    {
+     "rep": 18,
+     "position": 1,
+     "batchMs": 11.0273,
+     "usPerCall": 11.0273
+    },
+    {
+     "rep": 19,
+     "position": 0,
+     "batchMs": 12.2708,
+     "usPerCall": 12.2708
+    },
+    {
+     "rep": 20,
+     "position": 3,
+     "batchMs": 11.4004,
+     "usPerCall": 11.4004
+    },
+    {
+     "rep": 21,
+     "position": 2,
+     "batchMs": 10.795,
+     "usPerCall": 10.795
+    },
+    {
+     "rep": 22,
+     "position": 1,
+     "batchMs": 10.2132,
+     "usPerCall": 10.2132
+    },
+    {
+     "rep": 23,
+     "position": 0,
+     "batchMs": 11.4002,
+     "usPerCall": 11.4002
+    },
+    {
+     "rep": 24,
+     "position": 3,
+     "batchMs": 12.2676,
+     "usPerCall": 12.2676
+    },
+    {
+     "rep": 25,
+     "position": 2,
+     "batchMs": 11.0992,
+     "usPerCall": 11.0992
+    },
+    {
+     "rep": 26,
+     "position": 1,
+     "batchMs": 10.6598,
+     "usPerCall": 10.6598
+    },
+    {
+     "rep": 27,
+     "position": 0,
+     "batchMs": 21.2072,
+     "usPerCall": 21.2072
+    },
+    {
+     "rep": 28,
+     "position": 3,
+     "batchMs": 17.858,
+     "usPerCall": 17.858
+    },
+    {
+     "rep": 29,
+     "position": 2,
+     "batchMs": 10.9083,
+     "usPerCall": 10.9083
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 11.0531,
+    "usPerCallMin": 10.2132,
+    "usPerCallP95": 12.7623,
+    "usPerCallMean": 11.7413,
+    "usPerCallSd": 2.257
+   }
+  },
+  {
+   "experiment": "b-c-preview",
+   "impl": "product-previewMeshGroupRoute",
+   "param": "nodes",
+   "value": 50,
+   "inputBytes": 34240,
+   "check": "eligible_for_planning n14 same_site; candidates 50, eligible 40",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 256,
+    "probeMs": 102.65
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    458.156
+   ],
+   "loadavgAtStart": "1.11 1.21 2.28 1/120 8128",
+   "loadavgAtEnd": "1.14 1.20 2.24 1/119 8136",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 0,
+     "batchMs": 396.662,
+     "usPerCall": 396.662
+    },
+    {
+     "rep": 1,
+     "position": 3,
+     "batchMs": 392.8941,
+     "usPerCall": 392.8941
+    },
+    {
+     "rep": 2,
+     "position": 2,
+     "batchMs": 365.1952,
+     "usPerCall": 365.1952
+    },
+    {
+     "rep": 3,
+     "position": 1,
+     "batchMs": 380.1852,
+     "usPerCall": 380.1852
+    },
+    {
+     "rep": 4,
+     "position": 0,
+     "batchMs": 500.9004,
+     "usPerCall": 500.9004
+    },
+    {
+     "rep": 5,
+     "position": 3,
+     "batchMs": 397.4967,
+     "usPerCall": 397.4967
+    },
+    {
+     "rep": 6,
+     "position": 2,
+     "batchMs": 409.5557,
+     "usPerCall": 409.5557
+    },
+    {
+     "rep": 7,
+     "position": 1,
+     "batchMs": 463.8656,
+     "usPerCall": 463.8656
+    },
+    {
+     "rep": 8,
+     "position": 0,
+     "batchMs": 422.6943,
+     "usPerCall": 422.6943
+    },
+    {
+     "rep": 9,
+     "position": 3,
+     "batchMs": 414.458,
+     "usPerCall": 414.458
+    },
+    {
+     "rep": 10,
+     "position": 2,
+     "batchMs": 419.5175,
+     "usPerCall": 419.5175
+    },
+    {
+     "rep": 11,
+     "position": 1,
+     "batchMs": 415.3876,
+     "usPerCall": 415.3876
+    },
+    {
+     "rep": 12,
+     "position": 0,
+     "batchMs": 420.9939,
+     "usPerCall": 420.9939
+    },
+    {
+     "rep": 13,
+     "position": 3,
+     "batchMs": 435.7562,
+     "usPerCall": 435.7562
+    },
+    {
+     "rep": 14,
+     "position": 2,
+     "batchMs": 398.4349,
+     "usPerCall": 398.4349
+    },
+    {
+     "rep": 15,
+     "position": 1,
+     "batchMs": 357.6553,
+     "usPerCall": 357.6553
+    },
+    {
+     "rep": 16,
+     "position": 0,
+     "batchMs": 376.1971,
+     "usPerCall": 376.1971
+    },
+    {
+     "rep": 17,
+     "position": 3,
+     "batchMs": 384.7932,
+     "usPerCall": 384.7932
+    },
+    {
+     "rep": 18,
+     "position": 2,
+     "batchMs": 465.7099,
+     "usPerCall": 465.7099
+    },
+    {
+     "rep": 19,
+     "position": 1,
+     "batchMs": 384.4201,
+     "usPerCall": 384.4201
+    },
+    {
+     "rep": 20,
+     "position": 0,
+     "batchMs": 438.5323,
+     "usPerCall": 438.5323
+    },
+    {
+     "rep": 21,
+     "position": 3,
+     "batchMs": 385.4452,
+     "usPerCall": 385.4452
+    },
+    {
+     "rep": 22,
+     "position": 2,
+     "batchMs": 389.8092,
+     "usPerCall": 389.8092
+    },
+    {
+     "rep": 23,
+     "position": 1,
+     "batchMs": 370.3583,
+     "usPerCall": 370.3583
+    },
+    {
+     "rep": 24,
+     "position": 0,
+     "batchMs": 423.3132,
+     "usPerCall": 423.3132
+    },
+    {
+     "rep": 25,
+     "position": 3,
+     "batchMs": 385.3118,
+     "usPerCall": 385.3118
+    },
+    {
+     "rep": 26,
+     "position": 2,
+     "batchMs": 404.8183,
+     "usPerCall": 404.8183
+    },
+    {
+     "rep": 27,
+     "position": 1,
+     "batchMs": 364.1796,
+     "usPerCall": 364.1796
+    },
+    {
+     "rep": 28,
+     "position": 0,
+     "batchMs": 510.7668,
+     "usPerCall": 510.7668
+    },
+    {
+     "rep": 29,
+     "position": 3,
+     "batchMs": 454.1798,
+     "usPerCall": 454.1798
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 398.4349,
+    "usPerCallMin": 357.6553,
+    "usPerCallP95": 465.7099,
+    "usPerCallMean": 410.9829,
+    "usPerCallSd": 38.3129
+   }
+  },
+  {
+   "experiment": "b-c-preview",
+   "impl": "product-requestSchema-safeParse-only",
+   "param": "nodes",
+   "value": 50,
+   "inputBytes": 34240,
+   "check": "eligible_for_planning n14 same_site; candidates 50, eligible 40",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 256,
+    "probeMs": 108.476
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    401.627
+   ],
+   "loadavgAtStart": "1.11 1.21 2.28 1/120 8128",
+   "loadavgAtEnd": "1.14 1.20 2.24 1/119 8136",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 1,
+     "batchMs": 483.8583,
+     "usPerCall": 483.8583
+    },
+    {
+     "rep": 1,
+     "position": 0,
+     "batchMs": 417.1641,
+     "usPerCall": 417.1641
+    },
+    {
+     "rep": 2,
+     "position": 3,
+     "batchMs": 365.2853,
+     "usPerCall": 365.2853
+    },
+    {
+     "rep": 3,
+     "position": 2,
+     "batchMs": 380.968,
+     "usPerCall": 380.968
+    },
+    {
+     "rep": 4,
+     "position": 1,
+     "batchMs": 325.8846,
+     "usPerCall": 325.8846
+    },
+    {
+     "rep": 5,
+     "position": 0,
+     "batchMs": 381.844,
+     "usPerCall": 381.844
+    },
+    {
+     "rep": 6,
+     "position": 3,
+     "batchMs": 376.292,
+     "usPerCall": 376.292
+    },
+    {
+     "rep": 7,
+     "position": 2,
+     "batchMs": 414.4951,
+     "usPerCall": 414.4951
+    },
+    {
+     "rep": 8,
+     "position": 1,
+     "batchMs": 489.4931,
+     "usPerCall": 489.4931
+    },
+    {
+     "rep": 9,
+     "position": 0,
+     "batchMs": 430.4144,
+     "usPerCall": 430.4144
+    },
+    {
+     "rep": 10,
+     "position": 3,
+     "batchMs": 421.2568,
+     "usPerCall": 421.2568
+    },
+    {
+     "rep": 11,
+     "position": 2,
+     "batchMs": 389.3923,
+     "usPerCall": 389.3923
+    },
+    {
+     "rep": 12,
+     "position": 1,
+     "batchMs": 456.3182,
+     "usPerCall": 456.3182
+    },
+    {
+     "rep": 13,
+     "position": 0,
+     "batchMs": 380.9975,
+     "usPerCall": 380.9975
+    },
+    {
+     "rep": 14,
+     "position": 3,
+     "batchMs": 387.0018,
+     "usPerCall": 387.0018
+    },
+    {
+     "rep": 15,
+     "position": 2,
+     "batchMs": 339.8257,
+     "usPerCall": 339.8257
+    },
+    {
+     "rep": 16,
+     "position": 1,
+     "batchMs": 348.8857,
+     "usPerCall": 348.8857
+    },
+    {
+     "rep": 17,
+     "position": 0,
+     "batchMs": 359.0417,
+     "usPerCall": 359.0417
+    },
+    {
+     "rep": 18,
+     "position": 3,
+     "batchMs": 472.1585,
+     "usPerCall": 472.1585
+    },
+    {
+     "rep": 19,
+     "position": 2,
+     "batchMs": 441.7445,
+     "usPerCall": 441.7445
+    },
+    {
+     "rep": 20,
+     "position": 1,
+     "batchMs": 433.0405,
+     "usPerCall": 433.0405
+    },
+    {
+     "rep": 21,
+     "position": 0,
+     "batchMs": 454.4713,
+     "usPerCall": 454.4713
+    },
+    {
+     "rep": 22,
+     "position": 3,
+     "batchMs": 427.5155,
+     "usPerCall": 427.5155
+    },
+    {
+     "rep": 23,
+     "position": 2,
+     "batchMs": 397.2647,
+     "usPerCall": 397.2647
+    },
+    {
+     "rep": 24,
+     "position": 1,
+     "batchMs": 412.5213,
+     "usPerCall": 412.5213
+    },
+    {
+     "rep": 25,
+     "position": 0,
+     "batchMs": 686.8908,
+     "usPerCall": 686.8908
+    },
+    {
+     "rep": 26,
+     "position": 3,
+     "batchMs": 448.5939,
+     "usPerCall": 448.5939
+    },
+    {
+     "rep": 27,
+     "position": 2,
+     "batchMs": 443.2998,
+     "usPerCall": 443.2998
+    },
+    {
+     "rep": 28,
+     "position": 1,
+     "batchMs": 389.0412,
+     "usPerCall": 389.0412
+    },
+    {
+     "rep": 29,
+     "position": 0,
+     "batchMs": 382.843,
+     "usPerCall": 382.843
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 412.5213,
+    "usPerCallMin": 325.8846,
+    "usPerCallP95": 483.8583,
+    "usPerCallMean": 417.9268,
+    "usPerCallSd": 65.875
+   }
+  },
+  {
+   "experiment": "b-c-preview",
+   "impl": "lab-preview",
+   "param": "nodes",
+   "value": 50,
+   "inputBytes": 34240,
+   "check": "eligible_for_planning n14 same_site; candidates 50, eligible 40",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 256,
+    "probeMs": 52.184
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    201.932
+   ],
+   "loadavgAtStart": "1.11 1.21 2.28 1/120 8128",
+   "loadavgAtEnd": "1.14 1.20 2.24 1/119 8136",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 2,
+     "batchMs": 207.334,
+     "usPerCall": 207.334
+    },
+    {
+     "rep": 1,
+     "position": 1,
+     "batchMs": 240.7809,
+     "usPerCall": 240.7809
+    },
+    {
+     "rep": 2,
+     "position": 0,
+     "batchMs": 203.327,
+     "usPerCall": 203.327
+    },
+    {
+     "rep": 3,
+     "position": 3,
+     "batchMs": 193.7402,
+     "usPerCall": 193.7402
+    },
+    {
+     "rep": 4,
+     "position": 2,
+     "batchMs": 198.4623,
+     "usPerCall": 198.4623
+    },
+    {
+     "rep": 5,
+     "position": 1,
+     "batchMs": 215.9367,
+     "usPerCall": 215.9367
+    },
+    {
+     "rep": 6,
+     "position": 0,
+     "batchMs": 206.9643,
+     "usPerCall": 206.9643
+    },
+    {
+     "rep": 7,
+     "position": 3,
+     "batchMs": 212.121,
+     "usPerCall": 212.121
+    },
+    {
+     "rep": 8,
+     "position": 2,
+     "batchMs": 212.8108,
+     "usPerCall": 212.8108
+    },
+    {
+     "rep": 9,
+     "position": 1,
+     "batchMs": 215.4444,
+     "usPerCall": 215.4444
+    },
+    {
+     "rep": 10,
+     "position": 0,
+     "batchMs": 254.8761,
+     "usPerCall": 254.8761
+    },
+    {
+     "rep": 11,
+     "position": 3,
+     "batchMs": 217.0455,
+     "usPerCall": 217.0455
+    },
+    {
+     "rep": 12,
+     "position": 2,
+     "batchMs": 213.618,
+     "usPerCall": 213.618
+    },
+    {
+     "rep": 13,
+     "position": 1,
+     "batchMs": 214.0955,
+     "usPerCall": 214.0955
+    },
+    {
+     "rep": 14,
+     "position": 0,
+     "batchMs": 246.0133,
+     "usPerCall": 246.0133
+    },
+    {
+     "rep": 15,
+     "position": 3,
+     "batchMs": 198.4914,
+     "usPerCall": 198.4914
+    },
+    {
+     "rep": 16,
+     "position": 2,
+     "batchMs": 197.5914,
+     "usPerCall": 197.5914
+    },
+    {
+     "rep": 17,
+     "position": 1,
+     "batchMs": 218.4211,
+     "usPerCall": 218.4211
+    },
+    {
+     "rep": 18,
+     "position": 0,
+     "batchMs": 205.5374,
+     "usPerCall": 205.5374
+    },
+    {
+     "rep": 19,
+     "position": 3,
+     "batchMs": 226.7176,
+     "usPerCall": 226.7176
+    },
+    {
+     "rep": 20,
+     "position": 2,
+     "batchMs": 230.4639,
+     "usPerCall": 230.4639
+    },
+    {
+     "rep": 21,
+     "position": 1,
+     "batchMs": 196.2668,
+     "usPerCall": 196.2668
+    },
+    {
+     "rep": 22,
+     "position": 0,
+     "batchMs": 206.3636,
+     "usPerCall": 206.3636
+    },
+    {
+     "rep": 23,
+     "position": 3,
+     "batchMs": 283.8757,
+     "usPerCall": 283.8757
+    },
+    {
+     "rep": 24,
+     "position": 2,
+     "batchMs": 277.7156,
+     "usPerCall": 277.7156
+    },
+    {
+     "rep": 25,
+     "position": 1,
+     "batchMs": 271.2685,
+     "usPerCall": 271.2685
+    },
+    {
+     "rep": 26,
+     "position": 0,
+     "batchMs": 232.2938,
+     "usPerCall": 232.2938
+    },
+    {
+     "rep": 27,
+     "position": 3,
+     "batchMs": 248.1238,
+     "usPerCall": 248.1238
+    },
+    {
+     "rep": 28,
+     "position": 2,
+     "batchMs": 205.5177,
+     "usPerCall": 205.5177
+    },
+    {
+     "rep": 29,
+     "position": 1,
+     "batchMs": 213.2639,
+     "usPerCall": 213.2639
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 213.618,
+    "usPerCallMin": 193.7402,
+    "usPerCallP95": 271.2685,
+    "usPerCallMean": 222.1494,
+    "usPerCallSd": 24.5656
+   }
+  },
+  {
+   "experiment": "b-c-preview",
+   "impl": "lab-plan-only",
+   "param": "nodes",
+   "value": 50,
+   "inputBytes": 34240,
+   "check": "eligible_for_planning n14 same_site; candidates 50, eligible 40",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 1000,
+    "probeMs": 67.767
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    54.185
+   ],
+   "loadavgAtStart": "1.11 1.21 2.28 1/120 8128",
+   "loadavgAtEnd": "1.14 1.20 2.24 1/119 8136",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 3,
+     "batchMs": 41.7629,
+     "usPerCall": 41.7629
+    },
+    {
+     "rep": 1,
+     "position": 2,
+     "batchMs": 42.8116,
+     "usPerCall": 42.8116
+    },
+    {
+     "rep": 2,
+     "position": 1,
+     "batchMs": 39.9039,
+     "usPerCall": 39.9039
+    },
+    {
+     "rep": 3,
+     "position": 0,
+     "batchMs": 41.3567,
+     "usPerCall": 41.3567
+    },
+    {
+     "rep": 4,
+     "position": 3,
+     "batchMs": 39.6152,
+     "usPerCall": 39.6152
+    },
+    {
+     "rep": 5,
+     "position": 2,
+     "batchMs": 45.0547,
+     "usPerCall": 45.0547
+    },
+    {
+     "rep": 6,
+     "position": 1,
+     "batchMs": 44.8411,
+     "usPerCall": 44.8411
+    },
+    {
+     "rep": 7,
+     "position": 0,
+     "batchMs": 41.1838,
+     "usPerCall": 41.1838
+    },
+    {
+     "rep": 8,
+     "position": 3,
+     "batchMs": 43.3523,
+     "usPerCall": 43.3523
+    },
+    {
+     "rep": 9,
+     "position": 2,
+     "batchMs": 53.2932,
+     "usPerCall": 53.2932
+    },
+    {
+     "rep": 10,
+     "position": 1,
+     "batchMs": 41.2798,
+     "usPerCall": 41.2798
+    },
+    {
+     "rep": 11,
+     "position": 0,
+     "batchMs": 44.1724,
+     "usPerCall": 44.1724
+    },
+    {
+     "rep": 12,
+     "position": 3,
+     "batchMs": 47.0688,
+     "usPerCall": 47.0688
+    },
+    {
+     "rep": 13,
+     "position": 2,
+     "batchMs": 48.8585,
+     "usPerCall": 48.8585
+    },
+    {
+     "rep": 14,
+     "position": 1,
+     "batchMs": 41.4952,
+     "usPerCall": 41.4952
+    },
+    {
+     "rep": 15,
+     "position": 0,
+     "batchMs": 40.5343,
+     "usPerCall": 40.5343
+    },
+    {
+     "rep": 16,
+     "position": 3,
+     "batchMs": 39.8312,
+     "usPerCall": 39.8312
+    },
+    {
+     "rep": 17,
+     "position": 2,
+     "batchMs": 40.9763,
+     "usPerCall": 40.9763
+    },
+    {
+     "rep": 18,
+     "position": 1,
+     "batchMs": 39.3548,
+     "usPerCall": 39.3548
+    },
+    {
+     "rep": 19,
+     "position": 0,
+     "batchMs": 41.481,
+     "usPerCall": 41.481
+    },
+    {
+     "rep": 20,
+     "position": 3,
+     "batchMs": 40.3128,
+     "usPerCall": 40.3128
+    },
+    {
+     "rep": 21,
+     "position": 2,
+     "batchMs": 46.1324,
+     "usPerCall": 46.1324
+    },
+    {
+     "rep": 22,
+     "position": 1,
+     "batchMs": 40.9845,
+     "usPerCall": 40.9845
+    },
+    {
+     "rep": 23,
+     "position": 0,
+     "batchMs": 41.8293,
+     "usPerCall": 41.8293
+    },
+    {
+     "rep": 24,
+     "position": 3,
+     "batchMs": 75.4355,
+     "usPerCall": 75.4355
+    },
+    {
+     "rep": 25,
+     "position": 2,
+     "batchMs": 40.8352,
+     "usPerCall": 40.8352
+    },
+    {
+     "rep": 26,
+     "position": 1,
+     "batchMs": 43.5327,
+     "usPerCall": 43.5327
+    },
+    {
+     "rep": 27,
+     "position": 0,
+     "batchMs": 41.4148,
+     "usPerCall": 41.4148
+    },
+    {
+     "rep": 28,
+     "position": 3,
+     "batchMs": 40.2393,
+     "usPerCall": 40.2393
+    },
+    {
+     "rep": 29,
+     "position": 2,
+     "batchMs": 41.6912,
+     "usPerCall": 41.6912
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 41.481,
+    "usPerCallMin": 39.3548,
+    "usPerCallP95": 48.8585,
+    "usPerCallMean": 43.6878,
+    "usPerCallSd": 6.728
+   }
+  },
+  {
+   "experiment": "b-c-preview",
+   "impl": "product-previewMeshGroupRoute",
+   "param": "nodes",
+   "value": 100,
+   "inputBytes": 49550,
+   "check": "eligible_for_planning n19 same_site; candidates 100, eligible 81",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 64,
+    "probeMs": 72.056
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    721.473
+   ],
+   "loadavgAtStart": "1.14 1.20 2.24 1/119 8136",
+   "loadavgAtEnd": "1.05 1.16 2.16 1/120 8150",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 0,
+     "batchMs": 851.0918,
+     "usPerCall": 851.0918
+    },
+    {
+     "rep": 1,
+     "position": 3,
+     "batchMs": 695.5156,
+     "usPerCall": 695.5156
+    },
+    {
+     "rep": 2,
+     "position": 2,
+     "batchMs": 695.9129,
+     "usPerCall": 695.9129
+    },
+    {
+     "rep": 3,
+     "position": 1,
+     "batchMs": 813.3042,
+     "usPerCall": 813.3042
+    },
+    {
+     "rep": 4,
+     "position": 0,
+     "batchMs": 742.1627,
+     "usPerCall": 742.1627
+    },
+    {
+     "rep": 5,
+     "position": 3,
+     "batchMs": 716.5189,
+     "usPerCall": 716.5189
+    },
+    {
+     "rep": 6,
+     "position": 2,
+     "batchMs": 764.2247,
+     "usPerCall": 764.2247
+    },
+    {
+     "rep": 7,
+     "position": 1,
+     "batchMs": 767.3624,
+     "usPerCall": 767.3624
+    },
+    {
+     "rep": 8,
+     "position": 0,
+     "batchMs": 889.7879,
+     "usPerCall": 889.7879
+    },
+    {
+     "rep": 9,
+     "position": 3,
+     "batchMs": 810.519,
+     "usPerCall": 810.519
+    },
+    {
+     "rep": 10,
+     "position": 2,
+     "batchMs": 701.6167,
+     "usPerCall": 701.6167
+    },
+    {
+     "rep": 11,
+     "position": 1,
+     "batchMs": 699.7475,
+     "usPerCall": 699.7475
+    },
+    {
+     "rep": 12,
+     "position": 0,
+     "batchMs": 905.0911,
+     "usPerCall": 905.0911
+    },
+    {
+     "rep": 13,
+     "position": 3,
+     "batchMs": 815.9932,
+     "usPerCall": 815.9932
+    },
+    {
+     "rep": 14,
+     "position": 2,
+     "batchMs": 724.7404,
+     "usPerCall": 724.7404
+    },
+    {
+     "rep": 15,
+     "position": 1,
+     "batchMs": 751.5442,
+     "usPerCall": 751.5442
+    },
+    {
+     "rep": 16,
+     "position": 0,
+     "batchMs": 784.7635,
+     "usPerCall": 784.7635
+    },
+    {
+     "rep": 17,
+     "position": 3,
+     "batchMs": 841.0565,
+     "usPerCall": 841.0565
+    },
+    {
+     "rep": 18,
+     "position": 2,
+     "batchMs": 726.2852,
+     "usPerCall": 726.2852
+    },
+    {
+     "rep": 19,
+     "position": 1,
+     "batchMs": 744.0135,
+     "usPerCall": 744.0135
+    },
+    {
+     "rep": 20,
+     "position": 0,
+     "batchMs": 783.2264,
+     "usPerCall": 783.2264
+    },
+    {
+     "rep": 21,
+     "position": 3,
+     "batchMs": 840.9996,
+     "usPerCall": 840.9996
+    },
+    {
+     "rep": 22,
+     "position": 2,
+     "batchMs": 874.2469,
+     "usPerCall": 874.2469
+    },
+    {
+     "rep": 23,
+     "position": 1,
+     "batchMs": 873.8361,
+     "usPerCall": 873.8361
+    },
+    {
+     "rep": 24,
+     "position": 0,
+     "batchMs": 744.4564,
+     "usPerCall": 744.4564
+    },
+    {
+     "rep": 25,
+     "position": 3,
+     "batchMs": 1096.5631,
+     "usPerCall": 1096.5631
+    },
+    {
+     "rep": 26,
+     "position": 2,
+     "batchMs": 792.8916,
+     "usPerCall": 792.8916
+    },
+    {
+     "rep": 27,
+     "position": 1,
+     "batchMs": 844.5099,
+     "usPerCall": 844.5099
+    },
+    {
+     "rep": 28,
+     "position": 0,
+     "batchMs": 705.611,
+     "usPerCall": 705.611
+    },
+    {
+     "rep": 29,
+     "position": 3,
+     "batchMs": 864.0219,
+     "usPerCall": 864.0219
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 783.2264,
+    "usPerCallMin": 695.5156,
+    "usPerCallP95": 889.7879,
+    "usPerCallMean": 795.3872,
+    "usPerCallSd": 85.7545
+   }
+  },
+  {
+   "experiment": "b-c-preview",
+   "impl": "product-requestSchema-safeParse-only",
+   "param": "nodes",
+   "value": 100,
+   "inputBytes": 49550,
+   "check": "eligible_for_planning n19 same_site; candidates 100, eligible 81",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 256,
+    "probeMs": 143.64
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    560.117
+   ],
+   "loadavgAtStart": "1.14 1.20 2.24 1/119 8136",
+   "loadavgAtEnd": "1.05 1.16 2.16 1/120 8150",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 1,
+     "batchMs": 539.6221,
+     "usPerCall": 539.6221
+    },
+    {
+     "rep": 1,
+     "position": 0,
+     "batchMs": 576.3799,
+     "usPerCall": 576.3799
+    },
+    {
+     "rep": 2,
+     "position": 3,
+     "batchMs": 640.2602,
+     "usPerCall": 640.2602
+    },
+    {
+     "rep": 3,
+     "position": 2,
+     "batchMs": 628.5982,
+     "usPerCall": 628.5982
+    },
+    {
+     "rep": 4,
+     "position": 1,
+     "batchMs": 608.3077,
+     "usPerCall": 608.3077
+    },
+    {
+     "rep": 5,
+     "position": 0,
+     "batchMs": 776.6155,
+     "usPerCall": 776.6155
+    },
+    {
+     "rep": 6,
+     "position": 3,
+     "batchMs": 595.32,
+     "usPerCall": 595.32
+    },
+    {
+     "rep": 7,
+     "position": 2,
+     "batchMs": 587.862,
+     "usPerCall": 587.862
+    },
+    {
+     "rep": 8,
+     "position": 1,
+     "batchMs": 598.1373,
+     "usPerCall": 598.1373
+    },
+    {
+     "rep": 9,
+     "position": 0,
+     "batchMs": 599.0033,
+     "usPerCall": 599.0033
+    },
+    {
+     "rep": 10,
+     "position": 3,
+     "batchMs": 558.647,
+     "usPerCall": 558.647
+    },
+    {
+     "rep": 11,
+     "position": 2,
+     "batchMs": 640.6441,
+     "usPerCall": 640.6441
+    },
+    {
+     "rep": 12,
+     "position": 1,
+     "batchMs": 552.0838,
+     "usPerCall": 552.0838
+    },
+    {
+     "rep": 13,
+     "position": 0,
+     "batchMs": 578.3441,
+     "usPerCall": 578.3441
+    },
+    {
+     "rep": 14,
+     "position": 3,
+     "batchMs": 653.6831,
+     "usPerCall": 653.6831
+    },
+    {
+     "rep": 15,
+     "position": 2,
+     "batchMs": 653.1487,
+     "usPerCall": 653.1487
+    },
+    {
+     "rep": 16,
+     "position": 1,
+     "batchMs": 851.9238,
+     "usPerCall": 851.9238
+    },
+    {
+     "rep": 17,
+     "position": 0,
+     "batchMs": 594.1134,
+     "usPerCall": 594.1134
+    },
+    {
+     "rep": 18,
+     "position": 3,
+     "batchMs": 885.2292,
+     "usPerCall": 885.2292
+    },
+    {
+     "rep": 19,
+     "position": 2,
+     "batchMs": 711.2597,
+     "usPerCall": 711.2597
+    },
+    {
+     "rep": 20,
+     "position": 1,
+     "batchMs": 652.2537,
+     "usPerCall": 652.2537
+    },
+    {
+     "rep": 21,
+     "position": 0,
+     "batchMs": 629.0016,
+     "usPerCall": 629.0016
+    },
+    {
+     "rep": 22,
+     "position": 3,
+     "batchMs": 900.2959,
+     "usPerCall": 900.2959
+    },
+    {
+     "rep": 23,
+     "position": 2,
+     "batchMs": 852.0365,
+     "usPerCall": 852.0365
+    },
+    {
+     "rep": 24,
+     "position": 1,
+     "batchMs": 679.0177,
+     "usPerCall": 679.0177
+    },
+    {
+     "rep": 25,
+     "position": 0,
+     "batchMs": 525.6711,
+     "usPerCall": 525.6711
+    },
+    {
+     "rep": 26,
+     "position": 3,
+     "batchMs": 588.6929,
+     "usPerCall": 588.6929
+    },
+    {
+     "rep": 27,
+     "position": 2,
+     "batchMs": 658.6946,
+     "usPerCall": 658.6946
+    },
+    {
+     "rep": 28,
+     "position": 1,
+     "batchMs": 565.2869,
+     "usPerCall": 565.2869
+    },
+    {
+     "rep": 29,
+     "position": 0,
+     "batchMs": 519.9411,
+     "usPerCall": 519.9411
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 608.3077,
+    "usPerCallMin": 519.9411,
+    "usPerCallP95": 852.0365,
+    "usPerCallMean": 646.6692,
+    "usPerCallSd": 105.3784
+   }
+  },
+  {
+   "experiment": "b-c-preview",
+   "impl": "lab-preview",
+   "param": "nodes",
+   "value": 100,
+   "inputBytes": 49550,
+   "check": "eligible_for_planning n19 same_site; candidates 100, eligible 81",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 256,
+    "probeMs": 85.012
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    330.196
+   ],
+   "loadavgAtStart": "1.14 1.20 2.24 1/119 8136",
+   "loadavgAtEnd": "1.05 1.16 2.16 1/120 8150",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 2,
+     "batchMs": 321.6857,
+     "usPerCall": 321.6857
+    },
+    {
+     "rep": 1,
+     "position": 1,
+     "batchMs": 322.0458,
+     "usPerCall": 322.0458
+    },
+    {
+     "rep": 2,
+     "position": 0,
+     "batchMs": 316.0933,
+     "usPerCall": 316.0933
+    },
+    {
+     "rep": 3,
+     "position": 3,
+     "batchMs": 377.3267,
+     "usPerCall": 377.3267
+    },
+    {
+     "rep": 4,
+     "position": 2,
+     "batchMs": 503.0663,
+     "usPerCall": 503.0663
+    },
+    {
+     "rep": 5,
+     "position": 1,
+     "batchMs": 323.5847,
+     "usPerCall": 323.5847
+    },
+    {
+     "rep": 6,
+     "position": 0,
+     "batchMs": 472.9908,
+     "usPerCall": 472.9908
+    },
+    {
+     "rep": 7,
+     "position": 3,
+     "batchMs": 379.7408,
+     "usPerCall": 379.7408
+    },
+    {
+     "rep": 8,
+     "position": 2,
+     "batchMs": 355.2232,
+     "usPerCall": 355.2232
+    },
+    {
+     "rep": 9,
+     "position": 1,
+     "batchMs": 326.4207,
+     "usPerCall": 326.4207
+    },
+    {
+     "rep": 10,
+     "position": 0,
+     "batchMs": 331.6312,
+     "usPerCall": 331.6312
+    },
+    {
+     "rep": 11,
+     "position": 3,
+     "batchMs": 443.3154,
+     "usPerCall": 443.3154
+    },
+    {
+     "rep": 12,
+     "position": 2,
+     "batchMs": 341.7303,
+     "usPerCall": 341.7303
+    },
+    {
+     "rep": 13,
+     "position": 1,
+     "batchMs": 334.4233,
+     "usPerCall": 334.4233
+    },
+    {
+     "rep": 14,
+     "position": 0,
+     "batchMs": 333.9754,
+     "usPerCall": 333.9754
+    },
+    {
+     "rep": 15,
+     "position": 3,
+     "batchMs": 371.9972,
+     "usPerCall": 371.9972
+    },
+    {
+     "rep": 16,
+     "position": 2,
+     "batchMs": 367.7381,
+     "usPerCall": 367.7381
+    },
+    {
+     "rep": 17,
+     "position": 1,
+     "batchMs": 347.4877,
+     "usPerCall": 347.4877
+    },
+    {
+     "rep": 18,
+     "position": 0,
+     "batchMs": 408.4511,
+     "usPerCall": 408.4511
+    },
+    {
+     "rep": 19,
+     "position": 3,
+     "batchMs": 364.6567,
+     "usPerCall": 364.6567
+    },
+    {
+     "rep": 20,
+     "position": 2,
+     "batchMs": 326.0914,
+     "usPerCall": 326.0914
+    },
+    {
+     "rep": 21,
+     "position": 1,
+     "batchMs": 346.8346,
+     "usPerCall": 346.8346
+    },
+    {
+     "rep": 22,
+     "position": 0,
+     "batchMs": 390.2892,
+     "usPerCall": 390.2892
+    },
+    {
+     "rep": 23,
+     "position": 3,
+     "batchMs": 420.6285,
+     "usPerCall": 420.6285
+    },
+    {
+     "rep": 24,
+     "position": 2,
+     "batchMs": 326.0681,
+     "usPerCall": 326.0681
+    },
+    {
+     "rep": 25,
+     "position": 1,
+     "batchMs": 326.5216,
+     "usPerCall": 326.5216
+    },
+    {
+     "rep": 26,
+     "position": 0,
+     "batchMs": 383.8509,
+     "usPerCall": 383.8509
+    },
+    {
+     "rep": 27,
+     "position": 3,
+     "batchMs": 323.715,
+     "usPerCall": 323.715
+    },
+    {
+     "rep": 28,
+     "position": 2,
+     "batchMs": 329.9909,
+     "usPerCall": 329.9909
+    },
+    {
+     "rep": 29,
+     "position": 1,
+     "batchMs": 358.2027,
+     "usPerCall": 358.2027
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 346.8346,
+    "usPerCallMin": 316.0933,
+    "usPerCallP95": 443.3154,
+    "usPerCallMean": 362.5259,
+    "usPerCallSd": 47.0381
+   }
+  },
+  {
+   "experiment": "b-c-preview",
+   "impl": "lab-plan-only",
+   "param": "nodes",
+   "value": 100,
+   "inputBytes": 49550,
+   "check": "eligible_for_planning n19 same_site; candidates 100, eligible 81",
+   "calibration": {
+    "batchSize": 1000,
+    "probeCalls": 1000,
+    "probeMs": 82.615
+   },
+   "batchSize": 1000,
+   "warmupMs": [
+    81.645
+   ],
+   "loadavgAtStart": "1.14 1.20 2.24 1/119 8136",
+   "loadavgAtEnd": "1.05 1.16 2.16 1/120 8150",
+   "reps": [
+    {
+     "rep": 0,
+     "position": 3,
+     "batchMs": 86.3734,
+     "usPerCall": 86.3734
+    },
+    {
+     "rep": 1,
+     "position": 2,
+     "batchMs": 79.5655,
+     "usPerCall": 79.5655
+    },
+    {
+     "rep": 2,
+     "position": 1,
+     "batchMs": 78.5134,
+     "usPerCall": 78.5134
+    },
+    {
+     "rep": 3,
+     "position": 0,
+     "batchMs": 83.2136,
+     "usPerCall": 83.2136
+    },
+    {
+     "rep": 4,
+     "position": 3,
+     "batchMs": 131.1134,
+     "usPerCall": 131.1134
+    },
+    {
+     "rep": 5,
+     "position": 2,
+     "batchMs": 78.9694,
+     "usPerCall": 78.9694
+    },
+    {
+     "rep": 6,
+     "position": 1,
+     "batchMs": 85.106,
+     "usPerCall": 85.106
+    },
+    {
+     "rep": 7,
+     "position": 0,
+     "batchMs": 89.468,
+     "usPerCall": 89.468
+    },
+    {
+     "rep": 8,
+     "position": 3,
+     "batchMs": 83.6522,
+     "usPerCall": 83.6522
+    },
+    {
+     "rep": 9,
+     "position": 2,
+     "batchMs": 83.037,
+     "usPerCall": 83.037
+    },
+    {
+     "rep": 10,
+     "position": 1,
+     "batchMs": 79.7062,
+     "usPerCall": 79.7062
+    },
+    {
+     "rep": 11,
+     "position": 0,
+     "batchMs": 78.4031,
+     "usPerCall": 78.4031
+    },
+    {
+     "rep": 12,
+     "position": 3,
+     "batchMs": 79.7637,
+     "usPerCall": 79.7637
+    },
+    {
+     "rep": 13,
+     "position": 2,
+     "batchMs": 123.5439,
+     "usPerCall": 123.5439
+    },
+    {
+     "rep": 14,
+     "position": 1,
+     "batchMs": 81.4893,
+     "usPerCall": 81.4893
+    },
+    {
+     "rep": 15,
+     "position": 0,
+     "batchMs": 79.852,
+     "usPerCall": 79.852
+    },
+    {
+     "rep": 16,
+     "position": 3,
+     "batchMs": 78.114,
+     "usPerCall": 78.114
+    },
+    {
+     "rep": 17,
+     "position": 2,
+     "batchMs": 96.0937,
+     "usPerCall": 96.0937
+    },
+    {
+     "rep": 18,
+     "position": 1,
+     "batchMs": 82.9036,
+     "usPerCall": 82.9036
+    },
+    {
+     "rep": 19,
+     "position": 0,
+     "batchMs": 84.5192,
+     "usPerCall": 84.5192
+    },
+    {
+     "rep": 20,
+     "position": 3,
+     "batchMs": 90.2593,
+     "usPerCall": 90.2593
+    },
+    {
+     "rep": 21,
+     "position": 2,
+     "batchMs": 86.6015,
+     "usPerCall": 86.6015
+    },
+    {
+     "rep": 22,
+     "position": 1,
+     "batchMs": 143.9237,
+     "usPerCall": 143.9237
+    },
+    {
+     "rep": 23,
+     "position": 0,
+     "batchMs": 83.2688,
+     "usPerCall": 83.2688
+    },
+    {
+     "rep": 24,
+     "position": 3,
+     "batchMs": 78.3163,
+     "usPerCall": 78.3163
+    },
+    {
+     "rep": 25,
+     "position": 2,
+     "batchMs": 158.1122,
+     "usPerCall": 158.1122
+    },
+    {
+     "rep": 26,
+     "position": 1,
+     "batchMs": 88.2594,
+     "usPerCall": 88.2594
+    },
+    {
+     "rep": 27,
+     "position": 0,
+     "batchMs": 84.0747,
+     "usPerCall": 84.0747
+    },
+    {
+     "rep": 28,
+     "position": 3,
+     "batchMs": 76.8373,
+     "usPerCall": 76.8373
+    },
+    {
+     "rep": 29,
+     "position": 2,
+     "batchMs": 80.6203,
+     "usPerCall": 80.6203
+    }
+   ],
+   "summary": {
+    "usPerCallMedian": 83.2136,
+    "usPerCallMin": 76.8373,
+    "usPerCallP95": 131.1134,
+    "usPerCallMean": 90.4558,
+    "usPerCallSd": 20.4798
+   }
+  }
+ ]
+}

@@ -24,6 +24,10 @@ Require TeX source for TeX-authored papers, a clean upload folder, complete file
 
 No account credentials, live authenticated session, SWORD permission or automatic publishing service are included. See [validation and handoff](docs/VALIDATION-1.1.1.md) for the 27 local tests and remaining operational gates. Keep unpublished papers and account records outside this public repository.
 
+## ThoxWork for the Enterprise, technical report v1.0.0 (4 November 2026)
+
+[papers/thoxwork/v1.0.0](papers/thoxwork/v1.0.0/README.md) holds the THOX.ai Research technical report *ThoxWork for the Enterprise: Governed Digital Employees, MeshGroups, Rolodex and Evidence-First Teamwork* by Craig Ross and Tommy Xaypanya: PDF, standalone HTML, the ThoxWork Evidence Lab (one offline HTML file), experiments, results, figures, reviewed product captures and a narrated summary video (16:9 and 9:16; the narration voice is AI-generated). Preprint, not peer reviewed; no DOI yet. A code-level account of THOX's third platform: 3,747 tests rerun across 18 suites in 9 code bases, a browser lab that matches the ThoxWork routing planner on 12,000 of 12,000 seeded previews, three MeshGroup admission definitions shown side by side, and an evidence chain that needs a key and an outside anchor to catch truncation. Nothing is measured on a THOX device or a customer deployment.
+
 ## ThoxOS / ThoxInux technical report v1.0.1 (3 November 2026)
 
 [papers/thoxos/v1.0.1](papers/thoxos/v1.0.1/README.md) holds the THOX.ai Research technical report that builds on the 0.2.0-review draft: PDF, standalone HTML, browser demo, experiments and build pipeline. Preprint, not peer reviewed. Measured entitlement token designs, simulated A/B update contract, the Linux-ABI ledger at the ThoxInux pin joined with a traced agent loop, and the kernel-model memory budget.

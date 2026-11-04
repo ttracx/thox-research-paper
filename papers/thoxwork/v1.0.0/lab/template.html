@@ -1,0 +1,967 @@
+<title>ThoxWork Evidence Lab</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="THOX.ai research instrument for ThoxWork: MeshGroup admission and routing planner, Digital Employee approvals, ordered handoffs, tamper tests and hash-chained evidence capture.">
+<meta name="author" content="THOX.ai Research">
+<meta name="copyright" content="Copyright 2026 THOX.ai LLC">
+<style>
+/*__FONTS__*/
+/* Layout: instrument bench. A readout strip of chain state, the organization at left, the active bench in the middle, the evidence ledger at right; one column on phones. */
+:root {
+  --bg: #09090B; --surface: #18181B; --raised: #202024; --line: #3F3F46; --line-soft: #27272A;
+  --fg: #FAFAFA; --fg-2: #A1A1AA; --fg-3: #8B8B94;
+  --green: #05A451; --green-hover: #07C561; --green-ink: #05A451; --on-green: #04140B; --green-soft: rgba(5,164,81,.13); --green-line: rgba(5,164,81,.42);
+  --amber: #F59E0B; --amber-soft: rgba(245,158,11,.13); --red: #F87171; --red-soft: rgba(239,68,68,.14);
+  --sans: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --r: 10px; --t1: 120ms; --t2: 180ms;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --bg: #F4F6F5; --surface: #FFFFFF; --raised: #EEF1EF; --line: #CDD3D0; --line-soft: #E2E6E4;
+  --fg: #09090B; --fg-2: #4B4F55; --fg-3: #63676E;
+  --green: #047C3D; --green-hover: #036A34; --green-ink: #047C3D; --on-green: #FFFFFF; --green-soft: rgba(4,124,61,.09); --green-line: rgba(4,124,61,.38);
+  --amber: #A15C07; --amber-soft: rgba(217,119,6,.12); --red: #B91C1C; --red-soft: rgba(185,28,28,.09);
+  color-scheme: light;
+} }
+:root[data-theme="light"] {
+  --bg: #F4F6F5; --surface: #FFFFFF; --raised: #EEF1EF; --line: #CDD3D0; --line-soft: #E2E6E4;
+  --fg: #09090B; --fg-2: #4B4F55; --fg-3: #63676E;
+  --green: #047C3D; --green-hover: #036A34; --green-ink: #047C3D; --on-green: #FFFFFF; --green-soft: rgba(4,124,61,.09); --green-line: rgba(4,124,61,.38);
+  --amber: #A15C07; --amber-soft: rgba(217,119,6,.12); --red: #B91C1C; --red-soft: rgba(185,28,28,.09);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 14px/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1440px; margin: 0 auto; padding-block: 18px 40px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 16px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+.mono, code { font-family: var(--mono); }
+button, select, input, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* header */
+.top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.chip-mark { width: 30px; height: 30px; flex: none; }
+.wordmark { font: 700 15px/1 var(--mono); letter-spacing: .02em; }
+.wordmark b { color: var(--green-ink); font-weight: 700; }
+.titleblock h1 { font: 700 clamp(22px, 3vw, 30px)/1.1 var(--sans); letter-spacing: -.01em; }
+.eyebrow { font: 500 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--fg-3); }
+.top-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* readout strip */
+.readout { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); overflow: hidden; }
+.cell { padding: 10px 14px; border-right: 1px solid var(--line-soft); min-width: 0; }
+.cell:last-child { border-right: 0; }
+.cell .k { font: 500 10.5px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--fg-3); }
+.cell .v { font: 500 15px/1.35 var(--mono); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.cell .v.ok { color: var(--green-ink); }
+.cell .v.bad { color: var(--red); }
+
+.notice { display: flex; gap: 10px; align-items: flex-start; padding: 10px 14px; border: 1px dashed var(--line); border-radius: var(--r); color: var(--fg-2); font-size: 13px; }
+.notice strong { color: var(--fg); font-weight: 600; }
+
+/* layout */
+.grid { display: grid; grid-template-columns: 270px minmax(0, 1fr) 360px; gap: 16px; align-items: start; }
+@media (max-width: 1180px) { .grid { grid-template-columns: 250px minmax(0, 1fr); } .ledger-col { grid-column: 1 / -1; } }
+@media (max-width: 820px) { .grid { grid-template-columns: minmax(0, 1fr); } .grid > main { order: -1; } }
+.panel { border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); min-width: 0; }
+.panel-h { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line-soft); }
+.panel-h h2 { font: 600 13px/1.3 var(--sans); }
+.panel-b { padding: 12px 14px; display: grid; gap: 12px; min-width: 0; }
+.label { font: 500 10.5px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--fg-3); }
+.muted { color: var(--fg-2); }
+.small { font-size: 12.5px; }
+
+/* organization */
+.org-name { font-weight: 600; }
+.roster { display: grid; gap: 4px; }
+.member { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 6px 4px; border-radius: 8px; }
+.member:hover { background: var(--raised); }
+.avatar { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font: 600 11px/1 var(--mono); background: var(--raised); border: 1px solid var(--line); color: var(--fg-2); }
+.avatar.human { border-style: dashed; }
+.member .n { font-weight: 600; font-size: 13px; line-height: 1.2; }
+.member .r { color: var(--fg-3); font-size: 12px; line-height: 1.25; }
+.state { font: 500 10.5px/1 var(--mono); padding: 4px 6px; border-radius: 999px; border: 1px solid var(--line); color: var(--fg-2); text-transform: lowercase; }
+.state.active { color: var(--green-ink); border-color: var(--green-line); background: var(--green-soft); }
+.state.paused { color: var(--amber); border-color: var(--amber); background: var(--amber-soft); }
+.state.retired { color: var(--fg-3); text-decoration: line-through; }
+.groups { display: grid; gap: 8px; }
+.group { border: 1px solid var(--line-soft); border-radius: 8px; padding: 8px 10px; display: grid; gap: 2px; }
+.group .gn { font-weight: 600; font-size: 13px; }
+.group .gd { font: 400 11.5px/1.4 var(--mono); color: var(--fg-2); }
+
+/* tabs */
+.tabs { display: flex; gap: 2px; padding: 6px; border-bottom: 1px solid var(--line-soft); overflow-x: auto; scrollbar-width: thin; }
+.tab { border: 0; background: transparent; padding: 8px 12px; border-radius: 7px; color: var(--fg-2); font-weight: 500; cursor: pointer; white-space: nowrap; transition: background var(--t1), color var(--t1); }
+.tab:hover { color: var(--fg); background: var(--raised); }
+.tab[aria-selected="true"] { color: var(--fg); background: var(--raised); box-shadow: inset 0 -2px 0 var(--green); }
+.bench { padding: 14px; display: grid; gap: 14px; min-width: 0; }
+.bench-intro { color: var(--fg-2); max-width: 70ch; }
+.bench-intro b { color: var(--fg); font-weight: 600; }
+
+/* forms and buttons */
+.form { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.field { display: grid; gap: 4px; min-width: 0; }
+.field label, .field .lbl { font-size: 12px; color: var(--fg-2); }
+select, input[type="text"], textarea { width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-height: 38px; }
+textarea { min-height: 64px; resize: vertical; }
+select:focus, input:focus, textarea:focus { border-color: var(--green); outline: none; box-shadow: 0 0 0 3px var(--green-soft); }
+.check { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--fg-2); min-height: 38px; }
+.check input { accent-color: var(--green); width: 16px; height: 16px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--line); background: var(--surface); padding: 8px 12px; border-radius: 8px; font-weight: 500; cursor: pointer; min-height: 36px; transition: border-color var(--t1), background var(--t1); }
+.btn:hover { border-color: var(--green-line); background: var(--green-soft); }
+.btn.primary { background: var(--green); border-color: var(--green); color: var(--on-green); font-weight: 600; }
+.btn.primary:hover { background: var(--green-hover); }
+.btn.danger { color: var(--red); }
+.btn.danger:hover { border-color: var(--red); background: var(--red-soft); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+/* results */
+.result { border: 1px solid var(--line); border-radius: 8px; padding: 12px; display: grid; gap: 8px; background: var(--bg); }
+.verdict { display: inline-flex; align-items: center; gap: 6px; font: 600 12px/1 var(--mono); letter-spacing: .04em; padding: 6px 8px; border-radius: 6px; width: fit-content; }
+.verdict.ok { background: var(--green-soft); color: var(--green-ink); border: 1px solid var(--green-line); }
+.verdict.hold { background: var(--amber-soft); color: var(--amber); border: 1px solid var(--amber); }
+.verdict.no { background: var(--red-soft); color: var(--red); border: 1px solid var(--red); }
+.verdict.neutral { background: var(--raised); color: var(--fg-2); border: 1px solid var(--line); }
+.tbl-wrap { overflow-x: auto; border: 1px solid var(--line-soft); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+th { font: 500 10.5px/1.3 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--fg-3); background: var(--raised); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.num, .num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+td.num { white-space: nowrap; }
+td input[type="checkbox"] { accent-color: var(--green); }
+.reason { color: var(--fg-2); }
+.reason.pass { color: var(--green-ink); }
+
+/* handoffs */
+.picker { display: flex; flex-wrap: wrap; gap: 6px; }
+.pick { border: 1px solid var(--line); background: var(--bg); border-radius: 999px; padding: 6px 10px; cursor: pointer; font-size: 12.5px; }
+.pick[aria-pressed="true"] { border-color: var(--green); background: var(--green-soft); color: var(--fg); }
+.pick .ord { font: 600 11px/1 var(--mono); color: var(--green-ink); margin-right: 4px; }
+.chainview { display: grid; gap: 0; }
+.hcard { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; }
+.hcard .rail { display: grid; justify-items: center; grid-template-rows: 22px 1fr; }
+.hcard .dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--green); display: grid; place-items: center; font: 600 10px/1 var(--mono); color: var(--green-ink); background: var(--surface); }
+.hcard.broken .dot { border-color: var(--red); color: var(--red); }
+.hcard .line { width: 2px; background: var(--line); min-height: 12px; }
+.hcard:last-child .line { visibility: hidden; }
+.hcard .body { border: 1px solid var(--line-soft); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; display: grid; gap: 6px; min-width: 0; }
+.hcard.broken .body { border-color: var(--red); background: var(--red-soft); }
+.hcard pre { margin: 0; white-space: pre-wrap; font: 400 12px/1.5 var(--mono); color: var(--fg-2); overflow-wrap: anywhere; }
+.hashline { font: 400 11px/1.4 var(--mono); color: var(--fg-3); overflow-wrap: anywhere; }
+
+/* ledger */
+.ledger { display: grid; gap: 0; max-height: 640px; overflow: auto; }
+.rec { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 8px; padding: 8px 14px; border-bottom: 1px solid var(--line-soft); }
+.rec:last-child { border-bottom: 0; }
+.rec .seq { font: 500 11.5px/1.6 var(--mono); color: var(--fg-3); font-variant-numeric: tabular-nums; }
+.rec .kind { font: 500 11px/1.3 var(--mono); }
+.rec .kind.k-policy, .rec .kind.k-action { color: var(--green-ink); }
+.rec .kind.k-approval { color: var(--amber); }
+.rec .kind.k-blocked { color: var(--red); }
+.rec .sum { font-size: 12.5px; color: var(--fg-2); overflow-wrap: anywhere; }
+.rec .h { font: 400 10.5px/1.4 var(--mono); color: var(--fg-3); }
+.rec.bad { background: var(--red-soft); }
+.filters { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* captures */
+.drop { border: 1.5px dashed var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 8px; justify-items: start; background: var(--bg); transition: border-color var(--t1), background var(--t1); }
+.drop.over { border-color: var(--green); background: var(--green-soft); }
+.caps { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+.cap { border: 1px solid var(--line-soft); border-radius: 8px; overflow: hidden; display: grid; background: var(--bg); min-width: 0; }
+.cap .thumb { aspect-ratio: 16 / 10; background: var(--raised); display: grid; place-items: center; max-width: 100%; overflow: hidden; }
+.cap .thumb img, .cap .thumb video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cap .meta { padding: 8px 10px; display: grid; gap: 2px; font-size: 12px; min-width: 0; }
+.cap .meta .fn { font-weight: 600; overflow-wrap: anywhere; }
+
+/* tamper matrix */
+.matrix { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; }
+.mcell { border: 1px solid var(--line-soft); border-radius: 8px; padding: 10px; display: grid; gap: 6px; background: var(--bg); }
+
+/* measured */
+.measured { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.kpi { border: 1px solid var(--line-soft); border-radius: 8px; padding: 12px; display: grid; gap: 4px; background: var(--bg); }
+.kpi .big { font: 600 22px/1.15 var(--mono); font-variant-numeric: tabular-nums; }
+.kpi .big.green { color: var(--green-ink); }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; color: var(--fg-3); font-size: 12px; border-top: 1px solid var(--line-soft); padding-top: 14px; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); background: var(--fg); color: var(--bg); padding: 9px 14px; border-radius: 8px; font-size: 13px; font-weight: 500; z-index: 20; max-width: calc(100vw - 32px); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<div class="wrap" id="app">
+  <header class="top">
+    <div class="brand">
+      <svg class="chip-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="3" fill="none" stroke="var(--green)" stroke-width="2"/><rect x="12" y="12" width="8" height="8" rx="1.5" fill="var(--green)"/><g stroke="var(--green)" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M16 2v4M20 2v4M12 26v4M16 26v4M20 26v4M2 12h4M2 16h4M2 20h4M26 12h4M26 16h4M26 20h4"/></g></svg>
+      <div class="titleblock">
+        <div class="wordmark"><b>THOX</b>.ai <span class="eyebrow">ThoxWork&trade; research instrument</span></div>
+        <h1>Evidence Lab</h1>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="btn" id="btnVerify" type="button">Verify chain</button>
+      <button class="btn" id="btnSnapshot" type="button">Snapshot lab state</button>
+      <button class="btn primary" id="btnExport" type="button">Export evidence bundle</button>
+    </div>
+  </header>
+
+  <section class="readout" aria-label="Evidence chain status">
+    <div class="cell"><div class="k">Records</div><div class="v" id="roCount">0</div></div>
+    <div class="cell"><div class="k">Chain head</div><div class="v" id="roHead">genesis</div></div>
+    <div class="cell"><div class="k">Integrity</div><div class="v" id="roVerify">not checked</div></div>
+    <div class="cell"><div class="k">Pending approvals</div><div class="v" id="roPending">0</div></div>
+    <div class="cell"><div class="k">Captures</div><div class="v" id="roCaps">0</div></div>
+    <div class="cell"><div class="k">Session key</div><div class="v small" id="roKey">held in this tab</div></div>
+  </section>
+
+  <div class="notice" role="note"><strong>Demonstration environment.</strong> <span>The organization below is fictional example data. The lab runs THOX admission, approval, handoff and evidence logic in your browser with deterministic text: it calls no model and takes no external action. The session opens with a sample run so the ledger is not empty.</span></div>
+
+  <div class="grid">
+    <aside class="panel" aria-label="Organization">
+      <div class="panel-h"><h2>Organization</h2><span class="label">example</span></div>
+      <div class="panel-b">
+        <div><div class="org-name">Harbor Pine Logistics</div><div class="muted small">Fictional 40-person company, two sites</div></div>
+        <div><div class="label" style="margin-bottom:6px">People</div><div class="roster" id="people"></div></div>
+        <div><div class="label" style="margin-bottom:6px">Digital Employees</div><div class="roster" id="roster"></div></div>
+        <div><div class="label" style="margin-bottom:6px">MeshGroups</div><div class="groups" id="groups"></div></div>
+      </div>
+    </aside>
+
+    <main class="panel" aria-label="Lab benches">
+      <div class="tabs" role="tablist" id="tabs">
+        <button class="tab" role="tab" data-tab="admission" id="tab-admission" aria-controls="bench-admission">MeshGroup admission</button>
+        <button class="tab" role="tab" data-tab="planner" id="tab-planner" aria-controls="bench-planner">Routing planner</button>
+        <button class="tab" role="tab" data-tab="approvals" id="tab-approvals" aria-controls="bench-approvals">Approvals</button>
+        <button class="tab" role="tab" data-tab="handoffs" id="tab-handoffs" aria-controls="bench-handoffs">Ordered handoffs</button>
+        <button class="tab" role="tab" data-tab="tamper" id="tab-tamper" aria-controls="bench-tamper">Tamper tests</button>
+        <button class="tab" role="tab" data-tab="captures" id="tab-captures" aria-controls="bench-captures">Captures</button>
+        <button class="tab" role="tab" data-tab="measured" id="tab-measured" aria-controls="bench-measured">Measured</button>
+      </div>
+
+      <section class="bench" id="bench-admission" role="tabpanel" aria-labelledby="tab-admission">
+        <p class="bench-intro">A MeshGroup admits a request only when the tenant matches, the group exists, the data classification fits the group's ceiling, and a healthy, authenticated node on an allowed site serves the model. <b>Other sites stay closed unless policy enables cross-site use and the request consents.</b> The node with the most free memory wins; ties go to the earlier node.</p>
+        <div class="form">
+          <div class="field"><label for="aGroup">Requesting group</label><select id="aGroup"></select></div>
+          <div class="field"><label for="aSite">Requester site</label><select id="aSite"></select></div>
+          <div class="field"><label for="aModel">Model</label><select id="aModel"></select></div>
+          <div class="field"><label for="aClass">Data classification</label><select id="aClass"><option value="0">0 public</option><option value="1" selected>1 internal</option><option value="2">2 confidential</option><option value="3">3 restricted</option><option value="4">4 regulated</option></select></div>
+          <div class="field"><label for="aTenant">Tenant</label><select id="aTenant"><option value="harbor-pine">harbor-pine</option><option value="other-co">other-co</option></select></div>
+          <div class="field"><label for="aDemand">Task demand (GB)</label><input type="text" inputmode="decimal" id="aDemand" value="70"></div>
+          <div class="field"><label for="aInUse">Group capacity in use (GB)</label><input type="text" inputmode="decimal" id="aInUse" value="0"></div>
+          <div class="field"><span class="lbl">Cross-site</span><label class="check"><input type="checkbox" id="aConsent"> Request consents</label><label class="check"><input type="checkbox" id="aPolicy"> Policy enables</label></div>
+        </div>
+        <div class="tbl-wrap"><table aria-label="Node inventory"><thead><tr><th>Node</th><th>Group</th><th>Site</th><th>Free GB</th><th>Models</th><th>Auth</th><th>Healthy</th></tr></thead><tbody id="nodes"></tbody></table></div>
+        <div class="row"><button class="btn primary" type="button" id="aRun">Run admission</button><span class="muted small">Toggle a node's health or authentication to watch the placement move.</span></div>
+        <div class="result" id="aOut" aria-live="polite"></div>
+        <div class="result" id="aCompare" aria-live="polite"></div>
+      </section>
+
+      <section class="bench" id="bench-planner" role="tabpanel" aria-labelledby="tab-planner" hidden>
+        <p class="bench-intro">The ThoxWork routing planner answers a narrower question than admission: <b>which bound node may this person or Digital Employee plan on, and why is every other node refused?</b> Early denials stop the wrong organization, revoked or unauthorized principals, a Digital Employee whose sponsor lacks the same access, and unbound resources. Cross-site, remote and relay use need all three policy levels to allow them. The planner is a preview: it never executes, authorizes or falls back to hosted processing.</p>
+        <div class="form">
+          <div class="field"><label for="rPrin">Requester</label><select id="rPrin"></select></div>
+          <div class="field"><label for="rGroup">MeshGroup</label><select id="rGroup"></select></div>
+          <div class="field"><label for="rWs">Workspace</label><select id="rWs"></select></div>
+          <div class="field"><label for="rPool">Model pool</label><select id="rPool"></select></div>
+          <div class="field"><label for="rTask">Task</label><select id="rTask"></select></div>
+          <div class="field"><label for="rClass">Payload class</label><select id="rClass"><option>public</option><option selected>internal</option><option>restricted</option></select></div>
+          <div class="field"><label for="rSite">Working from</label><select id="rSite"><option value="hq">HQ site</option><option value="plant">Plant site</option><option value="">Remote (no site)</option></select></div>
+          <div class="field"><label for="rDev">Current device</label><select id="rDev"></select></div>
+          <div class="field"><span class="lbl">Request</span><label class="check"><input type="checkbox" id="rOpt" checked> Mesh opt-in</label><label class="check"><input type="checkbox" id="rSponsor" checked> Sponsors active</label></div>
+        </div>
+        <div class="tbl-wrap"><table aria-label="Policy levels"><thead><tr><th>Policy level</th><th>Cross-site</th><th>Remote access</th><th>Relay</th></tr></thead><tbody id="rPolicy"></tbody></table></div>
+        <div class="tbl-wrap"><table aria-label="Planner node state"><thead><tr><th>Node</th><th>Site</th><th>Pools</th><th>Classes</th><th>Online</th><th>Model ready</th><th>Fresh</th><th>Sharing</th><th>Verified link</th></tr></thead><tbody id="rNodes"></tbody></table></div>
+        <div class="row"><button class="btn primary" type="button" id="rRun">Preview route</button><span class="muted small">Same rules as the product planner; the report measures their agreement on seeded inputs.</span></div>
+        <div class="result" id="rOut" aria-live="polite"></div>
+      </section>
+
+      <section class="bench" id="bench-approvals" role="tabpanel" aria-labelledby="tab-approvals" hidden>
+        <p class="bench-intro">Two controls stand between a Digital Employee and an effect. The <b>action gateway fails closed</b>: a deployment ceiling no tenant can widen, unknown actions, tenant deny lists, channel membership (modelled here as workspace membership), secret markers and a size cap, in that order. The <b>approval gate</b> holds an assignment before any external effect for any of four reasons; only a person can decide, once, and each request names and records the role required to decide it. Role names here are illustrative.</p>
+        <div class="label">Action gateway</div>
+        <div class="form">
+          <div class="field"><label for="gEmp">Digital Employee</label><select id="gEmp"></select></div>
+          <div class="field"><label for="gAct">Action</label><select id="gAct"></select></div>
+          <div class="field"><label for="gWs">Workspace</label><select id="gWs"></select></div>
+          <div class="field" style="grid-column: span 2"><label for="gPayload">Payload</label><input type="text" id="gPayload" value="release cadence: biweekly"></div>
+        </div>
+        <div class="row"><button class="btn primary" type="button" id="gRun">Check action</button><span class="muted small">This deployment denies desk.exec at the ceiling; the tenant denies mcp.call.</span></div>
+        <div class="result" id="gOut" aria-live="polite"></div>
+        <div class="label">Assignment approval</div>
+        <div class="form">
+          <div class="field"><label for="pEmp">Digital Employee</label><select id="pEmp"></select></div>
+          <div class="field"><label for="pAct">Action</label><select id="pAct"></select></div>
+          <div class="field"><label for="pSens">Sensitivity</label><select id="pSens"><option>public</option><option selected>internal</option><option>confidential</option><option>restricted</option></select></div>
+          <div class="field"><span class="lbl">Gates</span><label class="check"><input type="checkbox" id="pGate" checked> External-effect gate</label><label class="check"><input type="checkbox" id="pResp"> Responsibility needs a person</label></div>
+        </div>
+        <div class="row"><button class="btn primary" type="button" id="pRun">Submit assignment</button><label class="check" for="pApprover">Decide as</label><select id="pApprover" style="max-width:260px"></select></div>
+        <div class="result" id="pOut" aria-live="polite"></div>
+        <div class="tbl-wrap"><table aria-label="Approval queue"><thead><tr><th>Id</th><th>Assignment</th><th>Reasons</th><th>Needs role</th><th>State</th><th>Decide</th></tr></thead><tbody id="queue"></tbody></table></div>
+        <div><div class="label" style="margin-bottom:8px">Assignment lifecycle</div>
+          <div class="row"><select id="lAsg" aria-label="Assignment" style="max-width:220px"></select><select id="lTo" aria-label="Target state" style="max-width:200px"></select><button class="btn" type="button" id="lRun">Try transition</button></div>
+          <p class="muted small" id="lOut" aria-live="polite">Seven states and eighteen legal moves. Completed and cancelled are terminal; a failed assignment may be retried. Every other move is refused and recorded.</p></div>
+      </section>
+
+      <section class="bench" id="bench-handoffs" role="tabpanel" aria-labelledby="tab-handoffs" hidden>
+        <p class="bench-intro">Pick a team in order, then run the brief. Each member writes a handoff whose hash commits to the brief, the member and the previous handoff. <b>Work reaches Done only after a person approves it in review.</b> Built today: each handoff carries the hash of its own body. Proposed here: each hash also commits to the previous handoff, so an insider who edits a step and rewrites its body hash is still caught.</p>
+        <div class="field"><span class="lbl">Team order (click to add or remove)</span><div class="picker" id="picker"></div></div>
+        <div class="field"><label for="hBrief">Brief</label><textarea id="hBrief">Prepare an ordered onboarding plan for a 40-person company adopting a shared agentic workspace: research, draft, then compliance review.</textarea></div>
+        <div class="row"><button class="btn primary" type="button" id="hRun">Run ordered task</button><button class="btn" type="button" id="hTamper">Edit step 2 and its hash</button><button class="btn" type="button" id="hVerify">Verify handoffs</button><button class="btn" type="button" id="hAccept">Approve, mark Done</button><button class="btn danger" type="button" id="hReject">Request changes</button></div>
+        <div class="result" id="hOut" aria-live="polite"><span class="muted">Run a task to see its handoffs.</span></div>
+        <div class="chainview" id="hChain"></div>
+      </section>
+
+      <section class="bench" id="bench-tamper" role="tabpanel" aria-labelledby="tab-tamper" hidden>
+        <p class="bench-intro">Each test copies the current ledger, applies one attack, and checks the copy three ways: <b>hash links alone</b>, <b>hash links plus the session HMAC key</b>, and <b>hash links plus an anchor</b> (record count and head hash held by a second party). The live ledger is never changed.</p>
+        <div class="row" id="tButtons"></div>
+        <div class="row"><button class="btn" type="button" id="tAnchor">Re-anchor to current head</button><span class="muted small mono" id="tAnchorOut"></span></div>
+        <div class="matrix" id="tOut" aria-live="polite"></div>
+      </section>
+
+      <section class="bench" id="bench-captures" role="tabpanel" aria-labelledby="tab-captures" hidden>
+        <p class="bench-intro">Attach screenshots, screen recordings or PDFs taken during a run. The lab hashes each file in your browser and writes its SHA-256 into the ledger, so the capture and the record vouch for each other. <b>Snapshot lab state</b> renders the ledger head as a PNG and captures it the same way.</p>
+        <div class="drop" id="drop">
+          <label class="btn primary" for="capFile">Choose files</label>
+          <input class="sr" type="file" id="capFile" multiple accept="image/*,video/*,application/pdf">
+          <span class="muted small">or drop files here. Images, video and PDF. Files stay in this tab unless the page can store them for your team.</span>
+        </div>
+        <div class="caps" id="caps"></div>
+      </section>
+
+      <section class="bench" id="bench-measured" role="tabpanel" aria-labelledby="tab-measured" hidden>
+        <p class="bench-intro">Numbers measured for the THOX ThoxWork technical report with the same code this page runs. They describe one host and the stated repetitions; see the report's limitations before you generalize.</p>
+        <div class="measured" id="measured"></div>
+        <div class="tbl-wrap"><table aria-label="Tamper detection by attack"><thead><tr><th>Attack (1,000-record chain)</th><th>Hash links</th><th>+ HMAC key</th><th>+ Anchor</th><th>+ Key and anchor</th></tr></thead><tbody id="mMatrix"></tbody></table></div>
+        <p class="muted small" id="mHost"></p>
+      </section>
+    </main>
+
+    <aside class="panel ledger-col" aria-label="Evidence ledger">
+      <div class="panel-h"><h2>Evidence ledger</h2><span class="label mono" id="ledgerCount">0 records</span></div>
+      <div class="panel-b" style="padding-bottom:0"><div class="filters" id="filters"></div></div>
+      <div class="ledger" id="ledger" aria-live="polite"></div>
+      <div class="panel-b" style="border-top:1px solid var(--line-soft)">
+        <div class="row"><button class="btn" type="button" id="btnSave">Save to team log</button><button class="btn" type="button" id="btnLoad">Open team log</button><label class="btn" for="importFile">Import bundle</label><input class="sr" type="file" id="importFile" accept="application/json,.json"></div>
+        <div class="muted small" id="teamOut"></div>
+        <div id="teamList"></div>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="foot">
+    <span>Copyright 2026 THOX.ai LLC. ThoxWork, ThoxOS, MeshStack and THOX are trademarks of THOX.ai LLC. Lab code Apache-2.0.</span>
+    <span class="mono">Your AI. Your Data. Your Rules.&trade;</span>
+  </footer>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>/*__EVIDENCE_JS__*/</script>
+<script>/*__MESHGROUP_JS__*/</script>
+<script>/*__GOVERNANCE_JS__*/</script>
+<script>/*__PLANNER_JS__*/</script>
+<script>
+(function () {
+  "use strict";
+  const E = window.ThoxEvidence, M = window.ThoxMeshGroup, G = window.ThoxGovernance, P = window.ThoxPlanner;
+  const MEASURED = /*__SUMMARY_JSON__*/null;
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, attrs, kids) => {
+    const n = document.createElement(tag);
+    if (attrs) for (const [k, v] of Object.entries(attrs)) {
+      if (k === "class") n.className = v; else if (k === "text") n.textContent = v; else if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else if (v !== false && v !== null && v !== undefined) n.setAttribute(k, v === true ? "" : v);
+    }
+    for (const c of [].concat(kids || [])) if (c !== null && c !== undefined) n.append(c instanceof Node ? c : document.createTextNode(String(c)));
+    return n;
+  };
+  const short = (h) => h ? h.slice(0, 8) + ".." + h.slice(-6) : "";
+
+  // ---------------------------------------------------------------- session
+  const keyBytes = new Uint8Array(32);
+  (window.crypto && crypto.getRandomValues) ? crypto.getRandomValues(keyBytes) : keyBytes.forEach((_, i) => { keyBytes[i] = Math.floor(Math.random() * 256); });
+  const SESSION_KEY = Array.from(keyBytes, (b) => b.toString(16).padStart(2, "0")).join("");
+  const SESSION_ID = "lab-" + new Date().toISOString().replace(/[-:T.Z]/g, "").slice(0, 14) + "-" + SESSION_KEY.slice(0, 6);
+  let HUMAN = "human:lead";
+  const chain = new E.EvidenceChain({ key: SESSION_KEY });
+  let anchor = null;
+  let lastVerify = null;
+  const captures = [];
+  let caps = { downloads: null, assets: null, db: null, user: null };
+
+  // ---------------------------------------------------------------- example organization (fictional)
+  const PEOPLE = [
+    { id: "human:lead", name: "You", role: "Team lead", roles: ["team-lead"] },
+    { id: "human:steward", name: "Data steward", role: "Decides confidential work", roles: ["team-lead", "data-steward"] },
+    { id: "human:owner", name: "Accountable owner", role: "Decides restricted work", roles: ["team-lead", "data-steward", "accountable-owner"] },
+  ];
+  // Illustrative role names; the required role rises with sensitivity.
+  const APPROVER_ROLE = (s) => (s === "restricted" ? "accountable-owner" : s === "confidential" ? "data-steward" : "team-lead");
+  const ROSTER = [
+    // Autonomy levels are this fictional organization's own choices, for illustration only; they are not THOX product settings.
+    ["thoxy", "THOXY", "Workspace assistant", 1, ["ops", "finance", "engineering"]], ["ava", "Ava", "Chief of staff", 2, ["ops", "finance"]],
+    ["mira", "Mira", "Knowledge steward", 1, ["ops", "engineering"]], ["kai", "Kai", "Device operator", 1, ["ops"]],
+    ["sera", "Sera", "Compliance sentinel", 2, ["ops", "finance", "engineering"]], ["nova", "Nova", "Build engineer", 2, ["engineering"]],
+    ["helix", "Helix", "Finance controller", 1, ["finance"]], ["rhea", "Rhea", "People operations", 0, ["ops"]], ["atlas", "Atlas", "Strategy research", 2, ["ops", "engineering"]],
+  ].map(([id, name, role, autonomy, workspaces]) => ({ id: "de:" + id, name, role, autonomy, workspaces, status: "idle" }));
+  ROSTER.find((e) => e.id === "de:kai").status = "offline";
+  const GATE_RULES = { deploymentDeny: ["desk.exec"], tenantDeny: ["mcp.call"], sizeCap: 256000 };
+  const GATE_ACTIONS = G.KNOWN_ACTIONS.concat(["format.disk"]);
+  const WORKSPACES = ["ops", "finance", "engineering"];
+  const assignments = [];
+  const desk = new G.ApprovalDesk(chain, APPROVER_ROLE);
+
+  const POLICY = {
+    tenant: "harbor-pine", cross_site_enabled: false,
+    groups: {
+      finance: { classification_max: 3, allowed_sites: ["hq"] },
+      operations: { classification_max: 2, allowed_sites: ["hq", "plant"] },
+      engineering: { classification_max: 2, allowed_sites: ["hq", "plant"] },
+    },
+    sites: { hq: { authenticated: true }, plant: { authenticated: true } },
+  };
+  const NODES = [
+    { id: "hq-desk-01", tenant: "harbor-pine", group: "finance", site: "hq", ram_free_gb: 18, models: ["office-4b", "analyst-8b"], authenticated: true, healthy: true },
+    { id: "hq-desk-02", tenant: "harbor-pine", group: "finance", site: "hq", ram_free_gb: 22, models: ["office-4b"], authenticated: true, healthy: true },
+    { id: "hq-rack-01", tenant: "harbor-pine", group: "operations", site: "hq", ram_free_gb: 48, models: ["office-4b", "analyst-8b"], authenticated: true, healthy: true },
+    { id: "plant-edge-01", tenant: "harbor-pine", group: "operations", site: "plant", ram_free_gb: 60, models: ["analyst-8b"], authenticated: true, healthy: true },
+    { id: "plant-edge-02", tenant: "harbor-pine", group: "operations", site: "plant", ram_free_gb: 12, models: ["office-4b"], authenticated: false, healthy: true },
+    { id: "hq-build-01", tenant: "harbor-pine", group: "engineering", site: "hq", ram_free_gb: 40, models: ["code-14b"], authenticated: true, healthy: true },
+    { id: "lab-spare-01", tenant: "other-co", group: "operations", site: "hq", ram_free_gb: 96, models: ["office-4b", "analyst-8b"], authenticated: true, healthy: true },
+  ];
+  const MODELS = ["office-4b", "analyst-8b", "code-14b"];
+
+  // Routing planner directory (same fictional organization, ThoxWork planner schema).
+  const ORG = "harbor-pine";
+  const pol = (c, r, l) => ({ crossSite: c, remoteAccess: r, relay: l });
+  const DIR = {
+    schemaVersion: P.SCHEMA_VERSION,
+    organization: { id: ORG, name: "Harbor Pine Logistics", policy: pol(false, false, false) },
+    principals: PEOPLE.map((p) => ({ id: p.id, name: p.name, organizationId: ORG, kind: "human", active: true, sponsorId: null }))
+      .concat(ROSTER.map((e) => ({ id: e.id, name: e.name, organizationId: ORG, kind: "digital_employee", active: e.status !== "offline", sponsorId: e.id === "de:helix" ? "human:steward" : "human:lead" }))),
+    sites: [
+      { id: "hq", name: "Headquarters", organizationId: ORG, active: true, gatewayReady: true },
+      { id: "plant", name: "Plant", organizationId: ORG, active: true, gatewayReady: true },
+    ],
+    workspaces: [
+      { id: "ws-ops", name: "Operations", organizationId: ORG, homeSiteId: "hq", dataClass: "internal", policy: pol(false, false, false) },
+      { id: "ws-finance", name: "Finance", organizationId: ORG, homeSiteId: "hq", dataClass: "restricted", policy: pol(false, false, false) },
+      { id: "ws-eng", name: "Engineering", organizationId: ORG, homeSiteId: "plant", dataClass: "internal", policy: pol(false, false, false) },
+    ],
+    pools: [
+      { id: "pool-general", name: "General models", organizationId: ORG, tasks: ["chat", "research"] },
+      { id: "pool-code", name: "Code models", organizationId: ORG, tasks: ["chat", "coding"] },
+    ],
+    nodes: [
+      ["hq-laptop-07", "hq", ["pool-general"], ["public", "internal"]],
+      ["hq-rack-01", "hq", ["pool-general", "pool-code"], ["public", "internal"]],
+      ["hq-desk-01", "hq", ["pool-general"], ["public", "internal", "restricted"]],
+      ["plant-edge-01", "plant", ["pool-general"], ["public", "internal"]],
+      ["plant-build-02", "plant", ["pool-code"], ["public", "internal"]],
+    ].map(([id, site, pools, classes]) => ({ id, name: id, organizationId: ORG, siteId: site, poolIds: pools, online: true, modelReady: true, sharingConsent: true, peerVerified: true, encrypted: true, usesRelay: id === "plant-build-02", lastObservedAt: "", dataClasses: classes })),
+    groups: [
+      { id: "mg-operations", name: "Operations", organizationId: ORG, policy: pol(false, false, false), workspaceIds: ["ws-ops"], poolIds: ["pool-general"], nodeIds: ["hq-laptop-07", "hq-rack-01", "plant-edge-01"],
+        members: [["human:lead", 3], ["de:thoxy", 2], ["de:ava", 2], ["de:mira", 2], ["de:kai", 2], ["de:rhea", 2], ["de:atlas", 2], ["de:sera", 2]] },
+      { id: "mg-finance", name: "Finance", organizationId: ORG, policy: pol(false, false, false), workspaceIds: ["ws-finance"], poolIds: ["pool-general"], nodeIds: ["hq-desk-01", "hq-rack-01"],
+        members: [["human:steward", 3], ["human:owner", 3], ["de:helix", 2], ["de:sera", 2]] },
+      { id: "mg-engineering", name: "Engineering", organizationId: ORG, policy: pol(false, false, false), workspaceIds: ["ws-eng"], poolIds: ["pool-code", "pool-general"], nodeIds: ["hq-rack-01", "plant-build-02", "plant-edge-01"],
+        members: [["human:lead", 3], ["de:nova", 2], ["de:mira", 1], ["de:thoxy", 2]] },
+    ].map((g) => Object.assign(g, { members: g.members.map(([id, n]) => ({ principalId: id, actions: ["infer", "workspace.read", "tool.propose"].slice(0, n) })) })),
+  };
+  const NODE_FRESH = {}; DIR.nodes.forEach((n) => { NODE_FRESH[n.id] = true; });
+
+  // ---------------------------------------------------------------- rendering helpers
+  function toast(msg) { const t = $("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => { t.hidden = true; }, 2600); }
+  function initials(name) { return name.replace(/[^A-Za-z ]/g, "").split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase(); }
+
+  function renderOrg() {
+    $("people").replaceChildren(...PEOPLE.map((p) => el("div", { class: "member" }, [el("div", { class: "avatar human", "aria-hidden": "true", text: initials(p.name) }), el("div", {}, [el("div", { class: "n", text: p.name }), el("div", { class: "r", text: p.role })]), el("span")])));
+    $("roster").replaceChildren(...ROSTER.map((e) => el("div", { class: "member" }, [el("div", { class: "avatar", "aria-hidden": "true", text: initials(e.name) }), el("div", {}, [el("div", { class: "n", text: e.name }), el("div", { class: "r", text: e.role })]), el("span", { class: "state " + (e.status === "offline" ? "paused" : "active"), text: e.status })])));
+    $("groups").replaceChildren(...Object.entries(POLICY.groups).map(([gid, g]) => el("div", { class: "group" }, [el("div", { class: "gn", text: gid[0].toUpperCase() + gid.slice(1) }), el("div", { class: "gd", text: "ceiling " + g.classification_max + " | sites " + g.allowed_sites.join(", ") })])));
+  }
+
+  function kindClass(kind) {
+    if (kind === "action.blocked") return "k-blocked";
+    if (kind.startsWith("approval")) return "k-approval";
+    if (kind.startsWith("policy") || kind.startsWith("action")) return "k-action";
+    return "";
+  }
+  function summarize(r) {
+    const p = r.payload || {};
+    switch (r.kind) {
+      case "policy.decision": if (p.planner) return "Planner preview: " + p.principal + " in " + p.group + " -> " + p.status + (p.node ? " on " + p.node + " (" + p.locality + ")" : p.status === "denied" ? " (" + p.reason + ")" : ""); return p.request ? ((p.rule ? "Algorithm 1: " : "") + p.request.group + " / " + p.request.model + " -> " + p.verdict + (p.node ? " on " + p.node : "") + (p.reason ? " (" + p.reason + ")" : "")) : (p.employee + " " + p.action + " -> " + (p.allowed ? "allowed" : "denied") + " (" + p.rule + ")");
+      case "action.execute": return p.action + " executed (simulated)" + (p.approval ? " after " + p.approval : "");
+      case "action.blocked": return p.action + " blocked: " + p.rule;
+      case "approval.request": return (p.approval || "") + " " + (p.action || "") + " awaits a person" + (p.required_role ? " with role " + p.required_role : "");
+      case "approval.decision": return p.approval + " " + p.result + (p.reason ? ": " + p.reason : "") + (p.role ? " (" + p.role + ")" : "");
+      case "handoff": return p.task + " step " + (p.step + 1) + " " + short(p.hash);
+      case "lifecycle.transition": return p.assignment + " " + p.from + " -> " + p.to + " " + p.result;
+      case "memory.contradiction": return p.fact + " (" + p.subject + ") collides with " + p.collides_with.join(", ") + "; both kept";
+      case "capture.screenshot": case "capture.recording": return p.filename + " " + (p.bytes / 1024).toFixed(0) + " KB sha256 " + short(p.sha256);
+      case "session.open": return "session " + p.session + " opened";
+      default: return JSON.stringify(p).slice(0, 120);
+    }
+  }
+  let filter = "all";
+  const FILTERS = [["all", "All"], ["policy", "Policy"], ["approval", "Approvals"], ["handoff", "Handoffs"], ["capture", "Captures"]];
+  function renderFilters() {
+    $("filters").replaceChildren(...FILTERS.map(([f, label]) => el("button", { class: "pick", type: "button", "aria-pressed": String(filter === f), onclick: () => { filter = f; renderFilters(); renderLedger(); } }, label)));
+  }
+  function renderLedger() {
+    const bad = lastVerify && !lastVerify.ok ? lastVerify.firstBad : -1;
+    const recs = chain.records.filter((r) => filter === "all" || r.kind.startsWith(filter) || (filter === "policy" && r.kind.startsWith("action"))).slice().reverse();
+    $("ledger").replaceChildren(...recs.map((r) => el("div", { class: "rec" + (r.seq === bad ? " bad" : "") }, [
+      el("div", { class: "seq", text: String(r.seq).padStart(3, "0") }),
+      el("div", {}, [el("div", { class: "kind " + kindClass(r.kind), text: r.kind + "  " + r.actor }), el("div", { class: "sum", text: summarize(r) }), el("div", { class: "h", text: "hash " + short(r.hash) + "  prev " + short(r.prev) })]),
+    ])));
+    $("ledgerCount").textContent = chain.records.length + " records";
+    $("roCount").textContent = String(chain.records.length);
+    $("roHead").textContent = chain.records.length ? short(chain.head()) : "genesis";
+    $("roPending").textContent = String(desk.pending().length + (taskRun && taskRun.status === "awaiting_review" ? 1 : 0));
+    $("roCaps").textContent = String(captures.length);
+  }
+  function verifyNow(quiet) {
+    lastVerify = chain.verify();
+    const v = $("roVerify");
+    v.textContent = lastVerify.ok ? "verified, " + lastVerify.length + " records" : "broken at #" + lastVerify.firstBad;
+    v.className = "v " + (lastVerify.ok ? "ok" : "bad");
+    renderLedger();
+    if (!quiet) toast(lastVerify.ok ? "Chain verified: hashes and HMAC tags match." : "Chain broken at record " + lastVerify.firstBad + ": " + lastVerify.reason);
+    return lastVerify;
+  }
+  function changed() { renderLedger(); verifyNow(true); }
+
+  // ---------------------------------------------------------------- tabs (hash routed)
+  const TABS = ["admission", "planner", "approvals", "handoffs", "tamper", "captures", "measured"];
+  function showTab(name) {
+    const t = TABS.indexOf(name) === -1 ? "admission" : name;
+    TABS.forEach((n) => { $("bench-" + n).hidden = n !== t; $("tab-" + n).setAttribute("aria-selected", String(n === t)); $("tab-" + n).tabIndex = n === t ? 0 : -1; });
+  }
+  $("tabs").addEventListener("click", (e) => { const b = e.target.closest("[data-tab]"); if (!b) return; if (location.hash !== "#" + b.dataset.tab) location.hash = b.dataset.tab; else showTab(b.dataset.tab); });
+  $("tabs").addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    const i = TABS.indexOf((location.hash || "#admission").slice(1)); const j = (Math.max(0, i) + (e.key === "ArrowRight" ? 1 : TABS.length - 1)) % TABS.length;
+    location.hash = TABS[j]; $("tab-" + TABS[j]).focus();
+  });
+  window.addEventListener("hashchange", () => showTab(location.hash.slice(1)));
+
+  // ---------------------------------------------------------------- admission bench
+  function fillSelect(id, values, labels) { $(id).replaceChildren(...values.map((v, i) => el("option", { value: v, text: labels ? labels[i] : v }))); }
+  function renderNodes() {
+    $("nodes").replaceChildren(...NODES.map((n, i) => el("tr", {}, [
+      el("td", { class: "num", text: n.id }), el("td", { text: n.tenant === POLICY.tenant ? n.group : n.group + " (" + n.tenant + ")" }), el("td", { text: n.site }), el("td", { class: "num", text: String(n.ram_free_gb) }), el("td", { class: "small", text: n.models.join(", ") }),
+      el("td", {}, el("input", { type: "checkbox", id: "na" + i, "aria-label": n.id + " authenticated", checked: n.authenticated, onchange: (e) => { n.authenticated = e.target.checked; } })),
+      el("td", {}, el("input", { type: "checkbox", id: "nh" + i, "aria-label": n.id + " healthy", checked: n.healthy, onchange: (e) => { n.healthy = e.target.checked; } })),
+    ])));
+  }
+  function runAdmission() {
+    POLICY.cross_site_enabled = $("aPolicy").checked;
+    const req = { tenant: $("aTenant").value, group: $("aGroup").value, source_site: $("aSite").value, model: $("aModel").value, classification: Number($("aClass").value), cross_site_consent: $("aConsent").checked };
+    const d = M.decide(req, NODES, POLICY);
+    chain.append("policy.decision", HUMAN, { request: req, verdict: d.verdict, node: d.node || null, reason: d.reason || "", cross_site_enabled: POLICY.cross_site_enabled });
+    const out = $("aOut");
+    const cls = d.verdict === "PLACE" ? "ok" : d.verdict === "DENY" ? "no" : "hold";
+    const head = el("div", { class: "row" }, [el("span", { class: "verdict " + cls, text: d.verdict === "PLACE" ? "PLACED ON " + d.node : d.verdict === "DENY" ? "DENIED" : "NO ELIGIBLE NODE" }), el("span", { class: "muted small", text: d.reason || (d.candidates ? d.candidates.length + " eligible: " + d.candidates.join(", ") : "admitted, but every node was excluded") })]);
+    const rows = (d.excluded || []).map((x) => el("tr", {}, [el("td", { class: "num", text: x.node }), el("td", { class: "reason", text: x.reason })]));
+    (d.candidates || []).forEach((c) => rows.push(el("tr", {}, [el("td", { class: "num", text: c }), el("td", { class: "reason pass", text: c === d.node ? "eligible, most free memory" : "eligible" })])));
+    out.replaceChildren(head, rows.length ? el("div", { class: "tbl-wrap" }, el("table", { "aria-label": "Per-node reasons" }, [el("thead", {}, el("tr", {}, [el("th", { text: "Node" }), el("th", { text: "Reason" })])), el("tbody", {}, rows)])) : el("span", { class: "muted small", text: "The request stopped before node selection." }));
+    const demand = Number($("aDemand").value), inUse = Number($("aInUse").value);
+    if (!Number.isFinite(demand) || demand < 0 || !Number.isFinite(inUse) || inUse < 0) {
+      $("aCompare").replaceChildren(el("span", { class: "muted small", text: "Enter demand and in-use capacity as non-negative numbers to compare the two admission rules." }));
+    } else {
+      const pooled = req.tenant !== POLICY.tenant ? { verdict: "DENIED", reason: "tenant mismatch", pooled: 0, free: 0, approved: [] } : M.admitPooled({ required: [req.model], demand }, req.group, NODES, POLICY, inUse);
+      chain.append("policy.decision", HUMAN, { rule: "paper-v1.0.0-algorithm-1", request: { group: req.group, model: req.model, demand, in_use: inUse }, verdict: pooled.verdict, reason: pooled.reason, pooled_gb: pooled.pooled });
+      const kitNote = d.verdict === "PLACE" ? "places the whole request on " + d.node + " (" + NODES.find((n) => n.id === d.node).ram_free_gb + " GB free); the reference rule does not compare demand with node capacity" : d.verdict === "DENY" ? "denies: " + d.reason : "admits, but no node qualifies";
+      const poolNote = pooled.verdict === "ADMITTED" ? "admits against " + pooled.pooled + " GB pooled across " + pooled.nodes.length + " node(s)" + (pooled.fitsOneNode ? "" : "; no single node holds " + demand + " GB, so this admission assumes work can span nodes") : pooled.verdict === "WAIT" ? "waits: " + demand + " GB needed, " + pooled.free + " GB free of " + pooled.pooled + " GB pooled" : "denies " + pooled.reason + (pooled.reason === "UNPLACEABLE" ? " (" + demand + " GB over " + pooled.pooled + " GB pooled)" : "");
+      $("aCompare").replaceChildren(
+        el("div", { class: "label", text: "Two admission rules on record, shown side by side (not merged)" }),
+        el("div", { class: "tbl-wrap" }, el("table", { "aria-label": "Admission rule comparison" }, [el("thead", {}, el("tr", {}, [el("th", { text: "Rule" }), el("th", { text: "Verdict" }), el("th", { text: "What it did" })])), el("tbody", {}, [
+          el("tr", {}, [el("td", { text: "Reference kit rule (single node)" }), el("td", { class: "num", text: d.verdict }), el("td", { class: "small", text: kitNote })]),
+          el("tr", {}, [el("td", { text: "Paper v1.0.0 Algorithm 1 (pooled)" }), el("td", { class: "num", text: pooled.verdict }), el("td", { class: "small", text: poolNote })]),
+        ])])),
+        el("span", { class: "muted small", text: "The ThoxWork paper v1.0.0 states the pooled rule; the reference kit implements the single-node rule. Which one governs is a product ruling, so the lab records both decisions." })
+      );
+    }
+    changed();
+    return d;
+  }
+
+  // ---------------------------------------------------------------- routing planner bench
+  const POLICY_LEVELS = [["organization", () => DIR.organization.policy], ["group", () => DIR.groups.find((g) => g.id === $("rGroup").value).policy], ["workspace", () => DIR.workspaces.find((w) => w.id === $("rWs").value).policy]];
+  function renderPlannerPolicy() {
+    $("rPolicy").replaceChildren(...POLICY_LEVELS.map(([lvl, get]) => {
+      const p = get();
+      const label = lvl === "group" ? "Group: " + $("rGroup").selectedOptions[0].text : lvl === "workspace" ? "Workspace: " + $("rWs").selectedOptions[0].text : "Organization";
+      return el("tr", {}, [el("td", { text: label }), ...["crossSite", "remoteAccess", "relay"].map((f) => el("td", {}, el("input", { type: "checkbox", "aria-label": label + " " + f, checked: p[f], onchange: (e) => { p[f] = e.target.checked; } })))]);
+    }));
+  }
+  function renderPlannerNodes() {
+    const box = (n, f, lbl) => el("td", {}, el("input", { type: "checkbox", "aria-label": n.id + " " + lbl, checked: f === "fresh" ? NODE_FRESH[n.id] : f === "link" ? n.peerVerified && n.encrypted : n[f], onchange: (e) => {
+      if (f === "fresh") NODE_FRESH[n.id] = e.target.checked; else if (f === "link") { n.peerVerified = e.target.checked; n.encrypted = e.target.checked; } else n[f] = e.target.checked;
+    } }));
+    $("rNodes").replaceChildren(...DIR.nodes.map((n) => el("tr", {}, [el("td", { class: "num", text: n.id + (n.usesRelay ? " (relay)" : "") }), el("td", { text: n.siteId }), el("td", { class: "small", text: n.poolIds.map((x) => x.replace("pool-", "")).join(", ") }), el("td", { class: "small", text: n.dataClasses.join(", ") }),
+      box(n, "online", "online"), box(n, "modelReady", "model ready"), box(n, "fresh", "fresh observation"), box(n, "sharingConsent", "sharing consent"), box(n, "link", "verified encrypted link")])));
+  }
+  function syncPlannerDevices() {
+    const site = $("rSite").value;
+    const devs = DIR.nodes.filter((n) => site && n.siteId === site);
+    fillSelect("rDev", [""].concat(devs.map((n) => n.id)), ["No local node"].concat(devs.map((n) => n.id)));
+  }
+  function runPlanner() {
+    const now = Date.now();
+    DIR.nodes.forEach((n) => { n.lastObservedAt = new Date(now - (NODE_FRESH[n.id] ? 20000 : 600000)).toISOString(); });
+    const sponsorsActive = $("rSponsor").checked;
+    DIR.principals.forEach((p) => { if (p.kind === "human") p.active = sponsorsActive || p.id === $("rPrin").value; });
+    const request = {
+      organizationId: ORG, groupId: $("rGroup").value, principalId: $("rPrin").value, workspaceId: $("rWs").value, poolId: $("rPool").value,
+      task: $("rTask").value, payloadClass: $("rClass").value, sourceSiteId: $("rSite").value || null, sourceNodeId: $("rDev").value || null, meshOptIn: $("rOpt").checked,
+    };
+    let r;
+    try { r = P.preview({ directory: DIR, request }, now); } catch (e) { $("rOut").replaceChildren(el("span", { class: "verdict no", text: "INVALID INPUT" }), el("span", { class: "muted small", text: " " + e.message })); return null; }
+    chain.append("policy.decision", HUMAN, { planner: true, principal: request.principalId, group: request.groupId, workspace: request.workspaceId, pool: request.poolId, task: request.task, status: r.status, reason: r.reason, node: r.selectedNodeId, locality: r.locality, effective_class: r.effectiveDataClass, preview_only: r.previewOnly });
+    const cls = r.status === "eligible_for_planning" ? "ok" : r.status === "denied" ? "no" : "hold";
+    const head = el("div", { class: "row" }, [
+      el("span", { class: "verdict " + cls, text: r.status === "eligible_for_planning" ? "ELIGIBLE: " + r.selectedNodeId : r.status === "denied" ? "DENIED" : "NO ELIGIBLE NODE" }),
+      el("span", { class: "muted small", text: (r.status === "denied" ? r.reason + ". " : r.locality ? r.locality.replace(/_/g, " ") + ". " : "") + "Effective data class " + r.effectiveDataClass + ". Preview only: no execution, no authorization, no hosted fallback." }),
+    ]);
+    const rows = r.candidates.map((c) => el("tr", {}, [el("td", { class: "num", text: c.nodeId }), el("td", { text: c.locality.replace(/_/g, " ") }),
+      el("td", { class: "reason" + (c.eligible ? " pass" : ""), text: c.eligible ? (c.nodeId === r.selectedNodeId ? "selected (rank 1 of " + r.ranking.length + ")" : "eligible, rank " + (r.ranking.indexOf(c.nodeId) + 1)) : c.denyReasons.join(", ") })]));
+    $("rOut").replaceChildren(head, rows.length ? el("div", { class: "tbl-wrap" }, el("table", { "aria-label": "Per-candidate reasons" }, [el("thead", {}, el("tr", {}, [el("th", { text: "Candidate" }), el("th", { text: "Locality" }), el("th", { text: "Reasons" })])), el("tbody", {}, rows)])) : el("span", { class: "muted small", text: "Stopped before candidates were listed." }));
+    changed();
+    return r;
+  }
+  function wirePlanner() {
+    const prin = DIR.principals;
+    fillSelect("rPrin", prin.map((p) => p.id), prin.map((p) => p.name + (p.kind === "human" ? " (person)" : ", Digital Employee" + (p.active ? "" : ", offline"))));
+    fillSelect("rGroup", DIR.groups.map((g) => g.id), DIR.groups.map((g) => g.name));
+    fillSelect("rWs", DIR.workspaces.map((w) => w.id), DIR.workspaces.map((w) => w.name + " (" + w.dataClass + ")"));
+    fillSelect("rPool", DIR.pools.map((x) => x.id), DIR.pools.map((x) => x.name));
+    fillSelect("rTask", ["chat", "coding", "research", "embedding"]);
+    $("rPrin").value = "de:mira"; $("rGroup").value = "mg-operations"; $("rWs").value = "ws-ops"; $("rTask").value = "research";
+    syncPlannerDevices();
+    ["rGroup", "rWs"].forEach((id) => $(id).addEventListener("change", renderPlannerPolicy));
+    $("rSite").addEventListener("change", syncPlannerDevices);
+    $("rRun").addEventListener("click", runPlanner);
+    renderPlannerPolicy(); renderPlannerNodes();
+  }
+
+  // ---------------------------------------------------------------- approvals bench
+  function checkAction() {
+    const emp = ROSTER.find((e) => e.id === $("gEmp").value);
+    const v = G.requestAction(chain, emp, $("gAct").value, $("gPayload").value, $("gWs").value, GATE_RULES);
+    $("gOut").replaceChildren(el("span", { class: "verdict " + (v.allowed ? "ok" : "no"), text: v.allowed ? "ALLOWED" : "DENIED" }), el("span", { class: "muted small mono", text: " rule " + v.rule }));
+    changed();
+    return v;
+  }
+  function personById(id) { return PEOPLE.find((p) => p.id === id); }
+  function renderQueue() {
+    $("queue").replaceChildren(...(desk.items.length ? desk.items.slice().reverse().map((i) => el("tr", {}, [
+      el("td", { class: "num", text: i.id }), el("td", { class: "small", text: i.assignment.id + " " + ROSTER.find((e) => e.id === i.assignment.employee).name + ", " + i.assignment.action }),
+      el("td", { class: "small", text: i.reasons.join("; ") }), el("td", { class: "num", text: i.requiredRole }),
+      el("td", {}, el("span", { class: "verdict " + (i.assignment.state === "completed" ? "ok" : i.assignment.state === "blocked" ? "no" : "hold"), text: i.assignment.state })),
+      el("td", {}, !i.decision ? el("div", { class: "row" }, [
+        el("button", { class: "btn primary", type: "button", onclick: () => decide(i.id, $("pApprover").value, true) }, "Approve"),
+        el("button", { class: "btn danger", type: "button", onclick: () => decide(i.id, $("pApprover").value, false) }, "Reject"),
+        el("button", { class: "btn", type: "button", title: "Shows that a Digital Employee cannot approve", onclick: () => decide(i.id, "agent:thoxy", true) }, "As THOXY"),
+      ]) : el("span", { class: "muted small", text: "decided by " + i.decision.by })),
+    ])) : [el("tr", {}, el("td", { colspan: "6", class: "muted", text: "Nothing waiting. Submit an assignment with the external-effect gate on." }))]));
+    fillSelect("lAsg", assignments.map((x) => x.id), assignments.map((x) => x.id + " (" + x.state + ")"));
+  }
+  function decide(id, who, approve) {
+    const person = personById(who);
+    const r = desk.decide(id, who, person ? person.roles : [], approve, person ? "decided in Evidence Lab" : "");
+    $("pOut").replaceChildren(el("span", { class: "verdict " + (r.ok ? (r.status === "completed" ? "ok" : "no") : "no"), text: r.ok ? id.toUpperCase() + (r.status === "completed" ? " APPROVED, COMPLETED" : " REJECTED, BLOCKED") : "REFUSED" }), el("span", { class: "muted small", text: r.ok ? (r.status === "completed" ? " The simulated effect ran after approval; every step is in the ledger." : " Nothing ran. The assignment is blocked.") : " " + r.reason }));
+    renderQueue(); changed();
+    return r;
+  }
+  function submitAction() {
+    const emp = ROSTER.find((e) => e.id === $("pEmp").value);
+    if (emp.status === "offline") { $("pOut").replaceChildren(el("span", { class: "verdict no", text: "NOT QUEUED" }), el("span", { class: "muted small", text: " " + emp.name + " is offline." })); return null; }
+    const asg = { id: "asg-" + (assignments.length + 1), employee: emp.id, action: $("pAct").value, state: "queued", version: 0, sensitivity: $("pSens").value,
+      externalEffectGate: $("pGate").checked, responsibilities: $("pResp").checked ? [{ requiresHumanApproval: true }] : [], employeeAutonomy: emp.autonomy, roleAutonomy: emp.autonomy };
+    assignments.push(asg);
+    const r = desk.submit(asg);
+    $("pOut").replaceChildren(el("span", { class: "verdict " + (r.status === "completed" ? "ok" : "hold"), text: r.status === "completed" ? "COMPLETED WITHOUT APPROVAL" : "AWAITING APPROVAL" }), el("span", { class: "muted small", text: r.status === "completed" ? " No reason for review applied." : " Reasons: " + r.reasons.join("; ") + ". Needs " + r.requiredRole + "." }));
+    renderQueue(); changed();
+    return r;
+  }
+  function lifecycle() {
+    const asg = assignments.find((x) => x.id === $("lAsg").value);
+    if (!asg) { toast("Submit an assignment first."); return; }
+    const from = asg.state, to = $("lTo").value;
+    const ok = G.transition(chain, asg, to, HUMAN);
+    $("lOut").textContent = asg.id + ": " + from + " to " + to + (ok ? " applied." : " refused. That move is not one of the eighteen legal transitions.");
+    renderQueue(); changed();
+    return ok;
+  }
+
+  // ---------------------------------------------------------------- handoffs bench
+  let team = ["de:atlas", "de:mira", "de:sera"].map((id) => id);
+  let taskRun = null;
+  function renderPicker() {
+    $("picker").replaceChildren(...ROSTER.map((e) => {
+      const pos = team.indexOf(e.id);
+      return el("button", { class: "pick", type: "button", "aria-pressed": String(pos !== -1), onclick: () => { if (pos === -1) { if (team.length < 5) team.push(e.id); else toast("Teams in the lab hold up to five members."); } else team.splice(pos, 1); renderPicker(); } }, [pos !== -1 ? el("span", { class: "ord", text: String(pos + 1) }) : null, e.name + " ", el("span", { class: "muted", text: e.role })]);
+    }));
+  }
+  function renderHandoffs(brokenAt) {
+    if (!taskRun) return;
+    $("hChain").replaceChildren(...taskRun.handoffs.map((h, i) => el("div", { class: "hcard" + (brokenAt === i ? " broken" : "") }, [
+      el("div", { class: "rail" }, [el("div", { class: "dot", text: String(i + 1) }), el("div", { class: "line" })]),
+      el("div", { class: "body" }, [el("div", { class: "row" }, [el("strong", { text: h.name }), el("span", { class: "muted small", text: h.role })]), el("pre", { text: h.text }), el("div", { class: "hashline", text: "body  " + h.body_sha256 }), el("div", { class: "hashline", text: "chain " + h.hash }), el("div", { class: "hashline", text: "prev  " + h.prev })]),
+    ])));
+  }
+  function runTask() {
+    const members = team.map((id) => ROSTER.find((e) => e.id === id));
+    const inactive = members.find((m) => m.status === "offline");
+    if (!members.length) { toast("Pick at least one team member."); return null; }
+    if (inactive) {
+      $("hOut").replaceChildren(el("span", { class: "verdict no", text: "NOT STARTED" }), el("span", { class: "muted small", text: " " + inactive.name + " is offline. Remove them from the team." }));
+      return null;
+    }
+    const brief = $("hBrief").value.trim();
+    if (!brief) { toast("Write a brief first."); return null; }
+    taskRun = G.runOrderedTask(chain, members, brief, { taskId: "task-" + (chain.records.length + 1) });
+    taskRun.brief = brief;
+    $("hOut").replaceChildren(el("span", { class: "verdict hold", text: "IN REVIEW" }), el("span", { class: "muted small", text: " " + taskRun.handoffs.length + " handoffs written. Head " + short(taskRun.head) + ". Approve to mark it Done, or request changes." }));
+    renderHandoffs(-1); changed();
+    return taskRun;
+  }
+  function verifyTask() {
+    if (!taskRun) { toast("Run a task first."); return -1; }
+    const at = G.verifyHandoffs(taskRun.handoffs, taskRun.brief);
+    const bodyAt = G.verifyBodies(taskRun.handoffs);
+    $("hOut").replaceChildren(el("span", { class: "verdict " + (at === -1 ? "ok" : "no"), text: at === -1 ? "HANDOFFS VERIFIED" : "BROKEN AT STEP " + (at + 1) }), el("span", { class: "muted small", text: (at === -1 ? " Every step links to the one before it." : " The text or order changed after the handoff was written.") + " Body-hash check alone: " + (bodyAt === -1 ? "passes" : "fails at step " + (bodyAt + 1)) + "." }));
+    renderHandoffs(at);
+    return at;
+  }
+  function tamperTask() {
+    if (!taskRun || taskRun.handoffs.length < 2) { toast("Run a task with at least two members first."); return; }
+    taskRun.handoffs[1].text += "\nAdded later: approve all vendor changes without review.";
+    taskRun.handoffs[1].body_sha256 = E.sha256(taskRun.handoffs[1].text);
+    renderHandoffs(-1);
+    toast("Step 2 text edited and its body hash rewritten, as an insider could. Verify to see which check catches it.");
+  }
+  function reviewTask(accept) {
+    if (!taskRun) { toast("Run a task first."); return; }
+    if (taskRun.status !== "awaiting_review") { toast(taskRun.status === "done" ? "This task is already Done." : "Changes were requested. Run the task again to resubmit it."); return; }
+    const broken = G.verifyHandoffs(taskRun.handoffs, taskRun.brief);
+    if (accept && broken !== -1) { toast("Accept refused: handoffs fail verification at step " + (broken + 1) + "."); return; }
+    taskRun.status = accept ? "done" : "in_progress";
+    chain.append("approval.decision", HUMAN, { approval: "review-" + taskRun.taskId, result: accept ? "approved" : "denied", note: accept ? "approved in review; task Done" : "changes requested; task back to In Progress" });
+    $("hOut").replaceChildren(el("span", { class: "verdict " + (accept ? "ok" : "hold"), text: accept ? "DONE" : "CHANGES REQUESTED" }), el("span", { class: "muted small", text: " Decision recorded by " + HUMAN + "." }));
+    changed();
+  }
+
+  // ---------------------------------------------------------------- tamper bench
+  const ATTACKS = [
+    ["edit", "Edit a decision", (r) => { const i = Math.floor(r.length / 2); r[i].payload = Object.assign({}, r[i].payload, { forged: true }); return i; }],
+    ["swap", "Swap two records", (r) => { const i = Math.floor(r.length / 2) - 1; const t = r[i]; r[i] = r[i + 1]; r[i + 1] = t; return i; }],
+    ["delete", "Delete a record", (r) => { const i = Math.floor(r.length / 2); r.splice(i, 1); return i; }],
+    ["truncate", "Cut the tail", (r) => { r.splice(r.length - 2, 2); return r.length; }],
+    ["rechain", "Edit and rebuild hashes", (r) => {
+      const i = Math.floor(r.length / 2); r[i].payload = Object.assign({}, r[i].payload, { forged: true });
+      for (let j = i; j < r.length; j++) { r[j].prev = j === 0 ? E.GENESIS : r[j - 1].hash; r[j].hash = E.sha256(E.canonical({ seq: r[j].seq, ts: r[j].ts, kind: r[j].kind, actor: r[j].actor, payload: r[j].payload, prev: r[j].prev })); }
+      return i;
+    }],
+  ];
+  function setAnchor() { anchor = { count: chain.records.length, head: chain.head() }; $("tAnchorOut").textContent = "anchor: " + anchor.count + " records, head " + short(anchor.head); }
+  function check(recs, key, anc) {
+    const v = E.EvidenceChain.verify(recs, key);
+    if (!v.ok) return { caught: true, how: "record " + v.firstBad + ": " + v.reason };
+    if (anc) {
+      if (recs.length !== anc.count) return { caught: true, how: "anchor count " + anc.count + " vs " + recs.length };
+      if ((recs.length ? recs[recs.length - 1].hash : E.GENESIS) !== anc.head) return { caught: true, how: "anchor head differs" };
+    }
+    return { caught: false, how: "passes" };
+  }
+  function runAttack(id) {
+    if (!anchor) setAnchor();
+    if (chain.records.length < 6) { toast("Run a few benches first so the ledger has at least six records."); return null; }
+    const attack = ATTACKS.find((a) => a[0] === id);
+    const recs = JSON.parse(JSON.stringify(chain.records.slice(0, anchor.count)));
+    attack[2](recs);
+    const results = [["Hash links", check(recs, null, null)], ["+ HMAC key", check(recs, SESSION_KEY, null)], ["+ Anchor", check(recs, null, anchor)]];
+    $("tOut").replaceChildren(...results.map(([label, r]) => el("div", { class: "mcell" }, [el("span", { class: "label", text: label }), el("span", { class: "verdict " + (r.caught ? "ok" : "no"), text: r.caught ? "DETECTED" : "MISSED" }), el("span", { class: "small muted", text: r.how })])));
+    chain.append("note", HUMAN, { tamper_test: id, results: results.map(([l, r]) => ({ check: l, caught: r.caught })) });
+    changed();
+    return results;
+  }
+
+  // ---------------------------------------------------------------- captures
+  async function hashBytes(buf) {
+    try { if (window.crypto && crypto.subtle) { const d = await crypto.subtle.digest("SHA-256", buf); return Array.from(new Uint8Array(d), (b) => b.toString(16).padStart(2, "0")).join(""); } } catch (e) { /* fall back to the pure JS hash below */ }
+    return E.sha256(new Uint8Array(buf));
+  }
+  async function addCapture(file, origin) {
+    if (file.size > 200 * 1024 * 1024) { toast(file.name + " is over 200 MB. Trim it and try again."); return; }
+    const buf = await file.arrayBuffer();
+    const sha = await hashBytes(buf);
+    const kind = (file.type || "").startsWith("video/") ? "capture.recording" : "capture.screenshot";
+    let stored = null;
+    if (caps.assets) {
+      try { const a = await caps.assets.upload(file); stored = { id: a.id, url: a.url }; } catch (e) { toast("Kept " + file.name + " in this tab only: upload was refused (" + (e && e.code ? e.code : "error") + ")."); }
+    }
+    const rec = chain.append(kind, HUMAN, { filename: file.name, type: file.type || "application/octet-stream", bytes: file.size, sha256: sha, origin: origin || "upload", asset: stored ? stored.id : null });
+    captures.push({ file, sha, kind, rec, url: stored ? stored.url : URL.createObjectURL(file) });
+    renderCaptures(); changed();
+  }
+  function renderCaptures() {
+    $("caps").replaceChildren(...captures.slice().reverse().map((c) => el("div", { class: "cap" }, [
+      el("div", { class: "thumb" }, c.kind === "capture.recording" ? el("video", { src: c.url, muted: true, controls: true, preload: "metadata" }) : (c.file.type === "application/pdf" ? el("span", { class: "label", text: "PDF" }) : el("img", { src: c.url, alt: "Capture " + c.file.name }))),
+      el("div", { class: "meta" }, [el("span", { class: "fn", text: c.file.name }), el("span", { class: "muted mono small", text: "sha256 " + short(c.sha) }), el("span", { class: "muted small", text: "ledger #" + c.rec.seq + ", " + (c.file.size / 1024).toFixed(0) + " KB" })]),
+    ])));
+  }
+  function snapshot() {
+    const w = 1200, h = 675, cv = document.createElement("canvas"); cv.width = w; cv.height = h;
+    const g = cv.getContext("2d"); const cs = getComputedStyle(document.documentElement);
+    const col = (n) => cs.getPropertyValue(n).trim() || "#000";
+    g.fillStyle = col("--bg"); g.fillRect(0, 0, w, h);
+    g.fillStyle = col("--green"); g.font = "700 26px " + cs.getPropertyValue("--mono"); g.fillText("THOX", 48, 70);
+    g.fillStyle = col("--fg"); g.fillText(".ai Evidence Lab snapshot", 48 + g.measureText("THOX").width, 70);
+    g.font = "400 18px " + cs.getPropertyValue("--mono"); g.fillStyle = col("--fg-2");
+    const v = chain.verify();
+    [["session", SESSION_ID], ["time", new Date().toISOString()], ["records", String(chain.records.length)], ["head", chain.head()], ["integrity", v.ok ? "verified" : "broken at #" + v.firstBad]].forEach(([k, val], i) => { g.fillText(k.padEnd(10) + val, 48, 120 + i * 30); });
+    g.strokeStyle = col("--line"); g.beginPath(); g.moveTo(48, 285); g.lineTo(w - 48, 285); g.stroke();
+    chain.records.slice(-10).reverse().forEach((r, i) => { g.fillStyle = i === 0 ? col("--fg") : col("--fg-2"); g.font = "400 16px " + cs.getPropertyValue("--mono"); g.fillText((String(r.seq).padStart(3, "0") + "  " + r.kind.padEnd(22) + summarize(r)).slice(0, 108), 48, 320 + i * 32); });
+    g.fillStyle = col("--fg-3"); g.font = "400 14px " + cs.getPropertyValue("--sans"); g.fillText("Your AI. Your Data. Your Rules.™", 48, h - 32);
+    return new Promise((resolve) => cv.toBlob(async (blob) => {
+      if (!blob) { toast("This browser could not render the snapshot."); resolve(null); return; }
+      const file = new File([blob], "evidence-lab-snapshot-" + chain.records.length + ".png", { type: "image/png" });
+      await addCapture(file, "lab-snapshot"); toast("Snapshot captured and hashed into the ledger."); resolve(file);
+    }, "image/png"));
+  }
+
+  // ---------------------------------------------------------------- export, import, team log
+  function bundle() { return chain.exportBundle({ lab: "ThoxWork Evidence Lab", session: SESSION_ID, exported: new Date().toISOString(), note: "HMAC tags need the session key, which never leaves this tab." }); }
+  async function exportBundle() {
+    const json = JSON.stringify(bundle(), null, 1);
+    if (caps.downloads) {
+      try { await caps.downloads.save({ filename: SESSION_ID + ".evidence.json", data: json }); toast("Bundle offered for download."); return; } catch (e) { /* declined or unavailable: fall through to copy */ }
+    }
+    try { await navigator.clipboard.writeText(json); toast("Bundle JSON copied to the clipboard."); }
+    catch (e) {
+      const ta = el("textarea", { "aria-label": "Evidence bundle JSON", readonly: true }); ta.value = json; ta.style.minHeight = "160px";
+      $("teamOut").replaceChildren("Copy the bundle below:"); $("teamList").replaceChildren(ta); ta.select(); toast("Select and copy the bundle shown under the ledger.");
+    }
+  }
+  async function importBundle(file) {
+    try {
+      const b = JSON.parse(await file.text());
+      const v = E.EvidenceChain.verify(b.records || [], null);
+      $("teamOut").textContent = file.name + ": " + (b.count || 0) + " records, hash links " + (v.ok ? "verify" : "break at #" + v.firstBad) + ". HMAC tags need the original session key.";
+    } catch (e) { $("teamOut").textContent = file.name + " is not an evidence bundle: " + e.message; }
+  }
+  async function saveTeam() {
+    if (!caps.db) { $("teamOut").textContent = "The team log needs this page open on claude.ai while signed in. Export the bundle instead."; return; }
+    try {
+      const b = bundle();
+      if (JSON.stringify(b.records).length > 240 * 1024) { $("teamOut").textContent = "This session is too large for one team log entry (256 KB). Export the bundle instead."; return; }
+      await caps.db.doc("sessions/" + SESSION_ID).set({ session: SESSION_ID, saved: new Date().toISOString(), count: b.count, head: b.head, records: b.records });
+      await caps.db.doc("anchors/" + SESSION_ID).set({ session: SESSION_ID, count: b.count, head: b.head, saved: new Date().toISOString() });
+      chain.append("note", HUMAN, { team_log: "saved", count: b.count, head: b.head });
+      $("teamOut").textContent = "Saved " + b.count + " records to the team log and anchored head " + short(b.head) + ".";
+      changed();
+    } catch (e) { $("teamOut").textContent = "Save failed (" + (e && e.code ? e.code : e) + "). Viewers without edit access can export the bundle instead."; }
+  }
+  async function loadTeam() {
+    if (!caps.db) { $("teamOut").textContent = "The team log needs this page open on claude.ai while signed in."; return; }
+    $("teamOut").textContent = "Loading team log...";
+    const timer = setTimeout(() => { $("teamOut").textContent = "The team log did not answer within 10 seconds."; }, 10000);
+    try {
+      const [sess, anc] = await Promise.all([caps.db.collection("sessions").limit(25).get(), caps.db.collection("anchors").limit(50).get()]);
+      clearTimeout(timer);
+      const anchors = {}; (anc.docs || anc).forEach((d) => { const x = d.data ? d.data() : d; anchors[x.session] = x; });
+      const docs = (sess.docs || sess).map((d) => (d.data ? d.data() : d));
+      if (!docs.length) { $("teamOut").textContent = "No saved sessions yet. Save this one to start the log."; $("teamList").replaceChildren(); return; }
+      $("teamOut").textContent = docs.length + " saved sessions, re-verified now:";
+      $("teamList").replaceChildren(el("div", { class: "tbl-wrap" }, el("table", {}, [el("thead", {}, el("tr", {}, [el("th", { text: "Session" }), el("th", { text: "Records" }), el("th", { text: "Links" }), el("th", { text: "Anchor" })])), el("tbody", {}, docs.map((d) => {
+        const v = E.EvidenceChain.verify(d.records || [], null); const a = anchors[d.session];
+        const anchorOk = a && a.count === (d.records || []).length && a.head === ((d.records || []).length ? d.records[d.records.length - 1].hash : E.GENESIS);
+        return el("tr", {}, [el("td", { class: "num small", text: d.session }), el("td", { class: "num", text: String((d.records || []).length) }), el("td", { text: v.ok ? "verify" : "break #" + v.firstBad }), el("td", { text: a ? (anchorOk ? "matches" : "differs") : "none" })]);
+      }))])));
+    } catch (e) { clearTimeout(timer); $("teamOut").textContent = "Could not read the team log (" + (e && e.code ? e.code : e) + ")."; }
+  }
+
+  // ---------------------------------------------------------------- measured panel
+  function fmt(x, d) { return x === null || x === undefined ? "n/a" : Number(x).toFixed(d === undefined ? 1 : d); }
+  function renderMeasured() {
+    if (!MEASURED) { $("measured").replaceChildren(el("p", { class: "muted", text: "Measured results load when the report build embeds them." })); return; }
+    const k = MEASURED;
+    const tiles = [
+      [k.mg_agree + " / " + k.mg_total, "admission decisions identical to the THOX reference policy", "green"],
+    ].concat(k.pl_total ? [[k.pl_agree + " / " + k.pl_total, "routing previews identical to the ThoxWork planner, every per-node reason included", "green"]] : []).concat([
+      [fmt(k.mg_lab_us_100, 2) + " us", "median lab admission decision, 100-node inventory", ""],
+      [fmt(k.ev_append_us_1000, 1) + " us", "median append per keyed record, 1,000-record chain", ""],
+      [fmt(k.ev_verify_ms_10000, 0) + " ms", "median keyed verification of 10,000 records", ""],
+    ]);
+    $("measured").replaceChildren(...tiles.map(([big, lbl, c]) => el("div", { class: "kpi" }, [el("span", { class: "big " + c, text: big }), el("span", { class: "muted small", text: lbl })])));
+    const names = { edit_payload: "Edit a decision", edit_actor: "Change the actor", swap_adjacent: "Swap two records", delete_middle: "Delete a record", truncate_tail: "Cut the tail", rechain_suffix: "Edit and rebuild hashes" };
+    $("mMatrix").replaceChildren(...Object.entries(k.matrix).map(([a, m]) => el("tr", {}, [el("td", { text: names[a] || a }), ...["plain|unanchored", "keyed|unanchored", "plain|anchored", "keyed|anchored"].map((c) => el("td", { class: "num", text: (m[c] * 100).toFixed(0) + "%" }))])));
+    $("mHost").textContent = "Host: " + k.host + ". " + k.trials + " seeded trials per cell; timing medians of 30 repetitions after one warm-up.";
+  }
+
+  // ---------------------------------------------------------------- wiring
+  function wire() {
+    fillSelect("aGroup", Object.keys(POLICY.groups)); fillSelect("aSite", Object.keys(POLICY.sites)); fillSelect("aModel", MODELS);
+    $("aGroup").value = "operations"; $("aSite").value = "hq"; $("aModel").value = "analyst-8b";
+    fillSelect("gEmp", ROSTER.map((e) => e.id), ROSTER.map((e) => e.name + ", " + e.role)); $("gEmp").value = "de:mira";
+    fillSelect("gAct", GATE_ACTIONS); $("gAct").value = "memory.write"; fillSelect("gWs", WORKSPACES);
+    fillSelect("pEmp", ROSTER.map((e) => e.id), ROSTER.map((e) => e.name + ", " + e.role + (e.status === "offline" ? " (offline)" : ""))); $("pEmp").value = "de:helix";
+    fillSelect("pAct", G.KNOWN_ACTIONS); $("pAct").value = "message";
+    fillSelect("pApprover", PEOPLE.map((p) => p.id), PEOPLE.map((p) => p.name + " (" + p.roles[p.roles.length - 1] + ")"));
+    fillSelect("lTo", G.STATES);
+    wirePlanner();
+    $("aRun").addEventListener("click", runAdmission);
+    $("pRun").addEventListener("click", submitAction); $("gRun").addEventListener("click", checkAction);
+    $("lRun").addEventListener("click", lifecycle);
+    $("hRun").addEventListener("click", runTask); $("hVerify").addEventListener("click", verifyTask); $("hTamper").addEventListener("click", tamperTask);
+    $("hAccept").addEventListener("click", () => reviewTask(true)); $("hReject").addEventListener("click", () => reviewTask(false));
+    $("tButtons").replaceChildren(...ATTACKS.map(([id, label]) => el("button", { class: "btn", type: "button", id: "t-" + id, onclick: () => runAttack(id) }, label)));
+    $("tAnchor").addEventListener("click", () => { setAnchor(); chain.append("note", HUMAN, { anchor: anchor }); changed(); });
+    $("btnVerify").addEventListener("click", () => verifyNow(false));
+    $("btnExport").addEventListener("click", exportBundle);
+    $("btnSnapshot").addEventListener("click", snapshot);
+    $("btnSave").addEventListener("click", saveTeam); $("btnLoad").addEventListener("click", loadTeam);
+    $("importFile").addEventListener("change", (e) => { const f = e.target.files[0]; if (f) importBundle(f); e.target.value = ""; });
+    $("capFile").addEventListener("change", async (e) => { for (const f of Array.from(e.target.files)) await addCapture(f, "upload"); e.target.value = ""; });
+    const drop = $("drop");
+    drop.addEventListener("dragover", (e) => { e.preventDefault(); drop.classList.add("over"); });
+    drop.addEventListener("dragleave", () => drop.classList.remove("over"));
+    drop.addEventListener("drop", async (e) => { e.preventDefault(); drop.classList.remove("over"); for (const f of Array.from(e.dataTransfer.files)) await addCapture(f, "drop"); });
+  }
+
+  function sampleRun() {
+    chain.append("session.open", HUMAN, { session: SESSION_ID, lab: "ThoxWork Evidence Lab", sample: true });
+    runAdmission();
+    runPlanner();
+    checkAction();
+    $("gAct").value = "desk.exec"; $("gPayload").value = "rm -rf build"; checkAction();
+    $("gAct").value = "memory.write"; $("gPayload").value = "release cadence: biweekly";
+    $("pSens").value = "confidential"; submitAction();
+    $("pSens").value = "internal";
+    runTask();
+    const store = [];
+    G.rememberFact(chain, store, "de:mira", "Vendor Northline contract end: 2027-01-31");
+    G.rememberFact(chain, store, "de:mira", "vendor northline contract end is 2027-03-31");
+    setAnchor();
+    changed();
+  }
+
+  async function lightUp() {
+    if (!window.claude || typeof window.claude.use !== "function") return;
+    const [downloads, assets, db, user] = await Promise.all(["downloads", "assets", "db", "user"].map((n) => window.claude.use(n).catch(() => null)));
+    caps = { downloads, assets, db, user };
+    if (user && typeof user.id === "function") { try { const id = await user.id(); if (id) HUMAN = "human:" + String(id).slice(0, 12); } catch (e) { /* keep the default reviewer label */ } }
+    $("teamOut").textContent = db ? "Team log available." : "Team log unavailable in this view. Export bundles instead.";
+  }
+
+  // Known-answer tests run on load; QA reads window.__labSelfTest.
+  window.__labSelfTest = E.selfTest();
+  window.__lab = { chain, runAdmission, runPlanner, DIR, checkAction, submitAction, runTask, verifyTask, tamperTask, runAttack, snapshot, decide, desk, lifecycle };
+  renderOrg(); renderFilters(); renderNodes(); wire(); renderPicker(); renderQueue(); renderMeasured();
+  showTab((location.hash || "#admission").slice(1));
+  sampleRun();
+  $("teamOut").textContent = "Team log loads when this page runs on claude.ai.";
+  lightUp();
+})();
+</script>

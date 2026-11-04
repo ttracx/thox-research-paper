@@ -1,0 +1,756 @@
+{
+ "experiment": "E2 MeshGroup admission agreement and timing",
+ "seed": 20261104,
+ "host": {
+  "platform": "linux",
+  "arch": "x64",
+  "node": "v22.23.4",
+  "cpus": 2,
+  "cpu_model": "Intel(R) Xeon(R) Processor @ 2.10GHz"
+ },
+ "agreement": {
+  "total": 20000,
+  "agree": 20000,
+  "rate": 1,
+  "by_reference_outcome": {
+   "NONE": 4377,
+   "PLACE": 4570,
+   "DENY:classification exceeds group policy": 9097,
+   "DENY:unknown group": 932,
+   "DENY:tenant mismatch": 1024
+  },
+  "mismatches": []
+ },
+ "exclusion_reason_counts": {
+  "outside tenant or group": 331608,
+  "cross-site needs policy and consent": 13080,
+  "model not served": 47401,
+  "node not healthy": 10253,
+  "site not authenticated": 8755,
+  "node not authenticated": 11035,
+  "site not allowed for group": 11596,
+  "site not registered": 2355
+ },
+ "timing": [
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 0,
+   "batch": 1000,
+   "batch_ms": 0.190529,
+   "us_per_decision": 0.190529
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 1,
+   "batch": 1000,
+   "batch_ms": 0.193708,
+   "us_per_decision": 0.193708
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 2,
+   "batch": 1000,
+   "batch_ms": 0.215948,
+   "us_per_decision": 0.215948
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 3,
+   "batch": 1000,
+   "batch_ms": 0.174884,
+   "us_per_decision": 0.174884
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 4,
+   "batch": 1000,
+   "batch_ms": 0.184102,
+   "us_per_decision": 0.184102
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 5,
+   "batch": 1000,
+   "batch_ms": 0.1925,
+   "us_per_decision": 0.1925
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 6,
+   "batch": 1000,
+   "batch_ms": 2.244861,
+   "us_per_decision": 2.244861
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 7,
+   "batch": 1000,
+   "batch_ms": 0.150306,
+   "us_per_decision": 0.150306
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 8,
+   "batch": 1000,
+   "batch_ms": 0.106024,
+   "us_per_decision": 0.106024
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 9,
+   "batch": 1000,
+   "batch_ms": 0.097185,
+   "us_per_decision": 0.097185
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 10,
+   "batch": 1000,
+   "batch_ms": 0.09606,
+   "us_per_decision": 0.09606
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 11,
+   "batch": 1000,
+   "batch_ms": 0.334947,
+   "us_per_decision": 0.334947
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 12,
+   "batch": 1000,
+   "batch_ms": 0.098563,
+   "us_per_decision": 0.098563
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 13,
+   "batch": 1000,
+   "batch_ms": 0.101362,
+   "us_per_decision": 0.101362
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 14,
+   "batch": 1000,
+   "batch_ms": 0.137803,
+   "us_per_decision": 0.137803
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 15,
+   "batch": 1000,
+   "batch_ms": 0.097234,
+   "us_per_decision": 0.097234
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 16,
+   "batch": 1000,
+   "batch_ms": 0.093575,
+   "us_per_decision": 0.093575
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 17,
+   "batch": 1000,
+   "batch_ms": 0.092611,
+   "us_per_decision": 0.092611
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 18,
+   "batch": 1000,
+   "batch_ms": 0.098861,
+   "us_per_decision": 0.098861
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 19,
+   "batch": 1000,
+   "batch_ms": 0.100566,
+   "us_per_decision": 0.100566
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 20,
+   "batch": 1000,
+   "batch_ms": 0.093139,
+   "us_per_decision": 0.093139
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 21,
+   "batch": 1000,
+   "batch_ms": 0.116028,
+   "us_per_decision": 0.116028
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 22,
+   "batch": 1000,
+   "batch_ms": 0.094896,
+   "us_per_decision": 0.094896
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 23,
+   "batch": 1000,
+   "batch_ms": 0.093117,
+   "us_per_decision": 0.093117
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 24,
+   "batch": 1000,
+   "batch_ms": 0.163631,
+   "us_per_decision": 0.163631
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 25,
+   "batch": 1000,
+   "batch_ms": 0.109998,
+   "us_per_decision": 0.109998
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 26,
+   "batch": 1000,
+   "batch_ms": 0.16398,
+   "us_per_decision": 0.16398
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 27,
+   "batch": 1000,
+   "batch_ms": 0.094865,
+   "us_per_decision": 0.094865
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 28,
+   "batch": 1000,
+   "batch_ms": 0.092697,
+   "us_per_decision": 0.092697
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 10,
+   "rep": 29,
+   "batch": 1000,
+   "batch_ms": 0.107873,
+   "us_per_decision": 0.107873
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 0,
+   "batch": 1000,
+   "batch_ms": 1.10404,
+   "us_per_decision": 1.10404
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 1,
+   "batch": 1000,
+   "batch_ms": 1.326868,
+   "us_per_decision": 1.326868
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 2,
+   "batch": 1000,
+   "batch_ms": 1.045751,
+   "us_per_decision": 1.045751
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 3,
+   "batch": 1000,
+   "batch_ms": 1.088865,
+   "us_per_decision": 1.088865
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 4,
+   "batch": 1000,
+   "batch_ms": 1.21846,
+   "us_per_decision": 1.21846
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 5,
+   "batch": 1000,
+   "batch_ms": 1.084811,
+   "us_per_decision": 1.084811
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 6,
+   "batch": 1000,
+   "batch_ms": 1.196001,
+   "us_per_decision": 1.1960010000000003
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 7,
+   "batch": 1000,
+   "batch_ms": 1.04809,
+   "us_per_decision": 1.04809
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 8,
+   "batch": 1000,
+   "batch_ms": 1.072721,
+   "us_per_decision": 1.072721
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 9,
+   "batch": 1000,
+   "batch_ms": 1.153111,
+   "us_per_decision": 1.153111
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 10,
+   "batch": 1000,
+   "batch_ms": 1.07204,
+   "us_per_decision": 1.07204
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 11,
+   "batch": 1000,
+   "batch_ms": 1.106205,
+   "us_per_decision": 1.106205
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 12,
+   "batch": 1000,
+   "batch_ms": 1.042754,
+   "us_per_decision": 1.042754
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 13,
+   "batch": 1000,
+   "batch_ms": 1.110828,
+   "us_per_decision": 1.110828
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 14,
+   "batch": 1000,
+   "batch_ms": 0.96466,
+   "us_per_decision": 0.96466
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 15,
+   "batch": 1000,
+   "batch_ms": 1.093964,
+   "us_per_decision": 1.093964
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 16,
+   "batch": 1000,
+   "batch_ms": 1.111978,
+   "us_per_decision": 1.111978
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 17,
+   "batch": 1000,
+   "batch_ms": 0.94838,
+   "us_per_decision": 0.94838
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 18,
+   "batch": 1000,
+   "batch_ms": 1.057587,
+   "us_per_decision": 1.057587
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 19,
+   "batch": 1000,
+   "batch_ms": 0.953553,
+   "us_per_decision": 0.953553
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 20,
+   "batch": 1000,
+   "batch_ms": 1.116837,
+   "us_per_decision": 1.116837
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 21,
+   "batch": 1000,
+   "batch_ms": 0.880869,
+   "us_per_decision": 0.880869
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 22,
+   "batch": 1000,
+   "batch_ms": 0.885861,
+   "us_per_decision": 0.885861
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 23,
+   "batch": 1000,
+   "batch_ms": 0.977472,
+   "us_per_decision": 0.977472
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 24,
+   "batch": 1000,
+   "batch_ms": 0.895514,
+   "us_per_decision": 0.895514
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 25,
+   "batch": 1000,
+   "batch_ms": 1.004489,
+   "us_per_decision": 1.004489
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 26,
+   "batch": 1000,
+   "batch_ms": 0.833961,
+   "us_per_decision": 0.833961
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 27,
+   "batch": 1000,
+   "batch_ms": 0.965576,
+   "us_per_decision": 0.965576
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 28,
+   "batch": 1000,
+   "batch_ms": 0.88358,
+   "us_per_decision": 0.88358
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 100,
+   "rep": 29,
+   "batch": 1000,
+   "batch_ms": 0.84954,
+   "us_per_decision": 0.84954
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 0,
+   "batch": 1000,
+   "batch_ms": 13.750742,
+   "us_per_decision": 13.750742
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 1,
+   "batch": 1000,
+   "batch_ms": 13.621888,
+   "us_per_decision": 13.621888
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 2,
+   "batch": 1000,
+   "batch_ms": 13.12987,
+   "us_per_decision": 13.12987
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 3,
+   "batch": 1000,
+   "batch_ms": 13.319017,
+   "us_per_decision": 13.319017
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 4,
+   "batch": 1000,
+   "batch_ms": 13.565311,
+   "us_per_decision": 13.565311
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 5,
+   "batch": 1000,
+   "batch_ms": 13.700926,
+   "us_per_decision": 13.700926
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 6,
+   "batch": 1000,
+   "batch_ms": 13.469894,
+   "us_per_decision": 13.469894
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 7,
+   "batch": 1000,
+   "batch_ms": 13.419873,
+   "us_per_decision": 13.419873
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 8,
+   "batch": 1000,
+   "batch_ms": 13.068415,
+   "us_per_decision": 13.068415
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 9,
+   "batch": 1000,
+   "batch_ms": 13.220558,
+   "us_per_decision": 13.220558
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 10,
+   "batch": 1000,
+   "batch_ms": 13.271309,
+   "us_per_decision": 13.271309
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 11,
+   "batch": 1000,
+   "batch_ms": 13.525289,
+   "us_per_decision": 13.525289
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 12,
+   "batch": 1000,
+   "batch_ms": 13.319066,
+   "us_per_decision": 13.319066
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 13,
+   "batch": 1000,
+   "batch_ms": 13.244002,
+   "us_per_decision": 13.244002
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 14,
+   "batch": 1000,
+   "batch_ms": 13.316401,
+   "us_per_decision": 13.316401
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 15,
+   "batch": 1000,
+   "batch_ms": 13.291789,
+   "us_per_decision": 13.291789
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 16,
+   "batch": 1000,
+   "batch_ms": 13.771039,
+   "us_per_decision": 13.771039
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 17,
+   "batch": 1000,
+   "batch_ms": 13.41307,
+   "us_per_decision": 13.41307
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 18,
+   "batch": 1000,
+   "batch_ms": 16.684719,
+   "us_per_decision": 16.684719
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 19,
+   "batch": 1000,
+   "batch_ms": 14.275713,
+   "us_per_decision": 14.275713
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 20,
+   "batch": 1000,
+   "batch_ms": 13.277372,
+   "us_per_decision": 13.277372
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 21,
+   "batch": 1000,
+   "batch_ms": 13.351631,
+   "us_per_decision": 13.351631
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 22,
+   "batch": 1000,
+   "batch_ms": 13.362067,
+   "us_per_decision": 13.362067
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 23,
+   "batch": 1000,
+   "batch_ms": 13.393192,
+   "us_per_decision": 13.393192
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 24,
+   "batch": 1000,
+   "batch_ms": 13.305332,
+   "us_per_decision": 13.305332
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 25,
+   "batch": 1000,
+   "batch_ms": 13.252218,
+   "us_per_decision": 13.252218
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 26,
+   "batch": 1000,
+   "batch_ms": 13.143538,
+   "us_per_decision": 13.143538
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 27,
+   "batch": 1000,
+   "batch_ms": 13.165004,
+   "us_per_decision": 13.165004
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 28,
+   "batch": 1000,
+   "batch_ms": 13.081417,
+   "us_per_decision": 13.081417
+  },
+  {
+   "impl": "lab-js",
+   "n_nodes": 1000,
+   "rep": 29,
+   "batch": 1000,
+   "batch_ms": 13.91921,
+   "us_per_decision": 13.91921
+  }
+ ]
+}

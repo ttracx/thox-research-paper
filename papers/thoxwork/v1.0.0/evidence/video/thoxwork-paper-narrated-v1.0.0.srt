@@ -1,0 +1,76 @@
+1
+00:00:00,800 --> 00:00:06,580
+THOX.ai Research has published a comprehensive technical report on ThoxWork,
+
+2
+00:00:06,600 --> 00:00:10,260
+our third platform, where people and named Digital Employees
+
+3
+00:00:10,280 --> 00:00:13,650
+share real work under rules a person can check.
+
+4
+00:00:14,901 --> 00:00:18,181
+MeshGroups scope every request to one team,
+
+5
+00:00:18,201 --> 00:00:23,341
+its approved workspaces and models, and an accountable human sponsor.
+
+6
+00:00:23,361 --> 00:00:25,481
+Today the planner is a preview.
+
+7
+00:00:25,501 --> 00:00:28,951
+It explains every denial, and it never executes.
+
+8
+00:00:30,077 --> 00:00:35,937
+Before any external effect, work waits for a person when an approval reason holds.
+
+9
+00:00:35,957 --> 00:00:39,947
+An agent cannot approve its own work, and every decision is recorded.
+
+10
+00:00:41,022 --> 00:00:43,922
+Teams run tasks in order.
+
+11
+00:00:43,942 --> 00:00:46,982
+Each Digital Employee leaves a written handoff,
+
+12
+00:00:47,002 --> 00:00:50,392
+and the reviewer approves the result or sends it back.
+
+13
+00:00:51,370 --> 00:00:53,930
+We measured what a record can prove.
+
+14
+00:00:53,950 --> 00:00:58,650
+Hash links alone missed a cut tail and a rebuilt history in every trial.
+
+15
+00:00:58,670 --> 00:01:03,360
+A session key and an anchor held by a second party caught both, every time.
+
+16
+00:01:04,735 --> 00:01:07,535
+Read the paper, run the browser Evidence Lab,
+
+17
+00:01:07,555 --> 00:01:10,775
+and check the rules yourself before you trust them.
+
+18
+00:01:10,795 --> 00:01:13,155
+ThoxWork is coming soon.
+
+19
+00:01:13,175 --> 00:01:16,405
+Your AI. Your Data. Your Rules.
+

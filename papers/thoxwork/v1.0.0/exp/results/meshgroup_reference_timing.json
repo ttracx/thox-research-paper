@@ -1,0 +1,730 @@
+{
+ "seed": 20261104,
+ "host": {
+  "platform": "Linux-6.18.44-fc-v233-x86_64-with-glibc2.39",
+  "python": "3.13.18",
+  "cpus": 2
+ },
+ "timing": [
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 0,
+   "batch": 1000,
+   "batch_ms": 1.634309,
+   "us_per_decision": 1.634309
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 1,
+   "batch": 1000,
+   "batch_ms": 1.524522,
+   "us_per_decision": 1.524522
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 2,
+   "batch": 1000,
+   "batch_ms": 1.564965,
+   "us_per_decision": 1.564965
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 3,
+   "batch": 1000,
+   "batch_ms": 1.561634,
+   "us_per_decision": 1.561634
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 4,
+   "batch": 1000,
+   "batch_ms": 1.567654,
+   "us_per_decision": 1.567654
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 5,
+   "batch": 1000,
+   "batch_ms": 1.519357,
+   "us_per_decision": 1.519357
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 6,
+   "batch": 1000,
+   "batch_ms": 1.597572,
+   "us_per_decision": 1.597572
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 7,
+   "batch": 1000,
+   "batch_ms": 1.52543,
+   "us_per_decision": 1.52543
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 8,
+   "batch": 1000,
+   "batch_ms": 1.506083,
+   "us_per_decision": 1.506083
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 9,
+   "batch": 1000,
+   "batch_ms": 1.532232,
+   "us_per_decision": 1.532232
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 10,
+   "batch": 1000,
+   "batch_ms": 1.485117,
+   "us_per_decision": 1.485117
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 11,
+   "batch": 1000,
+   "batch_ms": 1.65353,
+   "us_per_decision": 1.65353
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 12,
+   "batch": 1000,
+   "batch_ms": 1.541023,
+   "us_per_decision": 1.541023
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 13,
+   "batch": 1000,
+   "batch_ms": 1.665358,
+   "us_per_decision": 1.665358
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 14,
+   "batch": 1000,
+   "batch_ms": 1.608319,
+   "us_per_decision": 1.608319
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 15,
+   "batch": 1000,
+   "batch_ms": 1.555216,
+   "us_per_decision": 1.555216
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 16,
+   "batch": 1000,
+   "batch_ms": 1.59043,
+   "us_per_decision": 1.59043
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 17,
+   "batch": 1000,
+   "batch_ms": 1.507757,
+   "us_per_decision": 1.507757
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 18,
+   "batch": 1000,
+   "batch_ms": 1.575645,
+   "us_per_decision": 1.575645
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 19,
+   "batch": 1000,
+   "batch_ms": 1.525533,
+   "us_per_decision": 1.525533
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 20,
+   "batch": 1000,
+   "batch_ms": 1.65066,
+   "us_per_decision": 1.65066
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 21,
+   "batch": 1000,
+   "batch_ms": 1.595389,
+   "us_per_decision": 1.595389
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 22,
+   "batch": 1000,
+   "batch_ms": 1.539397,
+   "us_per_decision": 1.539397
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 23,
+   "batch": 1000,
+   "batch_ms": 1.599694,
+   "us_per_decision": 1.599694
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 24,
+   "batch": 1000,
+   "batch_ms": 1.577616,
+   "us_per_decision": 1.577616
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 25,
+   "batch": 1000,
+   "batch_ms": 1.572031,
+   "us_per_decision": 1.572031
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 26,
+   "batch": 1000,
+   "batch_ms": 2.186839,
+   "us_per_decision": 2.186839
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 27,
+   "batch": 1000,
+   "batch_ms": 1.772021,
+   "us_per_decision": 1.772021
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 28,
+   "batch": 1000,
+   "batch_ms": 1.552916,
+   "us_per_decision": 1.552916
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 10,
+   "rep": 29,
+   "batch": 1000,
+   "batch_ms": 1.522308,
+   "us_per_decision": 1.522308
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 0,
+   "batch": 1000,
+   "batch_ms": 6.158725,
+   "us_per_decision": 6.158725
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 1,
+   "batch": 1000,
+   "batch_ms": 6.186969,
+   "us_per_decision": 6.186969
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 2,
+   "batch": 1000,
+   "batch_ms": 6.306879,
+   "us_per_decision": 6.306879
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 3,
+   "batch": 1000,
+   "batch_ms": 6.209647,
+   "us_per_decision": 6.209647
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 4,
+   "batch": 1000,
+   "batch_ms": 6.334039,
+   "us_per_decision": 6.334039
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 5,
+   "batch": 1000,
+   "batch_ms": 6.194818,
+   "us_per_decision": 6.194818
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 6,
+   "batch": 1000,
+   "batch_ms": 6.274343,
+   "us_per_decision": 6.274343
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 7,
+   "batch": 1000,
+   "batch_ms": 6.345843,
+   "us_per_decision": 6.345843
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 8,
+   "batch": 1000,
+   "batch_ms": 6.316989,
+   "us_per_decision": 6.316989
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 9,
+   "batch": 1000,
+   "batch_ms": 6.174285,
+   "us_per_decision": 6.174285
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 10,
+   "batch": 1000,
+   "batch_ms": 6.378373,
+   "us_per_decision": 6.378373
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 11,
+   "batch": 1000,
+   "batch_ms": 6.436152,
+   "us_per_decision": 6.436152
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 12,
+   "batch": 1000,
+   "batch_ms": 6.336408,
+   "us_per_decision": 6.336408
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 13,
+   "batch": 1000,
+   "batch_ms": 6.209332,
+   "us_per_decision": 6.209332
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 14,
+   "batch": 1000,
+   "batch_ms": 6.3675,
+   "us_per_decision": 6.3675
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 15,
+   "batch": 1000,
+   "batch_ms": 6.323495,
+   "us_per_decision": 6.323495
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 16,
+   "batch": 1000,
+   "batch_ms": 6.204817,
+   "us_per_decision": 6.204817
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 17,
+   "batch": 1000,
+   "batch_ms": 6.191274,
+   "us_per_decision": 6.191274
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 18,
+   "batch": 1000,
+   "batch_ms": 6.27165,
+   "us_per_decision": 6.27165
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 19,
+   "batch": 1000,
+   "batch_ms": 6.277721,
+   "us_per_decision": 6.277721
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 20,
+   "batch": 1000,
+   "batch_ms": 6.296845,
+   "us_per_decision": 6.296845
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 21,
+   "batch": 1000,
+   "batch_ms": 6.919202,
+   "us_per_decision": 6.919202
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 22,
+   "batch": 1000,
+   "batch_ms": 6.292492,
+   "us_per_decision": 6.292492
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 23,
+   "batch": 1000,
+   "batch_ms": 6.644365,
+   "us_per_decision": 6.644365
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 24,
+   "batch": 1000,
+   "batch_ms": 6.463142,
+   "us_per_decision": 6.463142
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 25,
+   "batch": 1000,
+   "batch_ms": 6.386261,
+   "us_per_decision": 6.386261
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 26,
+   "batch": 1000,
+   "batch_ms": 6.355231,
+   "us_per_decision": 6.355231
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 27,
+   "batch": 1000,
+   "batch_ms": 6.357094,
+   "us_per_decision": 6.357094
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 28,
+   "batch": 1000,
+   "batch_ms": 6.235799,
+   "us_per_decision": 6.235799
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 100,
+   "rep": 29,
+   "batch": 1000,
+   "batch_ms": 6.276825,
+   "us_per_decision": 6.276825
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 0,
+   "batch": 1000,
+   "batch_ms": 49.990392,
+   "us_per_decision": 49.990392
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 1,
+   "batch": 1000,
+   "batch_ms": 51.93675,
+   "us_per_decision": 51.93675
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 2,
+   "batch": 1000,
+   "batch_ms": 49.568291,
+   "us_per_decision": 49.568291
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 3,
+   "batch": 1000,
+   "batch_ms": 48.90788,
+   "us_per_decision": 48.90788
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 4,
+   "batch": 1000,
+   "batch_ms": 49.484176,
+   "us_per_decision": 49.484176
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 5,
+   "batch": 1000,
+   "batch_ms": 49.59099,
+   "us_per_decision": 49.59099
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 6,
+   "batch": 1000,
+   "batch_ms": 50.268539,
+   "us_per_decision": 50.268539
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 7,
+   "batch": 1000,
+   "batch_ms": 52.668504,
+   "us_per_decision": 52.668504
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 8,
+   "batch": 1000,
+   "batch_ms": 50.644843,
+   "us_per_decision": 50.644843
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 9,
+   "batch": 1000,
+   "batch_ms": 52.806537,
+   "us_per_decision": 52.806537
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 10,
+   "batch": 1000,
+   "batch_ms": 53.019234,
+   "us_per_decision": 53.019234
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 11,
+   "batch": 1000,
+   "batch_ms": 53.265788,
+   "us_per_decision": 53.265788
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 12,
+   "batch": 1000,
+   "batch_ms": 57.03395,
+   "us_per_decision": 57.03395
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 13,
+   "batch": 1000,
+   "batch_ms": 50.38721,
+   "us_per_decision": 50.38721
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 14,
+   "batch": 1000,
+   "batch_ms": 50.117952,
+   "us_per_decision": 50.117952
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 15,
+   "batch": 1000,
+   "batch_ms": 50.961007,
+   "us_per_decision": 50.961007
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 16,
+   "batch": 1000,
+   "batch_ms": 55.80736,
+   "us_per_decision": 55.80736
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 17,
+   "batch": 1000,
+   "batch_ms": 76.476759,
+   "us_per_decision": 76.476759
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 18,
+   "batch": 1000,
+   "batch_ms": 65.359785,
+   "us_per_decision": 65.359785
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 19,
+   "batch": 1000,
+   "batch_ms": 55.530889,
+   "us_per_decision": 55.530889
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 20,
+   "batch": 1000,
+   "batch_ms": 49.354061,
+   "us_per_decision": 49.354061
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 21,
+   "batch": 1000,
+   "batch_ms": 49.002606,
+   "us_per_decision": 49.002606
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 22,
+   "batch": 1000,
+   "batch_ms": 49.13195,
+   "us_per_decision": 49.13195
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 23,
+   "batch": 1000,
+   "batch_ms": 49.136199,
+   "us_per_decision": 49.136199
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 24,
+   "batch": 1000,
+   "batch_ms": 48.912865,
+   "us_per_decision": 48.912865
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 25,
+   "batch": 1000,
+   "batch_ms": 49.459937,
+   "us_per_decision": 49.459937
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 26,
+   "batch": 1000,
+   "batch_ms": 49.428869,
+   "us_per_decision": 49.428869
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 27,
+   "batch": 1000,
+   "batch_ms": 48.985042,
+   "us_per_decision": 48.985042
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 28,
+   "batch": 1000,
+   "batch_ms": 49.375527,
+   "us_per_decision": 49.37552699999999
+  },
+  {
+   "impl": "reference-python",
+   "n_nodes": 1000,
+   "rep": 29,
+   "batch": 1000,
+   "batch_ms": 49.411466,
+   "us_per_decision": 49.411466
+  }
+ ]
+}

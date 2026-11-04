@@ -1,0 +1,842 @@
+{
+ "nist-ai-100-1": {
+  "authors": [
+   "Elham Tabassi"
+  ],
+  "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+  "venue": "National Institute of Standards and Technology, NIST AI 100-1, January 26, 2023; DOI 10.6028/NIST.AI.100-1",
+  "year": 2023,
+  "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10",
+  "accessed": "2026-11-04",
+  "note": "Voluntary framework; PDF page numbers not recorded, so cite subcategories by ID."
+ },
+ "nist-ai-600-1": {
+  "authors": [
+   "Chloe Autio",
+   "Reva Schwartz",
+   "Jesse Dunietz",
+   "Shomik Jain",
+   "Martin Stanley",
+   "Elham Tabassi",
+   "Patrick Hall",
+   "Kamie Roberts"
+  ],
+  "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
+  "venue": "National Institute of Standards and Technology, NIST AI 600-1, July 26, 2024; DOI 10.6028/NIST.AI.600-1",
+  "year": 2024,
+  "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+  "accessed": "2026-11-04",
+  "note": "Page shows an April 8, 2026 update whose nature was not determined; cite the July 26, 2024 publication."
+ },
+ "iso-42001": {
+  "authors": [
+   "ISO/IEC JTC 1/SC 42"
+  ],
+  "title": "ISO/IEC 42001:2023 Information technology - Artificial intelligence - Management system",
+  "venue": "International Standard ISO/IEC 42001:2023, Edition 1.0, 2023-12-18",
+  "year": 2023,
+  "url": "https://webstore.iec.ch/publication/90574",
+  "accessed": "2026-11-04",
+  "note": "The iso.org page could not be opened; verified via the IEC Webstore co-publisher listing, and no clauses or Annex A controls were checked."
+ },
+ "eu-ai-act": {
+  "authors": [
+   "European Parliament and Council"
+  ],
+  "title": "REGULATION (EU) 2024/1689 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 13 June 2024 laying down harmonised rules on artificial intelligence and amending Regulations (EC) No 300/2008, (EU) No 167/2013, (EU) No 168/2013, (EU) 2018/858, (EU) 2018/1139 and (EU) 2019/2144 and Directives 2014/90/EU, (EU) 2016/797 and (EU) 2020/1828 (Artificial Intelligence Act)",
+  "venue": "Official Journal of the European Union, L series, 2024/1689, 12.7.2024; Regulation (EU) 2024/1689; ELI http://data.europa.eu/eli/reg/2024/1689/oj",
+  "year": 2024,
+  "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+  "accessed": "2026-11-04",
+  "note": "Full text read from the Publications Office Cellar copy, and the Article 113 application dates are amended by Regulation (EU) 2026/1744."
+ },
+ "eu-ai-omnibus": {
+  "authors": [
+   "European Parliament and Council"
+  ],
+  "title": "REGULATION (EU) 2026/1744 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 8 July 2026 amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 as regards the simplification of the implementation of harmonised rules on artificial intelligence",
+  "venue": "Official Journal of the European Union, OJ L 2026/1744, 24.7.2026; Regulation (EU) 2026/1744 (Digital Omnibus on AI)",
+  "year": 2026,
+  "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202601744",
+  "accessed": "2026-11-04",
+  "note": "New application dates verified at Recital 40 only; the operative amendment to Article 113 was not read."
+ },
+ "owasp-llm-2025": {
+  "authors": [
+   "OWASP Gen AI Security Project"
+  ],
+  "title": "OWASP Top 10 for LLM Applications 2025",
+  "venue": "OWASP Gen AI Security Project, resource page dated November 17, 2024; entries LLM01:2025 and LLM06:2025",
+  "year": 2024,
+  "url": "https://genai.owasp.org/llm-top-10/",
+  "accessed": "2026-11-04",
+  "note": ""
+ },
+ "owasp-asi-threats": {
+  "authors": [
+   "OWASP Agentic Security Initiative (Gen AI Security Project)"
+  ],
+  "title": "Agentic AI \u2013 Threats and Mitigations",
+  "venue": "OWASP Gen AI Security Project, February 17, 2025",
+  "year": 2025,
+  "url": "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/",
+  "accessed": "2026-11-04",
+  "note": "PDF body not opened; cite only title, date and issuer."
+ },
+ "owasp-asi-top10-2026": {
+  "authors": [
+   "OWASP Gen AI Security Project - Agentic Security Initiative"
+  ],
+  "title": "OWASP Top 10 for Agentic Applications for 2026",
+  "venue": "OWASP Gen AI Security Project, resource page dated December 9, 2025 (PDF: Version 2026, December 2025); entries ASI01-ASI10",
+  "year": 2025,
+  "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+  "accessed": "2026-11-04",
+  "note": "PDF title page reads 'OWASP Top 10 For Agentic Applications 2026', and mitigation wording beyond short verbatim fragments is paraphrase."
+ },
+ "greshake2023": {
+  "authors": [
+   "Greshake",
+   "Abdelnabi",
+   "Mishra",
+   "Endres",
+   "Holz",
+   "Fritz"
+  ],
+  "title": "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection",
+  "venue": "Proceedings of the 16th ACM Workshop on Artificial Intelligence and Security (AISec '23), pp. 79-90, 2023; DOI 10.1145/3605764.3623985; arXiv:2302.12173",
+  "year": 2023,
+  "url": "https://arxiv.org/abs/2302.12173",
+  "accessed": "2026-11-04",
+  "note": "Title casing differs between arXiv and ACM; the venue version is used, and the notes record surnames only."
+ },
+ "debenedetti2024agentdojo": {
+  "authors": [
+   "Debenedetti",
+   "Zhang",
+   "Balunovic",
+   "Beurer-Kellner",
+   "Fischer",
+   "Tram\u00e8r"
+  ],
+  "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+  "venue": "Advances in Neural Information Processing Systems 37 (NeurIPS 2024), Datasets and Benchmarks Track, 2024; DOI 10.52202/079017-2636; arXiv:2406.13352",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2406.13352",
+  "accessed": "2026-11-04",
+  "note": "Spelled Balunovi\u0107 on arXiv and Balunovic on the NeurIPS page; venue spelling used, surnames only."
+ },
+ "zhan2024injecagent": {
+  "authors": [
+   "Zhan",
+   "Liang",
+   "Ying",
+   "Kang"
+  ],
+  "title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+  "venue": "Findings of the Association for Computational Linguistics: ACL 2024, pp. 10471-10506, 2024; DOI 10.18653/v1/2024.findings-acl.624; arXiv:2403.02691",
+  "year": 2024,
+  "url": "https://aclanthology.org/2024.findings-acl.624/",
+  "accessed": "2026-11-04",
+  "note": "The arXiv abstract's 'nearly doubling' claim is absent from the ACL abstract; cite the ACL version."
+ },
+ "nist-sp-800-207": {
+  "authors": [
+   "Scott Rose",
+   "Oliver Borchert",
+   "Stu Mitchell",
+   "Sean Connelly"
+  ],
+  "title": "Zero Trust Architecture",
+  "venue": "NIST Special Publication 800-207, August 2020; DOI 10.6028/NIST.SP.800-207",
+  "year": 2020,
+  "url": "https://csrc.nist.gov/pubs/sp/800/207/final",
+  "accessed": "2026-11-04",
+  "note": ""
+ },
+ "nist-sp-800-162": {
+  "authors": [
+   "Vincent Hu",
+   "David Ferraiolo",
+   "Richard Kuhn",
+   "Adam Schnitzer",
+   "Kenneth Sandlin",
+   "Robert Miller",
+   "Karen Scarfone"
+  ],
+  "title": "Guide to Attribute Based Access Control (ABAC) Definition and Considerations",
+  "venue": "NIST Special Publication 800-162, January 2014 (includes updates as of 08-02-2019); DOI 10.6028/NIST.SP.800-162",
+  "year": 2014,
+  "url": "https://csrc.nist.gov/pubs/sp/800/162/upd2/final",
+  "accessed": "2026-11-04",
+  "note": "CSRC record is the upd2 version; cite 2014 and note the updates through 2019."
+ },
+ "park2023generative": {
+  "authors": [
+   "Joon Sung Park",
+   "Joseph C. O'Brien",
+   "Carrie J. Cai",
+   "Meredith Ringel Morris",
+   "Percy Liang",
+   "Michael S. Bernstein"
+  ],
+  "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+  "venue": "Proceedings of UIST 2023, ACM; arXiv:2304.03442",
+  "year": 2023,
+  "url": "https://arxiv.org/abs/2304.03442",
+  "accessed": "2026-11-04",
+  "note": "ACM DOI not opened, so none is recorded."
+ },
+ "li2023camel": {
+  "authors": [
+   "Guohao Li",
+   "Hasan Abed Al Kader Hammoud",
+   "Hani Itani",
+   "Dmitrii Khizbullin",
+   "Bernard Ghanem"
+  ],
+  "title": "CAMEL: Communicative Agents for \"Mind\" Exploration of Large Language Model Society",
+  "venue": "NeurIPS 2023; arXiv:2303.17760",
+  "year": 2023,
+  "url": "https://arxiv.org/abs/2303.17760",
+  "accessed": "2026-11-04",
+  "note": "Venue from the arXiv comment and the OpenReview search API record."
+ },
+ "qian2024chatdev": {
+  "authors": [
+   "Chen Qian",
+   "Wei Liu",
+   "Hongzhang Liu",
+   "Nuo Chen",
+   "Yufan Dang",
+   "Jiahao Li",
+   "et al."
+  ],
+  "title": "ChatDev: Communicative Agents for Software Development",
+  "venue": "ACL 2024 (Long Papers), Anthology ID 2024.acl-long.810; arXiv:2307.07924",
+  "year": 2023,
+  "url": "https://arxiv.org/abs/2307.07924",
+  "accessed": "2026-11-04",
+  "note": "Year is the arXiv first-submission year; 14 authors in total, venue year 2024."
+ },
+ "hong2024metagpt": {
+  "authors": [
+   "Sirui Hong",
+   "Mingchen Zhuge",
+   "Jiaqi Chen",
+   "Xiawu Zheng",
+   "Yuheng Cheng",
+   "Ceyao Zhang",
+   "et al."
+  ],
+  "title": "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+  "venue": "ICLR 2024 (oral, per OpenReview); arXiv:2308.00352",
+  "year": 2023,
+  "url": "https://arxiv.org/abs/2308.00352",
+  "accessed": "2026-11-04",
+  "note": "Year is the arXiv first-submission year; venue from the OpenReview search API, as Semantic Scholar lists arXiv only."
+ },
+ "wu2024autogen": {
+  "authors": [
+   "Qingyun Wu",
+   "Gagan Bansal",
+   "Jieyu Zhang",
+   "Yiran Wu",
+   "Beibin Li",
+   "Erkang Zhu",
+   "et al."
+  ],
+  "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
+  "venue": "COLM 2024; arXiv:2308.08155",
+  "year": 2023,
+  "url": "https://arxiv.org/abs/2308.08155",
+  "accessed": "2026-11-04",
+  "note": "Year is the arXiv first-submission year; the COLM version title ends 'Conversations'."
+ },
+ "chen2024agentverse": {
+  "authors": [
+   "Weize Chen",
+   "Yusheng Su",
+   "Jingwei Zuo",
+   "Cheng Yang",
+   "Chenfei Yuan",
+   "Chi-Min Chan",
+   "et al."
+  ],
+  "title": "AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors",
+  "venue": "ICLR 2024 (poster); arXiv:2308.10848",
+  "year": 2023,
+  "url": "https://arxiv.org/abs/2308.10848",
+  "accessed": "2026-11-04",
+  "note": "Year is the arXiv first-submission year; 16 authors in total, venue year 2024."
+ },
+ "wang2024survey": {
+  "authors": [
+   "Lei Wang",
+   "Chen Ma",
+   "Xueyang Feng",
+   "Zeyu Zhang",
+   "Hao Yang",
+   "Jingsen Zhang",
+   "et al."
+  ],
+  "title": "A Survey on Large Language Model based Autonomous Agents",
+  "venue": "Frontiers of Computer Science 18(6):186345, 2024; DOI 10.1007/s11704-024-40231-1; arXiv:2308.11432",
+  "year": 2023,
+  "url": "https://arxiv.org/abs/2308.11432",
+  "accessed": "2026-11-04",
+  "note": "Year is the arXiv first-submission year; journal version 2024, 13 authors in total."
+ },
+ "xi2023rise": {
+  "authors": [
+   "Zhiheng Xi",
+   "Wenxiang Chen",
+   "Xin Guo",
+   "Wei He",
+   "Yiwen Ding",
+   "Boyang Hong",
+   "et al."
+  ],
+  "title": "The Rise and Potential of Large Language Model Based Agents: A Survey",
+  "venue": "arXiv preprint arXiv:2309.07864, 2023",
+  "year": 2023,
+  "url": "https://arxiv.org/abs/2309.07864",
+  "accessed": "2026-11-04",
+  "note": "Journal version not verified; cite as an arXiv preprint (29 authors in total)."
+ },
+ "guo2024multiagents": {
+  "authors": [
+   "Taicheng Guo",
+   "Xiuying Chen",
+   "Yaqi Wang",
+   "Ruidi Chang",
+   "Shichao Pei",
+   "Nitesh V. Chawla",
+   "et al."
+  ],
+  "title": "Large Language Model based Multi-Agents: A Survey of Progress and Challenges",
+  "venue": "IJCAI 2024 Survey Track, pp. 8048-8057, 2024; DOI 10.24963/ijcai.2024/890; arXiv:2402.01680",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2402.01680",
+  "accessed": "2026-11-04",
+  "note": "Proceedings title casing is 'Large Language Model Based Multi-agents: ...'."
+ },
+ "xu2024theagentcompany": {
+  "authors": [
+   "Frank F. Xu",
+   "Yufan Song",
+   "Boxuan Li",
+   "Yuxuan Tang",
+   "Kritanjali Jain",
+   "Mengxue Bao",
+   "et al."
+  ],
+  "title": "TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks",
+  "venue": "NeurIPS 2025 Datasets and Benchmarks Track (poster); arXiv:2412.14161",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2412.14161",
+  "accessed": "2026-11-04",
+  "note": "Year is the arXiv first-submission year; venue year 2025, 21 authors in total."
+ },
+ "drouin2024workarena": {
+  "authors": [
+   "Alexandre Drouin",
+   "Maxime Gasse",
+   "Massimo Caccia",
+   "Issam H. Laradji",
+   "Manuel Del Verme",
+   "Tom Marty",
+   "et al."
+  ],
+  "title": "WorkArena: How Capable Are Web Agents at Solving Common Knowledge Work Tasks?",
+  "venue": "ICML 2024 (poster); arXiv:2403.07718",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2403.07718",
+  "accessed": "2026-11-04",
+  "note": ""
+ },
+ "yao2025taubench": {
+  "authors": [
+   "Shunyu Yao",
+   "Noah Shinn",
+   "Pedram Razavi",
+   "Karthik Narasimhan"
+  ],
+  "title": "$\u03c4$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+  "venue": "ICLR 2025 (poster); arXiv:2406.12045",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2406.12045",
+  "accessed": "2026-11-04",
+  "note": "Year is the arXiv first-submission year; venue year 2025."
+ },
+ "mozannar2025magenticui": {
+  "authors": [
+   "Hussein Mozannar",
+   "Gagan Bansal",
+   "Cheng Tan",
+   "Adam Fourney",
+   "Victor Dibia",
+   "Jingya Chen",
+   "et al."
+  ],
+  "title": "Magentic-UI: Towards Human-in-the-loop Agentic Systems",
+  "venue": "arXiv preprint arXiv:2507.22358, 2025",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2507.22358",
+  "accessed": "2026-11-04",
+  "note": "No venue beyond arXiv verified; the abstract says six mechanisms but names five."
+ },
+ "shao2026cogym": {
+  "authors": [
+   "Yijia Shao",
+   "Vinay Samuel",
+   "Yucheng Jiang",
+   "John Yang",
+   "Diyi Yang"
+  ],
+  "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
+  "venue": "ICLR 2026 (poster); arXiv:2412.15701",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2412.15701",
+  "accessed": "2026-11-04",
+  "note": "Year is the arXiv first-submission year; venue year 2026."
+ },
+ "jaye2026corpgen": {
+  "authors": [
+   "Abubakarr Jaye",
+   "Nigel Boachie Kumankumah",
+   "Chidera Biringa",
+   "Anjel Shaileshbhai Patel",
+   "Sulaiman Vesal",
+   "Dayquan Julienne",
+   "et al."
+  ],
+  "title": "CORPGEN: Simulating Corporate Environments with Autonomous Digital Employees in Multi-Horizon Task Environments",
+  "venue": "arXiv preprint arXiv:2602.14229, 2026",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2602.14229",
+  "accessed": "2026-11-04",
+  "note": "arXiv-only as of 2026-11-04; full text not read."
+ },
+ "south2025authenticated": {
+  "authors": [
+   "Tobin South",
+   "Samuele Marro",
+   "Thomas Hardjono",
+   "Robert Mahari",
+   "Cedric Deslandes Whitney",
+   "Dazza Greenwood",
+   "et al."
+  ],
+  "title": "Authenticated Delegation and Authorized AI Agents",
+  "venue": "arXiv preprint arXiv:2501.09674, 2025",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2501.09674",
+  "accessed": "2026-11-04",
+  "note": "arXiv-only as of 2026-11-04."
+ },
+ "xie2024osworld": {
+  "authors": [
+   "Tianbao Xie",
+   "Danyang Zhang",
+   "Jixuan Chen",
+   "Xiaochuan Li",
+   "Siheng Zhao",
+   "Ruisheng Cao",
+   "et al."
+  ],
+  "title": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+  "venue": "NeurIPS 2024 Datasets and Benchmarks Track (poster); arXiv:2404.07972",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2404.07972",
+  "accessed": "2026-11-04",
+  "note": ""
+ },
+ "cemri2025mast": {
+  "authors": [
+   "Mert Cemri",
+   "Melissa Z. Pan",
+   "Shuyi Yang",
+   "Lakshya A. Agrawal",
+   "Bhavya Chopra",
+   "Rishabh Tiwari",
+   "et al."
+  ],
+  "title": "Why Do Multi-Agent LLM Systems Fail?",
+  "venue": "NeurIPS 2025 Datasets and Benchmarks Track (spotlight); arXiv:2503.13657",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2503.13657",
+  "accessed": "2026-11-04",
+  "note": ""
+ },
+ "fourney2024magenticone": {
+  "authors": [
+   "Adam Fourney",
+   "Gagan Bansal",
+   "Hussein Mozannar",
+   "Cheng Tan",
+   "Eduardo Salinas",
+   "Erkang Zhu",
+   "et al."
+  ],
+  "title": "Magentic-One: A Generalist Multi-Agent System for Solving Complex Tasks",
+  "venue": "arXiv preprint arXiv:2411.04468, 2024",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2411.04468",
+  "accessed": "2026-11-04",
+  "note": "arXiv metadata lists 20 author entries because 'Erkang' and 'Zhu' are split; 19 people."
+ },
+ "chan2025infrastructure": {
+  "authors": [
+   "Alan Chan",
+   "Kevin Wei",
+   "Sihao Huang",
+   "Nitarshan Rajkumar",
+   "Elija Perrier",
+   "Seth Lazar",
+   "et al."
+  ],
+  "title": "Infrastructure for AI Agents",
+  "venue": "TMLR 2025; arXiv:2501.10114",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2501.10114",
+  "accessed": "2026-11-04",
+  "note": "Venue from the arXiv comment and ML Anthology."
+ },
+ "chan2024visibility": {
+  "authors": [
+   "Alan Chan",
+   "Carson Ezell",
+   "Max Kaufmann",
+   "Kevin Wei",
+   "Lewis Hammond",
+   "Herbie Bradley",
+   "et al."
+  ],
+  "title": "Visibility into AI Agents",
+  "venue": "ACM FAccT 2024; arXiv:2401.13138",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2401.13138",
+  "accessed": "2026-11-04",
+  "note": ""
+ },
+ "souza2025provagent": {
+  "authors": [
+   "Renan Souza",
+   "Amal Gueroudji",
+   "Stephen DeWitt",
+   "Daniel Rosendo",
+   "Tirthankar Ghosal",
+   "Robert Ross",
+   "et al."
+  ],
+  "title": "PROV-AGENT: Unified Provenance for Tracking AI Agent Interactions in Agentic Workflows",
+  "venue": "IEEE e-Science 2025; arXiv:2508.02866",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2508.02866",
+  "accessed": "2026-11-04",
+  "note": "Duplicate of PROVAGENT25, which records all eight authors; venue is from the arXiv comment and the IEEE DOI was not verified."
+ },
+ "feng2025levels": {
+  "authors": [
+   "K. J. Kevin Feng",
+   "David W. McDonald",
+   "Amy X. Zhang"
+  ],
+  "title": "Levels of Autonomy for AI Agents",
+  "venue": "Knight First Amendment Institute 'AI and Democratic Freedoms' essay series, 2025; arXiv:2506.12469",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2506.12469",
+  "accessed": "2026-11-04",
+  "note": "Venue from the arXiv comment."
+ },
+ "feng2026cocoa": {
+  "authors": [
+   "K. J. Kevin Feng",
+   "Kevin Pu",
+   "Matt Latzke",
+   "Tal August",
+   "Pao Siangliulue",
+   "Jonathan Bragg",
+   "et al."
+  ],
+  "title": "Cocoa: Co-Planning and Co-Execution with AI Agents",
+  "venue": "CHI 2026; arXiv:2412.10999",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2412.10999",
+  "accessed": "2026-11-04",
+  "note": "Year is the arXiv first-submission year; venue (CHI 2026) from the arXiv comment."
+ },
+ "huang2025crmarena": {
+  "authors": [
+   "Kung-Hsiang Huang",
+   "Akshara Prabhakar",
+   "Sidharth Dhawan",
+   "Yixin Mao",
+   "Huan Wang",
+   "Silvio Savarese",
+   "et al."
+  ],
+  "title": "CRMArena: Understanding the Capacity of LLM Agents to Perform Professional CRM Tasks in Realistic Environments",
+  "venue": "NAACL 2025; arXiv:2411.02305",
+  "year": 2024,
+  "url": "https://arxiv.org/abs/2411.02305",
+  "accessed": "2026-11-04",
+  "note": "Year is the arXiv first-submission year; venue year 2025."
+ },
+ "tran2025collaboration": {
+  "authors": [
+   "Khanh-Tung Tran",
+   "Dung Dao",
+   "Minh-Duong Nguyen",
+   "Quoc-Viet Pham",
+   "Barry O'Sullivan",
+   "Hoang D. Nguyen"
+  ],
+  "title": "Multi-Agent Collaboration Mechanisms: A Survey of LLMs",
+  "venue": "arXiv preprint arXiv:2501.06322, 2025",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2501.06322",
+  "accessed": "2026-11-04",
+  "note": ""
+ },
+ "W3C-PROV-DM": {
+  "authors": [
+   "Luc Moreau",
+   "Paolo Missier"
+  ],
+  "title": "PROV-DM: The PROV Data Model",
+  "venue": "W3C Recommendation, 30 April 2013; REC-prov-dm-20130430",
+  "year": 2013,
+  "url": "https://www.w3.org/TR/2013/REC-prov-dm-20130430/",
+  "accessed": "2026-11-04",
+  "note": "Names are editors; post-2013 errata not checked."
+ },
+ "W3C-PROV-O": {
+  "authors": [
+   "Timothy Lebo",
+   "Satya Sahoo",
+   "Deborah McGuinness"
+  ],
+  "title": "PROV-O: The PROV Ontology",
+  "venue": "W3C Recommendation, 30 April 2013; REC-prov-o-20130430",
+  "year": 2013,
+  "url": "https://www.w3.org/TR/2013/REC-prov-o-20130430/",
+  "accessed": "2026-11-04",
+  "note": "Names are editors; post-2013 errata not checked."
+ },
+ "CROSBY09": {
+  "authors": [
+   "Scott A. Crosby",
+   "Dan S. Wallach"
+  ],
+  "title": "Efficient Data Structures for Tamper-Evident Logging",
+  "venue": "USENIX Security '09 (Technical Sessions), USENIX Association, 2009",
+  "year": 2009,
+  "url": "https://www.usenix.org/legacy/event/sec09/tech/full_papers/crosby.pdf",
+  "accessed": "2026-11-04",
+  "note": "No DOI listed; formal proceedings name, city and pages not verified, and the presentation URL returned HTTP 404."
+ },
+ "SCHNEIER99": {
+  "authors": [
+   "Bruce Schneier",
+   "John Kelsey"
+  ],
+  "title": "Secure audit logs to support computer forensics",
+  "venue": "ACM Transactions on Information and System Security (TISSEC), 1999, pp. 159-176; DOI 10.1145/317087.317089",
+  "year": 1999,
+  "url": "https://doi.org/10.1145/317087.317089",
+  "accessed": "2026-11-04",
+  "note": "DOI metadata gives vol. 2 no. 2 (May 1999) but Schneier's page says v. 1 n. 3; check on dl.acm.org."
+ },
+ "RFC6962": {
+  "authors": [
+   "B. Laurie",
+   "A. Langley",
+   "E. Kasper"
+  ],
+  "title": "Certificate Transparency",
+  "venue": "IETF RFC 6962 (Experimental), June 2013; DOI 10.17487/RFC6962",
+  "year": 2013,
+  "url": "https://www.rfc-editor.org/rfc/rfc6962",
+  "accessed": "2026-11-04",
+  "note": "Experimental, not Standards Track; obsoleted by RFC 9162."
+ },
+ "RFC9162": {
+  "authors": [
+   "B. Laurie",
+   "E. Messeri",
+   "R. Stradling"
+  ],
+  "title": "Certificate Transparency Version 2.0",
+  "venue": "IETF RFC 9162 (Experimental), December 2021; DOI 10.17487/RFC9162",
+  "year": 2021,
+  "url": "https://www.rfc-editor.org/rfc/rfc9162",
+  "accessed": "2026-11-04",
+  "note": "Experimental, not Standards Track; obsoletes RFC 6962."
+ },
+ "INTOTO19": {
+  "authors": [
+   "Santiago Torres-Arias",
+   "Hammad Afzali",
+   "Trishank Karthik Kuppusamy",
+   "Reza Curtmola",
+   "Justin Cappos"
+  ],
+  "title": "in-toto: Providing farm-to-table guarantees for bits and bytes",
+  "venue": "28th USENIX Security Symposium (USENIX Security 19), Santa Clara, CA, USENIX Association, pp. 1393-1410, August 2019; ISBN 978-1-939133-06-9",
+  "year": 2019,
+  "url": "https://www.usenix.org/conference/usenixsecurity19/presentation/torres-arias",
+  "accessed": "2026-11-04",
+  "note": ""
+ },
+ "SLSA-PROV": {
+  "authors": [
+   "SLSA",
+   "The Linux Foundation"
+  ],
+  "title": "Build: Provenance",
+  "venue": "SLSA specification v1.2, slsa.dev (Linux Foundation); in-toto predicateType https://slsa.dev/provenance/v1",
+  "year": null,
+  "url": "https://slsa.dev/spec/v1.2/build-provenance",
+  "accessed": "2026-11-04",
+  "note": "No individual authors and v1.2 release year not verified; cite as SLSA v1.2 with the access date."
+ },
+ "KLEPPMANN19": {
+  "authors": [
+   "Martin Kleppmann",
+   "Adam Wiggins",
+   "Peter van Hardenberg",
+   "Mark McGranaghan"
+  ],
+  "title": "Local-First Software: You Own Your Data, in spite of the Cloud",
+  "venue": "Proceedings of the 2019 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward! '19), Athens, Greece, ACM, pp. 154-178, 2019; DOI 10.1145/3359591.3359737",
+  "year": 2019,
+  "url": "https://doi.org/10.1145/3359591.3359737",
+  "accessed": "2026-11-04",
+  "note": "Essay version at https://www.inkandswitch.com/essay/local-first/."
+ },
+ "FIPS180-4": {
+  "authors": [
+   "National Institute of Standards and Technology"
+  ],
+  "title": "Secure Hash Standard (SHS)",
+  "venue": "NIST FIPS 180-4, August 2015; DOI 10.6028/NIST.FIPS.180-4",
+  "year": 2015,
+  "url": "https://csrc.nist.gov/pubs/fips/180-4/upd1/final",
+  "accessed": "2026-11-04",
+  "note": "NIST announced a planned revision in 2023; whether a successor was finalized was not checked."
+ },
+ "RFC2104": {
+  "authors": [
+   "H. Krawczyk",
+   "M. Bellare",
+   "R. Canetti"
+  ],
+  "title": "HMAC: Keyed-Hashing for Message Authentication",
+  "venue": "IETF RFC 2104 (Informational), February 1997; DOI 10.17487/RFC2104",
+  "year": 1997,
+  "url": "https://www.rfc-editor.org/rfc/rfc2104",
+  "accessed": "2026-11-04",
+  "note": "Later updates or errata not checked."
+ },
+ "PROVAGENT25": {
+  "authors": [
+   "Renan Souza",
+   "Amal Gueroudji",
+   "Stephen DeWitt",
+   "Daniel Rosendo",
+   "Tirthankar Ghosal",
+   "Robert Ross",
+   "Prasanna Balaprakash",
+   "Rafael Ferreira da Silva"
+  ],
+  "title": "PROV-AGENT: Unified Provenance for Tracking AI Agent Interactions in Agentic Workflows",
+  "venue": "arXiv preprint arXiv:2508.02866, 2025; authors state accepted to the 2025 IEEE 21st International Conference on e-Science (Chicago, IL)",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2508.02866",
+  "accessed": "2026-11-04",
+  "note": "Acceptance is self-reported on arXiv and the IEEE DOI was not verified."
+ },
+ "AUDITABLE26": {
+  "authors": [
+   "Yi Nian",
+   "Aojie Yuan",
+   "Haiyue Zhang",
+   "Jiate Li",
+   "Li Li",
+   "Xiyang Hu",
+   "Hua Wei",
+   "Xiongye Xiao",
+   "Chaowei Xiao",
+   "Yue Zhao"
+  ],
+  "title": "Auditable Agents",
+  "venue": "arXiv preprint arXiv:2604.05485 (v4, 27 Sep 2026), 2026; authors state a condensed 5-page version was accepted to ACM AI Summit 2026 (Visionary Papers track)",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2604.05485",
+  "accessed": "2026-11-04",
+  "note": "Final venue DOI not verified; cite as a preprint or 'to appear'."
+ },
+ "TRACETAMPER26": {
+  "authors": [
+   "Jeremy Qin",
+   "David Schmotz",
+   "Derck Prinzhorn",
+   "Luca Beurer-Kellner",
+   "Ameya Prabhu",
+   "Maksym Andriushchenko"
+  ],
+  "title": "LLM Agents Can Easily Tamper With Their Own Traces",
+  "venue": "arXiv preprint arXiv:2609.30266 (v1, 24 Sep 2026), 2026",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2609.30266",
+  "accessed": "2026-11-04",
+  "note": "No peer-review status stated."
+ },
+ "shahid2026chap": {
+  "authors": [],
+  "title": "",
+  "venue": "arXiv preprint arXiv:2606.09751, 2026 (v2, 20 Jun 2026)",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2606.09751",
+  "accessed": "2026-11-04",
+  "note": "Cited in THOX ThoxWork paper v1.0.0; metadata re-verified live from the arXiv API."
+ },
+ "liu2026dynaflow": {
+  "authors": [],
+  "title": "",
+  "venue": "arXiv preprint arXiv:2610.34467, 2026 (v2, 29 Oct 2026)",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2610.34467",
+  "accessed": "2026-11-04",
+  "note": "Cited in THOX ThoxWork paper v1.0.0; metadata re-verified live from the arXiv API."
+ },
+ "dhanyamraju2026orch": {
+  "authors": [],
+  "title": "",
+  "venue": "arXiv preprint arXiv:2606.20058, 2026 (v2, 28 Sep 2026)",
+  "year": 2026,
+  "url": "https://arxiv.org/abs/2606.20058",
+  "accessed": "2026-11-04",
+  "note": "Cited in THOX ThoxWork paper v1.0.0; metadata re-verified live from the arXiv API."
+ },
+ "ju2025collab": {
+  "authors": [],
+  "title": "",
+  "venue": "arXiv preprint arXiv:2503.18238, 2025 (v4, 15 Oct 2026)",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2503.18238",
+  "accessed": "2026-11-04",
+  "note": "Cited in THOX ThoxWork paper v1.0.0; metadata re-verified live from the arXiv API."
+ },
+ "ju2025personality": {
+  "authors": [],
+  "title": "",
+  "venue": "arXiv preprint arXiv:2511.13979, 2025 (v4, 28 Aug 2026)",
+  "year": 2025,
+  "url": "https://arxiv.org/abs/2511.13979",
+  "accessed": "2026-11-04",
+  "note": "Cited in THOX ThoxWork paper v1.0.0; metadata re-verified live from the arXiv API."
+ }
+}

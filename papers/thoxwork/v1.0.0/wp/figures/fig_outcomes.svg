@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="472.04055pt" height="166.024086pt" viewBox="0 0 472.04055 166.024086" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-04T13:24:22.350188</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M -0 166.024086 
+L 472.04055 166.024086 
+L 472.04055 0 
+L -0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 118.788516 127.25475 
+L 464.748516 127.25475 
+L 464.748516 21.91875 
+L 118.788516 21.91875 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 118.788516 122.46675 
+L 149.879807 122.46675 
+L 149.879807 109.615841 
+L 118.788516 109.615841 
+z
+" clip-path="url(#pa0d5779927)" style="fill: #b91c1c"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 118.788516 101.739477 
+L 152.948904 101.739477 
+L 152.948904 88.888568 
+L 118.788516 88.888568 
+z
+" clip-path="url(#pa0d5779927)" style="fill: #b91c1c"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 118.788516 81.012205 
+L 422.2622 81.012205 
+L 422.2622 68.161295 
+L 118.788516 68.161295 
+z
+" clip-path="url(#pa0d5779927)" style="fill: #b91c1c"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 118.788516 60.284932 
+L 264.80416 60.284932 
+L 264.80416 47.434023 
+L 118.788516 47.434023 
+z
+" clip-path="url(#pa0d5779927)" style="fill: #a15c07"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 118.788516 39.557659 
+L 271.242592 39.557659 
+L 271.242592 26.70675 
+L 118.788516 26.70675 
+z
+" clip-path="url(#pa0d5779927)" style="fill: #047c3d"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m974aa0f742" d="M 0 0 
+L 0 3.5 
+" style="stroke: #09090b; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m974aa0f742" x="118.788516" y="127.25475" style="fill: #09090b; stroke: #09090b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 8.5px; font-family: 'Inter'; text-anchor: middle; fill: #09090b" x="118.788516" y="142.489125" transform="rotate(-0 118.788516 142.489125)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m974aa0f742" x="185.508024" y="127.25475" style="fill: #09090b; stroke: #09090b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 8.5px; font-family: 'Inter'; text-anchor: middle; fill: #09090b" x="185.508024" y="142.489125" transform="rotate(-0 185.508024 142.489125)">2000</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m974aa0f742" x="252.227533" y="127.25475" style="fill: #09090b; stroke: #09090b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 8.5px; font-family: 'Inter'; text-anchor: middle; fill: #09090b" x="252.227533" y="142.489125" transform="rotate(-0 252.227533 142.489125)">4000</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m974aa0f742" x="318.947041" y="127.25475" style="fill: #09090b; stroke: #09090b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 8.5px; font-family: 'Inter'; text-anchor: middle; fill: #09090b" x="318.947041" y="142.489125" transform="rotate(-0 318.947041 142.489125)">6000</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m974aa0f742" x="385.666549" y="127.25475" style="fill: #09090b; stroke: #09090b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 8.5px; font-family: 'Inter'; text-anchor: middle; fill: #09090b" x="385.666549" y="142.489125" transform="rotate(-0 385.666549 142.489125)">8000</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m974aa0f742" x="452.386058" y="127.25475" style="fill: #09090b; stroke: #09090b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 8.5px; font-family: 'Inter'; text-anchor: middle; fill: #09090b" x="452.386058" y="142.489125" transform="rotate(-0 452.386058 142.489125)">10000</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 8.5px; font-family: 'Inter'; text-anchor: middle; fill: #09090b" x="291.768516" y="156.773793" transform="rotate(-0 291.768516 156.773793)">Requests (of 20,000); every outcome matched the reference policy</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <defs>
+       <path id="m5764dc165c" d="M 0 0 
+L -3.5 0 
+" style="stroke: #09090b; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m5764dc165c" x="118.788516" y="116.041295" style="fill: #09090b; stroke: #09090b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 8.5px; font-family: 'Inter'; text-anchor: end; fill: #09090b" x="111.788516" y="120.158483" transform="rotate(-0 111.788516 120.158483)">Denied: unknown group</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m5764dc165c" x="118.788516" y="95.314023" style="fill: #09090b; stroke: #09090b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 8.5px; font-family: 'Inter'; text-anchor: end; fill: #09090b" x="111.788516" y="99.43121" transform="rotate(-0 111.788516 99.43121)">Denied: tenant</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m5764dc165c" x="118.788516" y="74.58675" style="fill: #09090b; stroke: #09090b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 8.5px; font-family: 'Inter'; text-anchor: end; fill: #09090b" x="111.788516" y="78.703937" transform="rotate(-0 111.788516 78.703937)">Denied: classification</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m5764dc165c" x="118.788516" y="53.859477" style="fill: #09090b; stroke: #09090b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 8.5px; font-family: 'Inter'; text-anchor: end; fill: #09090b" x="111.788516" y="57.976665" transform="rotate(-0 111.788516 57.976665)">Admitted, no eligible node</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m5764dc165c" x="118.788516" y="33.132205" style="fill: #09090b; stroke: #09090b; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 8.5px; font-family: 'Inter'; text-anchor: end; fill: #09090b" x="111.788516" y="37.249392" transform="rotate(-0 111.788516 37.249392)">Placed</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_8">
+    <path d="M 118.788516 127.25475 
+L 118.788516 21.91875 
+" style="fill: none; stroke: #6b7280; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 118.788516 127.25475 
+L 464.748516 127.25475 
+" style="fill: none; stroke: #6b7280; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8px; font-family: 'JetBrains Mono'; text-anchor: start; fill: #09090b" x="152.914543" y="118.11942" transform="rotate(-0 152.914543 118.11942)">932</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 8px; font-family: 'JetBrains Mono'; text-anchor: start; fill: #09090b" x="155.983641" y="97.392148" transform="rotate(-0 155.983641 97.392148)">1,024</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 8px; font-family: 'JetBrains Mono'; text-anchor: start; fill: #09090b" x="425.296937" y="76.664875" transform="rotate(-0 425.296937 76.664875)">9,097</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8px; font-family: 'JetBrains Mono'; text-anchor: start; fill: #09090b" x="267.838897" y="55.937602" transform="rotate(-0 267.838897 55.937602)">4,377</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8px; font-family: 'JetBrains Mono'; text-anchor: start; fill: #09090b" x="274.277329" y="35.21033" transform="rotate(-0 274.277329 35.21033)">4,570</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 600; font-size: 9px; font-family: 'Inter'; text-anchor: start" x="118.788516" y="15.91875" transform="rotate(-0 118.788516 15.91875)">Admission outcomes across 200 seeded scenarios</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa0d5779927">
+   <rect x="118.788516" y="21.91875" width="345.96" height="105.336"/>
+  </clipPath>
+ </defs>
+</svg>

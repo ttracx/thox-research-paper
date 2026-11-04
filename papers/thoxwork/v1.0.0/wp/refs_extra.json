@@ -1,0 +1,188 @@
+{
+  "mckinsey-soai-2025": {
+    "authors": [
+      "Alex Singla",
+      "Alexander Sukharevsky",
+      "Bryce Hall",
+      "Lareina Yee",
+      "Michael Chui",
+      "Tara Balakrishnan"
+    ],
+    "title": "The state of AI in 2025: Agents, innovation, and transformation",
+    "venue": "McKinsey & Company (QuantumBlack, AI by McKinsey), November 5, 2025",
+    "year": 2025,
+    "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2025",
+    "accessed": "2026-11-04",
+    "note": "Byline lists Tara Balakrishnan as 'with'. Page now flags itself as older survey data and links to the 2026 edition.",
+    "figures": "Online survey June 25 to July 29, 2025; 1,993 participants in 105 nations; 62% at least experimenting with AI agents (23% scaling plus 39% experimenting); 23% scaling an agentic AI system in at least one function; no more than 10% scaling agents in any given function.",
+    "discrepancy": ""
+  },
+  "mckinsey-soai-2026": {
+    "authors": [
+      "Dan Tinkoff",
+      "Lieven Van der Veken",
+      "Michael Chui",
+      "Tara Balakrishnan"
+    ],
+    "title": "The state of AI in 2026: On the road to ROI",
+    "venue": "McKinsey & Company (QuantumBlack, AI by McKinsey), August 25, 2026",
+    "year": 2026,
+    "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+    "accessed": "2026-11-04",
+    "note": "Newer edition that supersedes the 2025 page; not cited in the source paper, recorded for context.",
+    "figures": "Online survey May 4 to June 8, 2026; 1,719 participants in 97 nations; about two in ten report reaching the scaling phase with AI agents across the organization.",
+    "discrepancy": ""
+  },
+  "sailpoint-agents-2025": {
+    "authors": [
+      "SailPoint",
+      "Dimensional Research"
+    ],
+    "title": "SailPoint research highlights rapid AI agent adoption, driving urgent need for evolved security",
+    "venue": "SailPoint press release, Austin, TX, May 28, 2025; report 'AI agents: The new attack surface' (survey by Dimensional Research)",
+    "year": 2025,
+    "url": "https://www.sailpoint.com/press-releases/sailpoint-ai-agent-adoption-report",
+    "accessed": "2026-11-04",
+    "note": "Figures taken from the press release; underlying report PDF not opened. Fielding dates not stated.",
+    "figures": "353 qualified participants, IT professionals with enterprise security responsibilities across 5 continents; 82% of organizations already use AI agents; 44% have policies in place to secure them; 92% say governing AI agents is critical.",
+    "discrepancy": "The page says 44% have policies 'to secure' AI agents, not policies 'governing' them."
+  },
+  "ms-wti-2026": {
+    "authors": [
+      "Microsoft WorkLab"
+    ],
+    "title": "Agents, human agency, and the opportunity for every organization (2026 Work Trend Index Annual Report)",
+    "venue": "Microsoft WorkLab, May 5, 2026; survey by Edelman Data x Intelligence",
+    "year": 2026,
+    "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization",
+    "accessed": "2026-11-04",
+    "note": "No individual byline. Fielding stated as Feb 18 to Apr 7, 2026 in methodology, Apr 20 in one figure note.",
+    "figures": "20,000 AI-using knowledge workers in 10 markets (2,000 each); organizational factors account for more than 2x the reported AI impact of individual factors (67% vs 32%), via random forest permutation importance on 19,854 respondents; associational, not causal.",
+    "discrepancy": "The page reports about twice the permutation importance for self-reported AI impact (67% vs 32%), not twice the outcome variance, and labels it associational."
+  },
+  "weill-woerner-2026": {
+    "authors": [
+      "Peter Weill",
+      "Stephanie L. Woerner"
+    ],
+    "title": "Leveraging Digital Colleagues for Enterprise Value",
+    "venue": "MIT CISR Research Briefing No. XXVI-4, April 16, 2026",
+    "year": 2026,
+    "url": "https://cisr.mit.edu/publication/2026_0401_DigitalColleagues_WeillWoerner",
+    "accessed": "2026-11-04",
+    "note": "Digital colleagues defined as AI-enabled systems that collaborate with humans to perform complex work.",
+    "figures": "MIT CISR 2025 Digital Colleagues Survey, N=132 organizations, fielded September (early fall) 2025; 75% of respondents predicted an average 25% increase in revenue per employee over three years.",
+    "discrepancy": ""
+  },
+  "nccoe-agent-idauth-2026": {
+    "authors": [
+      "Harold Booth",
+      "William Fisher",
+      "Ryan Galluzzo",
+      "Joshua Roberts"
+    ],
+    "title": "Accelerating the Adoption of Software and AI Agent Identity and Authorization",
+    "venue": "NIST National Cybersecurity Center of Excellence, draft concept paper (Initial Public Draft), February 5, 2026; comments closed April 2, 2026",
+    "year": 2026,
+    "url": "https://csrc.nist.gov/pubs/other/2026/02/05/accelerating-the-adoption-of-software-and-ai-agent/ipd",
+    "accessed": "2026-11-04",
+    "note": "CSRC lists the title as '[Concept Paper] ... Software and Artificial Intelligence Agent ...'; PDF cover lists 'Bill Fisher'. PDF: https://www.nccoe.nist.gov/sites/default/files/2026-02/accelerating-the-adoption-of-software-and-ai-agent-identity-and-authorization-concept-paper.pdf. No DOI.",
+    "figures": "No quantitative figures; seeks feedback on applying identity and authorization standards to enterprise AI agent use cases.",
+    "discrepancy": ""
+  },
+  "nist-ai-agent-standards-2026": {
+    "authors": [
+      "National Institute of Standards and Technology",
+      "Center for AI Standards and Innovation (CAISI)"
+    ],
+    "title": "AI Agent Standards Initiative",
+    "venue": "NIST initiative page; announced by CAISI on February 17, 2026; page last updated August 14, 2026",
+    "year": 2026,
+    "url": "https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative",
+    "accessed": "2026-11-04",
+    "note": "Announcement: https://www.nist.gov/news-events/news/2026/02/announcing-ai-agent-standards-initiative-interoperable-and-secure",
+    "figures": "Three pillars: industry-led standards, community-led open protocols, research on agent security and identity; deliverables include a CAISI RFI on agent security and the NCCoE identity concept paper.",
+    "discrepancy": ""
+  },
+  "csa-atf-blog-2026": {
+    "authors": [
+      "Josh Woodruff"
+    ],
+    "title": "The Agentic Trust Framework: Zero Trust Governance for AI Agents",
+    "venue": "Cloud Security Alliance blog, February 2, 2026",
+    "year": 2026,
+    "url": "https://cloudsecurityalliance.org/blog/2026/02/02/the-agentic-trust-framework-zero-trust-governance-for-ai-agents",
+    "accessed": "2026-11-04",
+    "note": "Author affiliation MassiveScale.AI. Blog states no specification version.",
+    "figures": "Five core elements (identity, behavior, data governance, segmentation, incident response) and four maturity levels (Intern, Junior, Senior, Principal).",
+    "discrepancy": ""
+  },
+  "atf-spec-v091": {
+    "authors": [
+      "Josh Woodruff"
+    ],
+    "title": "Agentic Trust Framework Specification",
+    "venue": "Version 0.9.1, Public Review Draft, last updated April 2026; GitHub massivescale-ai/agentic-trust-framework; stewardship transferring to CSAI Foundation (CSA press release, April 29, 2026)",
+    "year": 2026,
+    "url": "https://github.com/massivescale-ai/agentic-trust-framework/blob/main/SPECIFICATION.md",
+    "accessed": "2026-11-04",
+    "note": "Spec file carries no author or license line; repository page gives author Woodruff and CC BY 4.0. agentictrustframework.ai shows 'ATF v1'. Stewardship release: https://cloudsecurityalliance.org/press-releases/2026/04/29/csai-foundation-announces-key-milestones-to-secure-the-agentic-control-plane",
+    "figures": "Version 0.9.1, Public Review Draft, April 2026.",
+    "discrepancy": "The v0.9.1 draft is hosted on the author's GitHub, not on cloudsecurityalliance.org, and the spec site labels it ATF v1."
+  },
+  "anthropic-mcp-2024": {
+    "authors": [
+      "Anthropic"
+    ],
+    "title": "Introducing the Model Context Protocol",
+    "venue": "Anthropic news, November 25, 2024",
+    "year": 2024,
+    "url": "https://www.anthropic.com/news/model-context-protocol",
+    "accessed": "2026-11-04",
+    "note": "No individual byline; page credits David Soria Parra and Justin Spahr-Summers as MCP creators.",
+    "figures": "Announces open-sourcing of MCP as a standard for connecting AI assistants to data sources and tools.",
+    "discrepancy": ""
+  },
+  "mcp-spec-2026-07-28": {
+    "authors": [
+      "Model Context Protocol a Series of LF Projects, LLC"
+    ],
+    "title": "Model Context Protocol Specification, revision 2026-07-28",
+    "venue": "modelcontextprotocol.io; current protocol version 2026-07-28",
+    "year": 2026,
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28",
+    "accessed": "2026-11-04",
+    "note": "Versioning page states the current protocol version is 2026-07-28; lead maintainers David Soria Parra and Den Delimarsky (governance page).",
+    "figures": "Current revision 2026-07-28; handshake-based revisions are 2025-11-25 and earlier.",
+    "discrepancy": "The current specification is issued by the MCP project under LF Projects, LLC, not by Anthropic."
+  },
+  "google-a2a-2025": {
+    "authors": [
+      "Rao Surapaneni",
+      "Miku Jha",
+      "Michael Vakoc",
+      "Todd Segal"
+    ],
+    "title": "Announcing the Agent2Agent Protocol (A2A)",
+    "venue": "Google Developers Blog, April 9, 2025",
+    "year": 2025,
+    "url": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
+    "accessed": "2026-11-04",
+    "note": "",
+    "figures": "Announcement of the A2A open protocol for agent interoperability.",
+    "discrepancy": ""
+  },
+  "a2a-spec-v1": {
+    "authors": [
+      "A2A Protocol Project (Linux Foundation)"
+    ],
+    "title": "Agent2Agent (A2A) Protocol Specification",
+    "venue": "a2a-protocol.org, Latest Released Version 1.0.0; project under the Linux Foundation-directed Agentic AI Foundation (blog, August 27, 2026)",
+    "year": 2026,
+    "url": "https://a2a-protocol.org/latest/specification/",
+    "accessed": "2026-11-04",
+    "note": "Spec page has no date; the v1.0 release post is listed as March 12, 2026 on the blog index, but the post itself failed to open.",
+    "figures": "Latest released version 1.0.0; prior 0.3.0, 0.2.6, 0.1.0.",
+    "discrepancy": "The current spec is v1.0.0 under the Linux Foundation's Agentic AI Foundation, not a Google-issued specification."
+  }
+}

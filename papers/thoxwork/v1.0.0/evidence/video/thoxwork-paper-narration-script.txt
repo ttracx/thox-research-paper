@@ -1,0 +1,20 @@
+ThoxWork for the Enterprise: narration script (spoken form; written captions keep the THOX spelling)
+Voice: AI-generated synthetic voice.
+
+[00:00:00,800] Scene 1
+Thocks dot A-I Research has published a comprehensive technical report on Thocks Work, our third platform, where people and named Digital Employees share real work under rules a person can check.
+
+[00:00:14,901] Scene 2
+MeshGroups scope every request to one team, its approved workspaces and models, and an accountable human sponsor. Today the planner is a preview. It explains every denial, and it never executes.
+
+[00:00:30,077] Scene 3
+Before any external effect, work waits for a person when an approval reason holds. An agent cannot approve its own work, and every decision is recorded.
+
+[00:00:41,022] Scene 4
+Teams run tasks in order. Each Digital Employee leaves a written handoff, and the reviewer approves the result or sends it back.
+
+[00:00:51,370] Scene 5
+We measured what a record can prove. Hash links alone missed a cut tail and a rebuilt history in every trial. A session key and an anchor held by a second party caught both, every time.
+
+[00:01:04,735] Scene 6
+Read the paper, run the browser Evidence Lab, and check the rules yourself before you trust them. Thocks Work is coming soon. Your A-I. Your Data. Your Rules.
