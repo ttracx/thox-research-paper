@@ -33,5 +33,7 @@ MEASURED, Section 7.7), including both DOIs and the D1 ruling text.
 ## Files (SHA-256 in the flip report)
 - dist/THOX_ThoxWork_Research_Paper_v1.1.0.pdf (38 pp)
 - dist/THOX_ThoxWork_Research_Paper_v1.1.0.html (single file)
-- dist/ThoxWork_Demo_v1.1.0.html (interactive demo, byte-identical to the
-  demo shipped with v1.0.1)
+- dist/ThoxWork_Evidence_Lab_THOX.html (interactive demo: the ThoxWork
+  Evidence Lab with official THOX branding, SHA-256
+  d9667c23d60832171559f80d3e2ada795c20e83e300a3c24d37c33d215b01819;
+  replaces the earlier demo build on the founders' direction)

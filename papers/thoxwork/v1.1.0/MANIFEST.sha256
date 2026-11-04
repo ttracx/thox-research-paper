@@ -1,12 +1,12 @@
 250d547672c66d7418a5d3e4d774700b9a066848e8f725507b40026ec703f3b2  ./.agents/HANDOFF.md
 1a39fa376dea933e4b863e949aaf4e6374d64cbf279a136cecfe8b8408fcdc94  ./CITATION.bib
 0668caaffc8a5111039190ad835623e4e82b06bcb19b40eea23057f1d2202065  ./CITATION.cff
-f88d2cb847bda6adaba74e5675244d42c85196a2a353788a5c0a1a0568f3d338  ./HANDOFF.md
+6c7746e1e4cf47f92c44d9b85cc6a6f58bfcdc0395f7075bef05b5a8d9ac7ab1  ./HANDOFF.md
 9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411  ./LICENSE
 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  ./LICENSE-CODE.txt
 12f9afabb9029ae1c2673a40671a5f287c1f35048d045538fdc050e2b8140453  ./NOTICE.md
-3ac08b8d3324e0791514b078be247135267aa4493aa5510b3d08f8db662a43e0  ./README.md
-227d0bbd247b680b4bfff80fe3750a6ad463447608f53eb66ab4450adf945957  ./artifact/README.md
+0fd5eb35790eea0745b0d49e57ae7a6b21270e0f00d6702a6541caf23fb2cc34  ./README.md
+2c351458262330514a267fbb96a7946e276cb95e4db69c0c040fbc13e8cad228  ./artifact/README.md
 3e22f0af2f039ac8dfaf68bf4ba65320b2f294fcfb088bf67db12e3018c20ac7  ./artifact/exp/claude_admission_divergence.js
 3b5eebf458e459b7047f361fe940e01ed79d00b7d0992b5992fc68851ec7c9cb  ./artifact/exp/claude_admission_divergence.json
 4025d70468b1dc7d8eb4190802af1944ef9c58ba71110d28c2e3c5e63edf2995  ./artifact/exp/claude_meshgroup_cases.json
@@ -23,7 +23,7 @@ f7c72f64b9b8c6f2e1663fbb014374858b2251f2aeaa7d989393a6cdb071dd79  ./artifact/exp
 9c289275d77b6ba163320fb50fd215b2a221ebeadff2e00dafaaea3d1b7d92cb  ./artifact/exp/thoxwork_experiments.py
 332f33db797c87db9aabb18770b2c6878a29058a590dd89c8d592f34851202b8  ./artifact/wp/build.py
 7b39596a4dc28ae24545c53e53c79d8e7026bfb26df454c684d90f3168a9dd83  ./artifact/wp/paper.src.html
-0e77c1e2dacab4c7cd349cf0a92bc8a687f2c9f27e26ae743fdab0b792d265b9  ./artifact/wp/qa/QA-REPORT.md
+7271c61c151fae8847538b8c075997ddca7d19c83687bd09bbf9bdd2c5f52b50  ./artifact/wp/qa/QA-REPORT.md
 ee65178756ddc919231e0e0dafe78f3898e94ed2a90d6667f48319e240560a10  ./artifact/wp/qa/contact-1.png
 404dfe9f69e7152aa952446c9945ba39ec2d4250de9b5fd0d1f6c873ea80da9f  ./artifact/wp/qa/contact-2.png
 c882acff24a727a32692b5acbe01cc5f5a70750462dbda7a47604d78f68e2415  ./artifact/wp/qa/numbers-proof.json
@@ -34,4 +34,4 @@ d739d31d5505e7ce10a9a1e32ea6e7061c99bd9238e4995b393becf224533a2c  ./docs/USER_GU
 d44a1ba0e15416850678414f152500dcd2d4c21d597d048ab7a6b5896bc0a8e6  ./docs/previews/cover-v1.1.0.png
 7b39596a4dc28ae24545c53e53c79d8e7026bfb26df454c684d90f3168a9dd83  ./paper/THOX_ThoxWork_Research_Paper_v1.1.0.html
 8d7ad1c796a4184f84c1595d4a5ddc85d66b42d4bd26ce5e472eb083c1042819  ./paper/THOX_ThoxWork_Research_Paper_v1.1.0.pdf
-df020dc44c22bf0d07adcabcb61d436b6c1ba562e009bdc5a841649535e0997b  ./paper/ThoxWork_Demo_v1.1.0.html
+d9667c23d60832171559f80d3e2ada795c20e83e300a3c24d37c33d215b01819  ./paper/ThoxWork_Evidence_Lab_THOX.html

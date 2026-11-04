@@ -54,7 +54,7 @@ every number in the paper:
 - **Version DOI: [10.5281/zenodo.23965052](https://doi.org/10.5281/zenodo.23965052)** (concept DOI, all versions: 10.5281/zenodo.23963935)
 - Zenodo record: https://zenodo.org/records/23965052 (PDF + HTML)
 - Paper page: https://thox.ai/research/papers/thoxwork
-- Interactive demo: in this repository at `paper/ThoxWork_Demo_v1.1.0.html`, and linked from the paper page
+- Interactive demo: the ThoxWork Evidence Lab, in this repository at `paper/ThoxWork_Evidence_Lab_THOX.html`, and linked from the paper page
 - Hugging Face: folder `thoxwork/` in the [Thox-ai/thox-whitepapers](https://huggingface.co/datasets/Thox-ai/thox-whitepapers) dataset
 - This repository: paper PDF + HTML edition + demo in `paper/`, evidence in `artifact/exp/`
 
@@ -62,7 +62,7 @@ every number in the paper:
 |---|---|
 | `paper/THOX_ThoxWork_Research_Paper_v1.1.0.pdf` (434,438 bytes) | `8d7ad1c796a4184f84c1595d4a5ddc85d66b42d4bd26ce5e472eb083c1042819` |
 | `paper/THOX_ThoxWork_Research_Paper_v1.1.0.html` (2,259,668 bytes) | `7b39596a4dc28ae24545c53e53c79d8e7026bfb26df454c684d90f3168a9dd83` |
-| `paper/ThoxWork_Demo_v1.1.0.html` (9,222 bytes) | `df020dc44c22bf0d07adcabcb61d436b6c1ba562e009bdc5a841649535e0997b` |
+| `paper/ThoxWork_Evidence_Lab_THOX.html` (444,870 bytes) | `d9667c23d60832171559f80d3e2ada795c20e83e300a3c24d37c33d215b01819` |
 
 ## Repository layout
 

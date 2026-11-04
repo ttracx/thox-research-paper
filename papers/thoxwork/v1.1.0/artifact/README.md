@@ -7,7 +7,7 @@ Version DOI: 10.5281/zenodo.23965052 - Concept DOI: 10.5281/zenodo.23963935
 License: CC BY 4.0. Supersedes v1.0.1 (DOI 10.5281/zenodo.23963936).
 
 ## Contents
-- `dist/` - the shipped trio: paper PDF, single-file paper HTML, interactive demo HTML.
+- `dist/` - the shipped trio: paper PDF, single-file paper HTML, and the interactive demo (the ThoxWork Evidence Lab, THOX-branded edition).
 - `exp/` - the evidence: `results/summary.json` is the single evidence source for
   every number in the paper (schema thoxwork-summary/1.1.0), with the underlying
   product-test, planner, admission-divergence, Evidence Lab and live-core

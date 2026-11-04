@@ -42,9 +42,16 @@ Evidence-First Teamwork", authors Craig Ross (CEO) and Tommy Xaypanya
 |---|---|
 | `paper/THOX_ThoxWork_Research_Paper_v1.1.0.pdf` (434,438 bytes, 38 pp) | `8d7ad1c796a4184f84c1595d4a5ddc85d66b42d4bd26ce5e472eb083c1042819` |
 | `paper/THOX_ThoxWork_Research_Paper_v1.1.0.html` (2,259,668 bytes) | `7b39596a4dc28ae24545c53e53c79d8e7026bfb26df454c684d90f3168a9dd83` |
-| `paper/ThoxWork_Demo_v1.1.0.html` (9,222 bytes) | `df020dc44c22bf0d07adcabcb61d436b6c1ba562e009bdc5a841649535e0997b` |
+| `paper/ThoxWork_Evidence_Lab_THOX.html` (444,870 bytes) | `d9667c23d60832171559f80d3e2ada795c20e83e300a3c24d37c33d215b01819` |
 
 Full per-file manifest: `MANIFEST.sha256` in this folder.
+
+## Demo note
+
+The pack demo is the ThoxWork Evidence Lab in its THOX-branded edition
+(official lockup and icon; SHA-256 in the table above), which replaced
+the earlier demo build on the founders' direction of 2026-11-04. The
+same bytes are served from the paper's website page.
 
 ## Surfaces flipped in the same pass
 
