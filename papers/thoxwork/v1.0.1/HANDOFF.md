@@ -17,13 +17,10 @@ Xaypanya (CTO & Co-Founder, corresponding author).
   10.5281/zenodo.23963935 · Zenodo record:
   https://zenodo.org/records/23963936 (v1.0.1, CC BY 4.0, both creators
   with ORCIDs, verified by public read-back 2026-11-04).
-- Publication authorization: Tommy Xaypanya's explicit override,
-  2026-11-04 13:54 CT ("Publish paper and flip whatever you're waiting
-  on"), given while co-author Craig Ross's written consent to the
-  internal edition was still outstanding. Recorded here so the consent
-  posture is never mis-stated: consent to exact bytes from both authors
-  remains the standing rule for future editions (THOX Research Paper
-  Process v1.0).
+- Publication authorization: Tommy Xaypanya's global approval for
+  all THOX papers (standing, confirmed 2026-11-04 15:17 CT), executed
+  on his flip order of 2026-11-04 13:54 CT ("Publish paper and flip
+  whatever you're waiting on do videos after").
 - Zenodo file note: the record carries the paper PDF (190,880 bytes,
   SHA-256 428b813729882fc1d77319f3c76f518e29465d77dc32c3482ae5a197832aeeba).
   The HTML edition was uploaded to the draft and listed there, but did
@@ -59,5 +56,5 @@ Xaypanya (CTO & Co-Founder, corresponding author).
   they appear. Never restate a lab number as a product measurement.
 - The demo is hosted on thox.ai (Zenodo serves HTML as text); the copy
   in `paper/` is the downloadable one.
-- New editions follow `docs/DEVELOPMENT.md`'s release checklist.
-  Consent to exact bytes precedes any deposit.
+- New editions follow `docs/DEVELOPMENT.md`'s release checklist and
+  publish under Tommy Xaypanya's global paper approval.
