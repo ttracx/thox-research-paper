@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this paper, please cite it as below."
-type: article
+type: report
 title: "ThoxOS and ThoxInux: An Evidence-Bounded Architecture for a Local-First AI Operating System"
 authors:
   - family-names: Ross
@@ -13,38 +13,31 @@ authors:
     affiliation: "THOX.ai LLC"
 institution:
   name: "THOX.ai Research, THOX.ai LLC"
-version: "0.2.0-review"
-date-released: "2026-11-01"
-url: "https://zenodo.org/records/23876230"
-doi: "10.5281/zenodo.23876230"
+version: "1.0.1"
+date-released: "2026-11-03"
+url: "https://zenodo.org/records/23969073"
+doi: "10.5281/zenodo.23969073"
 license: CC-BY-4.0
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.23876230"
+    value: "10.5281/zenodo.23969073"
+    description: "Version DOI (Zenodo record 23969073)"
+  - type: doi
+    value: "10.5281/zenodo.23969072"
+    description: "Concept DOI (all versions)"
 abstract: >-
-  Local AI systems require an evidence chain from kernel behavior to
-  application execution, model quality, and physical device operation.
-  This technical report examines the ThoxOS program with ThoxInux, its
-  Ginux-derived, Rust-first x86-64 foundation. We reconcile an earlier
-  Linux-based design with current source and release records,
-  distinguish reusable component evidence from integrated-system
-  evidence, and define a falsifiable validation protocol. The reviewed
-  records document engineering-preview EFI releases and bounded
-  virtual-machine lifecycle tests. They also record resident-agent
-  faults in an edition payload, conditional build reproducibility, and
-  incomplete Linux ABI behavior. Published language-model evaluations
-  carry additional restrictions on scoring scope, serving templates,
-  quantization, and hardware applicability. We formalize the separation
-  between service entitlement and action authorization, and specify
-  experiments for workload compatibility, agent lifecycle, offline
-  operation, update recovery, and device feasibility. The review
-  contributes a revision-bound evidence map and an explicit set of
-  integration tests; it does not introduce a new kernel, report a
-  performance advantage, or establish production security. Historical
-  unit-test counts, repository-reported runs, publisher-reported model
-  scores, and unexecuted protocols remain distinct. The resulting
-  architecture draft supports continued implementation while identifying
-  the measurements required for a complete empirical systems paper.
+  ThoxOS is the operating system for THOX's local-first AI devices
+  and desktops. Its record has two foundations in four days: the
+  v0.1.0 whitepaper of 31 October specified linux-thox, a Linux LTS
+  fork with a separate Rust research laboratory; the 0.2.0-review
+  draft of 1 November identifies ThoxInux, a Ginux-derived Rust-first
+  x86-64 kernel with Linux userspace compatibility, as the reviewed
+  foundation, and treats the whitepaper as historical input. This
+  report takes the reviewed foundation as the architecture of record,
+  keeps what the whitepaper specified that survives the change (class
+  floors, entitlement without DRM, A/B updates with a health gate,
+  the open and paid line), and adds the evidence a general host can
+  produce.
 keywords:
   - ThoxOS
   - ThoxInux
@@ -54,7 +47,9 @@ keywords:
   - validation protocol
 notes: >-
   Preprint, not peer reviewed. THOX.ai Research technical report
-  v0.2.0-review, deposited on Zenodo 1 November 2026 (PDF, LaTeX
-  source, bibliography and evidence ledger; CC BY 4.0). Zenodo DOI:
-  10.5281/zenodo.23876230. No arXiv identifier has been issued for
-  this paper.
+  v1.0.1 (canonical public edition), deposited on Zenodo 4 November
+  2026 (paper PDF, HTML edition, browser demo and artifact ZIP;
+  CC BY 4.0). Zenodo DOI: 10.5281/zenodo.23969073 (concept DOI 10.5281/zenodo.23969072).
+  Supersedes the 0.2.0-review draft (DOI 10.5281/zenodo.23876230), preserved in
+  papers/thoxos/. No arXiv identifier has been issued for this
+  paper.

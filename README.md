@@ -32,6 +32,8 @@ No account credentials, live authenticated session, SWORD permission or automati
 
 [papers/thoxos/v1.0.1](papers/thoxos/v1.0.1/README.md) holds the THOX.ai Research technical report that builds on the 0.2.0-review draft: PDF, standalone HTML, browser demo, experiments and build pipeline. Preprint, not peer reviewed. Measured entitlement token designs, simulated A/B update contract, the Linux-ABI ledger at the ThoxInux pin joined with a traced agent loop, and the kernel-model memory budget.
 
+Published on Zenodo 4 November 2026: DOI [10.5281/zenodo.23969073](https://doi.org/10.5281/zenodo.23969073) (record: https://zenodo.org/records/23969073; concept DOI 10.5281/zenodo.23969072), CC BY 4.0. The `dist/` files in that directory are the canonical edition bytes; SHA-256 sums are in the `thoxos-v1.0.1` release notes.
+
 ## ThoxOS / ThoxInux manuscript draft
 
 The [ThoxOS paper directory](papers/thoxos/README.md) contains revision `0.2.0-review`: editable LaTeX, a compiled PDF, verified bibliography, a claim-level evidence ledger, and the preserved historical reference with its six recovered figures. It reconciles the Ginux-derived ThoxInux foundation with the older Linux/Core design and retains model, payload, hardware, and licensing limits.

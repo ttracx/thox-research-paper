@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this technical report, please cite it as below."
+type: report
+title: "ThoxOS and ThoxInux: An Evidence-Bounded Architecture for a Local-First AI Operating System"
+authors:
+  - family-names: Ross
+    given-names: Craig
+    orcid: "https://orcid.org/0009-0005-9872-3673"
+    affiliation: "THOX.ai LLC"
+  - family-names: Xaypanya
+    given-names: Tommy
+    orcid: "https://orcid.org/0009-0000-4425-9565"
+    affiliation: "THOX.ai LLC"
+publisher: "THOX.ai Research"
+version: "1.0.1"
+date-released: "2026-11-03"
+doi: "10.5281/zenodo.23969073"
+# DOI of record: Zenodo record 23969073 (concept DOI 10.5281/zenodo.23969072), deposited 2026-11-04.
