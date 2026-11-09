@@ -53,3 +53,35 @@ notes: >-
   Supersedes the 0.2.0-review draft (DOI 10.5281/zenodo.23876230), preserved in
   papers/thoxos/. No arXiv identifier has been issued for this
   paper.
+references:
+  - type: report
+    title: "ThoxWork: One Workplace, One Connected Team. A Policy-Bounded DigitalHuman Work Platform for Enterprise Use"
+    authors:
+      - family-names: Ross
+        given-names: Craig
+        orcid: "https://orcid.org/0009-0005-9872-3673"
+        affiliation: "THOX.ai LLC"
+      - family-names: Xaypanya
+        given-names: Tommy
+        orcid: "https://orcid.org/0009-0000-4425-9565"
+        affiliation: "THOX.ai LLC"
+    institution:
+      name: "THOX.ai Research, THOX.ai LLC"
+    version: "1.1.0"
+    date-released: "2026-11-04"
+    url: "https://zenodo.org/records/23965699"
+    doi: "10.5281/zenodo.23965699"
+    license: CC-BY-4.0
+    identifiers:
+      - type: doi
+        value: "10.5281/zenodo.23965699"
+        description: "Version DOI (Zenodo record 23965699)"
+      - type: doi
+        value: "10.5281/zenodo.23963935"
+        description: "Concept DOI (all versions)"
+    notes: >-
+      Preprint, not peer reviewed. THOX.ai Research technical report
+      v1.1.0 (canonical comprehensive edition), deposited on Zenodo
+      4 November 2026 (paper PDF and HTML edition; CC BY 4.0).
+      Paper page: https://thox.ai/research/papers/thoxwork
+      Full publication record: papers/thoxwork/v1.1.0/ in this repository.
