@@ -149,9 +149,21 @@
   <p>
     Clip / Mini / Air / Key packages live under <code>devices/packages/</code> with pinned TXF 5.0 tokens
     (<code>devices/branding/</code>), device-panel fields (Name, Class, Presence, Telemetry, Capabilities, Last sync),
-    and dry-run-only write policy. Product targets assume Orange Pi Zero 3W Allwinner A733 (sun60iw2);
-    Air procurement currently points at Radxa 3W 2&nbsp;GB (needs-tommy). HTML index: <code>devices/html/index.html</code>.
-    Planner: <code>thox-device-provision</code>. Emerald denotes brand, not permission to flash.
+    and gated write policy. Product targets assume Orange Pi Zero 3W Allwinner A733 (sun60iw2);
+    Air procurement currently points at Radxa 3W 2&nbsp;GB (needs-tommy). Working hardware-at-hand POC:
+    Luckfox Pico Pro/Max (RV1106) as ThoxAir with Buildroot SD image and <code>overlay-thox-air</code>
+    (rootfs verified; SHA-256 in <code>devices/sdcard/staging/meta/LUCKFOX_IMAGE_SHA256SUMS.txt</code>).
+    Pi Zero remains a lab target only. HTML index: <code>devices/html/index.html</code>.
+    Planner: <code>thox-device-provision validate --all</code>. Emerald denotes brand, not permission to flash.
+  </p>
+
+  <h3>3.6 Agentic hardness stack</h3>
+  <p>
+    <code>crates/thox-agent-hard</code> owns a TXF-branded RunEvent vocabulary (learn from agent-harness),
+    microVM adapters (Firecracker / Hyperlight / ArcBox / QEMU), and computer-use drivers
+    (Chrome CDP / Obscura-shaped / OxiBrowser-shaped). Default is dry-run; live isolate/browser needs
+    <code>CONFIRM_ISOLATE=1</code> / <code>CONFIRM_BROWSER=1</code>. Recreate: <code>bash agentic/lab/run.sh</code>
+    → <code>agentic/lab/evidence/2026-11-11/</code>.
   </p>
 
   <h2>4. Evaluation methodology</h2>
@@ -176,6 +188,10 @@
       <tr><td>QEMU x86_64 kernel boot + serial <code>THOX_KERNEL_READY</code></td><td>PASS; loaded PT_LOAD sha256 <code>b35af881…e57a7</code></td><td>observed</td></tr>
       <tr><td>Kernel VGA screendump</td><td>720×400; 5402 light-green pixels</td><td>observed</td></tr>
       <tr><td>QEMU raspi1ap + Alpine armhf Pi kernel</td><td>SKIP (empty serial); issue #27</td><td>observed failure</td></tr>
+      <tr><td>Device packages TXF validate --all (6)</td><td>PASS</td><td>observed</td></tr>
+      <tr><td>Luckfox ThoxAir Buildroot image + overlay-thox-air</td><td>BUILD_EXIT:0; rootfs overlay verified</td><td>observed</td></tr>
+      <tr><td>thox-agent-hard dry-run lab</td><td>PASS; evidence agentic/lab/evidence/2026-11-11/</td><td>observed</td></tr>
+      <tr><td>Physical 128GB microSD flash</td><td>not executed in cloud VM (no removable media)</td><td>proposed/unverified</td></tr>
       <tr><td>hardware RoT / device flash</td><td>not executed</td><td>proposed/unverified</td></tr>
     </tbody>
   </table>
@@ -224,6 +240,8 @@ Evidence: lab/evidence/2026-11-11/</pre>
     <li>Ross, C. &amp; Xaypanya, T. ThoxOS/ThoxInux architecture draft 0.2.0-review. https://github.com/ttracx/thox-research-paper/tree/main/papers/thoxos</li>
     <li>THOX Guard POC draft PR. https://github.com/ttracx/thoxos-rust-program/pull/26</li>
     <li>License research draft PR. https://github.com/ttracx/thoxos-rust-program/pull/8</li>
+    <li>Luckfox Pico Pro/Max wiki. https://wiki.luckfox.com/Luckfox-Pico-RV1106/Getting-Started/Pico-Pro-Max</li>
+    <li>THOX agentic hardness crate (this hub). crates/thox-agent-hard</li>
     <li>THOX Research Publishing skill v2.2.0. Thox-ai/thox-research-team</li>
   </ol>
 
@@ -245,7 +263,7 @@ Evidence: lab/evidence/2026-11-11/</pre>
     <tr><th>Version</th><td>0.1.2-draft</td></tr>
     <tr><th>Date</th><td>2026-11-11 (America/Chicago)</td></tr>
     <tr><th>Hub</th><td>https://github.com/ttracx/thoxos-rust-program</td></tr>
-    <tr><th>Change</th><td>TXF 5.0 branding on paper/catalog/device packages; A733 hardware map; Guard PR #26 evidence retained</td></tr>
+    <tr><th>Change</th><td>TXF 5.0; A733 map; Luckfox ThoxAir POC image; agentic hardness dry-run; Guard PR #26 evidence retained</td></tr>
   </table>
 </main>
 <footer>
