@@ -1,5 +1,9 @@
 # thox-research-paper
 
+![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
+![THOX.ai](https://img.shields.io/badge/THOX.ai-LLC-red.svg)
+![Repository](https://img.shields.io/badge/repository-ttracx%2Fthox--research--paper-0B1220)
+
 Skill and documentation for end-to-end authoring, technical drawings, requirements compliance, and publishing of research papers on behalf of THOX.ai, including submission to Hugging Face Papers.
 
 ## Automatic Research Studio workflows (1.2.0)
@@ -114,3 +118,17 @@ Apache-2.0 (consistent with THOX.ai public artifacts)
 ---
 
 THOX.ai LLC — Your AI. Your Data. Your Rules.
+
+---
+
+## Legal
+
+Copyright (c) 2024-2026 THOX.ai LLC. All rights reserved.
+
+**THOX.ai LLC**
+- CTO: Tommy Xaypanya
+- CEO: Craig Ross
+
+Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for details.
+
+Unauthorized copying, modification, merger, publication, distribution, sublicensing, and/or selling of this software, via any medium, is strictly prohibited without prior written consent from THOX.ai LLC.
